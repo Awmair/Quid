@@ -1,6 +1,7 @@
 export const navigation = [
   { label: 'How It Works', href: '/how-it-works' },
   { label: 'See Quid in Action', href: '/see-quid-in-action' },
+  { label: 'About', href: '/about' },
   { label: 'Human Handoffs', href: '/human-handoffs' },
   { label: 'Resources', href: '/resources' },
   { label: 'Pilot', href: '/pilot' },
@@ -39,6 +40,7 @@ export const footerGroups = [
   {
     title: 'Company',
     links: [
+      { label: 'About Quid', href: '/about' },
       { label: 'Contact', href: '/meet-quid' },
       { label: 'Privacy', href: '/privacy' },
       { label: 'Terms', href: '/terms' },

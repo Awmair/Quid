@@ -10,6 +10,7 @@ interface Props {
   description?: string;
   image?: string;
   noindex?: boolean;
+  canonicalUrl?: string;
   schema?: Record<string, unknown> | Record<string, unknown>[];
 }
 
@@ -18,9 +19,10 @@ const {
   description = site.defaultDescription,
   image = '/quid-og.png',
   noindex = false,
+  canonicalUrl,
   schema,
 } = Astro.props;
-const canonical = new URL(Astro.url.pathname, site.domain).toString();
+const canonical = canonicalUrl || new URL(Astro.url.pathname, site.domain).toString();
 const socialImage = new URL(image, site.domain).toString();
 const normalizedPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 const hideLeadMagnet = ['/privacy', '/terms', '/404', '/404.html'].includes(normalizedPath);
@@ -28,10 +30,19 @@ const globalSchema = [
   {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Quid',
+    '@id': `${site.domain}/#organization`,
+    name: 'Quid Admissions',
+    alternateName: 'Quid',
     url: site.domain,
     logo: `${site.domain}/favicon-192x192.png`,
     description: 'Quid is an AI-assisted admissions concierge for senior living communities.',
+    founder: {
+      '@type': 'Person',
+      '@id': `${site.domain}/about/#umair-qudoos`,
+      name: 'Umair Qudoos',
+      jobTitle: 'Founder',
+      sameAs: 'https://www.linkedin.com/in/umair-qudoos/',
+    },
   },
   {
     '@context': 'https://schema.org',

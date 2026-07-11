@@ -5,6 +5,7 @@
 ## Website
 
 - Homepage: https://get-quid.site/
+- About Quid: https://get-quid.site/about/
 - See Quid in Action: https://get-quid.site/see-quid-in-action
 - How It Works: https://get-quid.site/how-it-works
 - Human Handoffs: https://get-quid.site/human-handoffs
@@ -34,6 +35,14 @@ Quid does not:
 - determine eligibility
 - guarantee move-ins
 - replace admissions staff
+
+## About
+
+Quid Admissions is the company and entity behind Quid. Quid is the brand. Umair Qudoos is the founder.
+
+- Founder profile: https://www.linkedin.com/in/umair-qudoos/
+- Quid supports routine senior living admissions follow-up.
+- Quid is not a clinical decision system or CRM replacement.
 
 ## Best Resource Pages
 
