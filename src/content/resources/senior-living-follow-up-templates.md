@@ -3,7 +3,7 @@ title: "Senior Living Follow-Up Email Templates for Inquiries and Tours"
 description: "Practical email templates for senior living inquiry acknowledgement, tour options, confirmation, reminders, post-tour follow-up, and stalled leads."
 author: "Quid"
 publishedDate: 2026-07-10
-updatedDate: 2026-07-10
+updatedDate: 2026-07-11
 order: 6
 ---
 
@@ -173,3 +173,5 @@ Use the [human handoff checklist](/resources/senior-living-human-handoff-checkli
 - [ ] Staff can edit, pause, and stop the sequence.
 
 For a printable starting pack, [get the Senior Living Follow-Up Fix Kit](#follow-up-fix-kit). To see how templates and next actions appear operationally, [see the Quid admissions dashboard](/see-quid-in-action).
+
+See where these approved messages fit within the complete [senior living inquiry follow-up automation workflow](/senior-living-inquiry-follow-up-automation).

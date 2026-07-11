@@ -3,7 +3,7 @@ title: "A Practical Senior Living Tour Follow-Up Framework"
 description: "A clear, human-centered framework for senior living tour confirmations, reminders, post-tour follow-up, and staff handoffs."
 author: "Quid"
 publishedDate: 2026-07-10
-updatedDate: 2026-07-10
+updatedDate: 2026-07-11
 order: 3
 ---
 
@@ -167,3 +167,5 @@ Do not treat these measures as a guarantee of move-ins. They show whether the pr
 Good tour follow-up feels attentive rather than aggressive. It removes avoidable uncertainty, keeps staff ownership clear, and gives families a reliable path to a real person.
 
 See [how Quid handles the full inquiry workflow](/how-it-works) or [meet Quid](/meet-quid) for a guided walkthrough.
+
+For the commercial workflow, explore [senior living inquiry follow-up automation](/senior-living-inquiry-follow-up-automation) or [assisted living admissions automation](/assisted-living-admissions-automation).

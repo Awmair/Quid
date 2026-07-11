@@ -3,7 +3,7 @@ title: "Senior Living Admissions Automation: What to Automate and What to Keep H
 description: "A practical framework for deciding which senior living admissions tasks can be made consistent and which decisions must remain with staff."
 author: "Quid"
 publishedDate: 2026-07-10
-updatedDate: 2026-07-10
+updatedDate: 2026-07-11
 order: 1
 ---
 
@@ -125,3 +125,5 @@ Before real family communication begins, confirm:
 Automate the predictable coordination around an admissions conversation. Keep judgment, empathy, clinical knowledge, and admissions authority with people. Then review the boundary using real workflow evidence before expanding.
 
 Continue with [Quid’s human-handoff process](/human-handoffs) or see [how the full inquiry workflow works](/how-it-works).
+
+For a commercial view of the workflow, explore [assisted living admissions automation](/assisted-living-admissions-automation) and [senior living inquiry follow-up automation](/senior-living-inquiry-follow-up-automation).

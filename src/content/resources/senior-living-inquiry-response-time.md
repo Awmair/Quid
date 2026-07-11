@@ -3,7 +3,7 @@ title: "How to Improve Senior Living Inquiry Response Time Without Burning Out S
 description: "A sustainable operating framework for faster senior living inquiry responses without adding constant inbox monitoring or unrealistic promises."
 author: "Quid"
 publishedDate: 2026-07-10
-updatedDate: 2026-07-10
+updatedDate: 2026-07-11
 order: 2
 ---
 
@@ -139,3 +139,5 @@ Then review the workflow carefully before communicating with families.
 The durable improvement is not asking staff to work faster. It is making routine communication consistent, ownership visible, and exceptions easy to spot. That gives staff more time for the family conversations where speed alone is not enough.
 
 Explore the [30-day Quid pilot](/pilot) or review [what admissions work to automate and what to keep human](/resources/senior-living-admissions-automation).
+
+See how prompt acknowledgement fits into a controlled [senior living inquiry follow-up automation workflow](/senior-living-inquiry-follow-up-automation), or view the same process for [assisted living admissions teams](/assisted-living-admissions-automation).
