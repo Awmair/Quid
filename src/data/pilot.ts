@@ -12,8 +12,8 @@ export const pilotOffer = {
   continuationPrice: pricing.ongoing.display,
   ongoingPriceLabel: pricing.ongoing.monthlyDisplay,
   continuation: pricing.ongoing.continuationLine,
-  cardContinuation: `Keep Quid from ${pricing.ongoing.monthlyDisplay} after the pilot.`,
-  applicationContinuation: `Continue from ${pricing.ongoing.monthlyDisplay} after the pilot.`,
+  cardContinuation: `Keep Quid for ${pricing.ongoing.monthlyDisplay} after the pilot.`,
+  applicationContinuation: `Continue for ${pricing.ongoing.monthlyDisplay} after the pilot.`,
   scope: 'One community, one inquiry source, and one tour calendar.',
   positioning:
     'This is a paid implementation pilot—not a free trial or refundable deposit.',
@@ -82,7 +82,7 @@ export const pilotOffer = {
   continuationFoundation:
     'The pilot configuration becomes the foundation of your ongoing Quid service, so your team does not start over.',
   ongoingPricingNote:
-    'Final ongoing pricing depends on workflow complexity, inquiry sources, integrations, locations, and monitoring and support requirements.',
+    'Ongoing service is priced per community and per location.',
   measurements: [
     'Inquiries acknowledged',
     'Tours offered',
@@ -159,7 +159,7 @@ export const pilotFaqs = [
   ['How much does the pilot cost?', `The 30-day Quid Admissions Pilot costs ${pricing.pilot.displayWithBilling}.`],
   ['What is included?', 'We review your current process, configure one inquiry workflow, deploy Quid, provide the dashboard and daily summary, monitor the workflow, and deliver an end-of-pilot report.'],
   ['Is the pilot fee credited if we continue?', 'No. The pilot is a standalone implementation and deployment engagement. If you continue, the work completed during the pilot becomes the foundation of your managed Quid service.'],
-  ['What does Quid cost after the pilot?', `Managed Quid operations start from ${pricing.ongoing.monthlyDisplay}. Final pricing depends on workflow complexity, integrations, locations, and support requirements.`],
+  ['What does Quid cost after the pilot?', `Managed Quid operations cost ${pricing.ongoing.monthlyDisplay}. You decide whether to continue after the pilot.`],
   ['Do we have to continue?', 'No. At the end of the pilot, you decide whether the workflow is useful enough to keep.'],
   ['When does Quid go live?', 'Quid normally goes live during Week 3, after the workflow and handoff rules have been reviewed.'],
 ] as const;

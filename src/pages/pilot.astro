@@ -35,7 +35,7 @@ const schema = [
 
 <BaseLayout
   title="30-Day Senior Living Admissions Pilot | Quid"
-  description={`Run a focused 30-day Quid admissions implementation for ${pilotOffer.priceWithBilling}. Continue with managed Quid operations ${pilotOffer.continuationPrice.toLowerCase()} if you choose.`}
+  description={`Run a focused 30-day Quid admissions implementation for ${pilotOffer.priceWithBilling}. Continue with managed Quid operations for ${pilotOffer.continuationPrice.toLowerCase()} if you choose.`}
   schema={schema}
 >
   <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: '30-Day Pilot' }]} />
@@ -47,7 +47,7 @@ const schema = [
         <h1>{pilotOffer.pageHeadline}</h1>
         <p class="lede">{pilotOffer.pageBody}</p>
         <AnswerBlock answer={`We learn your admissions process, configure Quid around one inquiry source and one tour calendar, launch the workflow, monitor it, and show you what happened. No long-term commitment is required to complete the pilot.`} />
-        <p class="pilot-hero-price"><strong>{pilotOffer.priceWithBilling}.</strong> Continue {pilotOffer.continuationPrice.toLowerCase()} if you choose to keep Quid.</p>
+        <p class="pilot-hero-price"><strong>{pilotOffer.priceWithBilling}.</strong> Continue for {pilotOffer.continuationPrice.toLowerCase()} if you choose to keep Quid.</p>
         <div class="button-row">
           <a class="button" href="#apply">Apply for the Pilot</a>
           <a class="button button-secondary" href="/see-quid-in-action">See Quid in Action</a>
@@ -102,7 +102,7 @@ const schema = [
         <Mascot pose="summary" class="pilot-decision-mascot" alt="Quid presenting the end-of-pilot findings" width={180} />
         <div class="pilot-decision-content">
           <p class="eyebrow">Choose to continue</p>
-          <h3>Managed Quid operations start from:</h3>
+          <h3>If you choose to continue:</h3>
           <strong class="pilot-ongoing-price">{pilotOffer.ongoingPriceLabel}</strong>
           <p class="pilot-ongoing-note">{pilotOffer.ongoingPricingNote}</p>
           <ul class="pilot-ongoing-list">{pilotOffer.ongoingIncludes.map((item) => <li>{item}</li>)}</ul>

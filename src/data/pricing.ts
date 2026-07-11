@@ -1,17 +1,17 @@
 export const pricing = {
   pilot: {
     name: '30-Day Quid Admissions Pilot',
-    amount: 2499,
-    display: '$2,499',
+    amount: 1000,
+    display: '$1,000',
     billing: 'one-time',
-    displayWithBilling: '$2,499 one-time',
+    displayWithBilling: '$1,000 one-time',
   },
   ongoing: {
-    amount: 3999,
-    display: 'From $3,999/month',
-    monthlyDisplay: '$3,999/month',
-    billing: 'monthly',
-    continuationLine: 'Continue with managed Quid operations from $3,999/month.',
-    afterPilotDisplay: 'From $3,999/month after pilot',
+    amount: 899,
+    display: '$899/month per community, per location',
+    monthlyDisplay: '$899/month per community, per location',
+    billing: 'monthly per community, per location',
+    continuationLine: 'Continue with managed Quid operations for $899/month per community, per location.',
+    afterPilotDisplay: '$899/month per community, per location after pilot',
   },
 } as const;

@@ -20,7 +20,7 @@ Quid does not provide residential or clinical care, make admissions or eligibili
 
 Quid starts narrowly: one community, one website inquiry source, and one tour calendar. The managed 30-day pilot maps the current workflow, approves messages and handoff rules, launches the agreed process carefully, and reports what Quid handled, what staff handled, and what needs adjustment.
 
-The 30-day pilot is $2,499 one-time. It is a paid implementation engagement, not a free trial or refundable deposit. Managed Quid operations start from $3,999 per month if the community chooses to continue. Final ongoing pricing depends on workflow complexity, inquiry sources, integrations, locations, and support requirements.
+The 30-day pilot is $1,000 one-time. It is a paid implementation engagement, not a free trial or refundable deposit. Managed Quid operations cost $899 per month per community, per location if the community chooses to continue.
 
 ## Key public pages
 
