@@ -6,6 +6,8 @@ import PhotoPanel from '../../components/PhotoPanel.astro';
 import QuickScan from '../../components/QuickScan.astro';
 import { site } from '../../data/site';
 import { resourceMedia } from '../../data/resourceMedia';
+import { resourceFaqs } from '../../data/resourceFaqs';
+import { pricing } from '../../data/pricing';
 
 export async function getStaticPaths() {
   const entries = await getCollection('resources');
@@ -23,7 +25,7 @@ const visuals = {
   },
   'senior-living-inquiry-response-time': {
     ...resourceMedia['senior-living-inquiry-response-time'],
-    answer: 'Separate the immediate acknowledgement from the thoughtful human response. Make ownership, next steps, replies, and overdue inquiries visible without asking staff to monitor another inbox constantly.',
+    answer: 'A senior living community should acknowledge a new website inquiry promptly, ideally through a controlled workflow that confirms receipt and offers a clear next step. The thoughtful human response may follow separately, especially when clinical, eligibility, pricing, or sensitive family questions are involved.',
     items: [{kicker:'First',title:'Acknowledge'},{kicker:'Then',title:'Offer a next step'},{kicker:'Always',title:'Show ownership'}],
   },
   'senior-living-tour-follow-up': {
@@ -48,6 +50,7 @@ const visuals = {
   },
 } as const;
 const visual = visuals[entry.id as keyof typeof visuals];
+const faqs = resourceFaqs[entry.id as keyof typeof resourceFaqs];
 const schema = [
   {'@context':'https://schema.org','@type':'Article',headline:entry.data.title,description:entry.data.description,image:`${site.domain}/quid-og.png`,author:{'@type':'Organization',name:entry.data.author,url:site.domain},publisher:{'@type':'Organization',name:'Quid',url:site.domain},datePublished:entry.data.publishedDate.toISOString(),dateModified:entry.data.updatedDate.toISOString(),mainEntityOfPage:url,url},
   {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[
@@ -55,12 +58,13 @@ const schema = [
     {'@type':'ListItem',position:2,name:'Resources',item:`${site.domain}/resources`},
     {'@type':'ListItem',position:3,name:entry.data.title,item:url},
   ]},
+  ...(faqs ? [{'@context':'https://schema.org','@type':'FAQPage','mainEntity':faqs.map(([question,answer]) => ({'@type':'Question',name:question,acceptedAnswer:{'@type':'Answer',text:answer}}))}] : []),
 ];
 ---
 <BaseLayout title={`${entry.data.title} | Quid`} description={entry.data.description} schema={schema}>
   <Breadcrumbs items={[{label:'Home',href:'/'},{label:'Resources',href:'/resources'},{label:entry.data.title}]} />
   <header class="page-hero"><div class="shell page-hero-grid"><div><p class="eyebrow">Quid practical guide</p><h1>{entry.data.title}</h1><p class="lede">{entry.data.description}</p><p class="resource-meta"><span>By {entry.data.author}</span><span>Published {entry.data.publishedDate.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}</span><span>Updated {entry.data.updatedDate.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}</span></p></div>{visual && <PhotoPanel image={visual.image} alt={visual.alt} priority />}</div></header>
   {visual && <section class="section-sm section-sand"><div class="shell"><QuickScan items={[...visual.items]} label="Guide at a glance" /></div></section>}
-  <section class="section section-white"><div class="shell article-shell"><aside class="toc" aria-label="Table of contents"><h2>In this guide</h2>{headings.filter((h: {depth:number}) => h.depth === 2).map((h: {slug:string;text:string}) => <a href={`#${h.slug}`}>{h.text}</a>)}</aside><article class="prose">{visual && <div class="article-quick-answer"><strong>Direct answer</strong><p>{visual.answer}</p></div>}<Content /><div class="notice-card resource-next-step"><h2>Choose the next practical step.</h2><p>See how Quid presents admissions activity, review the managed pilot, or request a walkthrough around your current workflow.</p><div class="button-row"><a class="button" href="/see-quid-in-action">See the Quid admissions dashboard</a><a class="button button-secondary" href="/pilot">Review the 30-day admissions pilot</a><a class="button button-secondary" href="/meet-quid">Request a Quid walkthrough</a></div><p><a href="#follow-up-fix-kit">Get the Senior Living Follow-Up Fix Kit</a> for templates, a daily tracker, and a human-handoff checklist.</p></div></article></div></section>
+  <section class="section section-white"><div class="shell article-shell"><aside class="toc" aria-label="Table of contents"><h2>In this guide</h2>{headings.filter((h: {depth:number}) => h.depth === 2).map((h: {slug:string;text:string}) => <a href={`#${h.slug}`}>{h.text}</a>)}{faqs && <a href="#frequently-asked-questions">Frequently asked questions</a>}</aside><article class="prose">{visual && <div class="article-quick-answer"><strong>Direct answer</strong><p>{visual.answer}</p></div>}<Content />{faqs && <section class="article-faq" aria-labelledby="frequently-asked-questions"><h2 id="frequently-asked-questions">Frequently asked questions</h2><div class="faq-list">{faqs.map(([question,answer]) => <details><summary>{question}</summary><p>{answer}</p></details>)}</div></section>}<div class="notice-card resource-next-step">{entry.id === 'senior-living-inquiry-response-time' ? <><h2>Apply the workflow to one community.</h2><p>See how Quid can apply this workflow to one community, one inquiry source and one tour calendar.</p><p class="resource-pricing-line"><strong>30-day pilot: {pricing.pilot.displayWithBilling}.</strong> Continuation: {pricing.ongoing.monthlyDisplay} after the pilot.</p><div class="button-row"><a class="button" href="/pilot">Review the 30-day pilot</a><a class="button button-secondary" href="/meet-quid">Meet Quid</a></div></> : <><h2>Choose the next practical step.</h2><p>See how Quid presents admissions activity, review the managed pilot, or request a walkthrough around your current workflow.</p><div class="button-row"><a class="button" href="/see-quid-in-action">See the Quid admissions dashboard</a><a class="button button-secondary" href="/pilot">Review the 30-day admissions pilot</a><a class="button button-secondary" href="/meet-quid">Request a Quid walkthrough</a></div><p><a href="#follow-up-fix-kit">Get the Senior Living Follow-Up Fix Kit</a> for templates, a daily tracker, and a human-handoff checklist.</p></>}</div></article></div></section>
   <section class="section section-sand"><div class="shell"><h2>Related senior living admissions guides</h2><div class="card-grid three">{related.slice(0,3).map((item: typeof entry) => <article class="card"><h3>{item.data.title}</h3><p>{item.data.description}</p><a href={`/resources/${item.id}`}>Read {item.data.title}</a></article>)}</div></div></section>
 </BaseLayout>
