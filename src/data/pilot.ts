@@ -82,7 +82,7 @@ export const pilotOffer = {
   continuationFoundation:
     'The pilot configuration becomes the foundation of your ongoing Quid service, so your team does not start over.',
   ongoingPricingNote:
-    'Ongoing service is priced per community and per location.',
+    'Ongoing service is priced per community.',
   measurements: [
     'Inquiries acknowledged',
     'Tours offered',

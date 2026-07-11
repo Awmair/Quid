@@ -8,10 +8,10 @@ export const pricing = {
   },
   ongoing: {
     amount: 899,
-    display: '$899/month per community, per location',
-    monthlyDisplay: '$899/month per community, per location',
-    billing: 'monthly per community, per location',
-    continuationLine: 'Continue with managed Quid operations for $899/month per community, per location.',
-    afterPilotDisplay: '$899/month per community, per location after pilot',
+    display: '$899/month per community',
+    monthlyDisplay: '$899/month per community',
+    billing: 'monthly per community',
+    continuationLine: 'Continue with managed Quid operations for $899/month per community.',
+    afterPilotDisplay: '$899/month per community after pilot',
   },
 } as const;
