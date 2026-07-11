@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Mascot from '../components/Mascot.astro';
+import DashboardPreview from '../components/DashboardPreview.astro';
+import DashboardTour from '../components/DashboardTour.astro';
+import WorkflowDiagram from '../components/WorkflowDiagram.astro';
+import DailySummaryCard from '../components/DailySummaryCard.astro';
+import HumanHandoffSpotlight from '../components/HumanHandoffSpotlight.astro';
+import PilotMetricsPanel from '../components/PilotMetricsPanel.astro';
+import AnswerBlock from '../components/AnswerBlock.astro';
+import FaqSection from '../components/FaqSection.astro';
+import { site } from '../data/site';
+
+const title = 'Senior Living Admissions Dashboard Demo | Quid';
+const description = 'Explore a sample Quid dashboard showing inquiries, tours, follow-up, daily summaries, and human handoffs for senior living admissions teams.';
+const pageUrl = `${site.domain}/see-quid-in-action`;
+const faqs = [
+  ['Is the dashboard real?', 'The page shows the Quid product interface and its admissions workflow states. The records explain how the interface works and are not customer performance claims.'],
+  ['What does the sample dashboard show?', 'It shows new inquiries, tour offers, booked tours, follow-up activity, daily totals, next actions, and items that require staff attention.'],
+  ['Can this connect to our current tools?', 'Quid is designed to work around one existing inquiry source, tour calendar, and admissions workflow first. Connection details depend on the tools involved.'],
+  ['Does Quid make admissions decisions?', 'No. Quid coordinates routine non-clinical follow-up. Admissions, eligibility, clinical, and care decisions remain with staff.'],
+  ['What does “Needs Attention” mean?', 'It means the workflow has paused because a reply, sensitive topic, overdue action, or exception needs a staff member to review it.'],
+] as const;
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: title,
+    description,
+    url: pageUrl,
+    isPartOf: { '@type': 'WebSite', name: 'Quid', url: site.domain },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.domain },
+      { '@type': 'ListItem', position: 2, name: 'See Quid in Action', item: pageUrl },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(([question, answer]) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })),
+  },
+];
+---
+
+<BaseLayout title={title} description={description} schema={schema}>
+  <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'See Quid in Action' }]} />
+
+  <section class="page-hero action-page-hero">
+    <div class="shell page-hero-grid">
+      <div>
+        <p class="eyebrow">Admissions workflow</p>
+        <h1>See what a day with Quid could look like.</h1>
+        <p class="lede">Quid’s sample admissions dashboard shows how senior living teams can track inquiries, tours, follow-up, and human handoffs in one daily view.</p>
+        <AnswerBlock answer="Quid’s sample admissions dashboard shows how senior living teams can track inquiries, tours, follow-up, and human handoffs in one daily view." />
+        <p>This guided walkthrough shows how the same view fits around routine admissions work—without digging through inboxes or spreadsheets.</p>
+        <div class="button-row">
+          <a class="button" href="#dashboard">View the Dashboard</a>
+          <a class="button button-secondary" href="/meet-quid">Meet Quid</a>
+        </div>
+      </div>
+      <Mascot pose="tour" class="page-mascot action-page-mascot" alt="Quid calmly presenting the admissions dashboard" width={360} eager />
+    </div>
+  </section>
+
+  <section class="section section-white" id="dashboard">
+    <div class="shell">
+      <div class="tour-section-intro">
+        <div><p class="eyebrow">The full dashboard</p><h2>Your admissions day in one calm view.</h2></div>
+        <p class="lede">New inquiries, tour movement, follow-up, and staff handoffs stay visible without turning the day into another complicated system.</p>
+      </div>
+      <DashboardPreview />
+      <div class="dashboard-after-links"><a href="/how-it-works">See the complete Quid workflow</a><a href="/human-handoffs">Review the human-handoff rules</a></div>
+    </div>
+  </section>
+
+  <section class="section section-sand">
+    <div class="shell">
+      <div class="tour-section-intro">
+        <div><p class="eyebrow">Guided product tour</p><h2>What each part of the dashboard does.</h2></div>
+        <p class="lede">Each area answers one practical question, so staff can understand the day quickly and move to the right next action.</p>
+      </div>
+      <DashboardTour />
+    </div>
+  </section>
+
+  <section class="section section-deep">
+    <div class="shell">
+      <p class="eyebrow">The inquiry flow</p>
+      <h2>From inquiry to next step, without the usual chasing.</h2>
+      <WorkflowDiagram />
+      <p class="workflow-explanation">Quid does not make admissions decisions. It helps routine steps happen consistently so your team can focus on the conversations that need a person.</p>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="shell split split-wide daily-summary-layout">
+      <div>
+        <p class="eyebrow">A morning with Quid</p>
+        <h2>Start the day knowing what needs attention.</h2>
+        <p class="lede">Instead of hunting through forms, emails, and notes, staff gets a simple operational summary of what changed and what needs action.</p>
+        <a class="button button-secondary" href="/how-it-works">Explore How Quid Works</a>
+      </div>
+      <DailySummaryCard />
+    </div>
+  </section>
+
+  <section class="section section-sand">
+    <div class="shell split handoff-spotlight-layout">
+      <div>
+        <p class="eyebrow">Human handoff spotlight</p>
+        <h2>Quid knows when to stop.</h2>
+        <p class="lede">Medical, clinical, medication, eligibility, and sensitive care questions should go to a real staff member. Quid helps make sure those conversations are visible instead of buried.</p>
+        <a class="button" href="/human-handoffs">See the Handoff Rules</a>
+      </div>
+      <HumanHandoffSpotlight />
+    </div>
+  </section>
+
+  <section class="section section-sage">
+    <div class="shell">
+      <div class="tour-section-intro">
+        <div><p class="eyebrow">Measured during the pilot</p><h2>What the pilot actually measures.</h2></div>
+        <p class="lede">The 30-day pilot is designed to show what Quid handled, what staff handled, and where the admissions process became clearer. It does not promise outcomes.</p>
+      </div>
+      <PilotMetricsPanel />
+      <a class="button" href="/pilot">View the 30-Day Pilot</a>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} eyebrow="Dashboard questions" heading="Understand the admissions dashboard at a glance." />
+
+  <section class="section section-deep final-cta">
+    <div class="shell final-cta-grid">
+      <div data-reveal>
+        <p class="eyebrow">See it around your process</p>
+        <h2>Want to see this with your own admissions process?</h2>
+        <p class="lede">We can walk through how Quid would fit around one community, one inquiry source, and one tour calendar.</p>
+        <div class="button-row"><a class="button button-light" href="/meet-quid">Meet Quid</a><a class="button button-secondary" href="/pilot">View the 30-Day Pilot</a></div>
+      </div>
+      <Mascot pose="wave" class="final-mascot" alt="Quid offering a calm walkthrough of the admissions workflow" width={330} />
+    </div>
+  </section>
+</BaseLayout>

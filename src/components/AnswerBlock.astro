@@ -1,0 +1,14 @@
+---
+interface Props {
+  label?: string;
+  answer: string;
+  variant?: 'default' | 'hero';
+}
+
+const { label = 'Plain-English answer', answer, variant = 'default' } = Astro.props;
+---
+
+<section class:list={['answer-block', { 'answer-block-hero': variant === 'hero' }]} aria-label="Short answer">
+  <strong>{label}</strong>
+  <p>{answer}</p>
+</section>

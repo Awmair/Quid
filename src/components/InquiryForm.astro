@@ -1,0 +1,45 @@
+---
+import { site } from '../data/site';
+interface Props { mode?: 'meeting' | 'pilot' }
+const { mode = 'meeting' } = Astro.props;
+type Field = [string, string, 'text' | 'email' | 'url' | 'number'];
+const fields: Field[] = mode === 'pilot'
+  ? [
+      ['first-name', 'First name', 'text'], ['last-name', 'Last name', 'text'], ['email', 'Work email', 'email'],
+      ['job-title', 'Job title', 'text'], ['community', 'Community name', 'text'], ['website', 'Website', 'url'],
+      ['locations', 'Number of locations', 'number'], ['community-type', 'Community type', 'text'],
+      ['monthly-inquiries', 'Approximate monthly website inquiries', 'number'], ['scheduling-tool', 'Current scheduling tool', 'text'],
+      ['crm', 'Current CRM or lead system', 'text'], ['problem', 'Biggest follow-up problem', 'text'], ['preferred-time', 'Preferred meeting time', 'text'],
+    ]
+  : [
+      ['first-name', 'First name', 'text'], ['last-name', 'Last name', 'text'], ['email', 'Work email', 'email'],
+      ['job-title', 'Job title', 'text'], ['community', 'Community name', 'text'], ['website', 'Community website', 'url'],
+      ['locations', 'Number of locations', 'number'], ['problem', 'What is the biggest follow-up challenge?', 'text'],
+    ];
+---
+
+{site.formAction ? (
+  <form class="lead-form" action={site.formAction} method="post" data-static-form>
+    <input type="hidden" name="form_type" value={mode} />
+    <div class="form-grid">
+      {fields.map(([id, label, type]) => (
+        <label class:list={{ 'form-wide': id === 'problem' || id === 'preferred-time' }}>
+          <span>{label}</span>
+          <input id={`${mode}-${id}`} name={id} type={type} required={['first-name', 'last-name', 'email', 'community', 'problem'].includes(id)} min={type === 'number' ? '0' : undefined} autocomplete={id === 'email' ? 'email' : undefined} />
+        </label>
+      ))}
+    </div>
+    <p class="privacy-note">Please do not submit resident names, diagnoses, medication information, medical details, or other sensitive health information.</p>
+    <button class="button" type="submit">{mode === 'pilot' ? 'Apply for the 30-Day Pilot' : 'Request a Meeting'}</button>
+  </form>
+) : (
+  <div class="form-fallback notice-card" role="status">
+    <h2>Online submission is not currently enabled.</h2>
+    {site.contactEmail ? (
+      <><p>Send a note to our team and we will help arrange the next step.</p><a class="button" href={`mailto:${site.contactEmail}?subject=${encodeURIComponent(mode === 'pilot' ? 'Quid pilot inquiry' : 'Meet Quid')}`}>Email Quid</a></>
+    ) : (
+      <p>A booking link or contact email has not been configured yet. Please check back soon.</p>
+    )}
+    <p class="privacy-note">Do not send resident names, medical details, diagnoses, medications, or other sensitive information.</p>
+  </div>
+)}

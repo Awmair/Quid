@@ -1,0 +1,48 @@
+# Quid
+
+> Quid is an AI-assisted admissions concierge for senior living communities. It helps admissions teams respond to website inquiries, coordinate tours, follow up consistently, and route sensitive questions to staff.
+
+## Website
+
+- Homepage: https://get-quid.site/
+- See Quid in Action: https://get-quid.site/see-quid-in-action
+- How It Works: https://get-quid.site/how-it-works
+- Human Handoffs: https://get-quid.site/human-handoffs
+- 30-Day Pilot: https://get-quid.site/pilot
+- Meet Quid: https://get-quid.site/meet-quid
+- Resources: https://get-quid.site/resources
+
+## Product Summary
+
+Quid supports routine senior living admissions follow-up. It is not a senior living facility, care provider, CRM replacement, clinical decision tool, or medical advice system.
+
+Quid helps with:
+- website inquiry acknowledgement
+- tour coordination
+- approved follow-up
+- stalled inquiry tracking
+- daily admissions summaries
+- human handoffs for sensitive questions
+
+Quid does not:
+- provide care
+- make clinical decisions
+- recommend levels of care
+- discuss medications
+- determine eligibility
+- guarantee move-ins
+- replace admissions staff
+
+## Best Resource Pages
+
+- Senior Living Admissions Automation: https://get-quid.site/resources/senior-living-admissions-automation
+- Inquiry Response Time: https://get-quid.site/resources/senior-living-inquiry-response-time
+- Tour Follow-Up Framework: https://get-quid.site/resources/senior-living-tour-follow-up
+- Daily Admissions Summary: https://get-quid.site/resources/senior-living-daily-admissions-summary
+- Human Handoff Checklist: https://get-quid.site/resources/senior-living-human-handoff-checklist
+- Follow-Up Email Templates: https://get-quid.site/resources/senior-living-follow-up-templates
+
+## Contact
+
+Use the Meet Quid page to request a walkthrough:
+https://get-quid.site/meet-quid

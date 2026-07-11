@@ -1,0 +1,9 @@
+---
+interface Props { number: string; title: string; text: string; target: string }
+const { number, title, text, target } = Astro.props;
+---
+
+<article class={`dashboard-callout dashboard-callout-${target}`}>
+  <span class="callout-number">{number}</span>
+  <div><h3>{title}</h3><p>{text}</p></div>
+</article>

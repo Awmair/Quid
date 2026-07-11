@@ -1,0 +1,66 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PhotoPanel from '../../components/PhotoPanel.astro';
+import QuickScan from '../../components/QuickScan.astro';
+import { site } from '../../data/site';
+import { resourceMedia } from '../../data/resourceMedia';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('resources');
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry, entries } }));
+}
+const { entry, entries } = Astro.props;
+const { Content, headings } = await render(entry);
+const related = entries.filter((item: typeof entry) => item.id !== entry.id);
+const url = `${site.domain}/resources/${entry.id}`;
+const visuals = {
+  'senior-living-admissions-automation': {
+    ...resourceMedia['senior-living-admissions-automation'],
+    answer: 'Automate predictable coordination such as acknowledgements, tour options, reminders, and summaries. Keep clinical judgment, eligibility, sensitive conversations, and admissions authority with staff.',
+    items: [{kicker:'Automate',title:'Routine coordination'},{kicker:'Keep human',title:'Judgment and empathy'},{kicker:'Design first',title:'A visible handoff'}],
+  },
+  'senior-living-inquiry-response-time': {
+    ...resourceMedia['senior-living-inquiry-response-time'],
+    answer: 'Separate the immediate acknowledgement from the thoughtful human response. Make ownership, next steps, replies, and overdue inquiries visible without asking staff to monitor another inbox constantly.',
+    items: [{kicker:'First',title:'Acknowledge'},{kicker:'Then',title:'Offer a next step'},{kicker:'Always',title:'Show ownership'}],
+  },
+  'senior-living-tour-follow-up': {
+    ...resourceMedia['senior-living-tour-follow-up'],
+    answer: 'Confirm the visit clearly, let staff record the outcome, use limited approved follow-up, and pause as soon as a family replies or needs a real person.',
+    items: [{kicker:'Before',title:'Confirm the tour'},{kicker:'After',title:'Record the outcome'},{kicker:'When needed',title:'Pause for staff'}],
+  },
+  'senior-living-daily-admissions-summary': {
+    ...resourceMedia['senior-living-daily-admissions-summary'],
+    answer: 'A daily admissions summary is a short operational view of new inquiries, tours today, overdue replies, human handoffs, stalled inquiries, staff tasks, and workflow failures. It helps the team start with exceptions instead of searching through inboxes and spreadsheets.',
+    items: [{kicker:'Start',title:'New and due today'},{kicker:'Spot',title:'Stuck and overdue'},{kicker:'Assign',title:'Clear staff owners'}],
+  },
+  'senior-living-human-handoff-checklist': {
+    ...resourceMedia['senior-living-human-handoff-checklist'],
+    answer: 'A human handoff checklist defines what automation must not answer, the acknowledgement a family receives, who owns the question, how routine messages pause, and how the team tracks the issue until a staff member resolves it.',
+    items: [{kicker:'Detect',title:'Out-of-scope questions'},{kicker:'Route',title:'Named staff owner'},{kicker:'Track',title:'Until resolved'}],
+  },
+  'senior-living-follow-up-templates': {
+    ...resourceMedia['senior-living-follow-up-templates'],
+    answer: 'Senior living follow-up templates give staff an approved starting point for inquiry acknowledgement, tour options, confirmation, reminders, post-tour thanks, stalled inquiries, and staff handoffs. Each template should match the community voice and stop when a person needs to respond.',
+    items: [{kicker:'Respond',title:'Approved first reply'},{kicker:'Coordinate',title:'Tour messages'},{kicker:'Pause',title:'When staff takes over'}],
+  },
+} as const;
+const visual = visuals[entry.id as keyof typeof visuals];
+const schema = [
+  {'@context':'https://schema.org','@type':'Article',headline:entry.data.title,description:entry.data.description,image:`${site.domain}/quid-og.png`,author:{'@type':'Organization',name:entry.data.author,url:site.domain},publisher:{'@type':'Organization',name:'Quid',url:site.domain},datePublished:entry.data.publishedDate.toISOString(),dateModified:entry.data.updatedDate.toISOString(),mainEntityOfPage:url,url},
+  {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[
+    {'@type':'ListItem',position:1,name:'Home',item:site.domain},
+    {'@type':'ListItem',position:2,name:'Resources',item:`${site.domain}/resources`},
+    {'@type':'ListItem',position:3,name:entry.data.title,item:url},
+  ]},
+];
+---
+<BaseLayout title={`${entry.data.title} | Quid`} description={entry.data.description} schema={schema}>
+  <Breadcrumbs items={[{label:'Home',href:'/'},{label:'Resources',href:'/resources'},{label:entry.data.title}]} />
+  <header class="page-hero"><div class="shell page-hero-grid"><div><p class="eyebrow">Quid practical guide</p><h1>{entry.data.title}</h1><p class="lede">{entry.data.description}</p><p class="resource-meta"><span>By {entry.data.author}</span><span>Published {entry.data.publishedDate.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}</span><span>Updated {entry.data.updatedDate.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}</span></p></div>{visual && <PhotoPanel image={visual.image} alt={visual.alt} priority />}</div></header>
+  {visual && <section class="section-sm section-sand"><div class="shell"><QuickScan items={[...visual.items]} label="Guide at a glance" /></div></section>}
+  <section class="section section-white"><div class="shell article-shell"><aside class="toc" aria-label="Table of contents"><h2>In this guide</h2>{headings.filter((h: {depth:number}) => h.depth === 2).map((h: {slug:string;text:string}) => <a href={`#${h.slug}`}>{h.text}</a>)}</aside><article class="prose">{visual && <div class="article-quick-answer"><strong>Direct answer</strong><p>{visual.answer}</p></div>}<Content /><div class="notice-card resource-next-step"><h2>Choose the next practical step.</h2><p>See how Quid presents admissions activity, review the managed pilot, or request a walkthrough around your current workflow.</p><div class="button-row"><a class="button" href="/see-quid-in-action">See the Quid admissions dashboard</a><a class="button button-secondary" href="/pilot">Review the 30-day admissions pilot</a><a class="button button-secondary" href="/meet-quid">Request a Quid walkthrough</a></div><p><a href="#follow-up-fix-kit">Get the Senior Living Follow-Up Fix Kit</a> for templates, a daily tracker, and a human-handoff checklist.</p></div></article></div></section>
+  <section class="section section-sand"><div class="shell"><h2>Related senior living admissions guides</h2><div class="card-grid three">{related.slice(0,3).map((item: typeof entry) => <article class="card"><h3>{item.data.title}</h3><p>{item.data.description}</p><a href={`/resources/${item.id}`}>Read {item.data.title}</a></article>)}</div></div></section>
+</BaseLayout>

@@ -1,0 +1,92 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
+import { primaryCtaHref, site } from '../data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+  schema?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const {
+  title = site.defaultTitle,
+  description = site.defaultDescription,
+  image = '/quid-og.png',
+  noindex = false,
+  schema,
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, site.domain).toString();
+const socialImage = new URL(image, site.domain).toString();
+const normalizedPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+const hideLeadMagnet = ['/privacy', '/terms', '/404', '/404.html'].includes(normalizedPath);
+const globalSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Quid',
+    url: site.domain,
+    logo: `${site.domain}/favicon-192x192.png`,
+    description: 'Quid is an AI-assisted admissions concierge for senior living communities.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Quid',
+    url: site.domain,
+    description: site.defaultDescription,
+  },
+];
+const pageSchema = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
+const allSchema = [...globalSchema, ...pageSchema];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex,follow" />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Quid" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="application/rss+xml" title="Quid resources" href="/rss.xml" />
+    <script is:inline>document.documentElement.classList.add('js');</script>
+    {allSchema.map((item) => <script is:inline type="application/ld+json" set:html={JSON.stringify(item)} />)}
+    {site.analyticsDomain && <script is:inline defer data-domain={site.analyticsDomain} src="https://plausible.io/js/script.js"></script>}
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <Header />
+    <main id="main-content"><slot />{!hideLeadMagnet && <LeadMagnetCTA />}</main>
+    <Footer />
+    <a class="sticky-mobile-cta" href={primaryCtaHref}>Meet Quid</a>
+    <script>
+      const reveals = document.querySelectorAll<HTMLElement>('[data-reveal]');
+      if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
+          if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
+        }), { threshold: 0.12 });
+        reveals.forEach((item) => observer.observe(item));
+      } else reveals.forEach((item) => item.classList.add('is-visible'));
+    </script>
+  </body>
+</html>

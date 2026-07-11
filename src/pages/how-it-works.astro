@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Mascot from '../components/Mascot.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PhotoPanel from '../components/PhotoPanel.astro';
+import QuickScan from '../components/QuickScan.astro';
+import VisualFlow from '../components/VisualFlow.astro';
+import AnswerBlock from '../components/AnswerBlock.astro';
+import { primaryCtaHref, site } from '../data/site';
+import familyTour from '../assets/lifestyle/family-tour.png';
+
+const stages = [
+  ['New inquiry capture', 'A family submits the form already on your website. Quid records the submitted contact details and selected service without asking for clinical information.'],
+  ['Duplicate checks', 'Before a new workflow begins, Quid checks the available inquiry records to reduce duplicate outreach and conflicting tasks.'],
+  ['Approved acknowledgement', 'The family receives a prompt message written in the community’s reviewed voice, with a clear next step and an honest description of Quid’s role.'],
+  ['Tour availability', 'Quid offers only the tour times your team has made available. Families choose a suitable option without a long email exchange.'],
+  ['Confirmation and reminders', 'A selected time is confirmed, added to the admissions calendar, and followed by approved reminders.'],
+  ['Tour outcome marked by staff', 'Staff records whether the tour happened, was rescheduled, or did not take place. That human update determines the appropriate next step.'],
+  ['Post-tour sequence', 'After a completed tour, Quid can send approved thank-you and decision-stage messages on the community’s schedule.'],
+  ['Family-reply detection', 'A reply stops the scheduled sequence from continuing blindly and brings the conversation into the team’s view.'],
+  ['Automation pause', 'Sensitive details, clinical questions, uncertainty, or a manual staff action can pause routine messages immediately.'],
+  ['Human escalation', 'Quid acknowledges the family, assigns the question to the designated staff member, and keeps the item visible until it is resolved.'],
+  ['Daily operational summary', 'Admissions leaders receive a concise view of new inquiries, booked tours, replies, overdue items, handoffs, and workflow failures.'],
+  ['Logging and error handling', 'Delivery records, retry limits, duplicate prevention, failure alerts, and manual controls help staff see when a routine action did not complete.'],
+  ['Multi-location expansion', 'After one workflow is measured and stable, its approved foundation can be adapted carefully for additional communities, teams, calendars, and local policies.'],
+];
+const pageUrl = `${site.domain}/how-it-works`;
+const schema = [
+  {'@context':'https://schema.org','@type':'WebPage',name:'How Quid Works | Senior Living Inquiry Follow-Up',description:'Quid connects website inquiries, approved messages, tour scheduling, follow-up rules, and staff handoffs into one controlled senior living admissions workflow.',url:pageUrl},
+  {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[
+    {'@type':'ListItem',position:1,name:'Home',item:site.domain},
+    {'@type':'ListItem',position:2,name:'How It Works',item:pageUrl},
+  ]},
+];
+---
+<BaseLayout title="How Quid Works | Senior Living Inquiry Follow-Up" description="See how Quid connects website inquiries, approved messages, tour scheduling, follow-up rules, and staff handoffs into one controlled admissions workflow." schema={schema}>
+  <Breadcrumbs items={[{label:'Home',href:'/'},{label:'How It Works'}]} />
+  <section class="page-hero"><div class="shell page-hero-grid"><div><p class="eyebrow">How Quid works</p><h1>A clearer path from inquiry to tour.</h1><p class="lede">Quid connects a community’s website inquiry process, approved messages, tour calendar, follow-up rules, and admissions dashboard. Routine actions happen consistently, while sensitive questions and decisions remain with staff.</p><AnswerBlock answer="Quid connects a community’s website inquiry path, approved messages, tour process, follow-up rules, and staff handoffs into one controlled admissions workflow." /><a class="button" href={primaryCtaHref}>Meet Quid</a></div><Mascot pose="tour" class="page-mascot" alt="Quid presenting the tour workflow on a tablet" width={380} eager /></div></section>
+  <section class="section-sm section-sand"><div class="shell"><p class="eyebrow center">The journey at a glance</p><VisualFlow steps={[{title:'Inquiry arrives',text:'Existing website form'},{title:'Warm response',text:'Community-approved voice'},{title:'Tour booked',text:'Available times only'},{title:'Follow-up moves',text:'Replies pause automation'},{title:'Staff sees next',text:'One clear daily view'}]} label="Quid workflow at a glance" /></div></section>
+  <section class="section section-white"><div class="shell"><p class="eyebrow">The complete workflow</p><h2>Each step has a clear owner and a clear boundary.</h2><div class="card-grid">{stages.map(([title,text],i) => <article class="card" data-reveal><span class="card-number">{String(i+1).padStart(2,'0')}</span><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
+  <section class="section section-deep"><div class="shell"><p class="eyebrow">One workflow, end to end</p><h2>Routine actions move forward. Human decisions stay with people.</h2><VisualFlow steps={['Inquiry received','Approved response','Tour coordinated','Staff handoff when needed','Clear daily view'].map(title => ({title}))} label="Complete admissions workflow" /></div></section>
+  <section class="section"><div class="shell scan-layout"><PhotoPanel image={familyTour} alt="An older woman and her adult son speaking with an admissions director during a community tour" label="The family experience" caption="A clear process creates more room for a real conversation." /><div><p class="eyebrow">The boundary is simple</p><h2>Automate coordination. Keep judgment human.</h2><QuickScan items={[{kicker:'Quid handles',title:'Routine communication',text:'Acknowledgements, available tour times, reminders, and summaries.'},{kicker:'Staff handles',title:'Important decisions',text:'Clinical needs, eligibility, sensitive questions, and admissions authority.'},{kicker:'Everyone sees',title:'Clear ownership',text:'Replies, overdue items, handoffs, and failures stay visible.'}]} label="Automation boundaries" /></div></div></section>
+  <section class="section section-sand"><div class="narrow center"><h2>Start with one workflow, prove that it works, and expand carefully.</h2><p class="lede center">A measurable pilot keeps the scope clear and gives your team evidence before a wider rollout.</p><div class="button-row center"><a class="button" href="/pilot">Review the 30-day admissions pilot</a><a class="button button-secondary" href="/human-handoffs">Review Quid’s human handoff rules</a></div></div></section>
+</BaseLayout>

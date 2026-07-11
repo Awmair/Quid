@@ -1,0 +1,25 @@
+---
+import { Image } from 'astro:assets';
+interface Props {
+  image: ImageMetadata;
+  alt: string;
+  label?: string;
+  caption?: string;
+  priority?: boolean;
+  class?: string;
+}
+const { image, alt, label, caption, priority = false, class: className = '' } = Astro.props;
+---
+
+<figure class:list={['photo-panel', className]} data-reveal>
+  <Image
+    src={image}
+    alt={alt}
+    widths={[480, 720, 960, 1200]}
+    sizes="(max-width: 760px) 100vw, 50vw"
+    format="webp"
+    loading={priority ? 'eager' : 'lazy'}
+    fetchpriority={priority ? 'high' : 'auto'}
+  />
+  {(label || caption) && <figcaption>{label && <strong>{label}</strong>}{caption && <span>{caption}</span>}</figcaption>}
+</figure>

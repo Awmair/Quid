@@ -1,0 +1,25 @@
+---
+import wordmark from '../assets/brand/quid-wordmark.svg';
+import { footerGroups } from '../data/navigation';
+import { site } from '../data/site';
+---
+
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div class="footer-brand">
+      <img src={wordmark.src} alt="Quid" width="150" height="70" loading="lazy" />
+      <p>The friendly admissions concierge for senior living.</p>
+      <strong>More tours. Less chasing.</strong>
+    </div>
+    {footerGroups.map((group) => (
+      <nav aria-label={`${group.title} links`}>
+        <h2>{group.title}</h2>
+        {group.links.map((link) => <a href={link.href}>{link.label}</a>)}
+      </nav>
+    ))}
+  </div>
+  <div class="shell footer-bottom">
+    <p>© {new Date().getFullYear()} {site.legalCompanyName || 'Quid'}. All rights reserved.</p>
+    <p>Quid supports admissions teams. Quid is not a senior living facility and does not provide residential or clinical care.</p>
+  </div>
+</footer>

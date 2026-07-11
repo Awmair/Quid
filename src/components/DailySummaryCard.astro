@@ -1,0 +1,12 @@
+---
+import { dailySummary } from '../data/dashboardData';
+---
+
+<article class="daily-summary-card" data-reveal>
+  <header><div><p class="eyebrow">Daily admissions summary</p><h3>{dailySummary.title}</h3></div><span class="summary-date">Today · 8:00 AM</span></header>
+  <p class="daily-summary-body">{dailySummary.body}</p>
+  <ul>
+    {dailySummary.actions.map((action, index) => <li><span>{String(index + 1).padStart(2, '0')}</span>{action}</li>)}
+  </ul>
+  <p class="daily-summary-foot"><span aria-hidden="true">✓</span> Your priorities are ready before the first meeting.</p>
+</article>

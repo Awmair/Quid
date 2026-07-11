@@ -1,0 +1,40 @@
+---
+import Mascot from './Mascot.astro';
+import { pilotOffer } from '../data/pilot';
+
+interface Props {
+  ctaHref?: string;
+  showCta?: boolean;
+}
+
+const { ctaHref = '/pilot#apply', showCta = true } = Astro.props;
+---
+
+<article class="pilot-pricing-card" data-reveal>
+  <header class="pilot-card-head">
+    <div>
+      <p class="eyebrow">Focused 30-day implementation</p>
+      <h3>{pilotOffer.cardTitle}</h3>
+    </div>
+    <Mascot pose="summary" class="pilot-card-mascot" alt="" width={130} />
+  </header>
+
+  <div class="pilot-price-row">
+    <div class="pilot-price"><strong>{pilotOffer.priceLabel}</strong><span>{pilotOffer.priceQualifier}</span></div>
+  </div>
+  <p class="pilot-card-scope">{pilotOffer.scope}</p>
+  <p class="pilot-continuation">{pilotOffer.cardContinuation}</p>
+
+  <div class="pilot-scope-block">
+    <h4>Included</h4>
+    <ul class="pilot-included-list">
+      {pilotOffer.includes.map((item) => <li>{item}</li>)}
+    </ul>
+  </div>
+
+  {showCta && (
+    <div class="button-row pilot-card-actions">
+      <a class="button" href={ctaHref}>Apply for the Pilot</a>
+    </div>
+  )}
+</article>

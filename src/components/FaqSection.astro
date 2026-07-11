@@ -1,0 +1,18 @@
+---
+interface Props {
+  faqs: readonly (readonly [string, string])[];
+  eyebrow?: string;
+  heading?: string;
+  dark?: boolean;
+}
+
+const { faqs, eyebrow = 'Frequently asked questions', heading = 'Clear answers for admissions teams.', dark = false } = Astro.props;
+---
+
+<section class:list={['section', dark ? 'section-deep' : 'section-white']}>
+  <div class="narrow">
+    <p class="eyebrow">{eyebrow}</p>
+    <h2>{heading}</h2>
+    <div class="faq-list">{faqs.map(([question, answer]) => <details><summary>{question}</summary><p>{answer}</p></details>)}</div>
+  </div>
+</section>

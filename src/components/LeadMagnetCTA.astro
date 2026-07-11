@@ -1,0 +1,108 @@
+---
+import Mascot from './Mascot.astro';
+
+const kitItems = [
+  'Inquiry response templates',
+  'Tour follow-up sequence',
+  'Stalled-lead reactivation template',
+  'Daily “what’s stuck?” tracker',
+  'Human-handoff checklist',
+  'Simple admissions workflow map',
+];
+---
+
+<section class="lead-magnet-section" id="follow-up-fix-kit" aria-labelledby="lead-magnet-title">
+  <div class="shell lead-magnet-shell" data-reveal>
+    <div class="lead-magnet-copy">
+      <p class="eyebrow">Free DIY Kit</p>
+      <h2 id="lead-magnet-title">Free: Senior Living Follow-Up Fix Kit</h2>
+      <p class="lead-magnet-lede">Get response templates, a tour follow-up sequence, a daily “what’s stuck?” tracker, and human-handoff checklist for your admissions team.</p>
+      <div class="lead-magnet-resource">
+        <h3>Senior Living Follow-Up Fix Kit</h3>
+        <ul>
+          {kitItems.map((item, index) => <li style={`--kit-index:${index}`}><span aria-hidden="true">✓</span>{item}</li>)}
+        </ul>
+      </div>
+      <p class="lead-magnet-trust">Built for assisted living, memory care, and senior living admissions teams. No spam.</p>
+    </div>
+
+    <div class="lead-magnet-form-wrap">
+      <Mascot pose="summary" class="lead-magnet-mascot" alt="Quid holding a follow-up checklist" width={190} />
+      <form class="lead-magnet-form" action="https://formspree.io/f/mnjkzyak" method="POST" data-lead-magnet-form>
+        <div class="lead-magnet-form-heading">
+          <span>Free practical toolkit</span>
+          <h3>Send the kit to your inbox.</h3>
+        </div>
+
+        <label>
+          <span>First name <small>Optional</small></span>
+          <input type="text" name="first_name" autocomplete="given-name" />
+        </label>
+
+        <label>
+          <span>Work email</span>
+          <input type="email" name="email" autocomplete="email" required />
+        </label>
+
+        <label>
+          <span>Community name <small>Optional</small></span>
+          <input type="text" name="community_name" autocomplete="organization" />
+        </label>
+
+        <input type="hidden" name="lead_magnet" value="Senior Living Follow-Up Fix Kit" />
+        <div class="lead-magnet-honeypot" aria-hidden="true">
+          <label for="lead-magnet-gotcha">Leave this field empty</label>
+          <input id="lead-magnet-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <button class="button lead-magnet-submit" type="submit">Send Me the Free Kit</button>
+        <p class="lead-magnet-privacy">By submitting, you are requesting the free kit and may receive follow-up emails about Quid. Do not include resident or medical information.</p>
+        <p class="lead-magnet-status" aria-live="polite" data-lead-magnet-status></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLFormElement>('[data-lead-magnet-form]').forEach((form) => {
+    form.addEventListener('submit', async (event) => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        form.reportValidity();
+        return;
+      }
+
+      event.preventDefault();
+      const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+      const status = form.querySelector<HTMLElement>('[data-lead-magnet-status]');
+      if (!button || !status) return;
+
+      const originalLabel = button.textContent || 'Send Me the Free Kit';
+      button.disabled = true;
+      button.setAttribute('aria-busy', 'true');
+      button.textContent = 'Sending…';
+      status.textContent = '';
+      status.removeAttribute('data-state');
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        if (!response.ok) throw new Error('Submission failed');
+
+        form.reset();
+        status.dataset.state = 'success';
+        status.textContent = 'Check your inbox. The Follow-Up Fix Kit is on its way.';
+      } catch {
+        status.dataset.state = 'error';
+        status.textContent = 'Something went wrong. Please try again or contact us directly.';
+      } finally {
+        button.disabled = false;
+        button.removeAttribute('aria-busy');
+        button.textContent = originalLabel;
+      }
+    });
+  });
+</script>

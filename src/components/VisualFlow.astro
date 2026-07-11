@@ -1,0 +1,14 @@
+---
+interface Step { title: string; text?: string }
+interface Props { steps: Step[]; label?: string; compact?: boolean; vertical?: boolean }
+const { steps, label = 'Process overview', compact = false, vertical = false } = Astro.props;
+---
+
+<div class:list={['visual-flow', { 'visual-flow-compact': compact, 'visual-flow-vertical': vertical }]} style={`--flow-cols:${Math.min(steps.length, 5)}`} role="list" aria-label={label} data-reveal>
+  {steps.map((step, index) => (
+    <article class="visual-flow-step" role="listitem" style={`--step:${index}`}>
+      <span class="visual-flow-marker" aria-hidden="true">{index + 1}</span>
+      <div><strong>{step.title}</strong>{step.text && <small>{step.text}</small>}</div>
+    </article>
+  ))}
+</div>

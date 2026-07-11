@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import hero from '../assets/brand/quid-hero.png';
+import inquiry from '../assets/brand/quid-inquiry.png';
+import tour from '../assets/brand/quid-tour.png';
+import handoff from '../assets/brand/quid-handoff.png';
+import summary from '../assets/brand/quid-summary.png';
+import wave from '../assets/brand/quid-wave.png';
+import lost from '../assets/brand/quid-404.png';
+
+interface Props {
+  pose?: 'hero' | 'inquiry' | 'tour' | 'handoff' | 'summary' | 'wave' | 'lost';
+  alt?: string;
+  class?: string;
+  width?: number;
+  eager?: boolean;
+}
+
+const { pose = 'hero', alt = '', class: className = '', width = 520, eager = false } = Astro.props;
+const sources = { hero, inquiry, tour, handoff, summary, wave, lost };
+---
+
+<Image
+  src={sources[pose]}
+  alt={alt}
+  class:list={['mascot', className]}
+  width={width}
+  widths={[240, 360, 520, 720]}
+  sizes="(max-width: 720px) 70vw, 34vw"
+  format="webp"
+  loading={eager ? 'eager' : 'lazy'}
+  fetchpriority={eager ? 'high' : 'auto'}
+/>

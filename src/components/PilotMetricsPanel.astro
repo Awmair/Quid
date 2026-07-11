@@ -1,0 +1,12 @@
+---
+import { pilotOffer } from '../data/pilot';
+const icons = ['✓', '↗', '▦', '↻', '◷', '!', '◇', '+'];
+---
+
+<div class="pilot-metrics-panel" role="list" aria-label="Pilot measurements" data-reveal>
+  {pilotOffer.measurements.map((metric, index) => (
+    <article class="pilot-metric" role="listitem" style={`--metric:${index}`}>
+      <span aria-hidden="true">{icons[index]}</span><strong>{metric}</strong>
+    </article>
+  ))}
+</div>

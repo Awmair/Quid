@@ -1,0 +1,27 @@
+{
+  "name": "quid-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "build:og": "node scripts/build-og.mjs",
+    "check": "astro check",
+    "preview": "astro preview",
+    "test:site": "node scripts/check-site.mjs",
+    "seo:check": "node scripts/check-site.mjs"
+  },
+  "dependencies": {
+    "@astrojs/rss": "latest",
+    "@astrojs/sitemap": "latest",
+    "@fontsource-variable/manrope": "latest",
+    "@fontsource-variable/newsreader": "latest",
+    "astro": "latest",
+    "sharp": "latest"
+  },
+  "devDependencies": {
+    "@astrojs/check": "latest",
+    "typescript": "latest"
+  }
+}

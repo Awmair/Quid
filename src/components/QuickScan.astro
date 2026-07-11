@@ -1,0 +1,16 @@
+---
+interface Item { kicker?: string; title: string; text?: string }
+interface Props { items: Item[]; label?: string; dark?: boolean }
+const { items, label = 'At a glance', dark = false } = Astro.props;
+---
+
+<div class:list={['quick-scan', { 'quick-scan-dark': dark }]} aria-label={label} data-reveal>
+  {items.map((item, index) => (
+    <article class="quick-scan-item">
+      <span class="quick-scan-symbol" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+      {item.kicker && <span class="data-label">{item.kicker}</span>}
+      <h3>{item.title}</h3>
+      {item.text && <p>{item.text}</p>}
+    </article>
+  ))}
+</div>

@@ -1,0 +1,9 @@
+---
+import DashboardCallout from './DashboardCallout.astro';
+import { dashboardCallouts } from '../data/dashboardData';
+---
+
+<div class="dashboard-tour" aria-label="Dashboard area explanations" data-reveal>
+  <div class="dashboard-tour-line" aria-hidden="true"></div>
+  {dashboardCallouts.map((callout) => <DashboardCallout {...callout} />)}
+</div>

@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Mascot from '../components/Mascot.astro';
+import WalkthroughRequestForm from '../components/WalkthroughRequestForm.astro';
+import AnswerBlock from '../components/AnswerBlock.astro';
+import { site } from '../data/site';
+import { pricing } from '../data/pricing';
+
+const title = 'Meet Quid | AI Admissions Concierge for Senior Living';
+const description = 'Book a Quid walkthrough and see how an AI-assisted admissions concierge could help your senior living team respond to inquiries, coordinate tours, manage follow-up, and handle staff handoffs.';
+const pageUrl = `${site.domain}/meet-quid`;
+const primaryHref = site.bookingUrl || '#request-walkthrough';
+const primaryLabel = site.bookingUrl ? 'Book a Quid Walkthrough' : 'Request Walkthrough';
+
+const walkthroughItems = [
+  { icon: '01', title: 'Your inquiry path', text: 'We look at how families currently reach out through your website.' },
+  { icon: '02', title: 'Your tour process', text: 'We review how tours are offered, confirmed, and followed up.' },
+  { icon: '03', title: 'Your handoff rules', text: 'We identify what Quid should pause and send to a real staff member.' },
+  { icon: '04', title: 'Your pilot fit', text: 'We discuss whether a 30-day pilot makes sense for one community, one inquiry source, and one tour calendar.' },
+];
+
+const bringItems = [
+  'Your website link',
+  'Your current inquiry form',
+  'Your tour scheduling process',
+  'Your CRM, spreadsheet, or inbox setup',
+  'One place where follow-up gets stuck',
+];
+
+const fitPoints = [
+  { title: 'No CRM replacement required', text: 'We start by looking at one narrow admissions workflow.' },
+  { title: 'No resident data needed', text: 'We only discuss your public inquiry process and team workflow.' },
+  { title: 'No clinical workflow needed', text: 'Quid is focused on routine admissions follow-up and staff handoffs.' },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: title,
+    description,
+    url: pageUrl,
+    isPartOf: { '@type': 'WebSite', name: 'Quid', url: site.domain },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.domain },
+      { '@type': 'ListItem', position: 2, name: 'Meet Quid', item: pageUrl },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} schema={schema}>
+  <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Meet Quid' }]} />
+
+  <section class="page-hero meet-hero">
+    <div class="shell page-hero-grid">
+      <div>
+        <p class="eyebrow">Meet Quid</p>
+        <h1>See how Quid would fit your admissions workflow.</h1>
+        <p class="lede">In a short walkthrough, we will show how Quid could help your team handle website inquiries, tour follow-up, daily summaries, and human handoffs for one community.</p>
+        <AnswerBlock answer={`Meet Quid is a short walkthrough to see whether Quid fits your current admissions workflow. The 30-day pilot is ${pricing.pilot.display}. Managed Quid operations begin from ${pricing.ongoing.monthlyDisplay} if you continue.`} />
+        <div class="button-row">
+          <a class="button" href={primaryHref} rel={site.bookingUrl ? 'noopener' : undefined}>{primaryLabel}</a>
+          <a class="button button-secondary" href="/pilot">View the 30-Day Pilot</a>
+        </div>
+        <p class="meet-hero-note"><span aria-hidden="true">✓</span>No resident information needed. We only discuss your admissions process.</p>
+      </div>
+      <div class="meet-hero-visual">
+        <span class="meet-hero-halo" aria-hidden="true"></span>
+        <Mascot pose="summary" class="meet-hero-mascot" alt="Quid holding a concise admissions workflow plan" width={380} eager />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="shell">
+      <div class="meet-section-heading"><p class="eyebrow">A focused conversation</p><h2>What we will walk through</h2></div>
+      <div class="meet-walkthrough-grid">
+        {walkthroughItems.map((item, index) => (
+          <article class="meet-walkthrough-card" data-reveal style={`--meet-card:${index}`}>
+            <span>{item.icon}</span><h3>{item.title}</h3><p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-sand">
+    <div class="shell meet-prep-grid">
+      <div data-reveal>
+        <p class="eyebrow">What to bring</p>
+        <h2>Helpful, but not required</h2>
+        <p class="lede">You do not need to prepare a formal document. A few basics help us make the walkthrough more useful.</p>
+      </div>
+      <div class="meet-prep-card" data-reveal>
+        <ul>{bringItems.map((item) => <li><span aria-hidden="true">✓</span>{item}</li>)}</ul>
+        <p><strong>Keep resident information out.</strong> Do not bring or submit resident names, diagnoses, medications, payment details, or medical information.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-sage" id="request-walkthrough">
+    <div class="shell meet-form-layout">
+      <div class="meet-form-copy" data-reveal>
+        <p class="eyebrow">Request a walkthrough</p>
+        <h2>Tell us where to start.</h2>
+        <p class="lede">Share a little about your community and admissions workflow. We will review it and follow up if Quid looks relevant.</p>
+        {site.bookingUrl && (
+          <div class="meet-booking-card">
+            <strong>Prefer to choose a time now?</strong>
+            <p>Use the booking calendar, or send the form if you would rather share context first.</p>
+            <a class="button" href={site.bookingUrl} rel="noopener">Book a Quid Walkthrough</a>
+          </div>
+        )}
+        <p class="meet-form-safety"><strong>Safety note:</strong> Please describe your admissions workflow only. No resident or medical information is needed.</p>
+      </div>
+      <WalkthroughRequestForm />
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="shell meet-fit-wrap">
+      <div class="meet-section-heading center"><p class="eyebrow">What to expect</p><h2>This is a fit check, not a hard sell.</h2><p class="lede center">The walkthrough is meant to show whether Quid could fit your current admissions process. If it is not a fit, we will say so.</p></div>
+      <div class="meet-fit-grid">
+        {fitPoints.map((item) => <article class="meet-fit-card" data-reveal><span aria-hidden="true">✓</span><h3>{item.title}</h3><p>{item.text}</p></article>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-deep meet-final-cta">
+    <div class="shell final-cta-grid">
+      <div data-reveal>
+        <p class="eyebrow">Start with your process</p>
+        <h2>Ready to see where Quid fits?</h2>
+        <p class="lede">Start with your current admissions process. We will show what Quid could handle, what your team should keep, and whether the 30-day pilot makes sense.</p>
+        <div class="button-row"><a class="button button-light" href="#request-walkthrough">Request Walkthrough</a><a class="button button-secondary" href="/see-quid-in-action">See Quid in Action</a></div>
+      </div>
+      <Mascot pose="wave" class="final-mascot" alt="Quid inviting the admissions team to start a walkthrough" width={330} />
+    </div>
+  </section>
+</BaseLayout>

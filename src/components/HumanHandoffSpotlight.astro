@@ -1,0 +1,16 @@
+---
+import Mascot from './Mascot.astro';
+import { handoffSpotlight } from '../data/dashboardData';
+---
+
+<div class="handoff-spotlight" data-reveal>
+  <Mascot pose="handoff" class="handoff-spotlight-mascot" alt="Quid calmly pausing and handing a sensitive question to admissions staff" width={220} />
+  <article class="handoff-spotlight-card">
+    <p class="handoff-status">{handoffSpotlight.title}</p>
+    <dl>
+      <dt>Reason</dt><dd>{handoffSpotlight.reason}</dd>
+      <dt>Assigned to</dt><dd>{handoffSpotlight.assignedTo}</dd>
+    </dl>
+    <div class="safe-acknowledgement"><span class="data-label">Suggested safe acknowledgement</span><blockquote>“{handoffSpotlight.acknowledgement}”</blockquote></div>
+  </article>
+</div>

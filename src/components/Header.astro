@@ -1,0 +1,84 @@
+---
+import { Image } from 'astro:assets';
+import icon from '../assets/brand/quid-hero.png';
+import wordmark from '../assets/brand/quid-wordmark.svg';
+import { navigation } from '../data/navigation';
+import { primaryCtaHref, site } from '../data/site';
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="site-header" data-header>
+  <div class="header-inner shell">
+    <a class="brand" href="/" aria-label="Quid home">
+      <Image src={icon} alt="" width={44} height={56} loading="eager" />
+      <img src={wordmark.src} alt="Quid" width="94" height="45" />
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      {navigation.map((item) => (
+        <a href={item.href} aria-current={currentPath === item.href ? 'page' : undefined}>{item.label}</a>
+      ))}
+    </nav>
+    <a class="button button-small desktop-cta" href={primaryCtaHref}>Meet Quid</a>
+    <button class="menu-trigger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-panel" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-panel-inner">
+      <p class="eyebrow">Calm. Capable. Concierge.</p>
+      <nav aria-label="Mobile navigation">
+        {navigation.map((item, index) => (
+          <a href={item.href} style={`--delay:${index * 45}ms`}>{item.label}</a>
+        ))}
+      </nav>
+      <a class="button" href={primaryCtaHref}>Meet Quid</a>
+      <p class="mobile-tagline">More tours. Less chasing.</p>
+      {site.contactEmail && <a class="mobile-email" href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>}
+      <Image class="mobile-mascot" src={icon} alt="" width={180} height={230} loading="lazy" />
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector<HTMLElement>('[data-header]');
+  const trigger = document.querySelector<HTMLButtonElement>('.menu-trigger');
+  const panel = document.querySelector<HTMLElement>('.mobile-panel');
+  let previousFocus: HTMLElement | null = null;
+
+  const focusable = () => panel ? Array.from(panel.querySelectorAll<HTMLElement>('a, button, [tabindex]:not([tabindex="-1"])')) : [];
+  const closeMenu = () => {
+    if (!trigger || !panel) return;
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.setAttribute('aria-label', 'Open navigation menu');
+    panel.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('menu-open');
+    previousFocus?.focus();
+  };
+  const openMenu = () => {
+    if (!trigger || !panel) return;
+    previousFocus = document.activeElement as HTMLElement;
+    trigger.setAttribute('aria-expanded', 'true');
+    trigger.setAttribute('aria-label', 'Close navigation menu');
+    panel.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('menu-open');
+    window.setTimeout(() => focusable()[0]?.focus({ preventScroll: true }), 380);
+  };
+  trigger?.addEventListener('click', () => trigger.getAttribute('aria-expanded') === 'true' ? closeMenu() : openMenu());
+  panel?.addEventListener('click', (event) => {
+    if ((event.target as Element).closest('a')) closeMenu();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && trigger?.getAttribute('aria-expanded') === 'true') closeMenu();
+    if (event.key !== 'Tab' || trigger?.getAttribute('aria-expanded') !== 'true') return;
+    const items = focusable();
+    if (!items.length) return;
+    const first = items[0];
+    const last = items[items.length - 1];
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  });
+  const updateHeader = () => header?.classList.toggle('is-scrolled', window.scrollY > 20);
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
+</script>

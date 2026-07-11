@@ -1,0 +1,328 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Mascot from '../components/Mascot.astro';
+import PhotoPanel from '../components/PhotoPanel.astro';
+import QuickScan from '../components/QuickScan.astro';
+import VisualFlow from '../components/VisualFlow.astro';
+import PilotPricingCard from '../components/PilotPricingCard.astro';
+import PilotTimeline from '../components/PilotTimeline.astro';
+import DashboardPreview from '../components/DashboardPreview.astro';
+import AnswerBlock from '../components/AnswerBlock.astro';
+import { Image } from 'astro:assets';
+import assistedLiving from '../assets/lifestyle/assisted-living-diverse.png';
+import memoryCare from '../assets/lifestyle/memory-care.png';
+import independentLiving from '../assets/lifestyle/independent-living.png';
+import skilledNursing from '../assets/lifestyle/skilled-nursing-diverse.png';
+import admissionsTeam from '../assets/lifestyle/admissions-team.png';
+import { faqs, workflow } from '../data/content';
+import { pilotOffer } from '../data/pilot';
+import { primaryCtaHref, site } from '../data/site';
+
+const schema = [
+  {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Quid', applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web', description: site.defaultDescription,
+    audience: { '@type': 'Audience', audienceType: 'Senior living admissions teams' },
+  },
+  {
+    '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(([question, answer]) => ({
+      '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer },
+    })),
+  },
+];
+
+const features = [
+  { icon: '+', title: 'New inquiries', text: 'A warm, approved reply goes out right away.', cue: 'New inquiry', status: 'Acknowledged' },
+  { icon: '▦', title: 'Tour booking', text: 'Available times are offered, booked, and confirmed.', cue: 'Thursday · 10:30', status: 'Tour confirmed' },
+  { icon: '✓', title: 'Post-tour follow-up', text: 'Thank-yous and next steps are sent on schedule.', cue: 'Tour complete', status: 'Thank-you queued' },
+  { icon: '↻', title: 'Stalled inquiries', text: 'Quiet inquiries return to view before they disappear.', cue: 'No tour selected', status: 'Follow-up due' },
+  { icon: '→', title: 'Staff tasks', text: 'Non-clinical next steps reach the right person.', cue: 'Call requested', status: 'Assigned to Lisa' },
+  { icon: '≡', title: 'Daily summary', text: 'Tours, replies, and overdue work appear in one view.', cue: 'Good morning', status: '4 need review' },
+];
+
+const outcomes = [
+  ['Families hear back sooner', 'New website inquiries do not have to wait for someone to find time in the inbox.'],
+  ['More inquiries reach the next step', 'Tour options and clear calls to action make it easier for families to continue.'],
+  ['Follow-up becomes consistent', 'The intended admissions process is not dependent on how busy the week becomes.'],
+  ['Staff gets time back', 'The team spends less time recreating routine messages and checking spreadsheets.'],
+  ['Managers get visibility', 'Executive Directors can quickly see what is moving, what is overdue, and where staff attention is required.'],
+];
+
+const audiences = [
+  { label: 'Assisted Living', image: assistedLiving, alt: 'A Black senior woman speaking with a Black admissions professional in a warm senior living lounge' },
+  { label: 'Memory Care', image: memoryCare, alt: 'An older woman and a care partner arranging flowers together in a calm residential living room' },
+  { label: 'Independent Living', image: independentLiving, alt: 'Three older friends sharing coffee and conversation in a bright community lounge' },
+  { label: 'Skilled Nursing', image: skilledNursing, alt: 'A Hispanic older man and his daughter speaking with an admissions professional during a community visit' },
+];
+---
+
+<BaseLayout schema={schema}>
+  <section class="hero">
+    <div class="shell hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow" data-reveal>AI-assisted admissions follow-up for senior living</p>
+        <h1><span data-reveal>More tours.</span><span class="editorial" data-reveal>Less chasing.</span></h1>
+        <p class="lede" data-reveal>Quid responds to website inquiries, helps families book tours, and keeps follow-up moving—while your team handles the conversations that need a person.</p>
+        <AnswerBlock variant="hero" label="What Quid is" answer="Quid is an AI-assisted admissions concierge that helps senior living teams respond to website inquiries, coordinate tours, follow up consistently, and route sensitive questions to staff." />
+        <div class="button-row" data-reveal>
+          <a class="button" href={primaryCtaHref}>Meet Quid</a>
+          <a class="button button-secondary" href="/see-quid-in-action">See Quid in Action</a>
+        </div>
+        <p class="microcopy hero-proof">One community. One inquiry source. One measurable 30-day pilot.</p>
+      </div>
+      <div class="hero-brand-visual" data-reveal>
+        <span class="hero-halo" aria-hidden="true"></span>
+        <span class="hero-benefit-badge"><span aria-hidden="true">✓</span>No missed inquiries or tours</span>
+        <Mascot pose="hero" class="hero-brand-mascot" alt="Quid, the admissions concierge mascot, ready to help with a new inquiry" width={360} eager />
+        <span class="hero-brand-shadow" aria-hidden="true"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm section-sand">
+    <div class="shell">
+      <h2 class="center">Built for senior living admissions teams</h2>
+      <div class="audience-list">
+        {audiences.map((audience) => (
+          <article class="audience-card" data-reveal>
+            <Image
+              class="audience-photo"
+              src={audience.image}
+              alt={audience.alt}
+              widths={[320, 480, 640]}
+              sizes="(max-width: 760px) 100vw, (max-width: 1050px) 50vw, 25vw"
+              format="webp"
+              loading="lazy"
+            />
+            <h3>{audience.label}</h3>
+          </article>
+        ))}
+      </div>
+      <p class="center muted" style="margin-top:24px">Quid is a friendly AI-assisted admissions concierge for communities where every inquiry matters, but staff cannot always stop to respond immediately.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="comparison-intro" data-reveal>
+        <div class="comparison-copy">
+          <p class="eyebrow">The follow-up gap</p>
+          <h2>One inquiry. <span class="editorial">Two very different paths.</span></h2>
+          <p class="lede">Your team is doing ten things at once. Quid keeps routine admissions work moving while staff focuses on the people in front of them.</p>
+        </div>
+        <Mascot pose="inquiry" class="comparison-mascot" alt="Quid presenting two different inquiry follow-up paths" width={180} />
+      </div>
+      <div class="comparison-timelines" aria-label="Admissions follow-up paths with and without Quid">
+        <article class="path-card path-manual" data-reveal>
+          <header><div><p class="eyebrow">Before Quid</p><h3>The manual path</h3></div><span class="path-duration">Nearly 7 hours</span></header>
+          <ol class="path-timeline">
+            <li><time>8:42 AM</time><div><strong>New website inquiry arrives</strong><span>It waits in the team inbox.</span></div></li>
+            <li><time>9:00 AM</time><div><strong>Morning team meeting</strong><span>The day’s priorities take over.</span></div></li>
+            <li><time>10:30 AM</time><div><strong>Community tour</strong><span>Staff is focused on the visiting family.</span></div></li>
+            <li><time>12:15 PM</time><div><strong>Calls and family questions</strong><span>The inquiry remains untouched.</span></div></li>
+            <li class="path-outcome"><time>3:40 PM</time><div><strong>Inquiry is still waiting</strong><span>The family may already be talking elsewhere.</span></div></li>
+          </ol>
+        </article>
+        <article class="path-card path-optimized" data-reveal>
+          <header><div><p class="eyebrow">With Quid</p><h3>The automated path</h3></div><span class="path-duration">3 minutes</span></header>
+          <ol class="path-timeline">
+            <li><time>8:42 AM</time><div><strong>New website inquiry arrives</strong><span>Quid starts the approved workflow.</span></div></li>
+            <li><time>8:43 AM</time><div><strong>Inquiry acknowledged</strong><span>The family receives a warm, approved reply.</span></div></li>
+            <li><time>8:44 AM</time><div><strong>Tour booked</strong><span>The family chooses from approved availability.</span></div></li>
+            <li class="path-outcome"><time>8:45 AM</time><div><strong>Follow-up sent</strong><span>Acknowledged, booked, and visible to staff.</span></div></li>
+          </ol>
+          <p class="optimized-note"><span>✓</span> Routine work completed automatically. Your team stays informed.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="shell split split-wide">
+      <div>
+        <p class="eyebrow">Follow-up opportunity</p>
+        <h2>See what follow-up gaps may be costing you.</h2>
+        <p class="lede">Adjust three simple inputs to estimate the monthly resident revenue connected to missed follow-ups or tours.</p>
+        <Mascot pose="summary" class="opportunity-mascot" alt="Quid reviewing an admissions summary" width={220} />
+      </div>
+      <div class="calculator opportunity-calculator" data-calculator>
+        <div class="calculator-head">
+          <p class="eyebrow">Follow-up opportunity calculator</p>
+          <span>Senior living</span>
+        </div>
+        <div class="slider-list">
+          <label class="slider-field">
+            <span><span>Monthly website inquiries</span><output data-value="inquiries">40</output></span>
+            <input aria-label="Monthly website inquiries" type="range" min="10" max="200" step="5" value="40" data-field="inquiries" />
+          </label>
+          <label class="slider-field">
+            <span><span>Average missed follow-ups or tours per month</span><output data-value="missed">3</output></span>
+            <input aria-label="Average missed follow-ups or tours per month" type="range" min="0" max="30" step="1" value="3" data-field="missed" />
+          </label>
+          <label class="slider-field">
+            <span><span>Estimated monthly resident revenue</span><output data-value="revenue">$7,500</output></span>
+            <input aria-label="Estimated monthly resident revenue" type="range" min="1000" max="20000" step="500" value="7500" data-field="revenue" />
+          </label>
+        </div>
+        <div class="leak-result" aria-live="polite">
+          <span>Estimated revenue leak</span>
+          <strong data-result="leak">$22,500</strong>
+          <small>per month</small>
+        </div>
+        <p class="calculator-formula"><strong>3 missed opportunities</strong> × <strong>$7,500 monthly revenue</strong></p>
+        <p class="disclaimer">A simple planning estimate, not a prediction or guarantee. It treats each missed follow-up or tour as one potential resident-month. Inputs are not stored.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-deep" id="workflow">
+    <div class="shell workflow-home">
+      <div class="workflow-home-copy" data-reveal>
+        <p class="eyebrow">How Quid works</p>
+        <h2>From website inquiry to booked tour, without the usual chasing.</h2>
+        <p class="lede">Quid does not make the admissions decision. Quid helps prevent the admissions process from stalling.</p>
+        <a class="button button-secondary" href="/how-it-works">See How Quid Works</a>
+      </div>
+      <VisualFlow vertical steps={workflow.map(([title, text]) => ({ title, text }))} label="Inquiry-to-tour workflow" />
+    </div>
+  </section>
+
+  <section class="section section-white dashboard-preview-section">
+    <div class="shell">
+      <div class="tour-section-intro">
+        <div><p class="eyebrow">See Quid in action</p><h2>See your admissions day before you change anything.</h2></div>
+        <div><p class="lede">Explore the Quid dashboard for new inquiries, booked tours, follow-up, and human handoffs in one clear daily view.</p></div>
+      </div>
+      <DashboardPreview compact />
+      <div class="dashboard-preview-cta"><p>Walk through the dashboard, handoffs, daily summary, and follow-up flow.</p><a class="button" href="/see-quid-in-action">See Quid in Action</a></div>
+    </div>
+  </section>
+
+  <section class="section" id="what-quid-handles">
+    <div class="shell">
+      <p class="eyebrow">Routine work, handled</p>
+      <h2>The repetitive work gets handled. <span class="editorial">The human work stays human.</span></h2>
+      <div class="card-grid three feature-grid">
+        {features.map(({ icon, title, text, cue, status }) => (
+          <article class="card feature-tile" data-reveal>
+            <div class="feature-tile-head"><span class="feature-icon" aria-hidden="true">{icon}</span><span class="feature-auto">Quid handles it</span></div>
+            <h3>{title}</h3><p>{text}</p>
+            <div class="feature-signal" aria-label={`${cue}: ${status}`}><span class="feature-signal-dot"></span><strong>{status}</strong><small>{cue}</small></div>
+          </article>
+        ))}
+      </div>
+      <p class="resource-inline-link workflow-guide-note">
+        <span>Planning your first workflow?</span>
+        <span>Read the <a href="/resources/senior-living-admissions-automation">senior living admissions automation guide</a>.</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-sand">
+    <div class="shell split handoff-section">
+      <div data-reveal>
+        <p class="eyebrow">Quid knows when to stop</p>
+        <h2>Automation for the routine parts. <span class="editorial">Real people for the important parts.</span></h2>
+        <p>When a family shares medical information, asks about care eligibility, discusses medication, or needs a sensitive conversation, Quid pauses and alerts the designated staff member.</p>
+        <div class="card-grid">
+          <div><h3>Quid does not</h3><ul class="x-list"><li>Recommend a level of care</li><li>Interpret medical information</li><li>Assess clinical eligibility</li><li>Discuss medications</li><li>Make clinical promises</li><li>Impersonate an employee</li></ul></div>
+          <div><h3>Quid does</h3><ul class="check-list"><li>Acknowledge the family</li><li>Flag the conversation</li><li>Notify the right person</li><li>Keep the request visible</li><li>Record the handoff</li></ul></div>
+        </div>
+        <a class="button" href="/human-handoffs">See Quid’s Human-Handoff Rules</a>
+      </div>
+      <div class="handoff-visual">
+        <Mascot pose="handoff" class="handoff-section-mascot" alt="Quid calmly handing an important question to admissions staff" width={260} />
+        <div class="handoff-card" data-reveal><p class="handoff-status">Human review required</p><h3>Clinical or eligibility question detected</h3><p><strong>Assigned to:</strong> Admissions Director</p><p><strong>Status:</strong> Waiting for staff response</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div data-reveal>
+        <p class="eyebrow">Built around your community</p>
+        <h2>It sounds like your team, not a software company.</h2>
+        <p class="lede">Quid is configured around your community name, services, approved FAQs, business hours, tour calendar, communication style, escalation contacts, and follow-up policy.</p>
+        <div class="chips">{['Your tone','Your tour times','Your approved answers','Your business hours','Your handoff rules','Your staff contacts'].map((x) => <span class="chip">{x}</span>)}</div>
+      </div>
+      <div class="message-card" data-reveal>
+        <span class="data-label">Approved acknowledgement</span>
+        <blockquote><p>Hi Sarah,</p><p>Thank you for reaching out to Willow Creek Senior Living.</p><p>Finding the right community can feel like a lot to navigate, and we are happy to help make the next step simpler.</p><p>You can choose a convenient time to visit below. If you would rather speak with someone first, reply to this message and a member of our admissions team will follow up.</p><p>Warmly,<br />The Willow Creek Admissions Team</p></blockquote>
+        <p class="microcopy">Written in your voice. Approved by your team. Sent at the right time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-sage">
+    <div class="shell">
+      <p class="eyebrow">What changes</p><h2>Faster replies without faster burnout.</h2>
+      <div class="scan-layout">
+        <PhotoPanel image={admissionsTeam} alt="Two senior living admissions professionals reviewing follow-up together" label="The team stays in control" caption="Quid keeps routine work visible so staff can focus on families." />
+        <QuickScan items={outcomes.map(([title, text]) => ({ title, text }))} label="Benefits at a glance" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-deep" id="pilot-offer">
+    <div class="shell">
+      <div class="pilot-offer-layout">
+        <div class="pilot-offer-copy" data-reveal>
+          <p class="eyebrow">30-Day Pilot</p>
+          <h2>{pilotOffer.headline}</h2>
+          <p class="lede">{pilotOffer.homepageBody}</p>
+          <p class="pilot-process-line">{pilotOffer.processLine}</p>
+          <div class="button-row">
+            <a class="button button-light" href="/pilot#apply">Apply for the Pilot</a>
+            <a class="button button-secondary" href="/meet-quid">Meet Quid First</a>
+          </div>
+        </div>
+        <PilotPricingCard showCta={false} />
+      </div>
+      <div class="pilot-home-timeline">
+        <p class="eyebrow">Four focused weeks</p>
+        <PilotTimeline compact />
+      </div>
+      <p class="pilot-trust-line">{pilotOffer.trustLine}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="narrow">
+      <h2>Questions senior living teams ask about Quid</h2>
+      <div class="faq-list">{faqs.map(([question, answer]) => <details><summary>{question}</summary><p>{answer}</p></details>)}</div>
+    </div>
+  </section>
+
+  <script>
+    const calc = document.querySelector<HTMLElement>('[data-calculator]');
+    if (calc) {
+      const fields = Object.fromEntries(Array.from(calc.querySelectorAll<HTMLInputElement>('[data-field]')).map((el) => [el.dataset.field!, el]));
+      const values = Object.fromEntries(Array.from(calc.querySelectorAll<HTMLOutputElement>('[data-value]')).map((el) => [el.dataset.value!, el]));
+      const leak = calc.querySelector<HTMLElement>('[data-result="leak"]');
+      const formula = calc.querySelector<HTMLElement>('.calculator-formula');
+      const number = (key: string) => Math.max(0, Number(fields[key]?.value) || 0);
+      const currency = (value: number) => value.toLocaleString(undefined, { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+      const updateFill = (field: HTMLInputElement) => {
+        const min = Number(field.min) || 0;
+        const max = Number(field.max) || 100;
+        const fill = ((Number(field.value) - min) / (max - min)) * 100;
+        field.style.setProperty('--fill', `${fill}%`);
+      };
+      const update = () => {
+        const inquiries = number('inquiries');
+        fields.missed.max = String(Math.min(30, inquiries));
+        if (number('missed') > inquiries) fields.missed.value = String(inquiries);
+        const missed = number('missed');
+        const revenue = number('revenue');
+        values.inquiries.textContent = inquiries.toLocaleString();
+        values.missed.textContent = missed.toLocaleString();
+        values.revenue.textContent = currency(revenue);
+        if (leak) leak.textContent = currency(missed * revenue);
+        if (formula) formula.innerHTML = `<strong>${missed.toLocaleString()} missed ${missed === 1 ? 'opportunity' : 'opportunities'}</strong> × <strong>${currency(revenue)} monthly revenue</strong>`;
+        Object.values(fields).forEach(updateFill);
+      };
+      Object.values(fields).forEach((field) => field.addEventListener('input', update));
+      update();
+    }
+  </script>
+</BaseLayout>

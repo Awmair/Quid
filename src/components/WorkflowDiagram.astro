@@ -1,0 +1,13 @@
+---
+import { inquiryFlow } from '../data/dashboardData';
+---
+
+<ol class="workflow-diagram" aria-label="Inquiry follow-up workflow" data-reveal>
+  {inquiryFlow.map((step, index) => (
+    <li class="workflow-node" style={`--node:${index}`}>
+      <span class="workflow-icon" aria-hidden="true">{step.icon}</span>
+      <strong>{step.title}</strong>
+      <small>{step.text}</small>
+    </li>
+  ))}
+</ol>

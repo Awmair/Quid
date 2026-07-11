@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Mascot from '../components/Mascot.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PilotApplicationForm from '../components/PilotApplicationForm.astro';
+import PilotPricingCard from '../components/PilotPricingCard.astro';
+import PilotTimeline from '../components/PilotTimeline.astro';
+import AnswerBlock from '../components/AnswerBlock.astro';
+import { pilotFaqs, pilotOffer } from '../data/pilot';
+import { site } from '../data/site';
+
+const pageUrl = `${site.domain}/pilot`;
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: pilotOffer.name,
+    description: pilotOffer.pageBody,
+    provider: { '@type': 'Organization', name: 'Quid', url: site.domain },
+    offers: {
+      '@type': 'Offer',
+      price: String(pilotOffer.price),
+      priceCurrency: 'USD',
+      url: pageUrl,
+      description: pilotOffer.positioning,
+    },
+  },
+  {'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[
+    {'@type':'ListItem',position:1,name:'Home',item:site.domain},
+    {'@type':'ListItem',position:2,name:'30-Day Pilot',item:pageUrl},
+  ]},
+  {'@context':'https://schema.org','@type':'FAQPage','mainEntity':pilotFaqs.map(([question,answer]) => ({'@type':'Question',name:question,acceptedAnswer:{'@type':'Answer',text:answer}}))},
+];
+---
+
+<BaseLayout
+  title="30-Day Senior Living Admissions Pilot | Quid"
+  description={`Run a focused 30-day Quid admissions implementation for ${pilotOffer.priceWithBilling}. Continue with managed Quid operations ${pilotOffer.continuationPrice.toLowerCase()} if you choose.`}
+  schema={schema}
+>
+  <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: '30-Day Pilot' }]} />
+
+  <section class="page-hero pilot-page-hero">
+    <div class="shell page-hero-grid">
+      <div>
+        <p class="eyebrow">30-Day Admissions Pilot</p>
+        <h1>{pilotOffer.pageHeadline}</h1>
+        <p class="lede">{pilotOffer.pageBody}</p>
+        <AnswerBlock answer={`We learn your admissions process, configure Quid around one inquiry source and one tour calendar, launch the workflow, monitor it, and show you what happened. No long-term commitment is required to complete the pilot.`} />
+        <p class="pilot-hero-price"><strong>{pilotOffer.priceWithBilling}.</strong> Continue {pilotOffer.continuationPrice.toLowerCase()} if you choose to keep Quid.</p>
+        <div class="button-row">
+          <a class="button" href="#apply">Apply for the Pilot</a>
+          <a class="button button-secondary" href="/see-quid-in-action">See Quid in Action</a>
+        </div>
+      </div>
+      <Mascot pose="hero" class="page-mascot" alt="Quid holding an admissions pilot clipboard" width={360} eager />
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="shell pilot-page-offer">
+      <div class="pilot-page-copy" data-reveal>
+        <p class="eyebrow">Three practical questions</p>
+        <h2>Thirty days to reach a clear decision.</h2>
+        <ol class="pilot-question-list">
+          {pilotOffer.pilotQuestions.map((question, index) => <li><span>{index + 1}</span>{question}</li>)}
+        </ol>
+        <p class="pilot-outcome-line">{pilotOffer.outcomeLine}</p>
+        <p class="pilot-positioning pilot-positioning-light">{pilotOffer.positioning}</p>
+      </div>
+      <PilotPricingCard ctaHref="#apply" />
+    </div>
+  </section>
+
+  <section class="section section-sand" id="pilot-timeline">
+    <div class="shell">
+      <div class="pilot-section-heading">
+        <div><p class="eyebrow">What happens during the pilot</p><h2>Here is exactly what happens.</h2></div>
+        <p class="pilot-section-process">
+          <span>Understand.</span>
+          <span>Configure.</span>
+          <span>Deploy.</span>
+          <span>Measure.</span>
+        </p>
+      </div>
+      <PilotTimeline />
+      <nav class="pilot-context-links" aria-label="Pilot supporting pages"><a href="/see-quid-in-action">See the Quid admissions dashboard</a><a href="/human-handoffs">Review Quid’s human handoff rules</a><a href="/meet-quid">Request a Quid walkthrough</a></nav>
+    </div>
+  </section>
+
+  <section class="section section-deep">
+    <div class="shell split split-wide pilot-report-layout">
+      <div data-reveal>
+        <p class="eyebrow">What you receive at the end</p>
+        <h2>At the end, you get a clear answer.</h2>
+        <p class="lede">You receive a concise report showing:</p>
+        <ul class="pilot-report-list">
+          {pilotOffer.endReport.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+      <aside class="pilot-decision-card" data-reveal>
+        <Mascot pose="summary" class="pilot-decision-mascot" alt="Quid presenting the end-of-pilot findings" width={180} />
+        <div class="pilot-decision-content">
+          <p class="eyebrow">Choose to continue</p>
+          <h3>Managed Quid operations start from:</h3>
+          <strong class="pilot-ongoing-price">{pilotOffer.ongoingPriceLabel}</strong>
+          <p class="pilot-ongoing-note">{pilotOffer.ongoingPricingNote}</p>
+          <ul class="pilot-ongoing-list">{pilotOffer.ongoingIncludes.map((item) => <li>{item}</li>)}</ul>
+          <p class="pilot-foundation-line">{pilotOffer.continuationFoundation}</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section-sage">
+    <div class="shell pilot-boundaries-grid">
+      <article class="pilot-boundary-card" data-reveal>
+        <p class="eyebrow">What we need from your team</p>
+        <h2>What we need from you.</h2>
+        <ul class="pilot-simple-list">{pilotOffer.clientNeeds.map((item) => <li>{item}</li>)}</ul>
+        <p class="pilot-card-note">Your team does not need to rebuild its admissions process.</p>
+      </article>
+      <article class="pilot-boundary-card pilot-boundary-muted" data-reveal>
+        <p class="eyebrow">What the pilot does not include</p>
+        <h2>What we leave out at first.</h2>
+        <p>The first pilot stays focused so it is manageable, measurable, and safe.</p>
+        <ul class="pilot-simple-list pilot-simple-list-excluded">{pilotOffer.fullExcludes.map((item) => <li>{item}</li>)}</ul>
+        <p class="pilot-card-note">Those can be discussed later only if the first workflow proves useful.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="narrow">
+      <p class="eyebrow">Pilot questions</p>
+      <h2>Clear answers before you apply.</h2>
+      <div class="faq-list">{pilotFaqs.map(([question, answer]) => <details><summary>{question}</summary><p>{answer}</p></details>)}</div>
+    </div>
+  </section>
+
+  <section class="section section-sand" id="apply">
+    <div class="shell pilot-application-layout">
+      <div class="pilot-application-copy" data-reveal>
+        <p class="eyebrow">Pilot application</p>
+        <h2>Apply for the 30-Day Pilot.</h2>
+        <p class="lede">Tell us about your admissions process—not a resident. We will review fit for one community, one inquiry source, and one tour calendar.</p>
+        <div class="pilot-application-price">
+          <span>30-Day Admissions Pilot</span>
+          <strong>{pilotOffer.priceWithBilling}</strong>
+          <p>A focused 30-day implementation for one community, one inquiry source, and one tour calendar.</p>
+          <p>{pilotOffer.applicationContinuation}</p>
+        </div>
+        <div class="pilot-application-purpose">
+          <strong>What this application is for</strong>
+          <p>We use your answers to understand your current inquiry path, tour scheduling process, tools, and follow-up gaps.</p>
+        </div>
+        <p class="pilot-application-safety"><strong>Safety note:</strong> Do not send resident names, medical details, diagnoses, medications, or other sensitive information.</p>
+        <Mascot pose="summary" class="pilot-application-mascot" alt="Quid reviewing a concise pilot plan" width={230} />
+      </div>
+      <PilotApplicationForm />
+    </div>
+  </section>
+</BaseLayout>

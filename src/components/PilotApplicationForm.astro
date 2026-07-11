@@ -1,0 +1,155 @@
+---
+import { pricing } from '../data/pricing';
+---
+
+<form class="pilot-application-form" action="https://formspree.io/f/mnjkzyak" method="POST" data-pilot-application-form>
+  <header class="pilot-application-form-head">
+    <p class="eyebrow">Pilot application</p>
+    <h3>Tell us how your admissions process works.</h3>
+    <p>Required fields are marked with <span aria-hidden="true">*</span><span class="visually-hidden">an asterisk</span>.</p>
+  </header>
+
+  <div class="pilot-application-grid">
+    <label>
+      <span>First name <b aria-hidden="true">*</b></span>
+      <input type="text" name="first_name" autocomplete="given-name" required />
+    </label>
+
+    <label>
+      <span>Last name <b aria-hidden="true">*</b></span>
+      <input type="text" name="last_name" autocomplete="family-name" required />
+    </label>
+
+    <label>
+      <span>Work email <b aria-hidden="true">*</b></span>
+      <input type="email" name="email" autocomplete="email" required />
+    </label>
+
+    <label>
+      <span>Job title</span>
+      <input type="text" name="job_title" autocomplete="organization-title" />
+    </label>
+
+    <label>
+      <span>Community name <b aria-hidden="true">*</b></span>
+      <input type="text" name="community_name" autocomplete="organization" required />
+    </label>
+
+    <label>
+      <span>Website</span>
+      <input type="url" name="website" autocomplete="url" inputmode="url" />
+    </label>
+
+    <label>
+      <span>Number of locations</span>
+      <input type="number" name="number_of_locations" min="1" inputmode="numeric" />
+    </label>
+
+    <label>
+      <span>Community type</span>
+      <select name="community_type">
+        <option value="">Select one</option>
+        <option>Assisted Living</option>
+        <option>Memory Care</option>
+        <option>Independent Living</option>
+        <option>Skilled Nursing</option>
+        <option>Other</option>
+      </select>
+    </label>
+
+    <label>
+      <span>Approximate monthly website inquiries</span>
+      <select name="monthly_inquiries">
+        <option value="">Select a range</option>
+        <option>Under 10</option>
+        <option>10–25</option>
+        <option>26–50</option>
+        <option>51–100</option>
+        <option>100+</option>
+      </select>
+    </label>
+
+    <label>
+      <span>Preferred demo time</span>
+      <input type="text" name="preferred_demo_time" />
+    </label>
+
+    <label class="pilot-form-wide">
+      <span>Current scheduling tool</span>
+      <input type="text" name="scheduling_tool" placeholder="Google Calendar, Outlook, Calendly, CRM, or manual scheduling" />
+    </label>
+
+    <label class="pilot-form-wide">
+      <span>Current CRM or lead system</span>
+      <input type="text" name="crm_or_lead_system" placeholder="WelcomeHome, Aline, Sherpa, spreadsheet, inbox, or other" />
+    </label>
+
+    <div class="pilot-form-safety pilot-form-wide" role="note">
+      <strong>Admissions process only</strong>
+      <p>Please describe your admissions process only. Do not include resident names, medical details, diagnoses, medications, payment information, or other sensitive information.</p>
+    </div>
+
+    <label class="pilot-form-wide">
+      <span>Biggest admissions follow-up problem <b aria-hidden="true">*</b></span>
+      <textarea name="biggest_follow_up_problem" required placeholder="Example: inquiries wait too long, tours are hard to schedule, follow-up is inconsistent, or staff does not know what is stuck."></textarea>
+    </label>
+  </div>
+
+  <input type="hidden" name="form_type" value="30-Day Quid Admissions Pilot Application" />
+  <input type="hidden" name="pilot_price" value={pricing.pilot.displayWithBilling} />
+  <input type="hidden" name="continuation_price" value={pricing.ongoing.afterPilotDisplay} />
+  <input type="hidden" name="source_page" value="/pilot" />
+  <input type="hidden" name="_subject" value="New Quid Pilot Application" />
+  <div class="pilot-form-honeypot" aria-hidden="true">
+    <label for="pilot-gotcha">Leave this field empty</label>
+    <input id="pilot-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+  </div>
+
+  <button class="button pilot-application-submit" type="submit">Apply for the Pilot</button>
+  <p class="pilot-application-helper">We will review your application and follow up if the pilot looks like a fit.</p>
+  <p class="pilot-application-status" aria-live="polite" data-pilot-application-status></p>
+</form>
+
+<script>
+  document.querySelectorAll<HTMLFormElement>('[data-pilot-application-form]').forEach((form) => {
+    form.addEventListener('submit', async (event) => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        form.reportValidity();
+        return;
+      }
+
+      event.preventDefault();
+      const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+      const status = form.querySelector<HTMLElement>('[data-pilot-application-status]');
+      if (!button || !status) return;
+
+      const originalLabel = button.textContent || 'Apply for the Pilot';
+      button.disabled = true;
+      button.setAttribute('aria-busy', 'true');
+      button.textContent = 'Sending…';
+      status.textContent = '';
+      status.removeAttribute('data-state');
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        if (!response.ok) throw new Error('Submission failed');
+
+        form.reset();
+        status.dataset.state = 'success';
+        status.textContent = 'Application received. We’ll review your pilot fit and follow up soon.';
+      } catch {
+        status.dataset.state = 'error';
+        status.textContent = 'Something went wrong. Please try again or contact us directly.';
+      } finally {
+        button.disabled = false;
+        button.removeAttribute('aria-busy');
+        button.textContent = originalLabel;
+      }
+    });
+  });
+</script>
