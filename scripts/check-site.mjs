@@ -58,6 +58,8 @@ const requiredPages = [
   'human-handoffs/index.html',
   'pilot/index.html',
   'meet-quid/index.html',
+  'assisted-living-admissions-automation/index.html',
+  'senior-living-inquiry-follow-up-automation/index.html',
   'resources/index.html',
   'resources/senior-living-admissions-automation/index.html',
   'resources/senior-living-inquiry-response-time/index.html',

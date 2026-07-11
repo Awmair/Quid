@@ -31,6 +31,8 @@ The 30-day pilot is $1,000 one-time. It is a paid implementation engagement, not
 - [30-Day Pilot](https://get-quid.site/pilot): implementation scope, weekly plan, pricing, and application
 - [Meet Quid](https://get-quid.site/meet-quid): walkthrough request
 - [Resources](https://get-quid.site/resources): practical senior living admissions guides
+- [Assisted Living Admissions Automation](https://get-quid.site/assisted-living-admissions-automation): routine inquiry, tour, reminder, and staff-handoff workflow for assisted living communities
+- [Senior Living Inquiry Follow-Up Automation](https://get-quid.site/senior-living-inquiry-follow-up-automation): controlled website inquiry acknowledgement, tour coordination, approved follow-up, and stalled-inquiry visibility
 
 ## Practical guides
 

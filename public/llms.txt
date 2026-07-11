@@ -11,6 +11,8 @@
 - 30-Day Pilot: https://get-quid.site/pilot
 - Meet Quid: https://get-quid.site/meet-quid
 - Resources: https://get-quid.site/resources
+- Assisted Living Admissions Automation: https://get-quid.site/assisted-living-admissions-automation
+- Senior Living Inquiry Follow-Up Automation: https://get-quid.site/senior-living-inquiry-follow-up-automation
 
 ## Product Summary
 

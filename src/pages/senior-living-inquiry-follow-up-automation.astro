@@ -1,0 +1,213 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBlock from '../components/AnswerBlock.astro';
+import PhotoPanel from '../components/PhotoPanel.astro';
+import VisualFlow from '../components/VisualFlow.astro';
+import QuickScan from '../components/QuickScan.astro';
+import PilotPricingCard from '../components/PilotPricingCard.astro';
+import FaqSection from '../components/FaqSection.astro';
+import Mascot from '../components/Mascot.astro';
+import { pilotOffer } from '../data/pilot';
+import { pricing } from '../data/pricing';
+import { site } from '../data/site';
+import inquiryFollowUp from '../assets/lifestyle/senior-living-inquiry-follow-up.png';
+
+const title = 'Senior Living Inquiry Follow-Up Automation | Quid';
+const description = 'Automate senior living website inquiry responses, tour coordination and approved follow-up while keeping staff informed and in control.';
+const pageUrl = `${site.domain}/senior-living-inquiry-follow-up-automation`;
+
+const stallPoints = [
+  { title: 'A new inquiry waits in an inbox', text: 'The family has reached out, but the day is already full.' },
+  { title: 'No one owns the next step', text: 'Several people can see the inquiry, yet responsibility remains unclear.' },
+  { title: 'Tour scheduling becomes email tag', text: 'Availability and family preferences move back and forth.' },
+  { title: 'A confirmation has no reminder', text: 'The tour is booked, but the next routine touch is not scheduled.' },
+  { title: 'Post-tour follow-up is delayed', text: 'A thoughtful next step depends on someone remembering later.' },
+  { title: 'Quiet prospects disappear', text: 'No reply can look like no opportunity when the inquiry simply needs visibility.' },
+  { title: 'Managers cannot see what is overdue', text: 'The current state is scattered across forms, email, calendars, and notes.' },
+];
+
+const familySequence = [
+  ['01', 'Warm acknowledgement', 'A clear note confirms that the community received the inquiry.'],
+  ['02', 'Tour-booking option', 'Available visit times create an easy, useful next step.'],
+  ['03', 'Confirmation', 'The selected time is clear for the family and admissions team.'],
+  ['04', 'Helpful reminder', 'Approved timing keeps the upcoming visit visible without pressure.'],
+  ['05', 'Post-tour message', 'A thoughtful follow-up invites the family to continue the conversation.'],
+  ['06', 'Easy human conversation', 'A reply or sensitive question gives the family a direct path to staff.'],
+];
+
+const staffView = [
+  ['New inquiries', 'Who reached out and whether an acknowledgement was sent.'],
+  ['Booked tours', 'Which visits are confirmed and what is coming next.'],
+  ['Replies received', 'Where a family response has paused the routine sequence.'],
+  ['Follow-up due', 'Which approved action is scheduled or overdue.'],
+  ['Stalled inquiries', 'Which quiet conversations should return to view.'],
+  ['Human review required', 'Where a clinical, eligibility, medication, or sensitive topic needs staff.'],
+  ['Assigned staff tasks', 'Who owns the next human action and whether it is complete.'],
+];
+
+const faqs = [
+  ['What is senior living inquiry follow-up automation?', 'It is a controlled workflow that acknowledges new inquiries, coordinates tours, sends approved follow-up, and identifies stalled leads without requiring staff to monitor an inbox constantly.'],
+  ['How quickly should a senior living inquiry be acknowledged?', 'Each community should establish its own baseline and escalation rules. Quid separates a prompt acknowledgement that confirms receipt from the thoughtful staff response that may require context and judgment.'],
+  ['Does Quid send fully autonomous answers?', 'No. Quid uses approved messages and workflow boundaries for routine coordination. Replies, exceptions, sensitive topics, and anything outside those boundaries are surfaced for staff.'],
+  ['What happens when a family asks a clinical question?', 'Routine automation pauses. Quid can send an approved acknowledgement, flag the reason, assign the item, and keep it visible while designated staff responds.'],
+  ['Is Quid a CRM replacement?', 'No. A CRM stores and organizes prospect records. Quid keeps one approved inquiry-to-tour workflow moving around the systems the community already uses.'],
+  ['Can families book tours through the workflow?', 'Yes. Quid can offer only the tour availability approved by the community, confirm the selected time, and send approved reminders.'],
+  ['What happens when an inquiry stops responding?', 'The inquiry remains visible as stalled and can enter a calm, approved follow-up sequence. Staff can pause, change, or take over the conversation.'],
+  ['How much does the Quid pilot cost?', `The 30-day pilot is ${pricing.pilot.displayWithBilling} for one community, one inquiry source, and one tour calendar. Continued service is optional at ${pricing.ongoing.monthlyDisplay}.`],
+] as const;
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Senior Living Inquiry Follow-Up Automation',
+    serviceType: 'AI-assisted website inquiry acknowledgement, tour coordination, and approved follow-up workflow',
+    description,
+    url: pageUrl,
+    provider: { '@type': 'Organization', name: 'Quid', url: site.domain },
+    audience: { '@type': 'Audience', audienceType: 'Senior living operators, executive directors, community administrators, admissions directors, and sales directors' },
+    offers: [
+      { '@type': 'Offer', name: pilotOffer.name, price: String(pilotOffer.price), priceCurrency: 'USD', url: `${site.domain}/pilot`, description: `${pilotOffer.scope} ${pilotOffer.positioning}` },
+      { '@type': 'Offer', name: 'Optional managed Quid continuation', price: String(pricing.ongoing.amount), priceCurrency: 'USD', description: `${pricing.ongoing.monthlyDisplay} if the community chooses to continue after the pilot.` },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.domain },
+      { '@type': 'ListItem', position: 2, name: 'Solutions' },
+      { '@type': 'ListItem', position: 3, name: 'Inquiry Follow-Up Automation', item: pageUrl },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(([question, answer]) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })),
+  },
+];
+---
+
+<BaseLayout title={title} description={description} schema={schema}>
+  <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Solutions' }, { label: 'Inquiry Follow-Up Automation' }]} />
+
+  <section class="page-hero solution-page-hero">
+    <div class="shell solution-hero-grid">
+      <div>
+        <p class="eyebrow">Senior living inquiry follow-up automation</p>
+        <h1>Follow up while the family is still looking.</h1>
+        <p class="lede">Quid responds to new website inquiries, offers an easy next step, keeps approved follow-up moving, and alerts staff when a person should take over.</p>
+        <AnswerBlock label="What is senior living inquiry follow-up automation?" answer="It is a controlled workflow that acknowledges new inquiries, coordinates tours, sends approved follow-up and identifies stalled leads without requiring staff to monitor an inbox constantly." variant="hero" />
+        <div class="button-row">
+          <a class="button" href="/see-quid-in-action">See Quid in Action</a>
+          <a class="button button-secondary" href="/meet-quid">Meet Quid</a>
+        </div>
+        <p class="solution-microcopy">More tours. Less chasing. Staff stays in control.</p>
+      </div>
+      <PhotoPanel image={inquiryFollowUp} alt="A senior living admissions professional reviewing inquiries on a laptop while an adult daughter receives a response on her phone in the same warm community lounge" priority class="solution-hero-photo" />
+    </div>
+  </section>
+
+  <section class="section section-deep">
+    <div class="shell">
+      <div class="solution-section-intro">
+        <div><p class="eyebrow">The full inquiry lifecycle</p><h2>One clear path from website inquiry to the right next step.</h2></div>
+        <p class="lede">Senior living website inquiry automation moves routine coordination forward and pauses whenever clinical judgment, eligibility, medication, care assessment, or a sensitive discussion is involved.</p>
+      </div>
+      <VisualFlow steps={[
+        { title: 'Website inquiry', text: 'Existing form' },
+        { title: 'Acknowledgement', text: 'Approved language' },
+        { title: 'Tour options', text: 'Staff-controlled times' },
+        { title: 'Confirm and remind', text: 'Clear visit details' },
+        { title: 'Post-tour follow-up', text: 'Reviewed sequence' },
+        { title: 'Handoff or continue', text: 'People take over when needed' },
+      ]} label="Senior living website inquiry follow-up lifecycle" />
+      <p class="solution-boundary-note">A family reply or sensitive question stops the routine sequence from continuing blindly.</p>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="shell">
+      <div class="solution-section-intro">
+        <div><p class="eyebrow">Where inquiries usually stall</p><h2>Small coordination gaps become invisible work.</h2></div>
+        <p class="lede">Most gaps are not caused by a team that does not care. They appear when the next routine action has no clear owner, reminder, or shared view.</p>
+      </div>
+      <QuickScan items={stallPoints} label="Common senior living inquiry follow-up gaps" />
+    </div>
+  </section>
+
+  <section class="section section-sand">
+    <div class="shell">
+      <div class="solution-section-intro">
+        <div><p class="eyebrow">What the family experiences</p><h2>Helpful next steps without aggressive nurture.</h2></div>
+        <p class="lede">Senior living email follow-up stays warm, clear, and easy to leave. Families can reply or ask for a person whenever the conversation needs one.</p>
+      </div>
+      <ol class="family-sequence" data-reveal>
+        {familySequence.map(([number, heading, text]) => <li><span>{number}</span><div><strong>{heading}</strong><p>{text}</p></div></li>)}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="shell staff-view-layout">
+      <div class="staff-view-copy">
+        <p class="eyebrow">What staff sees</p>
+        <h2>A quick view of movement, stalls, and human work.</h2>
+        <p class="lede">Admissions staff and leaders can scan the workflow without opening forms, inboxes, calendars, and notes one by one.</p>
+        <a class="button button-secondary" href="/see-quid-in-action">Explore the full dashboard</a>
+        <Mascot pose="summary" class="staff-view-mascot" alt="Quid presenting a concise admissions activity summary" width={180} />
+      </div>
+      <div class="staff-status-grid" role="list" aria-label="Admissions activity visible to staff" data-reveal>
+        {staffView.map(([heading, text], index) => <article role="listitem"><span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><h3>{heading}</h3><p>{text}</p></article>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-sage">
+    <div class="shell">
+      <div class="solution-section-intro">
+        <div><p class="eyebrow">Quid versus CRM replacement</p><h2>A focused workflow, not a platform migration.</h2></div>
+        <p class="lede">Quid provides focused senior living lead follow-up automation around the systems the community already uses—not a broad lead-nurturing platform migration.</p>
+      </div>
+      <div class="crm-comparison" data-reveal>
+        <article><span class="data-label">CRM</span><h3>Stores and organizes prospect records.</h3><p>A CRM is the broader record system a community may already use for contacts, stages, notes, and reporting.</p></article>
+        <article class="crm-comparison-quid"><span class="data-label">Quid</span><h3>Keeps the approved next step moving.</h3><p>Quid connects the website inquiry, approved email follow-up, tour calendar, reminders, visibility, and human handoffs in one focused implementation.</p></article>
+      </div>
+      <AnswerBlock label="Plain-English distinction" answer="A CRM organizes records. Quid helps routine inquiry acknowledgement, tour coordination, and approved follow-up happen around the systems your community already uses." />
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="shell pilot-page-offer solution-pilot-layout">
+      <div class="pilot-page-copy">
+        <p class="eyebrow">Start with one inquiry source</p>
+        <h2>Prove the follow-up workflow before expanding anything.</h2>
+        <p class="lede">Over four controlled weeks, we review the current process, approve the messages and handoffs, deploy one workflow, and show what happened.</p>
+        <p class="pilot-positioning pilot-positioning-light">{pilotOffer.positioning}</p>
+        <nav class="solution-inline-links" aria-label="Pilot and walkthrough links"><a href="/pilot">Review the 30-Day Pilot</a><a href="/meet-quid">Request a walkthrough</a></nav>
+      </div>
+      <PilotPricingCard />
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} eyebrow="Inquiry follow-up questions" heading="Practical answers for admissions leaders." />
+
+  <section class="section section-sand">
+    <div class="shell">
+      <div class="solution-section-intro">
+        <div><p class="eyebrow">Related resources</p><h2>Build a clearer follow-up process.</h2></div>
+        <p class="lede">Use the guides to set response expectations, strengthen email follow-up, coordinate tours, and make overdue work visible.</p>
+      </div>
+      <nav class="solution-link-grid" aria-label="Related senior living inquiry follow-up resources">
+        <a href="/resources/senior-living-inquiry-response-time"><strong>Inquiry response time</strong><span>Set a baseline for acknowledgement and staff response.</span></a>
+        <a href="/resources/senior-living-follow-up-templates"><strong>Follow-up email templates</strong><span>Use warm, practical messages across the inquiry lifecycle.</span></a>
+        <a href="/resources/senior-living-tour-follow-up"><strong>Tour follow-up framework</strong><span>Coordinate confirmations, reminders, and post-tour steps.</span></a>
+        <a href="/resources/senior-living-daily-admissions-summary"><strong>Daily admissions summary</strong><span>Make movement and overdue work easy to scan.</span></a>
+        <a href="/human-handoffs"><strong>Human handoff rules</strong><span>Keep judgment, eligibility, medication, and care questions with staff.</span></a>
+        <a href="/pilot"><strong>30-Day Admissions Pilot</strong><span>Test one community, one source, and one tour calendar.</span></a>
+        <a href="/assisted-living-admissions-automation"><strong>Assisted living admissions automation</strong><span>See the workflow through an assisted living operator’s lens.</span></a>
+      </nav>
+    </div>
+  </section>
+</BaseLayout>

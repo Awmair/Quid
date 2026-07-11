@@ -1,0 +1,223 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBlock from '../components/AnswerBlock.astro';
+import PhotoPanel from '../components/PhotoPanel.astro';
+import VisualFlow from '../components/VisualFlow.astro';
+import QuickScan from '../components/QuickScan.astro';
+import HumanHandoffSpotlight from '../components/HumanHandoffSpotlight.astro';
+import PilotPricingCard from '../components/PilotPricingCard.astro';
+import FaqSection from '../components/FaqSection.astro';
+import { pilotOffer } from '../data/pilot';
+import { pricing } from '../data/pricing';
+import { site } from '../data/site';
+import assistedLivingAdmissions from '../assets/lifestyle/assisted-living-admissions-conversation.png';
+
+const title = 'Assisted Living Admissions Automation | Quid';
+const description = 'Quid automates routine assisted living inquiry follow-up, tour coordination, reminders and staff handoffs without replacing your admissions team.';
+const pageUrl = `${site.domain}/assisted-living-admissions-automation`;
+
+const automatedWork = [
+  ['↗', 'Website inquiry acknowledgement', 'A prompt, approved response confirms that the family has been heard.'],
+  ['⌁', 'Tour scheduling', 'Families receive only the tour times the community has made available.'],
+  ['✓', 'Tour confirmations', 'A chosen visit is confirmed clearly for the family and the team.'],
+  ['◷', 'Tour reminders', 'Approved reminders help keep the visit visible before it happens.'],
+  ['→', 'Post-tour follow-up', 'A reviewed sequence keeps the next step from depending on memory.'],
+  ['↺', 'Stalled-inquiry follow-up', 'Quiet inquiries return to view through calm, approved outreach.'],
+  ['!', 'Staff task routing', 'Replies and exceptions are assigned to the right person instead of staying buried.'],
+  ['▤', 'Daily admissions summary', 'Leaders see new activity, tours, overdue work, and handoffs in one scan.'],
+];
+
+const bestFor = [
+  { title: 'Single-location communities', text: 'Start with one assisted living community and one controlled workflow.' },
+  { title: 'Independent operators', text: 'Add consistent coordination without committing to a large platform migration.' },
+  { title: 'Small admissions teams', text: 'Reduce repetitive inbox and calendar work while keeping staff in control.' },
+  { title: 'Teams losing track of inquiries', text: 'Keep new, active, stalled, and overdue items visible.' },
+  { title: 'Inbox-and-calendar workflows', text: 'Work around the tools staff already use for inquiry and tour coordination.' },
+  { title: 'Communities ready to test narrowly', text: 'Measure one workflow before deciding whether to continue.' },
+];
+
+const faqs = [
+  ['What is assisted living admissions automation?', 'Assisted living admissions automation uses approved workflows to handle routine inquiry acknowledgement, tour coordination, reminders, and follow-up while leaving clinical judgment, eligibility, and sensitive family conversations with staff.'],
+  ['Is Quid an assisted living CRM?', 'No. Quid is a focused admissions concierge that keeps one approved inquiry-to-tour workflow moving around the systems your community already uses. It does not replace your CRM.'],
+  ['Does Quid replace our admissions staff?', 'No. Quid reduces repetitive coordination and keeps routine follow-up visible. Staff remain responsible for relationships, judgment, exceptions, and admissions decisions.'],
+  ['Can Quid answer clinical questions?', 'No. Medical, medication, eligibility, clinical, and care-assessment questions pause the routine workflow and are routed to designated staff.'],
+  ['Can Quid work with our existing inquiry form?', 'The pilot begins with one existing website inquiry source. We review how that form reaches your team and configure the controlled workflow around the agreed process.'],
+  ['What does the 30-day pilot include?', 'The four-week pilot reviews the current workflow, configures approved messages and handoff rules, deploys one controlled inquiry-to-tour workflow, monitors it, and documents what happened.'],
+  ['How much does Quid cost?', `The 30-day pilot is ${pricing.pilot.displayWithBilling}. If you choose to continue, managed Quid service is ${pricing.ongoing.monthlyDisplay}.`],
+  ['How quickly can one community begin?', 'The controlled pilot runs over four weeks. Timing to begin depends on workflow review, access to the agreed inquiry source and tour calendar, and approval of messages and handoff rules.'],
+] as const;
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Assisted Living Admissions Automation',
+    serviceType: 'AI-assisted admissions inquiry and tour follow-up workflow',
+    description,
+    url: pageUrl,
+    provider: { '@type': 'Organization', name: 'Quid', url: site.domain },
+    audience: { '@type': 'Audience', audienceType: 'Assisted living operators, community administrators, admissions directors, and sales directors' },
+    offers: [
+      { '@type': 'Offer', name: pilotOffer.name, price: String(pilotOffer.price), priceCurrency: 'USD', url: `${site.domain}/pilot`, description: `${pilotOffer.scope} ${pilotOffer.positioning}` },
+      { '@type': 'Offer', name: 'Optional managed Quid continuation', price: String(pricing.ongoing.amount), priceCurrency: 'USD', description: `${pricing.ongoing.monthlyDisplay} if the community chooses to continue after the pilot.` },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.domain },
+      { '@type': 'ListItem', position: 2, name: 'Solutions' },
+      { '@type': 'ListItem', position: 3, name: 'Assisted Living Admissions Automation', item: pageUrl },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(([question, answer]) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })),
+  },
+];
+---
+
+<BaseLayout title={title} description={description} schema={schema}>
+  <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Solutions' }, { label: 'Assisted Living Admissions Automation' }]} />
+
+  <section class="page-hero solution-page-hero">
+    <div class="shell solution-hero-grid">
+      <div>
+        <p class="eyebrow">Assisted living admissions automation</p>
+        <h1>Keep every assisted living inquiry moving.</h1>
+        <p class="lede">Quid acknowledges website inquiries, helps families book tours, keeps approved follow-up on schedule, and routes sensitive questions to your team.</p>
+        <AnswerBlock label="What is assisted living admissions automation?" answer="Assisted living admissions automation uses approved workflows to handle routine inquiry acknowledgement, tour coordination, reminders and follow-up while leaving clinical judgment, eligibility and sensitive family conversations with staff." variant="hero" />
+        <div class="button-row">
+          <a class="button" href="/meet-quid">Meet Quid</a>
+          <a class="button button-secondary" href="/pilot">Explore the 30-Day Pilot</a>
+        </div>
+        <p class="solution-microcopy">One community. One inquiry source. One tour calendar.</p>
+      </div>
+      <PhotoPanel image={assistedLivingAdmissions} alt="An assisted living admissions professional speaking with an older prospective resident and her adult daughter in a warm community lounge" priority class="solution-hero-photo" />
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="shell">
+      <div class="solution-section-intro">
+        <div><p class="eyebrow">The operational problem</p><h2>Admissions work does not pause when an inquiry arrives.</h2></div>
+        <p class="lede">Administrators and admissions staff are often leading tours, helping residents, taking calls, joining meetings, and answering family questions. The difference is whether the next routine step waits for an open moment.</p>
+      </div>
+      <div class="solution-comparison" data-reveal>
+        <article class="solution-path solution-path-manual">
+          <header><span>Without Quid</span><strong>Follow-up depends on the next free moment</strong></header>
+          <ol>
+            <li><span>01</span><p><strong>Inquiry enters a shared inbox.</strong><small>The request is available, but ownership may be unclear.</small></p></li>
+            <li><span>02</span><p><strong>Staff is occupied.</strong><small>Tours, residents, calls, and meetings remain the priority.</small></p></li>
+            <li><span>03</span><p><strong>Response waits.</strong><small>The family has no clear acknowledgement or next step yet.</small></p></li>
+            <li><span>04</span><p><strong>Follow-up depends on memory.</strong><small>A busy day can push the next touch out of view.</small></p></li>
+            <li><span>05</span><p><strong>The family may keep looking.</strong><small>Another community may be easier to reach in that moment.</small></p></li>
+          </ol>
+        </article>
+        <article class="solution-path solution-path-quid">
+          <header><span>With Quid</span><strong>Approved routine steps keep moving</strong></header>
+          <ol>
+            <li><span>01</span><p><strong>Inquiry is acknowledged.</strong><small>The family knows the community received their request.</small></p></li>
+            <li><span>02</span><p><strong>Approved tour times are offered.</strong><small>Only availability controlled by the team is shown.</small></p></li>
+            <li><span>03</span><p><strong>The visit is confirmed.</strong><small>The family and staff have one clear time.</small></p></li>
+            <li><span>04</span><p><strong>Follow-up is scheduled.</strong><small>Reviewed reminders and next steps do not rely on memory.</small></p></li>
+            <li><span>05</span><p><strong>Staff sees what needs attention.</strong><small>Replies, exceptions, and sensitive questions come back to people.</small></p></li>
+          </ol>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-sand">
+    <div class="shell">
+      <div class="solution-section-intro">
+        <div><p class="eyebrow">What Quid automates</p><h2>Routine coordination, from inquiry to follow-up.</h2></div>
+        <p class="lede">This focused assisted living inquiry automation follows language, timing, availability, and handoff rules approved by the community.</p>
+      </div>
+      <div class="solution-feature-grid">
+        {automatedWork.map(([icon, heading, text], index) => <article class="solution-feature-card" style={`--feature-index:${index}`} data-reveal><span aria-hidden="true">{icon}</span><h3>{heading}</h3><p>{text}</p></article>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="shell split solution-handoff-layout">
+      <div>
+        <p class="eyebrow">What remains human</p>
+        <h2>Keep judgment and sensitive conversations with staff.</h2>
+        <p class="lede">Quid can acknowledge, flag, assign, and record a handoff. It does not make the decision or continue a routine sequence through a sensitive question.</p>
+        <ul class="x-list solution-human-list">
+          <li>Care-level recommendations</li>
+          <li>Clinical assessments</li>
+          <li>Medication questions</li>
+          <li>Eligibility decisions</li>
+          <li>Pricing exceptions or promises</li>
+          <li>Sensitive family conversations</li>
+        </ul>
+        <a class="button button-secondary" href="/human-handoffs">Review Quid’s handoff rules</a>
+      </div>
+      <HumanHandoffSpotlight />
+    </div>
+  </section>
+
+  <section class="section section-deep">
+    <div class="shell">
+      <div class="solution-section-intro">
+        <div><p class="eyebrow">Fits around the current workflow</p><h2>Start with the process your team already uses.</h2></div>
+        <p class="lede">Quid begins with the community’s current website inquiry form, approved messages, email process, and tour calendar. Assisted living tour scheduling stays connected to staff-controlled availability, without requiring a CRM replacement.</p>
+      </div>
+      <VisualFlow steps={[
+        { title: 'Existing website form', text: 'One inquiry source' },
+        { title: 'Approved messages', text: 'Your reviewed voice' },
+        { title: 'Current email process', text: 'Routine follow-up rules' },
+        { title: 'Tour calendar', text: 'Staff-controlled times' },
+        { title: 'Clear daily view', text: 'Activity and exceptions' },
+      ]} label="How Quid fits the current assisted living admissions workflow" />
+      <p class="solution-boundary-note">Quid supports the workflow around the systems you already use. It is not a CRM replacement, clinical system, or autonomous decision-maker.</p>
+    </div>
+  </section>
+
+  <section class="section section-sage">
+    <div class="shell">
+      <p class="eyebrow">Who this is best for</p>
+      <h2>A focused fit for lean admissions operations.</h2>
+      <p class="lede">For teams evaluating practical AI for assisted living admissions, the best starting point is a narrow workflow with clear staff ownership.</p>
+      <QuickScan items={bestFor} label="Communities that may be a good fit for Quid" />
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="shell pilot-page-offer solution-pilot-layout">
+      <div class="pilot-page-copy">
+        <p class="eyebrow">Start with one controlled workflow</p>
+        <h2>Test assisted living admissions automation without a broad rollout.</h2>
+        <p class="lede">The pilot gives one community a practical way to review, configure, deploy, and measure the inquiry-to-tour workflow over four weeks.</p>
+        <p class="pilot-positioning pilot-positioning-light">{pilotOffer.positioning}</p>
+        <nav class="solution-inline-links" aria-label="Pilot and walkthrough links"><a href="/pilot">See the four-week pilot process</a><a href="/meet-quid">Request a walkthrough</a></nav>
+      </div>
+      <PilotPricingCard />
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} eyebrow="Assisted living automation questions" heading="Clear answers before you change the workflow." />
+
+  <section class="section section-sand">
+    <div class="shell">
+      <div class="solution-section-intro">
+        <div><p class="eyebrow">Related resources</p><h2>Go deeper on the admissions workflow.</h2></div>
+        <p class="lede">Practical guides and product views for response timing, tours, responsible handoffs, and day-to-day visibility.</p>
+      </div>
+      <nav class="solution-link-grid" aria-label="Related assisted living admissions resources">
+        <a href="/resources/senior-living-admissions-automation"><strong>Admissions automation guide</strong><span>Plan the workflow before automating it.</span></a>
+        <a href="/resources/senior-living-inquiry-response-time"><strong>Inquiry response time</strong><span>Separate immediate acknowledgement from thoughtful staff response.</span></a>
+        <a href="/resources/senior-living-tour-follow-up"><strong>Tour follow-up framework</strong><span>Keep confirmations, reminders, and post-tour steps clear.</span></a>
+        <a href="/human-handoffs"><strong>Human handoff rules</strong><span>See when automation pauses and staff takes over.</span></a>
+        <a href="/see-quid-in-action"><strong>See Quid in Action</strong><span>Explore the admissions dashboard and daily view.</span></a>
+        <a href="/senior-living-inquiry-follow-up-automation"><strong>Inquiry follow-up automation</strong><span>See the complete website-inquiry lifecycle.</span></a>
+      </nav>
+    </div>
+  </section>
+</BaseLayout>

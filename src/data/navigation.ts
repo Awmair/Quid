@@ -8,6 +8,13 @@ export const navigation = [
 
 export const footerGroups = [
   {
+    title: 'Solutions',
+    links: [
+      { label: 'Assisted Living Automation', href: '/assisted-living-admissions-automation' },
+      { label: 'Inquiry Follow-Up', href: '/senior-living-inquiry-follow-up-automation' },
+    ],
+  },
+  {
     title: 'Product',
     links: [
       { label: 'How It Works', href: '/how-it-works' },
