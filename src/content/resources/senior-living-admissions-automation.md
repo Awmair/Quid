@@ -97,6 +97,8 @@ Measure process health rather than promising a sales result:
 
 Quid is designed as a focused senior living CRM add-on or workflow layer, not a full CRM replacement.
 
+If you are actively comparing products, use the [2026 senior living admissions automation software buyer’s guide](/resources/senior-living-admissions-automation-software/) to distinguish complete CRMs, broader AI sales platforms, and focused workflow options.
+
 | Focused admissions automation | Full CRM replacement |
 | --- | --- |
 | Starts with one inquiry source and one calendar | Rebuilds broad lead and sales operations |

@@ -4,7 +4,7 @@ description: "A clear, human-centered framework for senior living tour confirmat
 author: "Quid"
 publishedDate: 2026-07-10
 updatedDate: 2026-07-11
-order: 3
+order: 4
 ---
 
 A practical senior living tour follow-up process starts before the visit. Confirm the time, set expectations, make ownership visible, record the outcome, and use approved messages that stop when a family replies or a staff conversation is needed. The purpose is consistency, not pressure.

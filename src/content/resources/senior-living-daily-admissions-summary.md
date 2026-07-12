@@ -4,7 +4,7 @@ description: "A practical template for a senior living daily admissions summary 
 author: "Quid"
 publishedDate: 2026-07-10
 updatedDate: 2026-07-11
-order: 4
+order: 5
 ---
 
 A senior living daily admissions summary is a short operational report that shows what changed, what is due, and what needs a person. It should help the team begin the morning with exceptions and next actions instead of searching through inboxes, calendars, CRM records, and spreadsheets.

@@ -4,7 +4,7 @@ description: "A practical checklist for routing clinical, medication, eligibilit
 author: "Quid"
 publishedDate: 2026-07-10
 updatedDate: 2026-07-11
-order: 5
+order: 6
 ---
 
 A senior living human handoff checklist defines where routine admissions automation stops and staff ownership begins. It should name the questions automation must not answer, the safe acknowledgement a family receives, the staff owner and backup, and the status used to track the handoff until it is resolved.

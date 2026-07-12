@@ -4,6 +4,7 @@ import tourFollowUp from '../assets/resources/tour-follow-up-guide.png';
 import dailyAdmissionsSummary from '../assets/resources/daily-admissions-summary-guide.png';
 import humanHandoffChecklist from '../assets/resources/human-handoff-checklist-guide.png';
 import followUpTemplates from '../assets/resources/follow-up-templates-guide.png';
+import softwareBuyersGuide from '../assets/resources/senior-living-admissions-software-buyers-guide.png';
 
 export const resourceMedia = {
   'senior-living-admissions-automation': {
@@ -29,5 +30,9 @@ export const resourceMedia = {
   'senior-living-follow-up-templates': {
     image: followUpTemplates,
     alt: 'An admissions professional personalizing an approved family follow-up message',
+  },
+  'senior-living-admissions-automation-software': {
+    image: softwareBuyersGuide,
+    alt: 'A senior living executive director and admissions director comparing software options together',
   },
 } as const;

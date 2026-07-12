@@ -4,7 +4,7 @@ description: "Practical email templates for senior living inquiry acknowledgemen
 author: "Quid"
 publishedDate: 2026-07-10
 updatedDate: 2026-07-11
-order: 6
+order: 7
 ---
 
 Senior living follow-up email templates give admissions teams an approved starting point for repetitive communication. They should make the next step clear, sound like the community, and stop as soon as a family replies or needs a staff member.

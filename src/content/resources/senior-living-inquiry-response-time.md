@@ -4,7 +4,7 @@ description: "Review senior living inquiry response-time benchmarks and build a 
 author: "Quid"
 publishedDate: 2026-07-10
 updatedDate: 2026-07-11
-order: 2
+order: 3
 ---
 
 Senior living inquiry response time is not one timestamp. A useful benchmark separates three moments:
