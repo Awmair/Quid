@@ -1,8 +1,8 @@
 export const navigation = [
   { label: 'How It Works', href: '/how-it-works' },
   { label: 'See Quid in Action', href: '/see-quid-in-action' },
-  { label: 'About', href: '/about' },
   { label: 'Human Handoffs', href: '/human-handoffs' },
+  { label: 'About', href: '/about' },
   { label: 'Resources', href: '/resources' },
   { label: 'Pilot', href: '/pilot' },
 ];
