@@ -4,8 +4,10 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Mascot from '../components/Mascot.astro';
 import AnswerBlock from '../components/AnswerBlock.astro';
 import VisualFlow from '../components/VisualFlow.astro';
+import { Image } from 'astro:assets';
 import { pricing } from '../data/pricing';
 import { site } from '../data/site';
+import founderPortrait from '../assets/founder/umair-q.jpg';
 
 const title = 'About Quid Admissions | Senior Living Admissions Automation';
 const description = 'Meet Quid, the founder-led AI-assisted admissions concierge helping senior living teams improve inquiry follow-up, tour coordination and staff handoffs.';
@@ -87,7 +89,7 @@ const schema = [
   <section class="section section-sand about-section">
     <div class="shell about-founder-card" data-reveal>
       <div><p class="eyebrow">Meet the founder</p><h2><a class="about-founder-name" href="https://www.linkedin.com/in/umair-qudoos/" target="_blank" rel="noopener noreferrer">Umair Q.</a></h2><p>Umair Q. is the founder of Quid. He is building Quid around a focused idea: senior living teams should not need another complicated platform just to make inquiry follow-up more consistent.</p><p>Quid begins with one community, one inquiry source and one tour calendar. The goal is to understand the community’s existing process, automate only the appropriate routine work and keep staff in control.</p><a class="text-link" href="https://www.linkedin.com/in/umair-qudoos/" target="_blank" rel="noopener noreferrer">Connect with Umair Q. on LinkedIn <span aria-hidden="true">↗</span></a></div>
-      <aside><span class="about-founder-mark">UQ</span><p><strong>Quid Admissions</strong><span>Founder-led senior living admissions automation</span></p></aside>
+      <aside><Image class="about-founder-portrait" src={founderPortrait} alt="Portrait of Umair Q., founder of Quid" width={180} widths={[180, 240, 360]} sizes="(max-width: 760px) 124px, 132px" format="webp" loading="lazy" /><p><strong>Quid Admissions</strong><span>Founder-led senior living admissions automation</span></p></aside>
     </div>
   </section>
 
