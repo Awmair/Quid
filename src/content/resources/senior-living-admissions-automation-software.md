@@ -201,6 +201,16 @@ Only Quid’s verified public pricing is shown numerically in this guide. All ot
 
 Use the same scenario in every demonstration so differences are easier to see. For deeper workflow questions, bring the [inquiry response-time guide](/resources/senior-living-inquiry-response-time/) and [tour follow-up framework](/resources/senior-living-tour-follow-up/).
 
+## Compare specific options
+
+Use the [senior living software comparison hub](/resources/senior-living-software-comparisons/) to browse all 15 pairings, or go directly to:
+
+- [Quid vs Aline](/resources/comparisons/quid-vs-aline/)
+- [Quid vs Further](/resources/comparisons/quid-vs-further/)
+- [Quid vs ECP](/resources/comparisons/quid-vs-ecp/)
+- [Quid vs WelcomeHome](/resources/comparisons/quid-vs-welcomehome/)
+- [Quid vs Advantage Anywhere](/resources/comparisons/quid-vs-advantage-anywhere/)
+
 ## Sources and methodology
 
 Quid used official vendor pages as primary sources. Information was reviewed July 12, 2026. Missing public information was labeled rather than guessed. Vendors do not pay for placement. Quid is both the publisher and one of the compared options, and this comparison does not constitute hands-on certification of every product.
@@ -215,4 +225,3 @@ Product pages can change. Buyers should verify final feature, integration, secur
 - **ECP:** [Senior living CRM](https://www.ecp123.com/crm) and [Official information about ECP](https://www.ecp123.com/official-information-about-ecp) — reviewed July 12, 2026.
 - **WelcomeHome:** [WelcomeHome CRM](https://www.welcomehomesoftware.com/) and [Senior living CRM](https://www.welcomehomesoftware.com/senior-living-crm) — reviewed July 12, 2026.
 - **Advantage Anywhere:** [Senior living and care](https://advantageanywhere.com/senior-living-and-care/), [Senior living CRM FAQ](https://advantageanywhere.com/faq-senior-living-crm/), and [Platform overview](https://advantageanywhere.com/) — reviewed July 12, 2026.
-

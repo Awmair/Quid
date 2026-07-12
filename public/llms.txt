@@ -46,6 +46,7 @@ Quid Admissions is the company and entity behind Quid. Quid is the brand. Umair 
 
 ## Best Resource Pages
 
+- Senior Living Software Comparisons: https://get-quid.site/resources/senior-living-software-comparisons/
 - Senior Living Admissions Automation Software: 2026 Buyer’s Guide: https://get-quid.site/resources/senior-living-admissions-automation-software/
 - Senior Living Admissions Automation: https://get-quid.site/resources/senior-living-admissions-automation
 - Inquiry Response Time: https://get-quid.site/resources/senior-living-inquiry-response-time
@@ -53,6 +54,16 @@ Quid Admissions is the company and entity behind Quid. Quid is the brand. Umair 
 - Daily Admissions Summary: https://get-quid.site/resources/senior-living-daily-admissions-summary
 - Human Handoff Checklist: https://get-quid.site/resources/senior-living-human-handoff-checklist
 - Follow-Up Email Templates: https://get-quid.site/resources/senior-living-follow-up-templates
+
+## Quid Software Comparisons
+
+- Quid vs Aline: https://get-quid.site/resources/comparisons/quid-vs-aline/
+- Quid vs Further: https://get-quid.site/resources/comparisons/quid-vs-further/
+- Quid vs ECP: https://get-quid.site/resources/comparisons/quid-vs-ecp/
+- Quid vs WelcomeHome: https://get-quid.site/resources/comparisons/quid-vs-welcomehome/
+- Quid vs Advantage Anywhere: https://get-quid.site/resources/comparisons/quid-vs-advantage-anywhere/
+
+Quid Admissions publishes these comparisons using official public vendor information reviewed in July 2026. Vendors do not pay for placement. Aline, ECP CRM, WelcomeHome and Advantage Anywhere are compared as broader CRM or platform options; Further as a CRM-connected AI sales and marketing platform; and Quid as focused admissions automation rather than a CRM replacement.
 
 ## Contact
 

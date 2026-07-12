@@ -29,6 +29,7 @@ export const footerGroups = [
     title: 'Resources',
     links: [
       { label: 'Resource Center', href: '/resources' },
+      { label: 'Software Comparisons', href: '/resources/senior-living-software-comparisons/' },
       { label: 'Admissions Automation', href: '/resources/senior-living-admissions-automation' },
       { label: 'Inquiry Response', href: '/resources/senior-living-inquiry-response-time' },
       { label: 'Tour Follow-Up', href: '/resources/senior-living-tour-follow-up' },

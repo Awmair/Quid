@@ -1,0 +1,7 @@
+---
+import ComparisonPage from '../../../components/ComparisonPage.astro';
+import { comparisons } from '../../../data/comparisons';
+export function getStaticPaths(){return comparisons.map((comparison)=>({params:{slug:comparison.slug},props:{comparison}}));}
+const { comparison }=Astro.props;
+---
+<ComparisonPage comparison={comparison} />
