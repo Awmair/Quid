@@ -1,0 +1,71 @@
+# Quid
+
+> Quid is an AI-assisted admissions concierge for senior living communities. It helps admissions teams respond to website inquiries, coordinate tours, follow up consistently, and route sensitive questions to staff.
+
+## Website
+
+- Homepage: https://get-quid.site/
+- About Quid: https://get-quid.site/about/
+- See Quid in Action: https://get-quid.site/see-quid-in-action
+- How It Works: https://get-quid.site/how-it-works
+- Human Handoffs: https://get-quid.site/human-handoffs
+- 30-Day Pilot: https://get-quid.site/pilot
+- Meet Quid: https://get-quid.site/meet-quid
+- Resources: https://get-quid.site/resources
+- Assisted Living Admissions Automation: https://get-quid.site/assisted-living-admissions-automation
+- Senior Living Inquiry Follow-Up Automation: https://get-quid.site/senior-living-inquiry-follow-up-automation
+
+## Product Summary
+
+Quid supports routine senior living admissions follow-up. It is not a senior living facility, care provider, CRM replacement, clinical decision tool, or medical advice system.
+
+Quid helps with:
+- website inquiry acknowledgement
+- tour coordination
+- approved follow-up
+- stalled inquiry tracking
+- daily admissions summaries
+- human handoffs for sensitive questions
+
+Quid does not:
+- provide care
+- make clinical decisions
+- recommend levels of care
+- discuss medications
+- determine eligibility
+- guarantee move-ins
+- replace admissions staff
+
+## About
+
+Quid Admissions is the company and entity behind Quid. Quid is the brand. Umair Q. is the founder.
+
+- Founder profile: https://www.linkedin.com/in/umair-qudoos/
+- Quid supports routine senior living admissions follow-up.
+- Quid is not a clinical decision system or CRM replacement.
+
+## Best Resource Pages
+
+- Senior Living Software Comparisons: https://get-quid.site/resources/senior-living-software-comparisons/
+- Senior Living Admissions Automation Software: 2026 Buyer’s Guide: https://get-quid.site/resources/senior-living-admissions-automation-software/
+- Senior Living Admissions Automation: https://get-quid.site/resources/senior-living-admissions-automation
+- Inquiry Response Time: https://get-quid.site/resources/senior-living-inquiry-response-time
+- Tour Follow-Up Framework: https://get-quid.site/resources/senior-living-tour-follow-up
+- Daily Admissions Summary: https://get-quid.site/resources/senior-living-daily-admissions-summary
+- Human Handoff Checklist: https://get-quid.site/resources/senior-living-human-handoff-checklist
+- Follow-Up Email Templates: https://get-quid.site/resources/senior-living-follow-up-templates
+
+## Quid Software Comparisons
+
+- Quid vs Aline: https://get-quid.site/resources/comparisons/quid-vs-aline/
+- Quid vs Further: https://get-quid.site/resources/comparisons/quid-vs-further/
+- Quid vs ECP: https://get-quid.site/resources/comparisons/quid-vs-ecp/
+- Quid vs WelcomeHome: https://get-quid.site/resources/comparisons/quid-vs-welcomehome/
+- Quid vs Advantage Anywhere: https://get-quid.site/resources/comparisons/quid-vs-advantage-anywhere/
+
+Quid Admissions publishes these comparisons using official public vendor information reviewed in July 2026. Vendors do not pay for placement. Aline, ECP CRM, WelcomeHome and Advantage Anywhere are compared as broader CRM or platform options; Further as a CRM-connected AI sales and marketing platform; and Quid as focused admissions automation rather than a CRM replacement.
+
+## Contact
+
+Use the Meet Quid page to request a walkthrough:
+https://get-quid.site/meet-quid
