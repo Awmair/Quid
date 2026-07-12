@@ -1,0 +1,340 @@
+---
+import '../styles/global.css';
+import { Image } from 'astro:assets';
+import wordmark from '../assets/brand/quid-wordmark.svg';
+import mascot from '../assets/brand/quid-inquiry.png';
+
+const title = 'Private Inquiry-to-Tour Preview | Quid';
+const description = 'An unlisted illustrative inquiry-to-tour workflow preview prepared by Quid.';
+const canonical = 'https://get-quid.site/private-preview/';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex,nofollow,noarchive,nosnippet" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Quid" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="https://get-quid.site/quid-og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://get-quid.site/quid-og.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <script is:inline>document.documentElement.classList.add('js');</script>
+  </head>
+  <body class="preview-body">
+    <header class="preview-header">
+      <div class="preview-shell preview-header-inner">
+        <a href="/" aria-label="Quid home"><Image src={wordmark} alt="Quid" width={120} /></a>
+        <span>Unlisted workflow preview</span>
+      </div>
+    </header>
+
+    <main id="preview-content">
+      <section class="preview-hero">
+        <div class="preview-shell preview-hero-grid">
+          <div>
+            <p class="eyebrow">Prepared for <span data-community>your community</span></p>
+            <h1>A quieter path from inquiry to tour.</h1>
+            <p class="preview-lede"><span data-community>Your community</span> already does the hard part: helping families raise their hands. This private preview shows how the next step could happen without waiting for someone to find the email and wrestle calendars.</p>
+            <div class="preview-context">
+              <span data-location>Location not supplied</span>
+              <a data-website-link href="#" target="_blank" rel="noopener noreferrer">Website reviewed</a>
+            </div>
+          </div>
+          <div class="preview-mascot-wrap">
+            <Image src={mascot} alt="Quid presenting an inquiry workflow" width={310} loading="eager" />
+          </div>
+        </div>
+      </section>
+
+      <section class="preview-section preview-section-sand">
+        <div class="preview-shell">
+          <p class="eyebrow">The observed handoff</p>
+          <h2>The website catches the interest. Then the inbox takes over.</h2>
+          <div class="preview-observation-grid">
+            <article class="preview-card preview-card-observed">
+              <span class="preview-card-label">Public website observation</span>
+              <p data-observation>Families can submit an inquiry, but the next step depends on manual staff follow-up.</p>
+              <small>Reviewed from publicly available website information. No inquiry form was submitted.</small>
+            </article>
+            <div class="preview-current-flow" aria-label="Current inquiry path">
+              <div><b>1</b><span>Family reaches <strong data-cta>Request a Tour</strong></span></div>
+              <i aria-hidden="true">→</i>
+              <div><b>2</b><span>Form reaches an inbox</span></div>
+              <i aria-hidden="true">→</i>
+              <div><b>3</b><span>Staff finds time to respond</span></div>
+              <i aria-hidden="true">→</i>
+              <div><b>4</b><span>Calendar back-and-forth begins</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="preview-section">
+        <div class="preview-shell">
+          <p class="eyebrow">The proposed Quid flow</p>
+          <h2>The routine parts move. Your team keeps the human parts.</h2>
+          <div class="preview-proposed-flow">
+            <article><span>01</span><h3>Inquiry arrives</h3><p>The existing website form starts an approved workflow.</p></article>
+            <article><span>02</span><h3>Family hears back</h3><p>A warm acknowledgement confirms receipt and offers a clear next step.</p></article>
+            <article><span>03</span><h3>Tour becomes bookable</h3><p>The family chooses from times already approved by the community.</p></article>
+            <article><span>04</span><h3>Staff sees what matters</h3><p>Replies, stalled inquiries and human-review items stay visible.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="preview-section preview-section-deep">
+        <div class="preview-shell preview-message-grid">
+          <div>
+            <p class="eyebrow">Illustrative acknowledgement</p>
+            <h2>Written like the community. Not like a software company.</h2>
+            <p>This is sample language for discussion. Every live message, timing rule and escalation path would be reviewed and approved before launch.</p>
+          </div>
+          <article class="preview-message">
+            <span>New inquiry · acknowledgement</span>
+            <p>Hi Sarah,</p>
+            <p>Thank you for reaching out to <strong data-community>the community</strong>.</p>
+            <p>Finding the right community can feel like a lot to navigate, and we are happy to make the next step easier.</p>
+            <p>You can choose a convenient time to visit below. If you would rather speak with someone first, reply here and a member of the admissions team will follow up.</p>
+            <p>Warmly,<br /><span data-community>Your community</span></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="preview-section preview-section-sage">
+        <div class="preview-shell preview-demo-grid">
+          <article class="preview-tour-card">
+            <div class="preview-window-head"><span></span><span></span><span></span><b>Choose a tour time</b></div>
+            <h3>Visit <span data-community>the community</span></h3>
+            <p>Select a time that works for your family.</p>
+            <div class="preview-date-row"><button type="button">Tue<br /><strong>14</strong></button><button type="button">Wed<br /><strong>15</strong></button><button type="button">Thu<br /><strong>16</strong></button></div>
+            <div class="preview-time-row"><span>10:00 AM</span><span>1:30 PM</span><span>3:00 PM</span></div>
+            <small>Illustrative availability only</small>
+          </article>
+          <article class="preview-summary-card">
+            <div class="preview-summary-head"><span>Daily admissions summary</span><b>Good morning</b></div>
+            <ul>
+              <li><b>3</b><span>New inquiries acknowledged</span></li>
+              <li><b>2</b><span>Tours booked</span></li>
+              <li><b>1</b><span>Follow-up due</span></li>
+              <li class="review"><b>1</b><span>Needs human review</span></li>
+            </ul>
+            <small>Illustrative activity, not community data</small>
+          </article>
+        </div>
+      </section>
+
+      <section class="preview-section">
+        <div class="preview-shell preview-handoff-grid">
+          <div>
+            <p class="eyebrow">Quid knows when to stop</p>
+            <h2>Important questions go to people.</h2>
+            <p>Clinical, medication, eligibility, care-assessment and sensitive family questions pause the routine workflow and alert the designated staff member.</p>
+          </div>
+          <article class="preview-handoff-card">
+            <span>Human review required</span>
+            <h3>Care or eligibility question detected</h3>
+            <p><strong>Assigned to:</strong> Admissions Director</p>
+            <p><strong>Status:</strong> Waiting for staff response</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="preview-section preview-section-sand">
+        <div class="preview-shell">
+          <p class="eyebrow">What the pilot measures</p>
+          <h2>A workflow should prove itself.</h2>
+          <div class="preview-metrics">
+            <article><strong>Response coverage</strong><span>How many eligible inquiries received the approved acknowledgement.</span></article>
+            <article><strong>Time to next step</strong><span>How quickly families received a clear route forward.</span></article>
+            <article><strong>Tours booked</strong><span>How many inquiries selected an approved tour time.</span></article>
+            <article><strong>Follow-up visibility</strong><span>What became due, stalled or required staff attention.</span></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="preview-section preview-final">
+        <div class="preview-shell preview-final-grid">
+          <div>
+            <p class="eyebrow">30-day focused pilot</p>
+            <h2>One community. One inquiry source. One tour calendar.</h2>
+            <p>We map the current process, approve messages and handoffs, deploy one controlled workflow, and report what happened.</p>
+            <a class="button" href="/meet-quid/">Walk through this with Umair</a>
+          </div>
+          <article class="preview-price-card">
+            <span>30-Day Quid Admissions Pilot</span>
+            <strong>$1,000</strong>
+            <small>one-time</small>
+            <hr />
+            <p>Keep Quid for <b>$899/month per community</b> after the pilot.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="preview-disclaimer">
+        <div class="preview-shell">
+          <p><strong>About this preview:</strong> This is an illustrative, unlisted workflow concept prepared from publicly available business information. It does not represent an active integration, endorsement, partnership, performance result or use of resident data. Final workflows require community review and approval.</p>
+        </div>
+      </section>
+    </main>
+
+    <section class="preview-invalid" data-invalid hidden>
+      <Image src={wordmark} alt="Quid" width={140} />
+      <h2>This preview link is incomplete.</h2>
+      <p>Please reply to Umair and ask for a fresh link.</p>
+    </section>
+
+    <script is:inline>
+      (() => {
+        const raw = window.location.hash.replace(/^#/, '');
+        const params = new URLSearchParams(raw);
+        const clean = (value, max = 240) => (value || '').replace(/[<>\u0000-\u001F]/g, '').trim().slice(0, max);
+        const community = clean(params.get('community'), 100);
+        const location = clean(params.get('location'), 100) || 'United States';
+        const observation = clean(params.get('observation'), 360) || 'Families can submit an inquiry, but the next step depends on manual staff follow-up.';
+        const cta = clean(params.get('cta'), 60) || 'Request a Tour';
+        const website = clean(params.get('website'), 260);
+
+        if (!community) {
+          document.querySelector('#preview-content')?.setAttribute('hidden', '');
+          document.querySelector('.preview-header')?.setAttribute('hidden', '');
+          const invalid = document.querySelector('[data-invalid]');
+          if (invalid) invalid.removeAttribute('hidden');
+          return;
+        }
+
+        document.querySelectorAll('[data-community]').forEach((node) => { node.textContent = community; });
+        document.querySelectorAll('[data-location]').forEach((node) => { node.textContent = location; });
+        document.querySelectorAll('[data-observation]').forEach((node) => { node.textContent = observation; });
+        document.querySelectorAll('[data-cta]').forEach((node) => { node.textContent = cta; });
+        const link = document.querySelector('[data-website-link]');
+        if (link instanceof HTMLAnchorElement) {
+          try {
+            const url = new URL(website);
+            if (!['http:', 'https:'].includes(url.protocol)) throw new Error('Unsupported protocol');
+            link.href = url.toString();
+            link.textContent = `Website reviewed · ${url.hostname.replace(/^www\./, '')}`;
+          } catch {
+            link.removeAttribute('href');
+            link.textContent = 'Public website reviewed';
+          }
+        }
+        document.title = `${community} Inquiry-to-Tour Preview | Quid`;
+      })();
+    </script>
+  </body>
+</html>
+
+<style>
+  .preview-body { background: var(--cream); }
+  .preview-shell { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+  .preview-header { position: sticky; top: 0; z-index: 50; border-bottom: 1px solid var(--border); background: rgba(251,247,239,.94); backdrop-filter: blur(14px); }
+  .preview-header-inner { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+  .preview-header a { text-decoration: none; }
+  .preview-header span { color: var(--muted); font-size: .76rem; font-weight: 750; text-transform: uppercase; letter-spacing: .1em; }
+  .preview-hero { padding: clamp(48px,7vw,92px) 0; overflow: hidden; background: radial-gradient(circle at 84% 20%, rgba(169,181,166,.5), transparent 32%), linear-gradient(135deg,var(--cream),#f4ecdf); }
+  .preview-hero-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: clamp(30px,7vw,80px); align-items: center; }
+  .preview-hero h1 { max-width: 13ch; margin-bottom: 18px; }
+  .preview-lede { max-width: 62ch; color: var(--muted); font-size: clamp(1.05rem,1.2vw,1.22rem); }
+  .preview-context { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .preview-context span, .preview-context a { padding: 8px 11px; border: 1px solid var(--border); border-radius: 999px; background: rgba(255,253,248,.76); color: var(--muted); font-size: .75rem; font-weight: 700; text-decoration: none; }
+  .preview-mascot-wrap { display: grid; place-items: center; min-height: 390px; }
+  .preview-mascot-wrap img { max-height: 390px; object-fit: contain; filter: drop-shadow(0 22px 24px rgba(30,61,52,.14)); }
+  .preview-section { padding: clamp(52px,7vw,86px) 0; }
+  .preview-section h2 { margin-bottom: 26px; }
+  .preview-section-sand { background: var(--sand); }
+  .preview-section-sage { background: #e6ebe4; }
+  .preview-section-deep { background: var(--ink); color: var(--cream); }
+  .preview-section-deep h2 { color: var(--cream); }
+  .preview-section-deep p { color: #dce4de; }
+  .preview-section-deep .eyebrow { color: #edb190; }
+  .preview-observation-grid { display: grid; grid-template-columns: .65fr 1.35fr; gap: 18px; align-items: stretch; }
+  .preview-card { padding: 24px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--white); box-shadow: var(--shadow); }
+  .preview-card-label { display: block; margin-bottom: 14px; color: var(--copper-dark); font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; }
+  .preview-card p { font-size: 1.05rem; }
+  .preview-card small { display: block; color: var(--muted); }
+  .preview-current-flow { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; gap: 9px; align-items: center; padding: 22px; border-radius: var(--radius); background: rgba(255,253,248,.6); }
+  .preview-current-flow > div { min-height: 126px; display: flex; flex-direction: column; justify-content: center; gap: 10px; padding: 15px; border: 1px solid var(--border); border-radius: 15px; background: var(--white); }
+  .preview-current-flow b { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; background: var(--ink); color: var(--cream); font-size: .75rem; }
+  .preview-current-flow span { font-size: .8rem; line-height: 1.42; }
+  .preview-current-flow i { color: var(--copper-dark); font-size: 1.4rem; font-style: normal; }
+  .preview-proposed-flow { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
+  .preview-proposed-flow article { min-height: 218px; padding: 22px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--white); box-shadow: 0 12px 34px rgba(30,61,52,.07); }
+  .preview-proposed-flow article > span { color: rgba(192,113,75,.4); font: 700 2.4rem/1 'Newsreader Variable',serif; }
+  .preview-proposed-flow h3 { margin: 30px 0 8px; }
+  .preview-proposed-flow p { color: var(--muted); font-size: .88rem; }
+  .preview-message-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(28px,6vw,70px); align-items: center; }
+  .preview-message { padding: clamp(22px,4vw,38px); border: 1px solid rgba(255,255,255,.13); border-radius: var(--radius); background: var(--white); color: var(--ink); box-shadow: 0 26px 80px rgba(0,0,0,.2); }
+  .preview-message > span { display: block; margin-bottom: 22px; color: var(--copper-dark); font-size: .7rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+  .preview-message p { color: var(--ink); }
+  .preview-demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .preview-tour-card, .preview-summary-card { padding: 25px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--white); box-shadow: var(--shadow); }
+  .preview-window-head { display: flex; align-items: center; gap: 6px; margin: -4px 0 25px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+  .preview-window-head span { width: 9px; height: 9px; border-radius: 50%; background: var(--sand); }
+  .preview-window-head b { margin-left: auto; color: var(--muted); font-size: .72rem; }
+  .preview-date-row, .preview-time-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-top: 16px; }
+  .preview-date-row button, .preview-time-row span { min-height: 64px; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 12px; background: var(--cream); color: var(--ink); text-align: center; }
+  .preview-date-row button:first-child { border-color: var(--green); background: #e6ebe4; }
+  .preview-time-row span { min-height: 46px; font-size: .8rem; }
+  .preview-tour-card > small, .preview-summary-card > small { display: block; margin-top: 17px; color: var(--muted); font-size: .7rem; }
+  .preview-summary-head { display: flex; justify-content: space-between; gap: 15px; align-items: start; padding-bottom: 15px; border-bottom: 1px solid var(--border); }
+  .preview-summary-head span { color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; }
+  .preview-summary-card ul { margin: 18px 0 0; padding: 0; list-style: none; }
+  .preview-summary-card li { display: grid; grid-template-columns: 42px 1fr; gap: 12px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border); }
+  .preview-summary-card li b { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 12px; background: #e6ebe4; }
+  .preview-summary-card li span { font-size: .84rem; }
+  .preview-summary-card li.review b { background: #f5dfd2; color: var(--copper-dark); }
+  .preview-handoff-grid, .preview-final-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px,7vw,82px); align-items: center; }
+  .preview-handoff-card { padding: 26px; border: 1px solid rgba(192,113,75,.35); border-radius: var(--radius); background: #fff8f2; box-shadow: var(--shadow); }
+  .preview-handoff-card > span { display: inline-flex; padding: 6px 9px; border-radius: 8px; background: #f5dfd2; color: var(--copper-dark); font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+  .preview-handoff-card h3 { margin: 20px 0; }
+  .preview-handoff-card p { margin-bottom: 8px; }
+  .preview-metrics { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+  .preview-metrics article { padding: 22px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--white); }
+  .preview-metrics strong, .preview-metrics span { display: block; }
+  .preview-metrics span { margin-top: 10px; color: var(--muted); font-size: .82rem; }
+  .preview-final { background: linear-gradient(135deg,var(--cream),#eef1eb); }
+  .preview-final p { max-width: 58ch; color: var(--muted); }
+  .preview-price-card { padding: 28px; border-radius: var(--radius); background: var(--ink); color: var(--cream); box-shadow: var(--shadow); }
+  .preview-price-card > span, .preview-price-card > strong, .preview-price-card > small { display: block; }
+  .preview-price-card > span { color: #edb190; font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+  .preview-price-card > strong { margin-top: 18px; font-size: 3.5rem; line-height: 1; }
+  .preview-price-card > small { color: #dce4de; }
+  .preview-price-card hr { margin: 24px 0; border: 0; border-top: 1px solid rgba(255,255,255,.15); }
+  .preview-price-card p { margin: 0; color: var(--cream); }
+  .preview-disclaimer { padding: 22px 0; background: var(--ink); color: #dce4de; }
+  .preview-disclaimer p { margin: 0; font-size: .72rem; }
+  .preview-invalid { min-height: 100vh; display: grid; place-content: center; justify-items: center; gap: 16px; padding: 30px; text-align: center; }
+  .preview-invalid h2 { margin: 12px 0 0; font-size: clamp(2rem,5vw,3.4rem); }
+  .preview-invalid[hidden] { display: none; }
+  @media (max-width: 900px) {
+    .preview-hero-grid, .preview-observation-grid, .preview-message-grid, .preview-handoff-grid, .preview-final-grid { grid-template-columns: 1fr; }
+    .preview-mascot-wrap { min-height: 270px; }
+    .preview-mascot-wrap img { max-height: 270px; }
+    .preview-current-flow { grid-template-columns: 1fr; }
+    .preview-current-flow i { transform: rotate(90deg); justify-self: center; }
+    .preview-current-flow > div { min-height: 0; }
+    .preview-proposed-flow, .preview-metrics { grid-template-columns: repeat(2,1fr); }
+  }
+  @media (max-width: 640px) {
+    .preview-shell { width: min(100% - 28px,1120px); }
+    .preview-header span { font-size: .64rem; }
+    .preview-hero-grid { text-align: left; }
+    .preview-demo-grid, .preview-proposed-flow, .preview-metrics { grid-template-columns: 1fr; }
+    .preview-proposed-flow article { min-height: 0; }
+  }
+  @media print {
+    .preview-header { position: static; }
+    .preview-section, .preview-hero { break-inside: avoid; }
+  }
+</style>
