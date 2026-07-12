@@ -169,7 +169,7 @@ const canonical = 'https://get-quid.site/private-preview/';
             <p class="eyebrow">30-day focused pilot</p>
             <h2>One community. One inquiry source. One tour calendar.</h2>
             <p>We map the current process, approve messages and handoffs, deploy one controlled workflow, and report what happened.</p>
-            <a class="button" href="/meet-quid/">Walk through this with Umair</a>
+            <a class="button" data-walkthrough-link href="mailto:charcopadart@gmail.com">Set Up a Walkthrough Call</a>
           </div>
           <article class="preview-price-card">
             <span>30-Day Quid Admissions Pilot</span>
@@ -217,6 +217,12 @@ const canonical = 'https://get-quid.site/private-preview/';
         document.querySelectorAll('[data-location]').forEach((node) => { node.textContent = location; });
         document.querySelectorAll('[data-observation]').forEach((node) => { node.textContent = observation; });
         document.querySelectorAll('[data-cta]').forEach((node) => { node.textContent = cta; });
+        const walkthroughLink = document.querySelector('[data-walkthrough-link]');
+        if (walkthroughLink instanceof HTMLAnchorElement) {
+          const subject = encodeURIComponent(`Quid walkthrough — ${community}`);
+          const body = encodeURIComponent(`Hi Umair,\n\nI'd like to set up a walkthrough call for ${community}.\n\n`);
+          walkthroughLink.href = `mailto:charcopadart@gmail.com?subject=${subject}&body=${body}`;
+        }
         const link = document.querySelector('[data-website-link]');
         if (link instanceof HTMLAnchorElement) {
           try {
