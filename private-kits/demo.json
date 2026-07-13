@@ -1,0 +1,29 @@
+{
+  "community": "Sample Senior Living Community",
+  "location": "United States",
+  "website": "https://get-quid.site/",
+  "preparedDate": "July 2026",
+  "cta": "Request a Tour",
+  "auditScore": 68,
+  "auditLabel": "Clear opportunity",
+  "observation": "The public website captures a tour request, then depends on staff to notice the submission, respond and coordinate the next step manually.",
+  "audit": [
+    { "title": "Inquiry capture", "status": "Working", "tone": "good", "note": "Families have a visible way to raise their hand." },
+    { "title": "Immediate acknowledgement", "status": "Unclear", "tone": "watch", "note": "No public indication confirms what happens immediately after submission." },
+    { "title": "Tour scheduling", "status": "Manual", "tone": "risk", "note": "No self-scheduling path is visible after the request." },
+    { "title": "Follow-up visibility", "status": "Manual", "tone": "risk", "note": "The public journey does not show a structured follow-up sequence." }
+  ],
+  "firstResponse": "Hi [First name],\n\nThank you for reaching out to Sample Senior Living Community. We received your request and would be happy to help with the next step.\n\nYou can choose a convenient tour time here: [Tour link]\n\nIf you would rather speak with someone first, reply to this message and a member of our team will follow up.",
+  "smsResponse": "Hi [First name], this is Sample Senior Living Community. We received your tour request. Choose a convenient time here: [Tour link]. Reply here if you would rather speak with our team first.",
+  "followUps": [
+    { "when": "After 1 day", "subject": "Still considering a visit?", "body": "Hi [First name], I wanted to make the next step easy. Would you like help choosing a tour time, or would a quick call be better?" },
+    { "when": "After 3 days", "subject": "A quick question", "body": "Hi [First name], what matters most as you compare communities: care, location, timing or something else? Reply with one word and we will point you in the right direction." },
+    { "when": "After 7 days", "subject": "Keep this open?", "body": "Hi [First name], should we keep your tour request open, or would you prefer that we close the loop for now? Either answer is completely fine." }
+  ],
+  "metrics": [
+    { "name": "Response coverage", "detail": "Eligible inquiries receiving the approved acknowledgement" },
+    { "name": "Time to next step", "detail": "Time between inquiry and a clear route forward" },
+    { "name": "Tours scheduled", "detail": "Inquiries selecting an approved visit time" },
+    { "name": "Human handoffs", "detail": "Questions correctly routed to staff" }
+  ]
+}
