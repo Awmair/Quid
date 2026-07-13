@@ -92,13 +92,14 @@ strong { font-weight: 700; }
 .hero .lede { max-width: 52ch; margin-bottom: 20px; line-height: 1.5; }
 .hero .button-row { margin-bottom: 10px; }
 .hero-proof { margin: 0; font-weight: 650; }
+.hero-mobile-lede, .hero-mobile-benefits, .hero-mobile-proof, .hero-benefit-label-mobile { display: none; }
 .data-label { display: inline-flex; padding: 5px 9px; border-radius: 8px; background: var(--sand); font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
 .mascot { height: auto; object-fit: contain; }
 .hero-brand-visual { min-height: 470px; position: relative; display: grid; place-items: center; isolation: isolate; }
 .hero-halo { position: absolute; z-index: -1; width: min(420px, 92%); aspect-ratio: 1; border-radius: 43% 57% 62% 38%; background: linear-gradient(145deg, rgba(231,218,196,.9), rgba(169,181,166,.5)); transform: rotate(-7deg); }
 .hero-brand-mascot { width: min(330px, 78%); max-height: 440px; filter: drop-shadow(0 20px 22px rgba(30,61,52,.13)); animation: float 5s ease-in-out infinite; }
 .hero-benefit-badge { position: absolute; z-index: 3; top: 62px; left: -8px; display: inline-flex; align-items: center; gap: 8px; padding: 10px 13px; border: 1px solid rgba(30,61,52,.14); border-radius: 999px; background: rgba(255,253,248,.94); color: var(--ink); box-shadow: 0 14px 32px rgba(30,61,52,.12); font-size: .76rem; font-weight: 800; }
-.hero-benefit-badge span { width: 22px; height: 22px; display: grid; place-items: center; border-radius: 50%; background: var(--green); color: var(--cream); }
+.hero-benefit-badge > span:first-child { width: 22px; height: 22px; display: grid; place-items: center; border-radius: 50%; background: var(--green); color: var(--cream); }
 .hero-brand-shadow { position: absolute; z-index: -1; bottom: 28px; width: 185px; height: 22px; border-radius: 50%; background: radial-gradient(ellipse, rgba(30,61,52,.25), transparent 70%); filter: blur(4px); animation: ground-shadow 5s ease-in-out infinite; }
 @keyframes float { 50% { transform: translateY(-5px); } }
 @keyframes ground-shadow { 50% { transform: scale(.92); opacity: .7; } }
@@ -1164,19 +1165,32 @@ details > p { padding: 0 48px 18px 0; color: var(--muted); max-width: 72ch; }
   .sticky-mobile-cta { display: flex; position: fixed; z-index: 80; left: 14px; right: 14px; bottom: calc(12px + env(safe-area-inset-bottom)); justify-content: center; align-items: center; min-height: 50px; border-radius: 14px; background: var(--ink); color: var(--cream); text-decoration: none; font-weight: 800; box-shadow: 0 14px 32px rgba(30,61,52,.28); transform: translateY(120px); animation: sticky-in linear both; animation-timeline: scroll(root); animation-range: 420px 520px; }
   @keyframes sticky-in { to { transform: none; } }
   .site-footer { padding-bottom: 100px; }
-  .hero { padding: 28px 0 48px; }
-  .hero-grid { gap: 12px; }
-  .hero h1 { font-size: clamp(2.4rem, 11.5vw, 3.2rem); margin-bottom: 12px; }
-  .hero .lede { font-size: 1.03rem; line-height: 1.48; margin-bottom: 16px; }
-  .hero .eyebrow { margin-bottom: 10px; font-size: .68rem; }
-  .hero .button-row { gap: 9px; }
-  .hero .button { min-height: 48px; padding-block: 10px; }
-  .hero-proof { font-size: .76rem; line-height: 1.4; }
-  .hero-brand-visual { min-height: 360px; }
-  .hero-brand-mascot { width: min(245px,70%); max-height: 340px; }
-  .hero-halo { width: 310px; }
-  .hero-benefit-badge { top: 24px; left: 0; }
-  .hero-brand-shadow { bottom: 18px; width: 145px; }
+  .hero { padding: 22px 0 34px; }
+  .hero::after { height: 54px; }
+  .hero-grid { gap: 2px; }
+  .hero-copy { text-align: center; }
+  .hero h1 { max-width: 9ch; margin: 0 auto 12px; font-size: clamp(2.55rem, 12vw, 3.25rem); line-height: .98; }
+  .hero .eyebrow { display: inline-flex; margin: 0 auto 13px; padding: 6px 9px; border: 1px solid rgba(192,113,75,.2); border-radius: 999px; background: rgba(255,253,248,.68); font-size: .61rem; letter-spacing: .11em; }
+  .hero-desktop-lede, .hero .answer-block-hero, .hero-proof, .hero-benefit-label-desktop { display: none; }
+  .hero-mobile-lede { display: block; max-width: 31ch; margin: 0 auto 17px; color: var(--muted); font-size: .96rem; line-height: 1.45; }
+  .hero-mobile-benefits { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); max-width: 430px; margin: 0 auto 20px; padding: 0; border-block: 1px solid rgba(30,61,52,.13); list-style: none; }
+  .hero-mobile-benefits li { min-width: 0; padding: 11px 8px 12px; }
+  .hero-mobile-benefits li + li { border-left: 1px solid rgba(30,61,52,.13); }
+  .hero-mobile-benefits span, .hero-mobile-benefits strong { display: block; }
+  .hero-mobile-benefits span { margin-bottom: 3px; color: var(--copper-dark); font-size: .58rem; font-weight: 850; letter-spacing: .11em; }
+  .hero-mobile-benefits strong { font-size: .75rem; line-height: 1.25; letter-spacing: -.01em; }
+  .hero .button-row { display: grid; justify-items: center; gap: 7px; margin-bottom: 8px; }
+  .hero .button-row .button { width: min(100%,430px); min-height: 49px; padding-block: 10px; }
+  .hero .button-row .button-secondary { width: auto; min-height: 0; padding: 5px 8px; border: 0; background: transparent; color: var(--ink); font-size: .78rem; }
+  .hero .button-secondary::after { content: ' \2192'; color: var(--copper-dark); }
+  .hero-mobile-proof { display: flex; justify-content: center; gap: 7px; margin: 0; color: var(--muted); font-size: .68rem; font-weight: 750; line-height: 1.4; }
+  .hero-brand-visual { min-height: 260px; }
+  .hero-brand-mascot { width: min(205px,61%); max-height: 245px; }
+  .hero-halo { width: 245px; }
+  .hero-benefit-badge { top: 7px; left: 50%; transform: translateX(-50%); width: max-content; max-width: 95%; padding: 8px 11px; font-size: .68rem; }
+  .hero-benefit-badge > span:first-child { width: 19px; height: 19px; }
+  .hero-benefit-label-mobile { display: inline; width: auto !important; height: auto !important; border-radius: 0 !important; background: transparent !important; color: inherit !important; }
+  .hero-brand-shadow { bottom: 9px; width: 126px; }
   .audience-list { grid-template-columns: repeat(2,1fr); }
   .comparison-timelines { grid-template-columns: 1fr; }
   .comparison-intro { grid-template-columns: 1fr; gap: 12px; }
