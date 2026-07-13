@@ -34,7 +34,7 @@ for (const file of htmlFiles) {
   if (!/<meta property="og:image" content="https:\/\/get-quid\.site\//.test(html)) errors.push(`${file}: missing absolute Open Graph image`);
   if (!/<meta name="twitter:card" content="summary_large_image"/.test(html)) errors.push(`${file}: missing Twitter card metadata`);
   if (/lorem ipsum/i.test(html)) errors.push(`${file}: lorem ipsum found`);
-  const intentionalNoindex = file.endsWith('404.html') || file.endsWith('private-preview/index.html');
+  const intentionalNoindex = file.endsWith('404.html') || file.endsWith('private-preview/index.html') || file.endsWith('private-kit/index.html');
   if (!intentionalNoindex && /<meta name="robots" content="[^"]*noindex/i.test(html)) errors.push(`${file}: unexpected noindex`);
   for (const match of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
     try { JSON.parse(match[1]); } catch { errors.push(`${file}: invalid JSON-LD`); }
@@ -90,6 +90,7 @@ try {
   }
   if (sitemap.includes('/404')) errors.push('dist/sitemap-0.xml: 404 page should be excluded');
   if (sitemap.includes('/private-preview')) errors.push('dist/sitemap-0.xml: private preview should be excluded');
+  if (sitemap.includes('/private-kit')) errors.push('dist/sitemap-0.xml: private kit should be excluded');
 } catch {}
 
 if (errors.length) {

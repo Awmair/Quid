@@ -5,7 +5,7 @@ export default defineConfig({
   site: 'https://get-quid.site',
   output: 'static',
   integrations: [sitemap({
-    filter: (page) => !page.includes('/private-preview/'),
+    filter: (page) => !page.includes('/private-preview/') && !page.includes('/private-kit/'),
   })],
   markdown: { shikiConfig: { theme: 'github-light' } },
 });

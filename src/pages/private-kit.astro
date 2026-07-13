@@ -1,0 +1,497 @@
+---
+import '../styles/global.css';
+import { Image } from 'astro:assets';
+import wordmark from '../assets/brand/quid-wordmark.svg';
+
+const title = 'Private Inquiry-to-Tour Kit | Quid';
+const description = 'A private, printable inquiry-to-tour improvement kit prepared by Quid.';
+const canonical = 'https://get-quid.site/private-kit/';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex,nofollow,noarchive,nosnippet" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Quid" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="https://get-quid.site/quid-og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://get-quid.site/quid-og.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <script is:inline>document.documentElement.classList.add('js');</script>
+  </head>
+  <body class="kit-body">
+    <header class="kit-header">
+      <div class="kit-header-inner">
+        <a href="/" aria-label="Quid home"><Image src={wordmark} alt="Quid" width={112} /></a>
+        <div class="kit-header-meta">
+          <span>Private · prepared for <b data-community>your community</b></span>
+          <button class="kit-print" type="button" data-print>Print / Save PDF</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="kit-layout" data-kit hidden>
+      <aside class="kit-sidebar" aria-label="Kit chapters">
+        <div>
+          <p class="kit-kicker">Inquiry-to-tour kit</p>
+          <strong data-community>Your community</strong>
+          <span data-location>United States</span>
+        </div>
+        <nav>
+          <button class="is-active" type="button" data-go="0"><i>01</i><span>Audit &amp; diagnosis</span></button>
+          <button type="button" data-go="1"><i>02</i><span>Recommended workflow</span></button>
+          <button type="button" data-go="2"><i>03</i><span>Ready-to-use templates</span></button>
+          <button type="button" data-go="3"><i>04</i><span>30-day action plan</span></button>
+        </nav>
+        <small>Prepared from public business information. No inquiry form was submitted.</small>
+      </aside>
+
+      <section class="kit-stage">
+        <article class="kit-page kit-cover-page is-active" data-page="0">
+          <div class="kit-page-topline"><span>01 / 04</span><span data-prepared-date>Prepared privately by Quid</span></div>
+          <div class="kit-cover-grid">
+            <div>
+              <p class="kit-eyebrow">Private inquiry-to-tour kit for</p>
+              <h1 data-community>Your community</h1>
+              <p class="kit-lede">A practical diagnosis and response system designed to help more family inquiries reach a clear next step.</p>
+              <div class="kit-pills"><span data-location>United States</span><a data-website href="#" target="_blank" rel="noopener noreferrer">Website reviewed</a></div>
+            </div>
+            <div class="kit-score" aria-label="Public journey audit score">
+              <div><strong data-audit-score>—</strong><span>/100</span></div>
+              <b data-audit-label>Public journey audit</b>
+              <small>Based only on what a family can see online</small>
+            </div>
+          </div>
+
+          <section class="kit-observation">
+            <div><span>Public website observation</span><b data-cta>Request a Tour</b></div>
+            <p data-observation>The public website captures interest, but the next step appears to depend on manual staff follow-up.</p>
+          </section>
+
+          <section>
+            <div class="kit-section-heading"><div><p class="kit-eyebrow">The diagnosis</p><h2>Where momentum may be leaking</h2></div><p>The goal is not to replace the sales team. It is to remove avoidable waiting before the team can do its best work.</p></div>
+            <div class="kit-audit-grid" data-audit-list></div>
+          </section>
+        </article>
+
+        <article class="kit-page" data-page="1">
+          <div class="kit-page-topline"><span>02 / 04</span><span data-community>Your community</span></div>
+          <p class="kit-eyebrow">Recommended workflow</p>
+          <h2>Fast where it should be. Human where it matters.</h2>
+          <p class="kit-page-intro">A family should never wonder whether the request disappeared. Routine steps move immediately; care, eligibility and sensitive questions go to staff.</p>
+
+          <div class="kit-flow">
+            <article><b>01</b><span class="auto">Automatic</span><h3>Inquiry arrives</h3><p>The existing form triggers one approved workflow.</p></article>
+            <i>→</i>
+            <article><b>02</b><span class="auto">Automatic</span><h3>Acknowledgement</h3><p>The family immediately knows the request was received.</p></article>
+            <i>→</i>
+            <article><b>03</b><span class="auto">Automatic</span><h3>Clear next step</h3><p>Offer approved tour times or a direct route to a person.</p></article>
+            <i>→</i>
+            <article><b>04</b><span class="team">Your team</span><h3>Human handoff</h3><p>Questions needing judgment pause and reach the right staff member.</p></article>
+            <i>→</i>
+            <article><b>05</b><span class="auto">Automatic</span><h3>Follow-up</h3><p>Unanswered inquiries receive a gentle, finite sequence.</p></article>
+          </div>
+
+          <div class="kit-workflow-grid">
+            <section class="kit-rule-card">
+              <p class="kit-eyebrow">Automation handles</p>
+              <ul><li>Receipt confirmation</li><li>Approved tour-calendar link</li><li>Routine reminders</li><li>Finite follow-up sequence</li><li>Daily activity summary</li></ul>
+            </section>
+            <section class="kit-rule-card human">
+              <p class="kit-eyebrow">People handle</p>
+              <ul><li>Care and medication questions</li><li>Eligibility or assessment</li><li>Pricing nuance and exceptions</li><li>Family concerns</li><li>Anything uncertain or sensitive</li></ul>
+            </section>
+          </div>
+
+          <section class="kit-handoff">
+            <div><span>Human-review rule</span><h3>When the workflow is unsure, it stops.</h3></div>
+            <p>The designated staff member receives the conversation, the question and the next action—without asking the family to repeat everything.</p>
+          </section>
+        </article>
+
+        <article class="kit-page" data-page="2">
+          <div class="kit-page-topline"><span>03 / 04</span><span data-community>Your community</span></div>
+          <p class="kit-eyebrow">Ready-to-use templates</p>
+          <h2>Useful copy, not a feature brochure.</h2>
+          <p class="kit-page-intro">Use these manually today or adapt them into an approved workflow. Replace bracketed fields before use.</p>
+
+          <div class="kit-template-grid">
+            <section class="kit-template featured">
+              <div><span>Email · immediately</span><button type="button" data-copy="first-response">Copy</button></div>
+              <pre data-first-response id="first-response"></pre>
+            </section>
+            <section class="kit-template">
+              <div><span>SMS · immediately</span><button type="button" data-copy="sms-response">Copy</button></div>
+              <pre data-sms-response id="sms-response"></pre>
+            </section>
+          </div>
+
+          <section class="kit-followup-section">
+            <div class="kit-section-heading"><div><p class="kit-eyebrow">A finite follow-up</p><h2>Three useful nudges. Then stop.</h2></div><p>Every message should make replying easier, not make the family feel chased.</p></div>
+            <div class="kit-followups" data-followups></div>
+          </section>
+
+          <div class="kit-copy-rule"><b>Simple rule:</b><span>If the family replies, the sequence stops. If the message raises a care or eligibility question, a person takes over.</span></div>
+        </article>
+
+        <article class="kit-page" data-page="3">
+          <div class="kit-page-topline"><span>04 / 04</span><span data-community>Your community</span></div>
+          <p class="kit-eyebrow">30-day action plan</p>
+          <h2>Start with one source, one calendar and one accountable owner.</h2>
+          <p class="kit-page-intro">The quickest useful implementation is deliberately narrow. Prove the handoff works before adding more channels or complexity.</p>
+
+          <div class="kit-plan">
+            <article><span>Week 1</span><h3>Map and approve</h3><p>Document the current form, recipient inbox, response copy, escalation rules and tour-calendar owner.</p></article>
+            <article><span>Week 2</span><h3>Connect and test</h3><p>Connect one inquiry source and test normal, unanswered and human-review scenarios.</p></article>
+            <article><span>Week 3</span><h3>Run with guardrails</h3><p>Launch the approved workflow, review daily summaries and correct exceptions quickly.</p></article>
+            <article><span>Week 4</span><h3>Measure and decide</h3><p>Review response coverage, speed, tours, handoffs and what should—or should not—expand.</p></article>
+          </div>
+
+          <section class="kit-metrics-wrap">
+            <div class="kit-section-heading"><div><p class="kit-eyebrow">Keep the scorecard honest</p><h2>Measure movement, not AI activity.</h2></div></div>
+            <div class="kit-metrics" data-metrics></div>
+          </section>
+
+          <section class="kit-final-cta">
+            <div><p class="kit-eyebrow">Want to see this mapped to your actual process?</p><h2>Walk through the kit with Umair.</h2><p>No platform migration. No giant rollout. Just the current handoff, the first useful workflow and the guardrails around it.</p></div>
+            <a class="kit-cta" data-walkthrough href="mailto:charcopadart@gmail.com">Set up a walkthrough</a>
+          </section>
+
+          <footer class="kit-disclaimer"><b>About this kit</b><p>This private concept was prepared from publicly available business information. It does not represent an active integration, endorsement, partnership, performance result or use of resident data. All live messages, timing rules and handoffs require community review and approval.</p></footer>
+        </article>
+
+        <div class="kit-controls">
+          <button type="button" data-prev disabled>← Previous</button>
+          <span><b data-current>1</b> of 4</span>
+          <button type="button" data-next>Next →</button>
+        </div>
+      </section>
+    </main>
+
+    <section class="kit-loading" data-loading>
+      <Image src={wordmark} alt="Quid" width={140} />
+      <p>Preparing your private kit…</p>
+    </section>
+    <section class="kit-invalid" data-invalid hidden>
+      <Image src={wordmark} alt="Quid" width={140} />
+      <h2>This kit link is incomplete.</h2>
+      <p>Please reply to Umair and ask for a fresh private link.</p>
+    </section>
+
+    <script is:inline>
+      (() => {
+        const cleanSlug = (value) => (value || '').toLowerCase().replace(/[^a-z0-9-]/g, '').slice(0, 80);
+        const clean = (value, max = 500) => String(value || '').replace(/[<>\u0000-\u001F]/g, '').trim().slice(0, max);
+        const slug = cleanSlug(window.location.hash.replace(/^#/, ''));
+        const kit = document.querySelector('[data-kit]');
+        const loading = document.querySelector('[data-loading]');
+        const invalid = document.querySelector('[data-invalid]');
+
+        const fail = () => {
+          loading?.setAttribute('hidden', '');
+          kit?.setAttribute('hidden', '');
+          invalid?.removeAttribute('hidden');
+        };
+
+        if (!slug) { fail(); return; }
+
+        fetch(`/private-kits/${slug}.json`, { cache: 'no-store' })
+          .then((response) => { if (!response.ok) throw new Error('Kit not found'); return response.json(); })
+          .then((data) => {
+            const community = clean(data.community, 100);
+            if (!community) throw new Error('Community missing');
+            const location = clean(data.location, 100) || 'United States';
+            const cta = clean(data.cta, 60) || 'Request a Tour';
+            const observation = clean(data.observation, 500) || 'The public website captures interest, but the next step appears to depend on manual staff follow-up.';
+            const firstResponse = clean(data.firstResponse, 1800).replaceAll('Sample Senior Living Community', community);
+            const smsResponse = clean(data.smsResponse, 600).replaceAll('Sample Senior Living Community', community);
+
+            document.querySelectorAll('[data-community]').forEach((node) => { node.textContent = community; });
+            document.querySelectorAll('[data-location]').forEach((node) => { node.textContent = location; });
+            document.querySelectorAll('[data-cta]').forEach((node) => { node.textContent = cta; });
+            document.querySelectorAll('[data-observation]').forEach((node) => { node.textContent = observation; });
+            document.querySelectorAll('[data-prepared-date]').forEach((node) => { node.textContent = clean(data.preparedDate, 50) || 'Prepared privately by Quid'; });
+            document.querySelectorAll('[data-audit-score]').forEach((node) => { node.textContent = Number.isFinite(Number(data.auditScore)) ? String(Math.max(0, Math.min(100, Number(data.auditScore)))) : '—'; });
+            document.querySelectorAll('[data-audit-label]').forEach((node) => { node.textContent = clean(data.auditLabel, 60) || 'Public journey audit'; });
+            document.querySelectorAll('[data-first-response]').forEach((node) => { node.textContent = firstResponse; });
+            document.querySelectorAll('[data-sms-response]').forEach((node) => { node.textContent = smsResponse; });
+
+            const websiteLink = document.querySelector('[data-website]');
+            try {
+              const url = new URL(clean(data.website, 260));
+              if (!['http:', 'https:'].includes(url.protocol)) throw new Error('Invalid protocol');
+              if (websiteLink instanceof HTMLAnchorElement) websiteLink.href = url.toString();
+            } catch { websiteLink?.setAttribute('hidden', ''); }
+
+            const auditList = document.querySelector('[data-audit-list]');
+            if (auditList) {
+              auditList.textContent = '';
+              (Array.isArray(data.audit) ? data.audit : []).slice(0, 4).forEach((item, index) => {
+                const card = document.createElement('article');
+                card.className = `kit-audit-card tone-${clean(item.tone, 10) || 'watch'}`;
+                const top = document.createElement('div');
+                const number = document.createElement('span'); number.textContent = `0${index + 1}`;
+                const status = document.createElement('b'); status.textContent = clean(item.status, 30) || 'Review';
+                top.append(number, status);
+                const heading = document.createElement('h3'); heading.textContent = clean(item.title, 80);
+                const note = document.createElement('p'); note.textContent = clean(item.note, 240);
+                card.append(top, heading, note); auditList.append(card);
+              });
+            }
+
+            const followups = document.querySelector('[data-followups]');
+            if (followups) {
+              followups.textContent = '';
+              (Array.isArray(data.followUps) ? data.followUps : []).slice(0, 3).forEach((item, index) => {
+                const card = document.createElement('article');
+                const when = document.createElement('span'); when.textContent = clean(item.when, 40);
+                const heading = document.createElement('h3'); heading.textContent = clean(item.subject, 100);
+                const body = document.createElement('p'); body.textContent = clean(item.body, 500).replaceAll('Sample Senior Living Community', community);
+                const badge = document.createElement('b'); badge.textContent = `0${index + 1}`;
+                card.append(badge, when, heading, body); followups.append(card);
+              });
+            }
+
+            const metrics = document.querySelector('[data-metrics]');
+            if (metrics) {
+              metrics.textContent = '';
+              (Array.isArray(data.metrics) ? data.metrics : []).slice(0, 4).forEach((item) => {
+                const card = document.createElement('article');
+                const heading = document.createElement('strong'); heading.textContent = clean(item.name, 80);
+                const detail = document.createElement('span'); detail.textContent = clean(item.detail, 200);
+                card.append(heading, detail); metrics.append(card);
+              });
+            }
+
+            const walkthrough = document.querySelector('[data-walkthrough]');
+            if (walkthrough instanceof HTMLAnchorElement) {
+              const subject = encodeURIComponent(`Quid kit walkthrough — ${community}`);
+              const body = encodeURIComponent(`Hi Umair,\n\nI'd like to walk through the inquiry-to-tour kit for ${community}.\n\n`);
+              walkthrough.href = `mailto:charcopadart@gmail.com?subject=${subject}&body=${body}`;
+            }
+
+            document.title = `${community} — Private Inquiry-to-Tour Kit`;
+            loading?.setAttribute('hidden', '');
+            invalid?.setAttribute('hidden', '');
+            kit?.removeAttribute('hidden');
+          })
+          .catch(fail);
+
+        let current = 0;
+        const pages = [...document.querySelectorAll('[data-page]')];
+        const navButtons = [...document.querySelectorAll('[data-go]')];
+        const prev = document.querySelector('[data-prev]');
+        const next = document.querySelector('[data-next]');
+        const counter = document.querySelector('[data-current]');
+        const show = (index) => {
+          current = Math.max(0, Math.min(pages.length - 1, index));
+          pages.forEach((page, i) => page.classList.toggle('is-active', i === current));
+          navButtons.forEach((button, i) => button.classList.toggle('is-active', i === current));
+          if (prev instanceof HTMLButtonElement) prev.disabled = current === 0;
+          if (next instanceof HTMLButtonElement) { next.disabled = current === pages.length - 1; next.textContent = current === pages.length - 1 ? 'Complete' : 'Next →'; }
+          if (counter) counter.textContent = String(current + 1);
+          window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+        };
+        navButtons.forEach((button) => button.addEventListener('click', () => show(Number(button.getAttribute('data-go')))));
+        prev?.addEventListener('click', () => show(current - 1));
+        next?.addEventListener('click', () => { if (current < pages.length - 1) show(current + 1); });
+        document.querySelector('[data-print]')?.addEventListener('click', () => window.print());
+        document.querySelectorAll('[data-copy]').forEach((button) => button.addEventListener('click', async () => {
+          const target = document.getElementById(button.getAttribute('data-copy') || '');
+          if (!target?.textContent) return;
+          await navigator.clipboard.writeText(target.textContent);
+          const original = button.textContent; button.textContent = 'Copied'; setTimeout(() => { button.textContent = original; }, 1400);
+        }));
+      })();
+    </script>
+  </body>
+</html>
+
+<style>
+  :global(:root) { --kit-ink:#18342c; --kit-muted:#63716b; --kit-cream:#fbf7ee; --kit-paper:#fffdf8; --kit-sage:#dfe8df; --kit-sage-deep:#45685a; --kit-peach:#edb190; --kit-sand:#eee2cf; --kit-border:rgba(24,52,44,.14); }
+  :global(*) { box-sizing: border-box; }
+  :global(html) { scroll-behavior: smooth; }
+  :global(body.kit-body) { margin:0; min-width:320px; background:#edf0ea; color:var(--kit-ink); font-family:'Manrope Variable',sans-serif; }
+  .kit-header { position:sticky; top:0; z-index:20; border-bottom:1px solid var(--kit-border); background:rgba(255,253,248,.94); backdrop-filter:blur(16px); }
+  .kit-header-inner { width:min(1440px,100% - 40px); min-height:68px; margin:auto; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+  .kit-header a { display:flex; }
+  .kit-header-meta { display:flex; align-items:center; gap:22px; color:var(--kit-muted); font-size:.78rem; }
+  .kit-header-meta b { color:var(--kit-ink); }
+  button { font:inherit; }
+  .kit-print { border:0; border-radius:999px; padding:10px 15px; background:var(--kit-ink); color:white; cursor:pointer; font-weight:750; }
+  .kit-layout { width:min(1440px,100% - 40px); margin:28px auto; display:grid; grid-template-columns:260px minmax(0,1fr); gap:24px; align-items:start; }
+  .kit-sidebar { position:sticky; top:96px; min-height:calc(100vh - 124px); padding:28px 22px; display:flex; flex-direction:column; border:1px solid var(--kit-border); border-radius:24px; background:var(--kit-ink); color:white; box-shadow:0 18px 50px rgba(24,52,44,.12); }
+  .kit-sidebar > div strong { display:block; margin:8px 0 3px; font:700 1.35rem/1.1 'Newsreader Variable',serif; }
+  .kit-sidebar > div span,.kit-sidebar small { color:rgba(255,255,255,.62); font-size:.74rem; line-height:1.5; }
+  .kit-kicker { margin:0; color:var(--kit-peach); font-size:.7rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+  .kit-sidebar nav { display:grid; gap:8px; margin:34px 0; }
+  .kit-sidebar nav button { width:100%; padding:12px; display:grid; grid-template-columns:28px 1fr; gap:8px; align-items:center; border:1px solid transparent; border-radius:12px; background:transparent; color:rgba(255,255,255,.66); text-align:left; cursor:pointer; }
+  .kit-sidebar nav button i { color:var(--kit-peach); font-style:normal; font-size:.65rem; font-weight:800; }
+  .kit-sidebar nav button span { font-size:.78rem; font-weight:700; }
+  .kit-sidebar nav button.is-active { border-color:rgba(255,255,255,.14); background:rgba(255,255,255,.09); color:white; }
+  .kit-sidebar small { margin-top:auto; }
+  .kit-stage { min-width:0; }
+  .kit-page { display:none; min-height:calc(100vh - 124px); padding:clamp(32px,5vw,72px); overflow:hidden; border:1px solid var(--kit-border); border-radius:28px; background:var(--kit-paper); box-shadow:0 18px 50px rgba(24,52,44,.1); }
+  .kit-page.is-active { display:block; animation:kit-in .32s ease both; }
+  @keyframes kit-in { from { opacity:0; transform:translateY(7px); } }
+  .kit-page-topline { margin:-10px 0 clamp(38px,6vw,72px); display:flex; justify-content:space-between; gap:20px; color:var(--kit-muted); font-size:.7rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+  .kit-eyebrow { margin:0 0 10px; color:var(--kit-sage-deep); font-size:.72rem; font-weight:850; letter-spacing:.12em; text-transform:uppercase; }
+  .kit-page h1,.kit-page h2,.kit-page h3 { font-family:'Newsreader Variable',serif; }
+  .kit-page h1 { max-width:12ch; margin:0; font-size:clamp(3.1rem,7vw,7.4rem); line-height:.88; letter-spacing:-.055em; }
+  .kit-page > h2,.kit-section-heading h2 { max-width:18ch; margin:0; font-size:clamp(2.3rem,4.4vw,4.8rem); line-height:.98; letter-spacing:-.035em; }
+  .kit-page-intro,.kit-lede { max-width:68ch; color:var(--kit-muted); font-size:clamp(1rem,1.2vw,1.16rem); line-height:1.7; }
+  .kit-cover-grid { display:grid; grid-template-columns:minmax(0,1fr) 240px; gap:50px; align-items:end; }
+  .kit-lede { max-width:56ch; margin:24px 0 20px; }
+  .kit-pills { display:flex; flex-wrap:wrap; gap:8px; }
+  .kit-pills span,.kit-pills a { padding:8px 11px; border:1px solid var(--kit-border); border-radius:999px; color:var(--kit-muted); background:white; font-size:.72rem; font-weight:750; text-decoration:none; }
+  .kit-score { aspect-ratio:1; padding:26px; display:flex; flex-direction:column; align-items:center; justify-content:center; border:14px solid var(--kit-sage); border-right-color:var(--kit-peach); border-radius:50%; text-align:center; }
+  .kit-score div { line-height:1; }
+  .kit-score strong { font:750 3.7rem/1 'Newsreader Variable',serif; }
+  .kit-score div span { color:var(--kit-muted); font-size:.8rem; }
+  .kit-score > b { margin-top:7px; font-size:.76rem; }
+  .kit-score small { max-width:15ch; margin-top:5px; color:var(--kit-muted); font-size:.6rem; line-height:1.35; }
+  .kit-observation { margin:clamp(38px,6vw,72px) 0; padding:24px 26px; display:grid; grid-template-columns:190px 1fr; gap:28px; border-left:5px solid var(--kit-peach); border-radius:0 16px 16px 0; background:var(--kit-cream); }
+  .kit-observation span { display:block; color:var(--kit-muted); font-size:.65rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+  .kit-observation b { display:block; margin-top:7px; font-size:.85rem; }
+  .kit-observation p { margin:0; font:600 1.08rem/1.55 'Newsreader Variable',serif; }
+  .kit-section-heading { margin-bottom:22px; display:flex; justify-content:space-between; gap:40px; align-items:end; }
+  .kit-section-heading h2 { font-size:clamp(1.9rem,3vw,3.2rem); }
+  .kit-section-heading > p { max-width:50ch; margin:0; color:var(--kit-muted); font-size:.84rem; line-height:1.55; }
+  .kit-audit-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+  .kit-audit-card { min-height:190px; padding:18px; border:1px solid var(--kit-border); border-radius:16px; background:white; }
+  .kit-audit-card > div { display:flex; justify-content:space-between; color:var(--kit-muted); font-size:.64rem; }
+  .kit-audit-card > div b { padding:4px 7px; border-radius:999px; background:var(--kit-sage); color:var(--kit-ink); }
+  .kit-audit-card.tone-risk > div b { background:#f6d5c4; }
+  .kit-audit-card.tone-watch > div b { background:#f4e7b9; }
+  .kit-audit-card h3 { margin:28px 0 8px; font-size:1.25rem; }
+  .kit-audit-card p { margin:0; color:var(--kit-muted); font-size:.74rem; line-height:1.5; }
+  .kit-flow { margin:50px 0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr) 24px) minmax(0,1fr); align-items:center; }
+  .kit-flow > i { color:var(--kit-peach); font-style:normal; text-align:center; }
+  .kit-flow article { min-height:210px; padding:17px; border:1px solid var(--kit-border); border-radius:16px; background:var(--kit-cream); }
+  .kit-flow article > b { color:var(--kit-peach); font-size:.68rem; }
+  .kit-flow article > span { float:right; padding:4px 6px; border-radius:999px; font-size:.55rem; font-weight:800; text-transform:uppercase; }
+  .kit-flow .auto { background:var(--kit-sage); }
+  .kit-flow .team { background:#f6d5c4; }
+  .kit-flow h3 { margin:42px 0 8px; font-size:1.25rem; }
+  .kit-flow p { margin:0; color:var(--kit-muted); font-size:.72rem; line-height:1.5; }
+  .kit-workflow-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  .kit-rule-card { padding:26px; border-radius:18px; background:var(--kit-sage); }
+  .kit-rule-card.human { background:#f4dfd2; }
+  .kit-rule-card ul { margin:18px 0 0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:12px 25px; list-style:none; }
+  .kit-rule-card li { position:relative; padding-left:20px; font-size:.78rem; }
+  .kit-rule-card li::before { content:'✓'; position:absolute; left:0; color:var(--kit-sage-deep); font-weight:900; }
+  .kit-handoff { margin-top:18px; padding:25px; display:grid; grid-template-columns:1fr 1.4fr; gap:30px; align-items:center; border:1px solid var(--kit-border); border-radius:18px; }
+  .kit-handoff span { color:#a46045; font-size:.65rem; font-weight:850; letter-spacing:.1em; text-transform:uppercase; }
+  .kit-handoff h3 { margin:7px 0 0; font-size:1.45rem; }
+  .kit-handoff p { margin:0; color:var(--kit-muted); font-size:.8rem; line-height:1.55; }
+  .kit-template-grid { margin:42px 0 48px; display:grid; grid-template-columns:1.2fr .8fr; gap:16px; }
+  .kit-template { padding:22px; border:1px solid var(--kit-border); border-radius:18px; background:var(--kit-cream); }
+  .kit-template.featured { background:var(--kit-sage); }
+  .kit-template > div { display:flex; align-items:center; justify-content:space-between; gap:15px; }
+  .kit-template > div span { font-size:.68rem; font-weight:850; letter-spacing:.08em; text-transform:uppercase; }
+  .kit-template button { padding:6px 9px; border:1px solid var(--kit-border); border-radius:999px; background:white; color:var(--kit-ink); cursor:pointer; font-size:.64rem; font-weight:750; }
+  .kit-template pre { margin:24px 0 0; white-space:pre-wrap; color:var(--kit-ink); font:500 .77rem/1.65 'Manrope Variable',sans-serif; }
+  .kit-followups { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .kit-followups article { position:relative; min-height:220px; padding:22px; border:1px solid var(--kit-border); border-radius:18px; background:white; }
+  .kit-followups article > b { position:absolute; top:17px; right:17px; color:var(--kit-peach); font-size:.68rem; }
+  .kit-followups article > span { color:var(--kit-sage-deep); font-size:.65rem; font-weight:850; text-transform:uppercase; }
+  .kit-followups h3 { margin:30px 0 12px; font-size:1.3rem; }
+  .kit-followups p { margin:0; color:var(--kit-muted); font-size:.75rem; line-height:1.58; }
+  .kit-copy-rule { margin-top:16px; padding:16px 20px; display:flex; gap:12px; border-radius:14px; background:var(--kit-ink); color:white; font-size:.75rem; }
+  .kit-copy-rule span { color:rgba(255,255,255,.7); }
+  .kit-plan { margin:46px 0; display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+  .kit-plan article { min-height:205px; padding:20px; border-top:5px solid var(--kit-sage-deep); border-radius:4px 4px 16px 16px; background:var(--kit-cream); }
+  .kit-plan article:nth-child(2) { border-color:#719081; }
+  .kit-plan article:nth-child(3) { border-color:var(--kit-peach); }
+  .kit-plan article:nth-child(4) { border-color:var(--kit-ink); }
+  .kit-plan span { color:var(--kit-muted); font-size:.65rem; font-weight:850; text-transform:uppercase; }
+  .kit-plan h3 { margin:36px 0 8px; font-size:1.35rem; }
+  .kit-plan p { margin:0; color:var(--kit-muted); font-size:.73rem; line-height:1.5; }
+  .kit-metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+  .kit-metrics article { padding:18px; border:1px solid var(--kit-border); border-radius:15px; }
+  .kit-metrics strong,.kit-metrics span { display:block; }
+  .kit-metrics strong { font:700 1.05rem/1.2 'Newsreader Variable',serif; }
+  .kit-metrics span { margin-top:8px; color:var(--kit-muted); font-size:.68rem; line-height:1.45; }
+  .kit-final-cta { margin-top:42px; padding:30px; display:grid; grid-template-columns:1fr auto; gap:35px; align-items:center; border-radius:20px; background:var(--kit-ink); color:white; }
+  .kit-final-cta .kit-eyebrow { color:var(--kit-peach); }
+  .kit-final-cta h2 { margin:0; font-size:2rem; }
+  .kit-final-cta p:last-child { max-width:62ch; margin:10px 0 0; color:rgba(255,255,255,.65); font-size:.75rem; line-height:1.5; }
+  .kit-cta { padding:13px 17px; border-radius:999px; background:var(--kit-peach); color:var(--kit-ink); font-size:.76rem; font-weight:850; text-decoration:none; white-space:nowrap; }
+  .kit-disclaimer { margin-top:28px; color:var(--kit-muted); font-size:.62rem; line-height:1.5; }
+  .kit-disclaimer p { margin:5px 0 0; }
+  .kit-controls { margin:16px 4px 0; display:flex; align-items:center; justify-content:space-between; }
+  .kit-controls button { min-width:110px; padding:10px 14px; border:1px solid var(--kit-border); border-radius:999px; background:var(--kit-paper); color:var(--kit-ink); cursor:pointer; font-size:.74rem; font-weight:800; }
+  .kit-controls button:disabled { opacity:.35; cursor:default; }
+  .kit-controls span { color:var(--kit-muted); font-size:.72rem; }
+  .kit-loading,.kit-invalid { min-height:calc(100vh - 68px); display:grid; place-content:center; justify-items:center; gap:12px; padding:30px; text-align:center; }
+  .kit-loading p,.kit-invalid p { color:var(--kit-muted); }
+  .kit-invalid h2 { margin:8px 0 0; font:700 2rem/1 'Newsreader Variable',serif; }
+
+  @media (max-width:1050px) {
+    .kit-layout { grid-template-columns:1fr; }
+    .kit-sidebar { position:static; min-height:0; padding:16px; }
+    .kit-sidebar > div,.kit-sidebar > small { display:none; }
+    .kit-sidebar nav { margin:0; grid-template-columns:repeat(4,1fr); }
+    .kit-sidebar nav button { grid-template-columns:1fr; text-align:center; }
+    .kit-flow { grid-template-columns:1fr; gap:8px; }
+    .kit-flow > i { transform:rotate(90deg); }
+    .kit-flow article { min-height:0; }
+    .kit-flow h3 { margin-top:22px; }
+  }
+  @media (max-width:760px) {
+    .kit-header-inner,.kit-layout { width:min(100% - 24px,1440px); }
+    .kit-header-meta > span { display:none; }
+    .kit-layout { margin:12px auto 24px; gap:12px; }
+    .kit-sidebar { overflow:auto; }
+    .kit-sidebar nav { width:680px; }
+    .kit-sidebar nav button span { font-size:.68rem; }
+    .kit-page { min-height:0; padding:28px 20px; border-radius:20px; }
+    .kit-page-topline { margin:0 0 36px; }
+    .kit-page-topline span:last-child { max-width:45%; text-align:right; }
+    .kit-cover-grid,.kit-observation,.kit-section-heading,.kit-workflow-grid,.kit-handoff,.kit-template-grid,.kit-final-cta { grid-template-columns:1fr; }
+    .kit-cover-grid { align-items:start; }
+    .kit-score { width:190px; }
+    .kit-audit-grid,.kit-followups,.kit-plan,.kit-metrics { grid-template-columns:1fr 1fr; }
+    .kit-section-heading { align-items:start; }
+    .kit-rule-card ul { grid-template-columns:1fr; }
+    .kit-final-cta { align-items:start; }
+    .kit-cta { justify-self:start; }
+  }
+  @media (max-width:520px) {
+    .kit-page h1 { font-size:clamp(3rem,16vw,5rem); }
+    .kit-audit-grid,.kit-followups,.kit-plan,.kit-metrics { grid-template-columns:1fr; }
+    .kit-audit-card,.kit-followups article,.kit-plan article { min-height:0; }
+    .kit-copy-rule { display:grid; }
+  }
+
+  @page { size:A4 portrait; margin:10mm; }
+  @media print {
+    :global(html),:global(body.kit-body) { background:white !important; }
+    .kit-header,.kit-sidebar,.kit-controls,.kit-loading,.kit-invalid,.kit-template button { display:none !important; }
+    .kit-layout { width:100%; margin:0; display:block; }
+    .kit-stage { display:block; }
+    .kit-page,.kit-page.is-active { min-height:277mm; padding:12mm; display:block !important; break-after:page; border:0; border-radius:0; box-shadow:none; animation:none; }
+    .kit-page:last-of-type { break-after:auto; }
+    .kit-page h1 { font-size:48pt; }
+    .kit-page > h2 { font-size:30pt; }
+    .kit-page-topline { margin-top:0; }
+    .kit-audit-grid,.kit-plan,.kit-metrics { gap:7px; }
+    .kit-audit-card,.kit-plan article { min-height:0; }
+    .kit-flow article { min-height:150px; }
+    .kit-template-grid { margin:25px 0; }
+    .kit-followups article { min-height:165px; }
+    .kit-final-cta { break-inside:avoid; }
+    * { -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  }
+</style>
