@@ -64,7 +64,7 @@ const canonical = 'https://get-quid.site/private-kit/';
             <div>
               <p class="kit-eyebrow">Private inquiry-to-tour kit for</p>
               <h1 data-community>Your community</h1>
-              <p class="kit-lede">A practical diagnosis and response system designed to help more family inquiries reach a clear next step.</p>
+              <p class="kit-lede">The commercial problem is simple: slow follow-up can turn warm inquiries into someone else’s tours.</p>
               <div class="kit-pills"><span data-location>United States</span><a data-website href="#" target="_blank" rel="noopener noreferrer">Website reviewed</a></div>
             </div>
             <div class="kit-score" aria-label="Public journey audit score">
@@ -74,49 +74,53 @@ const canonical = 'https://get-quid.site/private-kit/';
             </div>
           </div>
 
+          <div class="kit-commercial-grid">
+            <article class="kit-commercial problem"><span>The revenue leak</span><h2>Manual delay loses tour opportunities.</h2><div><b>Inquiry</b><i>→</i><b>Wait</b><i>→</i><strong>Family books elsewhere</strong></div></article>
+            <article class="kit-commercial solution"><span>The Quid fix</span><h2>Reply instantly. Move more families toward tours.</h2><div><b>Inquiry</b><i>→</i><b>Fast next step</b><i>→</i><strong>More move-in opportunities</strong></div></article>
+          </div>
+
           <section class="kit-observation">
             <div><span>Public website observation</span><b data-cta>Request a Tour</b></div>
             <p data-observation>The public website captures interest, but the next step appears to depend on manual staff follow-up.</p>
           </section>
 
           <section>
-            <div class="kit-section-heading"><div><p class="kit-eyebrow">The diagnosis</p><h2>Where momentum may be leaking</h2></div><p>The goal is not to replace the sales team. It is to remove avoidable waiting before the team can do its best work.</p></div>
+            <div class="kit-section-heading"><div><p class="kit-eyebrow">Public journey audit</p><h2>What a family sees</h2></div></div>
             <div class="kit-audit-grid" data-audit-list></div>
           </section>
         </article>
 
         <article class="kit-page" data-page="1">
           <div class="kit-page-topline"><span>02 / 04</span><span data-community>Your community</span></div>
-          <p class="kit-eyebrow">Recommended workflow</p>
-          <h2>Fast where it should be. Human where it matters.</h2>
-          <p class="kit-page-intro">A family should never wonder whether the request disappeared. Routine steps move immediately; care, eligibility and sensitive questions go to staff.</p>
+          <p class="kit-eyebrow">The difference in one glance</p>
+          <h2>Manual path vs. Quid path</h2>
+          <p class="kit-page-intro">Same inquiry. A much clearer route to revenue.</p>
 
-          <div class="kit-flow">
-            <article><b>01</b><span class="auto">Automatic</span><h3>Inquiry arrives</h3><p>The existing form triggers one approved workflow.</p></article>
-            <i>→</i>
-            <article><b>02</b><span class="auto">Automatic</span><h3>Acknowledgement</h3><p>The family immediately knows the request was received.</p></article>
-            <i>→</i>
-            <article><b>03</b><span class="auto">Automatic</span><h3>Clear next step</h3><p>Offer approved tour times or a direct route to a person.</p></article>
-            <i>→</i>
-            <article><b>04</b><span class="team">Your team</span><h3>Human handoff</h3><p>Questions needing judgment pause and reach the right staff member.</p></article>
-            <i>→</i>
-            <article><b>05</b><span class="auto">Automatic</span><h3>Follow-up</h3><p>Unanswered inquiries receive a gentle, finite sequence.</p></article>
+          <div class="kit-compare">
+            <article class="kit-compare-lane manual">
+              <header><span>Your current path</span><strong>Manual</strong></header>
+              <div><b>1</b><span><strong data-cta>Request a Tour</strong> submitted</span></div><i>↓</i>
+              <div><b>2</b><span>Form waits in an inbox</span></div><i>↓</i>
+              <div><b>3</b><span>Staff replies when available</span></div><i>↓</i>
+              <div><b>4</b><span>Calendar back-and-forth</span></div>
+              <footer>Risk: another community responds first</footer>
+            </article>
+            <div class="kit-vs">VS</div>
+            <article class="kit-compare-lane automated">
+              <header><span>The Quid path</span><strong>Immediate</strong></header>
+              <div><b>1</b><span>Inquiry triggers approved workflow</span></div><i>↓</i>
+              <div><b>2</b><span>Family receives a fast reply</span></div><i>↓</i>
+              <div><b>3</b><span>Approved tour times appear</span></div><i>↓</i>
+              <div><b>4</b><span>Follow-up runs; staff handles exceptions</span></div>
+              <footer>Upside: more inquiries can reach tours</footer>
+            </article>
           </div>
 
-          <div class="kit-workflow-grid">
-            <section class="kit-rule-card">
-              <p class="kit-eyebrow">Automation handles</p>
-              <ul><li>Receipt confirmation</li><li>Approved tour-calendar link</li><li>Routine reminders</li><li>Finite follow-up sequence</li><li>Daily activity summary</li></ul>
-            </section>
-            <section class="kit-rule-card human">
-              <p class="kit-eyebrow">People handle</p>
-              <ul><li>Care and medication questions</li><li>Eligibility or assessment</li><li>Pricing nuance and exceptions</li><li>Family concerns</li><li>Anything uncertain or sensitive</li></ul>
-            </section>
-          </div>
+          <div class="kit-revenue-strip"><b>Existing demand</b><i>→</i><b>More responses</b><i>→</i><b>More tours</b><i>→</i><strong>More move-in opportunities</strong></div>
 
           <section class="kit-handoff">
-            <div><span>Human-review rule</span><h3>When the workflow is unsure, it stops.</h3></div>
-            <p>The designated staff member receives the conversation, the question and the next action—without asking the family to repeat everything.</p>
+            <div><span>Human-review rule</span><h3>Important questions still go to people.</h3></div>
+            <p>Care, eligibility and sensitive questions pause and alert staff.</p>
           </section>
         </article>
 
@@ -361,6 +365,21 @@ const canonical = 'https://get-quid.site/private-kit/';
   .kit-score div span { color:var(--kit-muted); font-size:.8rem; }
   .kit-score > b { margin-top:7px; font-size:.76rem; }
   .kit-score small { max-width:15ch; margin-top:5px; color:var(--kit-muted); font-size:.6rem; line-height:1.35; }
+  .kit-commercial-grid { margin:40px 0 18px; display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .kit-commercial { padding:25px; border-radius:18px; }
+  .kit-commercial > span { display:inline-flex; padding:5px 8px; border-radius:999px; font-size:.62rem; font-weight:900; letter-spacing:.09em; text-transform:uppercase; }
+  .kit-commercial h2 { max-width:14ch; margin:18px 0 22px; font-size:clamp(1.7rem,3vw,2.65rem); line-height:1; }
+  .kit-commercial > div { display:grid; grid-template-columns:1fr auto .7fr auto 1.6fr; gap:6px; align-items:center; font-size:.62rem; }
+  .kit-commercial > div b,.kit-commercial > div strong { padding:8px; border-radius:8px; text-align:center; }
+  .kit-commercial > div i { font-style:normal; }
+  .kit-commercial.problem { background:#fff0e7; color:#6f3827; }
+  .kit-commercial.problem > span { background:#efc6b2; color:#803b25; }
+  .kit-commercial.problem > div b { background:white; }
+  .kit-commercial.problem > div strong { background:#b95032; color:white; }
+  .kit-commercial.solution { background:var(--kit-ink); color:white; }
+  .kit-commercial.solution > span { background:rgba(237,177,144,.18); color:#ffc6a6; }
+  .kit-commercial.solution > div b { background:rgba(255,255,255,.1); }
+  .kit-commercial.solution > div strong { background:#b7d2bd; color:var(--kit-ink); }
   .kit-observation { margin:clamp(38px,6vw,72px) 0; padding:24px 26px; display:grid; grid-template-columns:190px 1fr; gap:28px; border-left:5px solid var(--kit-peach); border-radius:0 16px 16px 0; background:var(--kit-cream); }
   .kit-observation span { display:block; color:var(--kit-muted); font-size:.65rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
   .kit-observation b { display:block; margin-top:7px; font-size:.85rem; }
@@ -369,13 +388,33 @@ const canonical = 'https://get-quid.site/private-kit/';
   .kit-section-heading h2 { font-size:clamp(1.9rem,3vw,3.2rem); }
   .kit-section-heading > p { max-width:50ch; margin:0; color:var(--kit-muted); font-size:.84rem; line-height:1.55; }
   .kit-audit-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
-  .kit-audit-card { min-height:190px; padding:18px; border:1px solid var(--kit-border); border-radius:16px; background:white; }
+  .kit-audit-card { min-height:125px; padding:18px; border:1px solid var(--kit-border); border-radius:16px; background:white; }
   .kit-audit-card > div { display:flex; justify-content:space-between; color:var(--kit-muted); font-size:.64rem; }
   .kit-audit-card > div b { padding:4px 7px; border-radius:999px; background:var(--kit-sage); color:var(--kit-ink); }
   .kit-audit-card.tone-risk > div b { background:#f6d5c4; }
   .kit-audit-card.tone-watch > div b { background:#f4e7b9; }
-  .kit-audit-card h3 { margin:28px 0 8px; font-size:1.25rem; }
-  .kit-audit-card p { margin:0; color:var(--kit-muted); font-size:.74rem; line-height:1.5; }
+  .kit-audit-card h3 { margin:24px 0 0; font-size:1.25rem; }
+  .kit-audit-card p { display:none; }
+  .kit-compare { margin:44px 0 18px; display:grid; grid-template-columns:1fr 64px 1fr; align-items:center; }
+  .kit-compare-lane { padding:24px; border:1px solid var(--kit-border); border-radius:20px; }
+  .kit-compare-lane.manual { background:#fff0e7; }
+  .kit-compare-lane.automated { background:#e3eee4; }
+  .kit-compare-lane header { display:flex; justify-content:space-between; gap:15px; padding-bottom:16px; border-bottom:1px solid var(--kit-border); }
+  .kit-compare-lane header span { font-size:.7rem; font-weight:900; letter-spacing:.09em; text-transform:uppercase; }
+  .kit-compare-lane.manual header span { color:#99472d; }
+  .kit-compare-lane.automated header span { color:#315f49; }
+  .kit-compare-lane header strong { font-size:.7rem; }
+  .kit-compare-lane > div { min-height:52px; padding:8px 0; display:grid; grid-template-columns:32px 1fr; gap:11px; align-items:center; }
+  .kit-compare-lane > div b { width:30px; height:30px; display:grid; place-items:center; border-radius:9px; background:white; font-size:.65rem; }
+  .kit-compare-lane > div span { font-size:.76rem; }
+  .kit-compare-lane > i { display:block; margin:-6px 0 -6px 13px; color:var(--kit-muted); font-style:normal; }
+  .kit-compare-lane footer { margin-top:12px; padding:13px; border-radius:11px; font-size:.74rem; font-weight:900; text-align:center; }
+  .kit-compare-lane.manual footer { background:#b95032; color:white; }
+  .kit-compare-lane.automated footer { background:var(--kit-ink); color:white; }
+  .kit-vs { width:52px; height:52px; z-index:1; display:grid; place-items:center; justify-self:center; border:7px solid var(--kit-paper); border-radius:50%; background:var(--kit-ink); color:white; font-size:.7rem; font-weight:900; }
+  .kit-revenue-strip { padding:18px; display:grid; grid-template-columns:1fr auto 1fr auto 1fr auto 1.5fr; gap:8px; align-items:center; border-radius:15px; background:var(--kit-ink); color:white; font-size:.7rem; text-align:center; }
+  .kit-revenue-strip i { color:var(--kit-peach); font-style:normal; }
+  .kit-revenue-strip strong { padding:10px; border-radius:9px; background:var(--kit-peach); color:var(--kit-ink); }
   .kit-flow { margin:50px 0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr) 24px) minmax(0,1fr); align-items:center; }
   .kit-flow > i { color:var(--kit-peach); font-style:normal; text-align:center; }
   .kit-flow article { min-height:210px; padding:17px; border:1px solid var(--kit-border); border-radius:16px; background:var(--kit-cream); }
@@ -448,6 +487,8 @@ const canonical = 'https://get-quid.site/private-kit/';
     .kit-flow > i { transform:rotate(90deg); }
     .kit-flow article { min-height:0; }
     .kit-flow h3 { margin-top:22px; }
+    .kit-compare { grid-template-columns:1fr; gap:10px; }
+    .kit-vs { margin:-5px 0; }
   }
   @media (max-width:760px) {
     .kit-header-inner,.kit-layout { width:min(100% - 24px,1440px); }
@@ -459,7 +500,7 @@ const canonical = 'https://get-quid.site/private-kit/';
     .kit-page { min-height:0; padding:28px 20px; border-radius:20px; }
     .kit-page-topline { margin:0 0 36px; }
     .kit-page-topline span:last-child { max-width:45%; text-align:right; }
-    .kit-cover-grid,.kit-observation,.kit-section-heading,.kit-workflow-grid,.kit-handoff,.kit-template-grid,.kit-final-cta { grid-template-columns:1fr; }
+    .kit-cover-grid,.kit-commercial-grid,.kit-observation,.kit-section-heading,.kit-workflow-grid,.kit-handoff,.kit-template-grid,.kit-final-cta { grid-template-columns:1fr; }
     .kit-cover-grid { align-items:start; }
     .kit-score { width:190px; }
     .kit-audit-grid,.kit-followups,.kit-plan,.kit-metrics { grid-template-columns:1fr 1fr; }
@@ -467,6 +508,8 @@ const canonical = 'https://get-quid.site/private-kit/';
     .kit-rule-card ul { grid-template-columns:1fr; }
     .kit-final-cta { align-items:start; }
     .kit-cta { justify-self:start; }
+    .kit-revenue-strip { grid-template-columns:1fr; }
+    .kit-revenue-strip i { transform:rotate(90deg); }
   }
   @media (max-width:520px) {
     .kit-page h1 { font-size:clamp(3rem,16vw,5rem); }

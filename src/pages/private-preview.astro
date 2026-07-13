@@ -41,144 +41,89 @@ const canonical = 'https://get-quid.site/private-preview/';
 
     <main id="preview-content">
       <section class="preview-hero">
-        <div class="preview-shell preview-hero-grid">
-          <div>
-            <p class="eyebrow">Private inquiry-to-tour preview for</p>
-            <h1 class="preview-community-title"><span data-community>Your community</span></h1>
-            <p class="preview-hero-kicker">A quieter path from inquiry to tour.</p>
-            <p class="preview-lede"><span data-community>Your community</span> already does the hard part: helping families raise their hands. This private preview shows how the next step could happen without waiting for someone to find the email and wrestle calendars.</p>
-            <div class="preview-context">
-              <span data-location>Location not supplied</span>
-              <a data-website-link href="#" target="_blank" rel="noopener noreferrer">Website reviewed</a>
-            </div>
-          </div>
-          <div class="preview-mascot-wrap">
-            <Image src={mascot} alt="Quid presenting an inquiry workflow" width={310} loading="eager" />
-          </div>
-        </div>
-      </section>
-
-      <section class="preview-section preview-section-sand">
         <div class="preview-shell">
-          <p class="eyebrow">The observed handoff</p>
-          <h2>The website catches the interest. Then the inbox takes over.</h2>
-          <div class="preview-observation-grid">
-            <article class="preview-card preview-card-observed">
-              <span class="preview-card-label">Public website observation</span>
-              <p data-observation>Families can submit an inquiry, but the next step depends on manual staff follow-up.</p>
-              <small>Reviewed from publicly available website information. No inquiry form was submitted.</small>
+          <p class="eyebrow">Private inquiry-to-tour preview for</p>
+          <h1 class="preview-community-title"><span data-community>Your community</span></h1>
+          <div class="preview-context"><span data-location>Location not supplied</span><a data-website-link href="#" target="_blank" rel="noopener noreferrer">Website reviewed</a></div>
+
+          <div class="preview-verdict-grid">
+            <article class="preview-verdict problem">
+              <span>The problem</span>
+              <h2>Manual delay can cost you tours.</h2>
+              <p>Families may contact several communities. Every hour spent waiting for a reply gives another community the opening.</p>
+              <div class="preview-chain danger"><b>Inquiry</b><i>→</i><b>Inbox wait</b><i>→</i><strong>Tour opportunity lost</strong></div>
             </article>
-            <div class="preview-current-flow" aria-label="Current inquiry path">
-              <div><b>1</b><span>Family reaches <strong data-cta>Request a Tour</strong></span></div>
-              <i aria-hidden="true">→</i>
-              <div><b>2</b><span>Form reaches an inbox</span></div>
-              <i aria-hidden="true">→</i>
-              <div><b>3</b><span>Staff finds time to respond</span></div>
-              <i aria-hidden="true">→</i>
-              <div><b>4</b><span>Calendar back-and-forth begins</span></div>
-            </div>
+            <article class="preview-verdict solution">
+              <Image src={mascot} alt="Quid moving an inquiry toward a tour" width={118} loading="eager" />
+              <span>The Quid fix</span>
+              <h2>Reply now. Move families toward a visit.</h2>
+              <p>Quid responds immediately, follows up and offers approved tour times while your team stays in control.</p>
+              <div class="preview-chain gain"><b>Inquiry</b><i>→</i><b>Fast response</b><i>→</i><strong>More tour opportunities</strong></div>
+            </article>
           </div>
+
+          <div class="preview-observation"><span>What we saw on your public website</span><p data-observation>Families can submit an inquiry, but the next step depends on manual staff follow-up.</p></div>
         </div>
       </section>
 
-      <section class="preview-section">
+      <section class="preview-section preview-comparison">
         <div class="preview-shell">
-          <p class="eyebrow">The proposed Quid flow</p>
-          <h2>The routine parts move. Your team keeps the human parts.</h2>
-          <div class="preview-proposed-flow">
-            <article><span>01</span><h3>Inquiry arrives</h3><p>The existing website form starts an approved workflow.</p></article>
-            <article><span>02</span><h3>Family hears back</h3><p>A warm acknowledgement confirms receipt and offers a clear next step.</p></article>
-            <article><span>03</span><h3>Tour becomes bookable</h3><p>The family chooses from times already approved by the community.</p></article>
-            <article><span>04</span><h3>Staff sees what matters</h3><p>Replies, stalled inquiries and human-review items stay visible.</p></article>
+          <div class="preview-section-head"><div><p class="eyebrow">The difference in one glance</p><h2>Your current path vs. the Quid path</h2></div><p>Same inquiry. Very different chance of reaching a tour.</p></div>
+          <div class="preview-lanes">
+            <article class="preview-lane current">
+              <header><span>Current manual path</span><strong>Slow and easy to lose</strong></header>
+              <div><b>1</b><span><strong data-cta>Request a Tour</strong> submitted</span></div><i>↓</i>
+              <div><b>2</b><span>Form waits in an inbox</span></div><i>↓</i>
+              <div><b>3</b><span>Staff replies when available</span></div><i>↓</i>
+              <div><b>4</b><span>Calendar back-and-forth</span></div>
+              <footer>Risk: the family books elsewhere first</footer>
+            </article>
+            <div class="preview-versus"><span>VS</span></div>
+            <article class="preview-lane quid">
+              <header><span>With Quid</span><strong>Immediate and trackable</strong></header>
+              <div><b>1</b><span>Inquiry triggers approved workflow</span></div><i>↓</i>
+              <div><b>2</b><span>Family receives an immediate reply</span></div><i>↓</i>
+              <div><b>3</b><span>Approved tour times are offered</span></div><i>↓</i>
+              <div><b>4</b><span>Follow-up runs; staff handles exceptions</span></div>
+              <footer>Upside: more existing inquiries can reach tours</footer>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="preview-section preview-section-deep">
-        <div class="preview-shell preview-message-grid">
-          <div>
-            <p class="eyebrow">Illustrative acknowledgement</p>
-            <h2>Written like the community. Not like a software company.</h2>
-            <p>This is sample language for discussion. Every live message, timing rule and escalation path would be reviewed and approved before launch.</p>
-          </div>
+      <section class="preview-revenue">
+        <div class="preview-shell">
+          <p class="eyebrow">The revenue path</p>
+          <h2>More inquiries answered. More tours reached. More move-in opportunities.</h2>
+          <div class="preview-revenue-flow"><div><b>Existing demand</b><span>Families already finding you</span></div><i>→</i><div><b>Faster response</b><span>No waiting for inbox coverage</span></div><i>→</i><div><b>More tours</b><span>A clear next step while intent is high</span></div><i>→</i><div class="money"><b>More revenue opportunities</b><span>More chances to convert a move-in</span></div></div>
+          <p class="preview-honesty">Quid does not invent demand or guarantee move-ins. It helps more of the demand you already have reach a visit.</p>
+        </div>
+      </section>
+
+      <section class="preview-section preview-proof">
+        <div class="preview-shell preview-proof-grid">
           <article class="preview-message">
-            <span>New inquiry · acknowledgement</span>
+            <span>Immediate acknowledgement</span>
             <p>Hi Sarah,</p>
-            <p>Thank you for reaching out to <strong data-community>the community</strong>.</p>
-            <p>Finding the right community can feel like a lot to navigate, and we are happy to make the next step easier.</p>
-            <p>You can choose a convenient time to visit below. If you would rather speak with someone first, reply here and a member of the admissions team will follow up.</p>
-            <p>Warmly,<br /><span data-community>Your community</span></p>
+            <p>Thank you for reaching out to <strong data-community>the community</strong>. We received your request.</p>
+            <p>Choose a convenient time to visit below, or reply if you would rather speak with our team first.</p>
           </article>
-        </div>
-      </section>
-
-      <section class="preview-section preview-section-sage">
-        <div class="preview-shell preview-demo-grid">
           <article class="preview-tour-card">
-            <div class="preview-window-head"><span></span><span></span><span></span><b>Choose a tour time</b></div>
+            <span>Next step offered immediately</span>
             <h3>Visit <span data-community>the community</span></h3>
-            <p>Select a time that works for your family.</p>
             <div class="preview-date-row"><button type="button">Tue<br /><strong>14</strong></button><button type="button">Wed<br /><strong>15</strong></button><button type="button">Thu<br /><strong>16</strong></button></div>
             <div class="preview-time-row"><span>10:00 AM</span><span>1:30 PM</span><span>3:00 PM</span></div>
-            <small>Illustrative availability only</small>
           </article>
-          <article class="preview-summary-card">
-            <div class="preview-summary-head"><span>Daily admissions summary</span><b>Good morning</b></div>
-            <ul>
-              <li><b>3</b><span>New inquiries acknowledged</span></li>
-              <li><b>2</b><span>Tours booked</span></li>
-              <li><b>1</b><span>Follow-up due</span></li>
-              <li class="review"><b>1</b><span>Needs human review</span></li>
-            </ul>
-            <small>Illustrative activity, not community data</small>
-          </article>
-        </div>
-      </section>
-
-      <section class="preview-section">
-        <div class="preview-shell preview-handoff-grid">
-          <div>
-            <p class="eyebrow">Quid knows when to stop</p>
-            <h2>Important questions go to people.</h2>
-            <p>Clinical, medication, eligibility, care-assessment and sensitive family questions pause the routine workflow and alert the designated staff member.</p>
-          </div>
           <article class="preview-handoff-card">
-            <span>Human review required</span>
-            <h3>Care or eligibility question detected</h3>
-            <p><strong>Assigned to:</strong> Admissions Director</p>
-            <p><strong>Status:</strong> Waiting for staff response</p>
+            <span>Human review</span><h3>Important questions still go to people.</h3><p>Care, medication, eligibility and sensitive questions pause the workflow and alert staff.</p>
           </article>
-        </div>
-      </section>
-
-      <section class="preview-section preview-section-sand">
-        <div class="preview-shell">
-          <p class="eyebrow">What the pilot measures</p>
-          <h2>A workflow should prove itself.</h2>
-          <div class="preview-metrics">
-            <article><strong>Response coverage</strong><span>How many eligible inquiries received the approved acknowledgement.</span></article>
-            <article><strong>Time to next step</strong><span>How quickly families received a clear route forward.</span></article>
-            <article><strong>Tours booked</strong><span>How many inquiries selected an approved tour time.</span></article>
-            <article><strong>Follow-up visibility</strong><span>What became due, stalled or required staff attention.</span></article>
-          </div>
         </div>
       </section>
 
       <section class="preview-section preview-final">
         <div class="preview-shell preview-final-grid">
-          <div>
-            <p class="eyebrow">30-day focused pilot</p>
-            <h2>One community. One inquiry source. One tour calendar.</h2>
-            <p>We map the current process, approve messages and handoffs, deploy one controlled workflow, and report what happened.</p>
-            <a class="button" data-walkthrough-link href="mailto:charcopadart@gmail.com">Set Up a Walkthrough Call</a>
-          </div>
-          <article class="preview-price-card">
-            <span>30-Day Quid Admissions Pilot</span>
-            <strong>$1,000</strong>
-            <small>one-time</small>
-            <hr />
-            <p>Keep Quid for <b>$899/month per community</b> after the pilot.</p>
-          </article>
+          <div><p class="eyebrow">30-day focused pilot</p><h2>Stop losing warm inquiries to slow follow-up.</h2><p>One community. One inquiry source. One tour calendar. Measure response coverage, speed and tours reached.</p><a class="button" data-walkthrough-link href="mailto:charcopadart@gmail.com">Walk through this with Umair</a></div>
+          <article class="preview-price-card"><span>30-Day Quid Admissions Pilot</span><strong>$1,000</strong><small>one-time</small><hr /><p>Keep Quid for <b>$899/month per community</b> after the pilot.</p></article>
         </div>
       </section>
 
@@ -321,6 +266,72 @@ const canonical = 'https://get-quid.site/private-preview/';
   .preview-price-card > small { color: #dce4de; }
   .preview-price-card hr { margin: 24px 0; border: 0; border-top: 1px solid rgba(255,255,255,.15); }
   .preview-price-card p { margin: 0; color: var(--cream); }
+  .preview-verdict-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:42px; }
+  .preview-verdict { position:relative; min-height:355px; padding:clamp(25px,4vw,42px); overflow:hidden; border:1px solid var(--border); border-radius:26px; }
+  .preview-verdict > span { display:inline-flex; padding:7px 10px; border-radius:999px; font-size:.69rem; font-weight:850; letter-spacing:.09em; text-transform:uppercase; }
+  .preview-verdict h2 { max-width:12ch; margin:26px 0 13px; font-size:clamp(2.1rem,4vw,4.1rem); line-height:.96; letter-spacing:-.04em; }
+  .preview-verdict > p { max-width:52ch; margin:0 0 30px; font-size:.9rem; line-height:1.6; }
+  .preview-verdict.problem { background:#fff1e9; }
+  .preview-verdict.problem > span { background:#f2cab5; color:#8d4027; }
+  .preview-verdict.problem > p { color:#744c3d; }
+  .preview-verdict.solution { background:var(--ink); color:var(--cream); }
+  .preview-verdict.solution > span { background:rgba(237,177,144,.18); color:#ffc9aa; }
+  .preview-verdict.solution > p { color:#dce4de; }
+  .preview-verdict.solution > img { position:absolute; top:20px; right:20px; width:96px; max-height:110px; object-fit:contain; filter:drop-shadow(0 15px 18px rgba(0,0,0,.18)); }
+  .preview-chain { display:flex; align-items:center; gap:8px; padding:13px; border-radius:14px; font-size:.68rem; }
+  .preview-chain b,.preview-chain strong { padding:8px 9px; border-radius:9px; text-align:center; }
+  .preview-chain i { font-style:normal; font-size:1.15rem; }
+  .preview-chain.danger { background:rgba(192,82,51,.08); }
+  .preview-chain.danger b { background:white; }
+  .preview-chain.danger strong { background:#b95032; color:white; }
+  .preview-chain.gain { background:rgba(255,255,255,.08); }
+  .preview-chain.gain b { background:rgba(255,255,255,.1); }
+  .preview-chain.gain strong { background:#b7d2bd; color:var(--ink); }
+  .preview-observation { margin-top:18px; padding:18px 22px; display:grid; grid-template-columns:220px 1fr; gap:24px; align-items:center; border:1px solid var(--border); border-left:6px solid var(--copper); border-radius:14px; background:rgba(255,253,248,.78); }
+  .preview-observation span { color:var(--copper-dark); font-size:.68rem; font-weight:850; letter-spacing:.08em; text-transform:uppercase; }
+  .preview-observation p { margin:0; font:650 1.02rem/1.5 'Newsreader Variable',serif; }
+  .preview-comparison { background:var(--white); }
+  .preview-section-head { display:flex; justify-content:space-between; gap:40px; align-items:end; margin-bottom:34px; }
+  .preview-section-head h2 { max-width:16ch; margin:0; font-size:clamp(2.4rem,5vw,4.9rem); line-height:.96; }
+  .preview-section-head > p { max-width:28ch; margin:0; color:var(--muted); font:650 1.2rem/1.35 'Newsreader Variable',serif; }
+  .preview-lanes { display:grid; grid-template-columns:1fr 70px 1fr; gap:0; align-items:center; }
+  .preview-lane { padding:25px; border:1px solid var(--border); border-radius:24px; }
+  .preview-lane.current { background:#fff1e9; }
+  .preview-lane.quid { background:#e5efe6; }
+  .preview-lane header { display:flex; justify-content:space-between; gap:15px; padding-bottom:18px; border-bottom:1px solid var(--border); }
+  .preview-lane header span { font-size:.72rem; font-weight:850; letter-spacing:.08em; text-transform:uppercase; }
+  .preview-lane.current header span { color:#9c4b31; }
+  .preview-lane.quid header span { color:#315f49; }
+  .preview-lane header strong { font-size:.72rem; }
+  .preview-lane > div { min-height:58px; display:grid; grid-template-columns:34px 1fr; gap:12px; align-items:center; padding:10px 0; }
+  .preview-lane > div b { width:32px; height:32px; display:grid; place-items:center; border-radius:10px; background:white; font-size:.68rem; }
+  .preview-lane > div span { font-size:.82rem; }
+  .preview-lane > i { display:block; margin:-5px 0 -5px 15px; color:var(--muted); font-style:normal; }
+  .preview-lane footer { margin-top:14px; padding:14px; border-radius:12px; font-weight:850; text-align:center; }
+  .preview-lane.current footer { background:#b95032; color:white; }
+  .preview-lane.quid footer { background:var(--ink); color:white; }
+  .preview-versus { display:grid; place-items:center; }
+  .preview-versus span { width:54px; height:54px; display:grid; place-items:center; border:7px solid white; border-radius:50%; background:var(--ink); color:white; font-size:.76rem; font-weight:900; }
+  .preview-revenue { padding:clamp(55px,8vw,95px) 0; background:var(--ink); color:var(--cream); }
+  .preview-revenue .eyebrow { color:#ffc9aa; }
+  .preview-revenue h2 { max-width:16ch; margin:0 auto 45px; color:white; font-size:clamp(2.8rem,6vw,6.2rem); line-height:.92; letter-spacing:-.045em; text-align:center; }
+  .preview-revenue-flow { display:grid; grid-template-columns:1fr 32px 1fr 32px 1fr 32px 1.2fr; align-items:center; }
+  .preview-revenue-flow > div { min-height:128px; padding:20px; display:flex; flex-direction:column; justify-content:center; border:1px solid rgba(255,255,255,.14); border-radius:16px; background:rgba(255,255,255,.06); }
+  .preview-revenue-flow > div.money { background:var(--copper); color:var(--ink); }
+  .preview-revenue-flow b,.preview-revenue-flow span { display:block; }
+  .preview-revenue-flow b { font:700 1.3rem/1.15 'Newsreader Variable',serif; }
+  .preview-revenue-flow span { margin-top:7px; color:#bfcac3; font-size:.68rem; line-height:1.4; }
+  .preview-revenue-flow .money span { color:#57382c; }
+  .preview-revenue-flow > i { color:var(--copper); font-style:normal; text-align:center; }
+  .preview-honesty { max-width:60ch; margin:26px auto 0; color:#bfcac3; font-size:.75rem; text-align:center; }
+  .preview-proof { background:#e8ede7; }
+  .preview-proof-grid { display:grid; grid-template-columns:1fr 1fr .75fr; gap:16px; align-items:stretch; }
+  .preview-proof-grid > article { min-height:350px; }
+  .preview-message { color:var(--ink); }
+  .preview-message > span,.preview-tour-card > span { display:block; margin-bottom:24px; color:var(--copper-dark); font-size:.68rem; font-weight:850; letter-spacing:.08em; text-transform:uppercase; }
+  .preview-handoff-card { display:flex; flex-direction:column; justify-content:center; }
+  .preview-handoff-card h3 { font-size:1.8rem; }
+  .preview-final h2 { max-width:14ch; font-size:clamp(2.5rem,5vw,4.8rem); line-height:.96; }
   .preview-disclaimer { padding: 22px 0; background: var(--ink); color: #dce4de; }
   .preview-disclaimer p { margin: 0; font-size: .72rem; }
   .preview-invalid { min-height: 100vh; display: grid; place-content: center; justify-items: center; gap: 16px; padding: 30px; text-align: center; }
@@ -334,6 +345,12 @@ const canonical = 'https://get-quid.site/private-preview/';
     .preview-current-flow i { transform: rotate(90deg); justify-self: center; }
     .preview-current-flow > div { min-height: 0; }
     .preview-proposed-flow, .preview-metrics { grid-template-columns: repeat(2,1fr); }
+    .preview-verdict-grid,.preview-proof-grid { grid-template-columns:1fr; }
+    .preview-lanes { grid-template-columns:1fr; gap:12px; }
+    .preview-versus span { margin:-4px 0; }
+    .preview-revenue-flow { grid-template-columns:1fr; gap:7px; }
+    .preview-revenue-flow > i { transform:rotate(90deg); }
+    .preview-proof-grid > article { min-height:0; }
   }
   @media (max-width: 640px) {
     .preview-shell { width: min(100% - 28px,1120px); }
@@ -342,6 +359,11 @@ const canonical = 'https://get-quid.site/private-preview/';
     .preview-hero-grid { text-align: left; }
     .preview-demo-grid, .preview-proposed-flow, .preview-metrics { grid-template-columns: 1fr; }
     .preview-proposed-flow article { min-height: 0; }
+    .preview-verdict { min-height:0; }
+    .preview-verdict.solution > img { width:72px; }
+    .preview-chain { display:grid; grid-template-columns:1fr auto 1fr auto 1.4fr; padding:8px; }
+    .preview-observation,.preview-section-head { grid-template-columns:1fr; display:grid; gap:12px; align-items:start; }
+    .preview-lane header { display:grid; }
   }
   @media print {
     .preview-header { position: static; }
