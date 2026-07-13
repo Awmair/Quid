@@ -62,17 +62,24 @@ const audiences = [
       <div class="hero-copy">
         <p class="eyebrow" data-reveal>AI-assisted admissions follow-up for senior living</p>
         <h1><span data-reveal>More tours.</span><span class="editorial" data-reveal>Less chasing.</span></h1>
-        <p class="lede" data-reveal>Quid responds to website inquiries, helps families book tours, and keeps follow-up moving—while your team handles the conversations that need a person.</p>
+        <p class="lede hero-desktop-lede" data-reveal>Quid responds to website inquiries, helps families book tours, and keeps follow-up moving—while your team handles the conversations that need a person.</p>
+        <p class="lede hero-mobile-lede" data-reveal>Quid replies fast, books tours, and keeps every inquiry moving.</p>
         <AnswerBlock variant="hero" label="What Quid is" answer="Quid is an AI-assisted admissions concierge that helps senior living teams respond to website inquiries, coordinate tours, follow up consistently, and route sensitive questions to staff." />
+        <ul class="hero-mobile-benefits" aria-label="What Quid helps with" data-reveal>
+          <li><span aria-hidden="true">01</span><strong>Reply fast</strong></li>
+          <li><span aria-hidden="true">02</span><strong>Book tours</strong></li>
+          <li><span aria-hidden="true">03</span><strong>Follow up</strong></li>
+        </ul>
         <div class="button-row" data-reveal>
           <a class="button" href={primaryCtaHref}>Meet Quid</a>
           <a class="button button-secondary" href="/see-quid-in-action/">See Quid in Action</a>
         </div>
         <p class="microcopy hero-proof">One community. One inquiry source. One measurable 30-day pilot.</p>
+        <p class="microcopy hero-mobile-proof">One community <span aria-hidden="true">·</span> 30-day measurable pilot</p>
       </div>
       <div class="hero-brand-visual" data-reveal>
         <span class="hero-halo" aria-hidden="true"></span>
-        <span class="hero-benefit-badge"><span aria-hidden="true">✓</span>No missed inquiries or tours</span>
+        <span class="hero-benefit-badge"><span aria-hidden="true">✓</span><span class="hero-benefit-label-desktop">No missed inquiries or tours</span><span class="hero-benefit-label-mobile">Nothing slips through</span></span>
         <Mascot pose="hero" class="hero-brand-mascot" alt="Quid, the admissions concierge mascot, ready to help with a new inquiry" width={360} eager />
         <span class="hero-brand-shadow" aria-hidden="true"></span>
       </div>
