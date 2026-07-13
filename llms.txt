@@ -6,14 +6,14 @@
 
 - Homepage: https://get-quid.site/
 - About Quid: https://get-quid.site/about/
-- See Quid in Action: https://get-quid.site/see-quid-in-action
-- How It Works: https://get-quid.site/how-it-works
-- Human Handoffs: https://get-quid.site/human-handoffs
-- 30-Day Pilot: https://get-quid.site/pilot
-- Meet Quid: https://get-quid.site/meet-quid
-- Resources: https://get-quid.site/resources
-- Assisted Living Admissions Automation: https://get-quid.site/assisted-living-admissions-automation
-- Senior Living Inquiry Follow-Up Automation: https://get-quid.site/senior-living-inquiry-follow-up-automation
+- See Quid in Action: https://get-quid.site/see-quid-in-action/
+- How It Works: https://get-quid.site/how-it-works/
+- Human Handoffs: https://get-quid.site/human-handoffs/
+- 30-Day Pilot: https://get-quid.site/pilot/
+- Meet Quid: https://get-quid.site/meet-quid/
+- Resources: https://get-quid.site/resources/
+- Assisted Living Admissions Automation: https://get-quid.site/assisted-living-admissions-automation/
+- Senior Living Inquiry Follow-Up Automation: https://get-quid.site/senior-living-inquiry-follow-up-automation/
 
 ## Product Summary
 
@@ -48,12 +48,12 @@ Quid Admissions is the company and entity behind Quid. Quid is the brand. Umair 
 
 - Senior Living Software Comparisons: https://get-quid.site/resources/senior-living-software-comparisons/
 - Senior Living Admissions Automation Software: 2026 Buyer’s Guide: https://get-quid.site/resources/senior-living-admissions-automation-software/
-- Senior Living Admissions Automation: https://get-quid.site/resources/senior-living-admissions-automation
-- Inquiry Response Time: https://get-quid.site/resources/senior-living-inquiry-response-time
-- Tour Follow-Up Framework: https://get-quid.site/resources/senior-living-tour-follow-up
-- Daily Admissions Summary: https://get-quid.site/resources/senior-living-daily-admissions-summary
-- Human Handoff Checklist: https://get-quid.site/resources/senior-living-human-handoff-checklist
-- Follow-Up Email Templates: https://get-quid.site/resources/senior-living-follow-up-templates
+- Senior Living Admissions Automation: https://get-quid.site/resources/senior-living-admissions-automation/
+- Inquiry Response Time: https://get-quid.site/resources/senior-living-inquiry-response-time/
+- Tour Follow-Up Framework: https://get-quid.site/resources/senior-living-tour-follow-up/
+- Daily Admissions Summary: https://get-quid.site/resources/senior-living-daily-admissions-summary/
+- Human Handoff Checklist: https://get-quid.site/resources/senior-living-human-handoff-checklist/
+- Follow-Up Email Templates: https://get-quid.site/resources/senior-living-follow-up-templates/
 
 ## Quid Software Comparisons
 
@@ -68,4 +68,4 @@ Quid Admissions publishes these comparisons using official public vendor informa
 ## Contact
 
 Use the Meet Quid page to request a walkthrough:
-https://get-quid.site/meet-quid
+https://get-quid.site/meet-quid/

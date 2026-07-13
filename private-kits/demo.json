@@ -15,10 +15,27 @@
   ],
   "firstResponse": "Hi [First name],\n\nThank you for reaching out to Sample Senior Living Community. We received your request and would be happy to help with the next step.\n\nYou can choose a convenient tour time here: [Tour link]\n\nIf you would rather speak with someone first, reply to this message and a member of our team will follow up.",
   "smsResponse": "Hi [First name], this is Sample Senior Living Community. We received your tour request. Choose a convenient time here: [Tour link]. Reply here if you would rather speak with our team first.",
+  "stalledLead": {
+    "subject": "Still looking?",
+    "body": "Hi [First name],\n\nAre you still exploring senior living options? If a visit to Sample Senior Living Community would help, I can send a few available times.\n\nIf your plans changed, just say so and I’ll close the loop."
+  },
   "followUps": [
     { "when": "After 1 day", "subject": "Still considering a visit?", "body": "Hi [First name], I wanted to make the next step easy. Would you like help choosing a tour time, or would a quick call be better?" },
     { "when": "After 3 days", "subject": "A quick question", "body": "Hi [First name], what matters most as you compare communities: care, location, timing or something else? Reply with one word and we will point you in the right direction." },
     { "when": "After 7 days", "subject": "Keep this open?", "body": "Hi [First name], should we keep your tour request open, or would you prefer that we close the loop for now? Either answer is completely fine." }
+  ],
+  "handoffChecklist": [
+    "Care, medication or clinical questions",
+    "Eligibility or assessment decisions",
+    "Pricing exceptions or financial nuance",
+    "Family concerns, complaints or distress",
+    "Anything uncertain, sensitive or urgent"
+  ],
+  "stuckTracker": [
+    { "priority": "Now", "item": "New inquiry", "status": "Waiting for first response", "owner": "Admissions", "next": "Acknowledge and offer tour times" },
+    { "priority": "Today", "item": "Tour requested", "status": "No time selected", "owner": "Sales", "next": "Send approved availability" },
+    { "priority": "Review", "item": "Care question", "status": "Human handoff", "owner": "Clinical", "next": "Answer directly" },
+    { "priority": "Follow up", "item": "No reply after 3 days", "status": "Sequence paused", "owner": "Admissions", "next": "Send next approved message" }
   ],
   "metrics": [
     { "name": "Response coverage", "detail": "Eligible inquiries receiving the approved acknowledgement" },
