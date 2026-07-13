@@ -1,5 +1,6 @@
 ---
 title: "Senior Living Follow-Up Email Templates for Inquiries and Tours"
+seoTitle: "Senior Living Follow-Up Email Templates | Quid"
 description: "Practical email templates for senior living inquiry acknowledgement, tour options, confirmation, reminders, post-tour follow-up, and stalled leads."
 author: "Quid"
 publishedDate: 2026-07-10
@@ -159,7 +160,7 @@ Pause scheduled follow-up when:
 - the tour outcome is missing; or
 - delivery fails or the record may be duplicated.
 
-Use the [human handoff checklist](/resources/senior-living-human-handoff-checklist) to define ownership and the [tour follow-up framework](/resources/senior-living-tour-follow-up) to choose a limited cadence.
+Use the [human handoff checklist](/resources/senior-living-human-handoff-checklist/) to define ownership and the [tour follow-up framework](/resources/senior-living-tour-follow-up/) to choose a limited cadence.
 
 ## Template approval checklist
 
@@ -172,6 +173,6 @@ Use the [human handoff checklist](/resources/senior-living-human-handoff-checkli
 - [ ] No template requests resident or medical information.
 - [ ] Staff can edit, pause, and stop the sequence.
 
-For a printable starting pack, [get the Senior Living Follow-Up Fix Kit](#follow-up-fix-kit). To see how templates and next actions appear operationally, [see the Quid admissions dashboard](/see-quid-in-action).
+For a printable starting pack, [get the Senior Living Follow-Up Fix Kit](#follow-up-fix-kit). To see how templates and next actions appear operationally, [see the Quid admissions dashboard](/see-quid-in-action/).
 
-See where these approved messages fit within the complete [senior living inquiry follow-up automation workflow](/senior-living-inquiry-follow-up-automation).
+See where these approved messages fit within the complete [senior living inquiry follow-up automation workflow](/senior-living-inquiry-follow-up-automation/).

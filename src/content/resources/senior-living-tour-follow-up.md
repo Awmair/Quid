@@ -103,7 +103,7 @@ If the reason includes medical, eligibility, care, distress, or another sensitiv
 
 **No-show reschedule:** “We are sorry we missed you today. If you would like another tour time, reply here and we will share current availability.”
 
-Use the full [senior living inquiry and tour follow-up templates](/resources/senior-living-follow-up-templates) as an approval starting point.
+Use the full [senior living inquiry and tour follow-up templates](/resources/senior-living-follow-up-templates/) as an approval starting point.
 
 ## Detect the moments that need a person
 
@@ -166,6 +166,6 @@ Do not treat these measures as a guarantee of move-ins. They show whether the pr
 
 Good tour follow-up feels attentive rather than aggressive. It removes avoidable uncertainty, keeps staff ownership clear, and gives families a reliable path to a real person.
 
-See [how Quid handles the full inquiry workflow](/how-it-works) or [meet Quid](/meet-quid) for a guided walkthrough.
+See [how Quid handles the full inquiry workflow](/how-it-works/) or [meet Quid](/meet-quid/) for a guided walkthrough.
 
-For the commercial workflow, explore [senior living inquiry follow-up automation](/senior-living-inquiry-follow-up-automation) or [assisted living admissions automation](/assisted-living-admissions-automation).
+For the commercial workflow, explore [senior living inquiry follow-up automation](/senior-living-inquiry-follow-up-automation/) or [assisted living admissions automation](/assisted-living-admissions-automation/).

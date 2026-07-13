@@ -69,7 +69,7 @@ const schema = [
         <h1>Built to keep senior living inquiries moving.</h1>
         <p class="lede">Quid is an AI-assisted admissions concierge for senior living communities. It handles routine inquiry follow-up and tour coordination while keeping important decisions and sensitive family conversations with staff.</p>
         <AnswerBlock label="What is Quid?" answer="Quid helps senior living teams acknowledge website inquiries, coordinate tours, maintain approved follow-up, identify stalled leads and route sensitive questions to the right staff member." variant="hero" />
-        <div class="button-row"><a class="button" href="/meet-quid">Meet Quid</a><a class="button button-secondary" href="/pilot">Explore the 30-Day Pilot</a></div>
+        <div class="button-row"><a class="button" href="/meet-quid/">Meet Quid</a><a class="button button-secondary" href="/pilot/">Explore the 30-Day Pilot</a></div>
       </div>
       <div class="about-hero-visual" data-reveal>
         <span class="about-hero-halo" aria-hidden="true"></span>
@@ -82,7 +82,7 @@ const schema = [
   <section class="section section-white about-section">
     <div class="shell about-purpose-grid">
       <div><p class="eyebrow">Why Quid exists</p><h2>Routine work should not crowd out human conversations.</h2></div>
-      <div><p>Senior living admissions teams are expected to respond quickly while simultaneously handling tours, calls, residents, staff questions and sensitive family conversations. Routine follow-up can easily be delayed even when the team cares deeply.</p><p>Quid exists to keep that routine coordination moving without pretending that software should replace the human side of admissions. See <a href="/how-it-works">how the controlled workflow works</a>.</p></div>
+      <div><p>Senior living admissions teams are expected to respond quickly while simultaneously handling tours, calls, residents, staff questions and sensitive family conversations. Routine follow-up can easily be delayed even when the team cares deeply.</p><p>Quid exists to keep that routine coordination moving without pretending that software should replace the human side of admissions. See <a href="/how-it-works/">how the controlled workflow works</a>.</p></div>
     </div>
   </section>
 
@@ -94,20 +94,20 @@ const schema = [
   </section>
 
   <section class="section about-section">
-    <div class="shell"><p class="eyebrow">What Quid helps with</p><h2>Routine admissions coordination, kept visible.</h2><div class="about-help-grid">{helps.map((item, index) => <article class="about-help-card" data-reveal><span>{String(index + 1).padStart(2, '0')}</span><h3>{item}</h3></article>)}</div><p class="about-related-links">Explore <a href="/assisted-living-admissions-automation">assisted living admissions automation</a> and the complete <a href="/senior-living-inquiry-follow-up-automation">inquiry follow-up workflow</a>.</p></div>
+    <div class="shell"><p class="eyebrow">What Quid helps with</p><h2>Routine admissions coordination, kept visible.</h2><div class="about-help-grid">{helps.map((item, index) => <article class="about-help-card" data-reveal><span>{String(index + 1).padStart(2, '0')}</span><h3>{item}</h3></article>)}</div><p class="about-related-links">Explore <a href="/assisted-living-admissions-automation/">assisted living admissions automation</a> and the complete <a href="/senior-living-inquiry-follow-up-automation/">inquiry follow-up workflow</a>.</p></div>
   </section>
 
   <section class="section section-deep about-section">
-    <div class="shell"><div class="about-boundaries-intro"><div><p class="eyebrow">What Quid keeps human</p><h2>Clear limits are part of the product.</h2></div><p>Quid supports routine coordination. Judgment, care decisions and sensitive family conversations stay with qualified staff.</p></div><div class="about-boundaries-grid"><article><h3>Quid does not</h3><ul class="x-list"><li>Recommend a level of care</li><li>Interpret medical information</li><li>Discuss medications</li><li>Determine eligibility</li><li>Make clinical promises</li><li>Replace admissions staff</li><li>Impersonate a community employee</li></ul></article><article><h3>Quid can</h3><ul class="check-list"><li>Acknowledge the family</li><li>Flag the conversation</li><li>Notify the designated staff member</li><li>Assign the next step</li><li>Keep the request visible</li><li>Record the handoff</li></ul><a class="button button-light" href="/human-handoffs">Review Human Handoffs</a></article></div></div>
+    <div class="shell"><div class="about-boundaries-intro"><div><p class="eyebrow">What Quid keeps human</p><h2>Clear limits are part of the product.</h2></div><p>Quid supports routine coordination. Judgment, care decisions and sensitive family conversations stay with qualified staff.</p></div><div class="about-boundaries-grid"><article><h3>Quid does not</h3><ul class="x-list"><li>Recommend a level of care</li><li>Interpret medical information</li><li>Discuss medications</li><li>Determine eligibility</li><li>Make clinical promises</li><li>Replace admissions staff</li><li>Impersonate a community employee</li></ul></article><article><h3>Quid can</h3><ul class="check-list"><li>Acknowledge the family</li><li>Flag the conversation</li><li>Notify the designated staff member</li><li>Assign the next step</li><li>Keep the request visible</li><li>Record the handoff</li></ul><a class="button button-light" href="/human-handoffs/">Review Human Handoffs</a></article></div></div>
   </section>
 
   <section class="section section-sage about-section">
-    <div class="shell about-pilot-grid"><div><p class="eyebrow">How Quid begins</p><h2>30-Day Quid Admissions Pilot</h2><p class="about-price">{pricing.pilot.display} <span>{pricing.pilot.billing}</span></p><p>One community, one inquiry source, and one tour calendar.</p><p><strong>Keep Quid for {pricing.ongoing.monthlyDisplay} after the pilot.</strong></p><a class="button" href="/pilot">Review the Pilot</a></div><VisualFlow steps={pilotStages} label="Four stages of the Quid Admissions Pilot" /></div>
+    <div class="shell about-pilot-grid"><div><p class="eyebrow">How Quid begins</p><h2>30-Day Quid Admissions Pilot</h2><p class="about-price">{pricing.pilot.display} <span>{pricing.pilot.billing}</span></p><p>One community, one inquiry source, and one tour calendar.</p><p><strong>Keep Quid for {pricing.ongoing.monthlyDisplay} after the pilot.</strong></p><a class="button" href="/pilot/">Review the Pilot</a></div><VisualFlow steps={pilotStages} label="Four stages of the Quid Admissions Pilot" /></div>
   </section>
 
   <section class="section section-white about-section">
     <div class="shell about-transparency"><div><p class="eyebrow">Trust and transparency</p><h2>Built around staff control.</h2><Mascot pose="handoff" class="about-transparency-mascot" alt="Quid pausing routine work for a human handoff" width={210} /></div><ul class="check-list"><li>Quid supports admissions teams rather than replacing them.</li><li>The initial workflow focuses on website inquiries, email communication and tour calendars.</li><li>Clinical and sensitive questions go to people.</li><li>Each community approves its messages and handoff rules.</li><li>The pilot begins with a narrow, measurable scope.</li><li>Voice and SMS are not presented as current standard features.</li></ul></div>
   </section>
 
-  <section class="section section-sand about-section about-final-cta"><div class="narrow center"><h2>See whether Quid fits your admissions workflow.</h2><p class="lede center">Start with a conversation about how your community currently handles website inquiries, tours and follow-up.</p><div class="button-row center"><a class="button" href="/meet-quid">Meet Quid</a><a class="button button-secondary" href="/pilot">Review the Pilot</a></div></div></section>
+  <section class="section section-sand about-section about-final-cta"><div class="narrow center"><h2>See whether Quid fits your admissions workflow.</h2><p class="lede center">Start with a conversation about how your community currently handles website inquiries, tours and follow-up.</p><div class="button-row center"><a class="button" href="/meet-quid/">Meet Quid</a><a class="button button-secondary" href="/pilot/">Review the Pilot</a></div></div></section>
 </BaseLayout>

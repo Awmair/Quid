@@ -10,7 +10,7 @@ interface Props {
   description?: string;
   image?: string;
   noindex?: boolean;
-  canonicalUrl?: string;
+  canonicalUrl?: string | false;
   schema?: Record<string, unknown> | Record<string, unknown>[];
 }
 
@@ -22,7 +22,7 @@ const {
   canonicalUrl,
   schema,
 } = Astro.props;
-const canonical = canonicalUrl || new URL(Astro.url.pathname, site.domain).toString();
+const canonical = canonicalUrl === false ? undefined : canonicalUrl || new URL(Astro.url.pathname, site.domain).toString();
 const socialImage = new URL(image, site.domain).toString();
 const normalizedPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 const hideLeadMagnet = ['/privacy', '/terms', '/404', '/404.html'].includes(normalizedPath);
@@ -63,13 +63,13 @@ const allSchema = [...globalSchema, ...pageSchema];
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
+    {canonical && <link rel="canonical" href={canonical} />}
     {noindex && <meta name="robots" content="noindex,follow" />}
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Quid" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonical} />
+    {canonical && <meta property="og:url" content={canonical} />}
     <meta property="og:image" content={socialImage} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />

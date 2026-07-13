@@ -1,5 +1,6 @@
 ---
 title: "Senior Living Inquiry Response Time Benchmarks and Workflow"
+seoTitle: "Senior Living Inquiry Response Time Guide | Quid"
 description: "Review senior living inquiry response-time benchmarks and build a practical workflow for acknowledging families quickly without burning out staff."
 author: "Quid"
 publishedDate: 2026-07-10
@@ -51,7 +52,7 @@ These targets are practical operating guidance for a website-inquiry workflow. T
 
 <aside class="notice-card response-benchmark-cta">
   <strong>Turn the benchmark into a working process.</strong>
-  <p>See the complete <a href="/senior-living-inquiry-follow-up-automation">senior living inquiry follow-up automation workflow</a>, or view the same approach for <a href="/assisted-living-admissions-automation">assisted living admissions teams</a>.</p>
+  <p>See the complete <a href="/senior-living-inquiry-follow-up-automation/">senior living inquiry follow-up automation workflow</a>, or view the same approach for <a href="/assisted-living-admissions-automation/">assisted living admissions teams</a>.</p>
 </aside>
 
 ## Acknowledgement versus human response
@@ -83,7 +84,7 @@ An automated acknowledgement is a useful response stage. It is not the entire fa
   </section>
 </div>
 
-The first message should be warm, short, and honest. Use the <a href="/resources/senior-living-follow-up-templates">senior living follow-up templates</a> as an approval starting point rather than rewriting routine messages each time.
+The first message should be warm, short, and honest. Use the <a href="/resources/senior-living-follow-up-templates/">senior living follow-up templates</a> as an approval starting point rather than rewriting routine messages each time.
 
 ## Response-time scorecard
 
@@ -130,7 +131,7 @@ Use this scorecard to assess the workflow before buying tools or setting a new s
   <li><span>07</span><div><strong>Daily overdue-work review</strong><small>Review stalled inquiries, replies, handoffs, and failures.</small></div></li>
 </ol>
 
-Quid pauses routine messages and routes clinical, medication, eligibility, care-assessment, and sensitive questions to staff. Review the complete <a href="/human-handoffs">human-handoff rules</a> and the <a href="/resources/senior-living-tour-follow-up">tour follow-up framework</a> before launch.
+Quid pauses routine messages and routes clinical, medication, eligibility, care-assessment, and sensitive questions to staff. Review the complete <a href="/human-handoffs/">human-handoff rules</a> and the <a href="/resources/senior-living-tour-follow-up/">tour follow-up framework</a> before launch.
 
 ## After-hours enquiries without false promises
 
@@ -176,7 +177,7 @@ Track:
 
 Use medians rather than averages when a few extremely late responses would distort the picture. Segment results by inquiry source, business-hours status, care type, and community when volume allows. Aline’s care-type and urban-versus-rural reporting is a useful reminder that one senior living inquiry response benchmark should not be copied blindly across locations.
 
-Compare the same definitions before and during a narrow <a href="/pilot">30-day pilot</a>. Faster acknowledgement matters only when the next step remains accurate and the family can reach a person.
+Compare the same definitions before and during a narrow <a href="/pilot/">30-day pilot</a>. Faster acknowledgement matters only when the next step remains accurate and the family can reach a person.
 
 ## Sources
 
