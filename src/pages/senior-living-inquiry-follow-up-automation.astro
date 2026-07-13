@@ -15,7 +15,7 @@ import inquiryFollowUp from '../assets/lifestyle/senior-living-inquiry-follow-up
 
 const title = 'Senior Living Inquiry Follow-Up Automation | Quid';
 const description = 'Automate senior living website inquiry responses, tour coordination and approved follow-up while keeping staff informed and in control.';
-const pageUrl = `${site.domain}/senior-living-inquiry-follow-up-automation`;
+const pageUrl = `${site.domain}/senior-living-inquiry-follow-up-automation/`;
 
 const stallPoints = [
   { title: 'A new inquiry waits in an inbox', text: 'The family has reached out, but the day is already full.' },
@@ -68,7 +68,7 @@ const schema = [
     provider: { '@type': 'Organization', name: 'Quid', url: site.domain },
     audience: { '@type': 'Audience', audienceType: 'Senior living operators, executive directors, community administrators, admissions directors, and sales directors' },
     offers: [
-      { '@type': 'Offer', name: pilotOffer.name, price: String(pilotOffer.price), priceCurrency: 'USD', url: `${site.domain}/pilot`, description: `${pilotOffer.scope} ${pilotOffer.positioning}` },
+      { '@type': 'Offer', name: pilotOffer.name, price: String(pilotOffer.price), priceCurrency: 'USD', url: `${site.domain}/pilot/`, description: `${pilotOffer.scope} ${pilotOffer.positioning}` },
       { '@type': 'Offer', name: 'Optional managed Quid continuation', price: String(pricing.ongoing.amount), priceCurrency: 'USD', description: `${pricing.ongoing.monthlyDisplay} if the community chooses to continue after the pilot.` },
     ],
   },
@@ -100,8 +100,8 @@ const schema = [
         <p class="lede">Quid responds to new website inquiries, offers an easy next step, keeps approved follow-up moving, and alerts staff when a person should take over.</p>
         <AnswerBlock label="What is senior living inquiry follow-up automation?" answer="It is a controlled workflow that acknowledges new inquiries, coordinates tours, sends approved follow-up and identifies stalled leads without requiring staff to monitor an inbox constantly." variant="hero" />
         <div class="button-row">
-          <a class="button" href="/see-quid-in-action">See Quid in Action</a>
-          <a class="button button-secondary" href="/meet-quid">Meet Quid</a>
+          <a class="button" href="/see-quid-in-action/">See Quid in Action</a>
+          <a class="button button-secondary" href="/meet-quid/">Meet Quid</a>
         </div>
         <p class="solution-microcopy">More tours. Less chasing. Staff stays in control.</p>
       </div>
@@ -155,7 +155,7 @@ const schema = [
         <p class="eyebrow">What staff sees</p>
         <h2>A quick view of movement, stalls, and human work.</h2>
         <p class="lede">Admissions staff and leaders can scan the workflow without opening forms, inboxes, calendars, and notes one by one.</p>
-        <a class="button button-secondary" href="/see-quid-in-action">Explore the full dashboard</a>
+        <a class="button button-secondary" href="/see-quid-in-action/">Explore the full dashboard</a>
         <Mascot pose="summary" class="staff-view-mascot" alt="Quid presenting a concise admissions activity summary" width={180} />
       </div>
       <div class="staff-status-grid" role="list" aria-label="Admissions activity visible to staff" data-reveal>
@@ -185,7 +185,7 @@ const schema = [
         <h2>Prove the follow-up workflow before expanding anything.</h2>
         <p class="lede">Over four controlled weeks, we review the current process, approve the messages and handoffs, deploy one workflow, and show what happened.</p>
         <p class="pilot-positioning pilot-positioning-light">{pilotOffer.positioning}</p>
-        <nav class="solution-inline-links" aria-label="Pilot and walkthrough links"><a href="/pilot">Review the 30-Day Pilot</a><a href="/meet-quid">Request a walkthrough</a></nav>
+        <nav class="solution-inline-links" aria-label="Pilot and walkthrough links"><a href="/pilot/">Review the 30-Day Pilot</a><a href="/meet-quid/">Request a walkthrough</a></nav>
       </div>
       <PilotPricingCard />
     </div>
@@ -200,13 +200,13 @@ const schema = [
         <p class="lede">Use the guides to set response expectations, strengthen email follow-up, coordinate tours, and make overdue work visible.</p>
       </div>
       <nav class="solution-link-grid" aria-label="Related senior living inquiry follow-up resources">
-        <a href="/resources/senior-living-inquiry-response-time"><strong>Inquiry response time</strong><span>Set a baseline for acknowledgement and staff response.</span></a>
-        <a href="/resources/senior-living-follow-up-templates"><strong>Follow-up email templates</strong><span>Use warm, practical messages across the inquiry lifecycle.</span></a>
-        <a href="/resources/senior-living-tour-follow-up"><strong>Tour follow-up framework</strong><span>Coordinate confirmations, reminders, and post-tour steps.</span></a>
-        <a href="/resources/senior-living-daily-admissions-summary"><strong>Daily admissions summary</strong><span>Make movement and overdue work easy to scan.</span></a>
-        <a href="/human-handoffs"><strong>Human handoff rules</strong><span>Keep judgment, eligibility, medication, and care questions with staff.</span></a>
-        <a href="/pilot"><strong>30-Day Admissions Pilot</strong><span>Test one community, one source, and one tour calendar.</span></a>
-        <a href="/assisted-living-admissions-automation"><strong>Assisted living admissions automation</strong><span>See the workflow through an assisted living operator’s lens.</span></a>
+        <a href="/resources/senior-living-inquiry-response-time/"><strong>Inquiry response time</strong><span>Set a baseline for acknowledgement and staff response.</span></a>
+        <a href="/resources/senior-living-follow-up-templates/"><strong>Follow-up email templates</strong><span>Use warm, practical messages across the inquiry lifecycle.</span></a>
+        <a href="/resources/senior-living-tour-follow-up/"><strong>Tour follow-up framework</strong><span>Coordinate confirmations, reminders, and post-tour steps.</span></a>
+        <a href="/resources/senior-living-daily-admissions-summary/"><strong>Daily admissions summary</strong><span>Make movement and overdue work easy to scan.</span></a>
+        <a href="/human-handoffs/"><strong>Human handoff rules</strong><span>Keep judgment, eligibility, medication, and care questions with staff.</span></a>
+        <a href="/pilot/"><strong>30-Day Admissions Pilot</strong><span>Test one community, one source, and one tour calendar.</span></a>
+        <a href="/assisted-living-admissions-automation/"><strong>Assisted living admissions automation</strong><span>See the workflow through an assisted living operator’s lens.</span></a>
       </nav>
     </div>
   </section>

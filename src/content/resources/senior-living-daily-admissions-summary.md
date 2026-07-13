@@ -1,5 +1,6 @@
 ---
 title: "The Daily Admissions Summary Senior Living Teams Should Review Each Morning"
+seoTitle: "Senior Living Daily Admissions Summary Template | Quid"
 description: "A practical template for a senior living daily admissions summary covering new inquiries, tours, overdue replies, handoffs, stalled leads, and staff tasks."
 author: "Quid"
 publishedDate: 2026-07-10
@@ -83,7 +84,7 @@ Show the reason category, assigned staff owner, time assigned, acknowledgement s
 
 Common categories include clinical questions, medication questions, eligibility, care assessment, pricing exceptions, complaints, distress, and requests outside approved messaging.
 
-Use the [human handoff checklist for senior living admissions automation](/resources/senior-living-human-handoff-checklist) to define what appears here and who owns it.
+Use the [human handoff checklist for senior living admissions automation](/resources/senior-living-human-handoff-checklist/) to define what appears here and who owns it.
 
 ## Stalled inquiries
 
@@ -176,6 +177,6 @@ Track whether the summary improves process control:
 - workflow failures; and
 - time spent preparing the morning review.
 
-The [Quid admissions dashboard](/see-quid-in-action) shows how these states can fit into one daily view. For the wider workflow, see the [senior living admissions automation guide](/resources/senior-living-admissions-automation) and the [30-day admissions pilot](/pilot).
+The [Quid admissions dashboard](/see-quid-in-action/) shows how these states can fit into one daily view. For the wider workflow, see the [senior living admissions automation guide](/resources/senior-living-admissions-automation/) and the [30-day admissions pilot](/pilot/).
 
-The [senior living inquiry follow-up automation page](/senior-living-inquiry-follow-up-automation) shows how those states connect from a new website inquiry through tour coordination, follow-up, and staff handoff.
+The [senior living inquiry follow-up automation page](/senior-living-inquiry-follow-up-automation/) shows how those states connect from a new website inquiry through tour coordination, follow-up, and staff handoff.

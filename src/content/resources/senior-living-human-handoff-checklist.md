@@ -1,5 +1,6 @@
 ---
 title: "Human Handoff Checklist for Senior Living Admissions Automation"
+seoTitle: "Senior Living Admissions Human Handoff Checklist | Quid"
 description: "A practical checklist for routing clinical, medication, eligibility, care-assessment, and sensitive admissions questions from automation to staff."
 author: "Quid"
 publishedDate: 2026-07-10
@@ -139,6 +140,6 @@ Walk through realistic scenarios with one admissions staff member and a decision
 
 The workflow should fail safely: pause, show the exception, and give staff control.
 
-Review [Quid’s complete human handoff rules](/human-handoffs), see how handoffs appear in the [senior living admissions dashboard](/see-quid-in-action), or compare this checklist with the [daily admissions summary guide](/resources/senior-living-daily-admissions-summary).
+Review [Quid’s complete human handoff rules](/human-handoffs/), see how handoffs appear in the [senior living admissions dashboard](/see-quid-in-action/), or compare this checklist with the [daily admissions summary guide](/resources/senior-living-daily-admissions-summary/).
 
-See these boundaries applied in the [assisted living admissions automation workflow](/assisted-living-admissions-automation) and the broader [senior living inquiry follow-up workflow](/senior-living-inquiry-follow-up-automation).
+See these boundaries applied in the [assisted living admissions automation workflow](/assisted-living-admissions-automation/) and the broader [senior living inquiry follow-up workflow](/senior-living-inquiry-follow-up-automation/).

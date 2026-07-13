@@ -8,8 +8,8 @@ import { site } from '../data/site';
 import { pricing } from '../data/pricing';
 
 const title = 'Meet Quid | AI Admissions Concierge for Senior Living';
-const description = 'Book a Quid walkthrough and see how an AI-assisted admissions concierge could help your senior living team respond to inquiries, coordinate tours, manage follow-up, and handle staff handoffs.';
-const pageUrl = `${site.domain}/meet-quid`;
+const description = 'Book a Quid walkthrough to see how senior living teams can respond to inquiries, coordinate tours, automate follow-up, and keep staff in control.';
+const pageUrl = `${site.domain}/meet-quid/`;
 const primaryHref = site.bookingUrl || '#request-walkthrough';
 const primaryLabel = site.bookingUrl ? 'Book a Quid Walkthrough' : 'Request Walkthrough';
 
@@ -66,7 +66,7 @@ const schema = [
         <AnswerBlock answer={`Meet Quid is a short walkthrough to see whether Quid fits your current admissions workflow. The 30-day pilot is ${pricing.pilot.display}. Managed Quid operations cost ${pricing.ongoing.monthlyDisplay} if you continue.`} />
         <div class="button-row">
           <a class="button" href={primaryHref} rel={site.bookingUrl ? 'noopener' : undefined}>{primaryLabel}</a>
-          <a class="button button-secondary" href="/pilot">View the 30-Day Pilot</a>
+          <a class="button button-secondary" href="/pilot/">View the 30-Day Pilot</a>
         </div>
         <p class="meet-hero-note"><span aria-hidden="true">✓</span>No resident information needed. We only discuss your admissions process.</p>
       </div>
@@ -138,7 +138,7 @@ const schema = [
         <p class="eyebrow">Start with your process</p>
         <h2>Ready to see where Quid fits?</h2>
         <p class="lede">Start with your current admissions process. We will show what Quid could handle, what your team should keep, and whether the 30-day pilot makes sense.</p>
-        <div class="button-row"><a class="button button-light" href="#request-walkthrough">Request Walkthrough</a><a class="button button-secondary" href="/see-quid-in-action">See Quid in Action</a></div>
+        <div class="button-row"><a class="button button-light" href="#request-walkthrough">Request Walkthrough</a><a class="button button-secondary" href="/see-quid-in-action/">See Quid in Action</a></div>
       </div>
       <Mascot pose="wave" class="final-mascot" alt="Quid inviting the admissions team to start a walkthrough" width={330} />
     </div>

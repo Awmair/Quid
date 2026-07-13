@@ -15,9 +15,33 @@ const htmlFiles = files.filter((file) => file.endsWith('.html'));
 const errors = [];
 const titles = new Map();
 const descriptions = new Map();
+const indexableCanonicals = [];
+
+function checkStructuredDataUrls(value, file, path = 'schema') {
+  if (Array.isArray(value)) {
+    value.forEach((item, index) => checkStructuredDataUrls(item, file, `${path}[${index}]`));
+    return;
+  }
+  if (value && typeof value === 'object') {
+    for (const [key, item] of Object.entries(value)) checkStructuredDataUrls(item, file, `${path}.${key}`);
+    return;
+  }
+  if (typeof value !== 'string' || !value.startsWith('https://get-quid.site')) return;
+  const url = new URL(value);
+  const looksLikePage = url.pathname !== '/' && !url.pathname.endsWith('/') && !/\.[a-z0-9]+$/i.test(url.pathname);
+  if (looksLikePage) errors.push(`${file}: structured-data URL is not canonical at ${path}: ${value}`);
+}
 
 for (const file of htmlFiles) {
   const html = await readFile(file, 'utf8');
+  const outputPath = file.slice(root.length + 1).replaceAll('\\', '/');
+  const intentionalNoindex = outputPath === '404.html' || outputPath === 'private-preview/index.html' || outputPath === 'private-kit/index.html';
+  const route = outputPath === 'index.html'
+    ? '/'
+    : outputPath.endsWith('/index.html')
+      ? `/${outputPath.replace(/index\.html$/, '')}`
+      : `/${outputPath}`;
+  const expectedCanonical = `https://get-quid.site${route}`;
   const title = html.match(/<title>([^<]+)<\/title>/)?.[1];
   const description = html.match(/<meta name="description" content="([^"]+)"/)?.[1];
   if (!title) errors.push(`${file}: missing title`);
@@ -26,22 +50,28 @@ for (const file of htmlFiles) {
   if (!description) errors.push(`${file}: missing meta description`);
   else if (descriptions.has(description)) errors.push(`${file}: duplicate meta description also used by ${descriptions.get(description)}`);
   else descriptions.set(description, file);
-  if (!/<link rel="canonical" href="https:\/\/get-quid\.site\//.test(html)) errors.push(`${file}: missing canonical`);
+  const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
+  if (!canonical && outputPath !== '404.html') errors.push(`${file}: missing canonical`);
+  if (canonical && canonical !== expectedCanonical) errors.push(`${file}: canonical ${canonical} does not match served URL ${expectedCanonical}`);
+  if (canonical && !intentionalNoindex) indexableCanonicals.push(canonical);
   const h1Count = (html.match(/<h1(?:\s|>)/g) || []).length;
   if (h1Count !== 1) errors.push(`${file}: expected exactly one H1, found ${h1Count}`);
   if (!/<meta property="og:title" content="[^"]+"/.test(html)) errors.push(`${file}: missing Open Graph title`);
   if (!/<meta property="og:description" content="[^"]+"/.test(html)) errors.push(`${file}: missing Open Graph description`);
+  const openGraphUrl = html.match(/<meta property="og:url" content="([^"]+)"/)?.[1];
+  if (canonical && openGraphUrl !== canonical) errors.push(`${file}: Open Graph URL does not match canonical`);
+  if (!canonical && openGraphUrl) errors.push(`${file}: Open Graph URL exists without a canonical URL`);
   if (!/<meta property="og:image" content="https:\/\/get-quid\.site\//.test(html)) errors.push(`${file}: missing absolute Open Graph image`);
   if (!/<meta name="twitter:card" content="summary_large_image"/.test(html)) errors.push(`${file}: missing Twitter card metadata`);
   if (/lorem ipsum/i.test(html)) errors.push(`${file}: lorem ipsum found`);
-  const intentionalNoindex = file.endsWith('404.html') || file.endsWith('private-preview/index.html') || file.endsWith('private-kit/index.html');
   if (!intentionalNoindex && /<meta name="robots" content="[^"]*noindex/i.test(html)) errors.push(`${file}: unexpected noindex`);
   for (const match of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
-    try { JSON.parse(match[1]); } catch { errors.push(`${file}: invalid JSON-LD`); }
+    try { checkStructuredDataUrls(JSON.parse(match[1]), file); } catch { errors.push(`${file}: invalid JSON-LD`); }
   }
-  for (const match of html.matchAll(/href="(\/[^"#?]*)/g)) {
+  for (const match of html.matchAll(/href="(\/[^"#?]*)(?:[?#][^"]*)?"/g)) {
     const href = match[1];
     if (/\.(png|jpg|jpeg|webp|svg|ico|xml|css|js|webmanifest)$/.test(href)) continue;
+    if (href !== '/' && !href.endsWith('/') && !href.endsWith('.html')) errors.push(`${file}: internal link is not canonical ${href}`);
     const target = href === '/' ? join(root, 'index.html') : join(root, href.replace(/^\//, ''), 'index.html');
     const fallback = join(root, `${href.replace(/^\//, '').replace(/\/$/, '')}.html`);
     try { await access(target); } catch { try { await access(fallback); } catch { errors.push(`${file}: broken internal link ${href}`); } }
@@ -91,6 +121,9 @@ try {
   if (sitemap.includes('/404')) errors.push('dist/sitemap-0.xml: 404 page should be excluded');
   if (sitemap.includes('/private-preview')) errors.push('dist/sitemap-0.xml: private preview should be excluded');
   if (sitemap.includes('/private-kit')) errors.push('dist/sitemap-0.xml: private kit should be excluded');
+  for (const canonical of indexableCanonicals) {
+    if (!sitemap.includes(`<loc>${canonical}</loc>`)) errors.push(`dist/sitemap-0.xml: canonical URL missing ${canonical}`);
+  }
 } catch {}
 
 if (errors.length) {

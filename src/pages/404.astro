@@ -2,6 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Mascot from '../components/Mascot.astro';
 ---
-<BaseLayout title="Page Not Found | Quid" description="The requested Quid page could not be found." noindex>
-  <section class="page-hero"><div class="shell page-hero-grid"><div><p class="eyebrow">404 · Page not found</p><h1>This inquiry wandered off course.</h1><p class="lede">Quid could not find the page you were looking for, but the main admissions path is still easy to reach.</p><div class="button-row"><a class="button" href="/">Return Home</a><a class="button button-secondary" href="/meet-quid">Meet Quid</a></div></div><Mascot pose="lost" class="page-mascot" alt="Quid thoughtfully checking a misplaced inquiry card" width={360} eager /></div></section>
+<BaseLayout title="Page Not Found | Quid" description="The requested Quid page could not be found." noindex canonicalUrl={false}>
+  <section class="page-hero"><div class="shell page-hero-grid"><div><p class="eyebrow">404 · Page not found</p><h1>This inquiry wandered off course.</h1><p class="lede">Quid could not find the page you were looking for, but the main admissions path is still easy to reach.</p><div class="button-row"><a class="button" href="/">Return Home</a><a class="button button-secondary" href="/meet-quid/">Meet Quid</a></div></div><Mascot pose="lost" class="page-mascot" alt="Quid thoughtfully checking a misplaced inquiry card" width={360} eager /></div></section>
 </BaseLayout>

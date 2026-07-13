@@ -15,7 +15,7 @@ import assistedLivingAdmissions from '../assets/lifestyle/assisted-living-admiss
 
 const title = 'Assisted Living Admissions Automation | Quid';
 const description = 'Quid automates routine assisted living inquiry follow-up, tour coordination, reminders and staff handoffs without replacing your admissions team.';
-const pageUrl = `${site.domain}/assisted-living-admissions-automation`;
+const pageUrl = `${site.domain}/assisted-living-admissions-automation/`;
 
 const automatedWork = [
   ['↗', 'Website inquiry acknowledgement', 'A prompt, approved response confirms that the family has been heard.'],
@@ -59,7 +59,7 @@ const schema = [
     provider: { '@type': 'Organization', name: 'Quid', url: site.domain },
     audience: { '@type': 'Audience', audienceType: 'Assisted living operators, community administrators, admissions directors, and sales directors' },
     offers: [
-      { '@type': 'Offer', name: pilotOffer.name, price: String(pilotOffer.price), priceCurrency: 'USD', url: `${site.domain}/pilot`, description: `${pilotOffer.scope} ${pilotOffer.positioning}` },
+      { '@type': 'Offer', name: pilotOffer.name, price: String(pilotOffer.price), priceCurrency: 'USD', url: `${site.domain}/pilot/`, description: `${pilotOffer.scope} ${pilotOffer.positioning}` },
       { '@type': 'Offer', name: 'Optional managed Quid continuation', price: String(pricing.ongoing.amount), priceCurrency: 'USD', description: `${pricing.ongoing.monthlyDisplay} if the community chooses to continue after the pilot.` },
     ],
   },
@@ -91,8 +91,8 @@ const schema = [
         <p class="lede">Quid acknowledges website inquiries, helps families book tours, keeps approved follow-up on schedule, and routes sensitive questions to your team.</p>
         <AnswerBlock label="What is assisted living admissions automation?" answer="Assisted living admissions automation uses approved workflows to handle routine inquiry acknowledgement, tour coordination, reminders and follow-up while leaving clinical judgment, eligibility and sensitive family conversations with staff." variant="hero" />
         <div class="button-row">
-          <a class="button" href="/meet-quid">Meet Quid</a>
-          <a class="button button-secondary" href="/pilot">Explore the 30-Day Pilot</a>
+          <a class="button" href="/meet-quid/">Meet Quid</a>
+          <a class="button button-secondary" href="/pilot/">Explore the 30-Day Pilot</a>
         </div>
         <p class="solution-microcopy">One community. One inquiry source. One tour calendar.</p>
       </div>
@@ -157,7 +157,7 @@ const schema = [
           <li>Pricing exceptions or promises</li>
           <li>Sensitive family conversations</li>
         </ul>
-        <a class="button button-secondary" href="/human-handoffs">Review Quid’s handoff rules</a>
+        <a class="button button-secondary" href="/human-handoffs/">Review Quid’s handoff rules</a>
       </div>
       <HumanHandoffSpotlight />
     </div>
@@ -196,7 +196,7 @@ const schema = [
         <h2>Test assisted living admissions automation without a broad rollout.</h2>
         <p class="lede">The pilot gives one community a practical way to review, configure, deploy, and measure the inquiry-to-tour workflow over four weeks.</p>
         <p class="pilot-positioning pilot-positioning-light">{pilotOffer.positioning}</p>
-        <nav class="solution-inline-links" aria-label="Pilot and walkthrough links"><a href="/pilot">See the four-week pilot process</a><a href="/meet-quid">Request a walkthrough</a></nav>
+        <nav class="solution-inline-links" aria-label="Pilot and walkthrough links"><a href="/pilot/">See the four-week pilot process</a><a href="/meet-quid/">Request a walkthrough</a></nav>
       </div>
       <PilotPricingCard />
     </div>
@@ -211,12 +211,12 @@ const schema = [
         <p class="lede">Practical guides and product views for response timing, tours, responsible handoffs, and day-to-day visibility.</p>
       </div>
       <nav class="solution-link-grid" aria-label="Related assisted living admissions resources">
-        <a href="/resources/senior-living-admissions-automation"><strong>Admissions automation guide</strong><span>Plan the workflow before automating it.</span></a>
-        <a href="/resources/senior-living-inquiry-response-time"><strong>Inquiry response time</strong><span>Separate immediate acknowledgement from thoughtful staff response.</span></a>
-        <a href="/resources/senior-living-tour-follow-up"><strong>Tour follow-up framework</strong><span>Keep confirmations, reminders, and post-tour steps clear.</span></a>
-        <a href="/human-handoffs"><strong>Human handoff rules</strong><span>See when automation pauses and staff takes over.</span></a>
-        <a href="/see-quid-in-action"><strong>See Quid in Action</strong><span>Explore the admissions dashboard and daily view.</span></a>
-        <a href="/senior-living-inquiry-follow-up-automation"><strong>Inquiry follow-up automation</strong><span>See the complete website-inquiry lifecycle.</span></a>
+        <a href="/resources/senior-living-admissions-automation/"><strong>Admissions automation guide</strong><span>Plan the workflow before automating it.</span></a>
+        <a href="/resources/senior-living-inquiry-response-time/"><strong>Inquiry response time</strong><span>Separate immediate acknowledgement from thoughtful staff response.</span></a>
+        <a href="/resources/senior-living-tour-follow-up/"><strong>Tour follow-up framework</strong><span>Keep confirmations, reminders, and post-tour steps clear.</span></a>
+        <a href="/human-handoffs/"><strong>Human handoff rules</strong><span>See when automation pauses and staff takes over.</span></a>
+        <a href="/see-quid-in-action/"><strong>See Quid in Action</strong><span>Explore the admissions dashboard and daily view.</span></a>
+        <a href="/senior-living-inquiry-follow-up-automation/"><strong>Inquiry follow-up automation</strong><span>See the complete website-inquiry lifecycle.</span></a>
       </nav>
     </div>
   </section>

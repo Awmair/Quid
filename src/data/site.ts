@@ -33,4 +33,4 @@ export const site: SiteConfig = {
     'Quid helps senior living teams respond to website inquiries, coordinate tours, manage follow-up, and route sensitive questions to staff.',
 };
 
-export const primaryCtaHref = '/meet-quid';
+export const primaryCtaHref = '/meet-quid/';
