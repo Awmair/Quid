@@ -84,7 +84,19 @@ const canonical = 'https://get-quid.site/private-kit/';
             <p data-observation>The public website captures interest, but the next step appears to depend on manual staff follow-up.</p>
           </section>
 
-          <section>
+          <section class="kit-included">
+            <div class="kit-section-heading"><div><p class="kit-eyebrow">Included in this kit</p><h2>Six tools your team can use.</h2></div><p>Built around the public inquiry path we reviewed.</p></div>
+            <div class="kit-included-grid">
+              <span>✓ Inquiry response templates</span>
+              <span>✓ Tour follow-up sequence</span>
+              <span>✓ Stalled-lead reactivation template</span>
+              <span>✓ Daily “what’s stuck?” tracker</span>
+              <span>✓ Human-handoff checklist</span>
+              <span>✓ Simple admissions workflow map</span>
+            </div>
+          </section>
+
+          <section class="kit-audit-section">
             <div class="kit-section-heading"><div><p class="kit-eyebrow">Public journey audit</p><h2>What a family sees</h2></div></div>
             <div class="kit-audit-grid" data-audit-list></div>
           </section>
@@ -92,9 +104,9 @@ const canonical = 'https://get-quid.site/private-kit/';
 
         <article class="kit-page" data-page="1">
           <div class="kit-page-topline"><span>02 / 04</span><span data-community>Your community</span></div>
-          <p class="kit-eyebrow">The difference in one glance</p>
-          <h2>Manual path vs. Quid path</h2>
-          <p class="kit-page-intro">Same inquiry. A much clearer route to revenue.</p>
+          <p class="kit-eyebrow">Simple admissions workflow map</p>
+          <h2>See the manual gap—and the fix.</h2>
+          <p class="kit-page-intro">Same inquiry. A faster, clearer route to a tour.</p>
 
           <div class="kit-compare">
             <article class="kit-compare-lane manual">
@@ -119,16 +131,16 @@ const canonical = 'https://get-quid.site/private-kit/';
           <div class="kit-revenue-strip"><b>Existing demand</b><i>→</i><b>More responses</b><i>→</i><b>More tours</b><i>→</i><strong>More move-in opportunities</strong></div>
 
           <section class="kit-handoff">
-            <div><span>Human-review rule</span><h3>Important questions still go to people.</h3></div>
-            <p>Care, eligibility and sensitive questions pause and alert staff.</p>
+            <div><span>Human-handoff checklist</span><h3>Automation handles speed. People handle judgment.</h3><p>Pause the workflow and alert the right person when any of these appear.</p></div>
+            <ul data-handoff-list></ul>
           </section>
         </article>
 
         <article class="kit-page" data-page="2">
           <div class="kit-page-topline"><span>03 / 04</span><span data-community>Your community</span></div>
-          <p class="kit-eyebrow">Ready-to-use templates</p>
-          <h2>Useful copy, not a feature brochure.</h2>
-          <p class="kit-page-intro">Use these manually today or adapt them into an approved workflow. Replace bracketed fields before use.</p>
+          <p class="kit-eyebrow">Inquiry response templates</p>
+          <h2>Copy your team can use today.</h2>
+          <p class="kit-page-intro">Replace bracketed fields, approve the wording and use it manually or in a workflow.</p>
 
           <div class="kit-template-grid">
             <section class="kit-template featured">
@@ -142,30 +154,35 @@ const canonical = 'https://get-quid.site/private-kit/';
           </div>
 
           <section class="kit-followup-section">
-            <div class="kit-section-heading"><div><p class="kit-eyebrow">A finite follow-up</p><h2>Three useful nudges. Then stop.</h2></div><p>Every message should make replying easier, not make the family feel chased.</p></div>
+            <div class="kit-section-heading"><div><p class="kit-eyebrow">Tour follow-up sequence</p><h2>Three useful nudges. Then stop.</h2></div><p>A reply stops the sequence. A sensitive question goes to a person.</p></div>
             <div class="kit-followups" data-followups></div>
           </section>
 
-          <div class="kit-copy-rule"><b>Simple rule:</b><span>If the family replies, the sequence stops. If the message raises a care or eligibility question, a person takes over.</span></div>
+          <section class="kit-stalled">
+            <div class="kit-stalled-heading"><div><p class="kit-eyebrow">Stalled-lead reactivation template</p><h2>Restart a quiet conversation.</h2></div><button type="button" data-copy="stalled-lead">Copy</button></div>
+            <div class="kit-stalled-copy"><b data-stalled-subject></b><pre data-stalled-body id="stalled-lead"></pre></div>
+          </section>
         </article>
 
         <article class="kit-page" data-page="3">
           <div class="kit-page-topline"><span>04 / 04</span><span data-community>Your community</span></div>
-          <p class="kit-eyebrow">30-day action plan</p>
-          <h2>Start with one source, one calendar and one accountable owner.</h2>
-          <p class="kit-page-intro">The quickest useful implementation is deliberately narrow. Prove the handoff works before adding more channels or complexity.</p>
+          <p class="kit-eyebrow">Daily “what’s stuck?” tracker</p>
+          <h2>See what needs a person today.</h2>
+          <p class="kit-page-intro">A short daily view keeps warm inquiries from disappearing into inboxes. The rows below are illustrative—never resident data.</p>
+
+          <section class="kit-tracker" aria-label="Illustrative daily inquiry tracker">
+            <div class="kit-tracker-head"><span>Priority</span><span>Inquiry</span><span>Status</span><span>Owner</span><span>Next action</span></div>
+            <div data-stuck-tracker></div>
+          </section>
+
+          <div class="kit-section-heading kit-plan-heading"><div><p class="kit-eyebrow">30-day action plan</p><h2>Start narrow. Prove the handoff.</h2></div><p>One source, one calendar, one accountable owner.</p></div>
 
           <div class="kit-plan">
-            <article><span>Week 1</span><h3>Map and approve</h3><p>Document the current form, recipient inbox, response copy, escalation rules and tour-calendar owner.</p></article>
-            <article><span>Week 2</span><h3>Connect and test</h3><p>Connect one inquiry source and test normal, unanswered and human-review scenarios.</p></article>
-            <article><span>Week 3</span><h3>Run with guardrails</h3><p>Launch the approved workflow, review daily summaries and correct exceptions quickly.</p></article>
-            <article><span>Week 4</span><h3>Measure and decide</h3><p>Review response coverage, speed, tours, handoffs and what should—or should not—expand.</p></article>
+            <article><span>Week 1</span><h3>Map</h3><p>Approve the form, copy, calendar owner and handoff rules.</p></article>
+            <article><span>Week 2</span><h3>Test</h3><p>Test standard, unanswered and human-review scenarios.</p></article>
+            <article><span>Week 3</span><h3>Run</h3><p>Launch one source and review the tracker daily.</p></article>
+            <article><span>Week 4</span><h3>Measure</h3><p>Review response speed, tours and correct handoffs.</p></article>
           </div>
-
-          <section class="kit-metrics-wrap">
-            <div class="kit-section-heading"><div><p class="kit-eyebrow">Keep the scorecard honest</p><h2>Measure movement, not AI activity.</h2></div></div>
-            <div class="kit-metrics" data-metrics></div>
-          </section>
 
           <section class="kit-final-cta">
             <div><p class="kit-eyebrow">Want to see this mapped to your actual process?</p><h2>Walk through the kit with Umair.</h2><p>No platform migration. No giant rollout. Just the current handoff, the first useful workflow and the guardrails around it.</p></div>
@@ -220,6 +237,8 @@ const canonical = 'https://get-quid.site/private-kit/';
             const observation = clean(data.observation, 500) || 'The public website captures interest, but the next step appears to depend on manual staff follow-up.';
             const firstResponse = clean(data.firstResponse, 1800).replaceAll('Sample Senior Living Community', community);
             const smsResponse = clean(data.smsResponse, 600).replaceAll('Sample Senior Living Community', community);
+            const stalledSubject = clean(data.stalledLead?.subject, 120) || 'Still looking?';
+            const stalledBody = clean(data.stalledLead?.body, 1000).replaceAll('Sample Senior Living Community', community);
 
             document.querySelectorAll('[data-community]').forEach((node) => { node.textContent = community; });
             document.querySelectorAll('[data-location]').forEach((node) => { node.textContent = location; });
@@ -230,6 +249,8 @@ const canonical = 'https://get-quid.site/private-kit/';
             document.querySelectorAll('[data-audit-label]').forEach((node) => { node.textContent = clean(data.auditLabel, 60) || 'Public journey audit'; });
             document.querySelectorAll('[data-first-response]').forEach((node) => { node.textContent = firstResponse; });
             document.querySelectorAll('[data-sms-response]').forEach((node) => { node.textContent = smsResponse; });
+            document.querySelectorAll('[data-stalled-subject]').forEach((node) => { node.textContent = `Subject: ${stalledSubject}`; });
+            document.querySelectorAll('[data-stalled-body]').forEach((node) => { node.textContent = stalledBody; });
 
             const websiteLink = document.querySelector('[data-website]');
             try {
@@ -264,6 +285,32 @@ const canonical = 'https://get-quid.site/private-kit/';
                 const body = document.createElement('p'); body.textContent = clean(item.body, 500).replaceAll('Sample Senior Living Community', community);
                 const badge = document.createElement('b'); badge.textContent = `0${index + 1}`;
                 card.append(badge, when, heading, body); followups.append(card);
+              });
+            }
+
+            const handoffList = document.querySelector('[data-handoff-list]');
+            if (handoffList) {
+              handoffList.textContent = '';
+              (Array.isArray(data.handoffChecklist) ? data.handoffChecklist : []).slice(0, 6).forEach((item) => {
+                const row = document.createElement('li');
+                row.textContent = clean(item, 160);
+                handoffList.append(row);
+              });
+            }
+
+            const stuckTracker = document.querySelector('[data-stuck-tracker]');
+            if (stuckTracker) {
+              stuckTracker.textContent = '';
+              (Array.isArray(data.stuckTracker) ? data.stuckTracker : []).slice(0, 6).forEach((item) => {
+                const row = document.createElement('div');
+                row.className = 'kit-tracker-row';
+                ['priority', 'item', 'status', 'owner', 'next'].forEach((key) => {
+                  const cell = document.createElement('span');
+                  cell.dataset.label = key === 'item' ? 'Inquiry' : key === 'next' ? 'Next action' : `${key.charAt(0).toUpperCase()}${key.slice(1)}`;
+                  cell.textContent = clean(item[key], 160);
+                  row.append(cell);
+                });
+                stuckTracker.append(row);
               });
             }
 
@@ -346,10 +393,11 @@ const canonical = 'https://get-quid.site/private-kit/';
   .kit-sidebar nav button.is-active { border-color:rgba(255,255,255,.14); background:rgba(255,255,255,.09); color:white; }
   .kit-sidebar small { margin-top:auto; }
   .kit-stage { min-width:0; }
-  .kit-page { display:none; min-height:calc(100vh - 124px); padding:clamp(32px,5vw,72px); overflow:hidden; border:1px solid var(--kit-border); border-radius:28px; background:var(--kit-paper); box-shadow:0 18px 50px rgba(24,52,44,.1); }
+  .kit-page { display:none; min-height:calc(100vh - 124px); padding:clamp(32px,4.2vw,60px); overflow:hidden; border:1px solid var(--kit-border); border-radius:28px; background:var(--kit-paper); box-shadow:0 18px 50px rgba(24,52,44,.1); }
+  .kit-page > * { width:100%; }
   .kit-page.is-active { display:block; animation:kit-in .32s ease both; }
   @keyframes kit-in { from { opacity:0; transform:translateY(7px); } }
-  .kit-page-topline { margin:-10px 0 clamp(38px,6vw,72px); display:flex; justify-content:space-between; gap:20px; color:var(--kit-muted); font-size:.7rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+  .kit-page-topline { min-height:18px; margin:0 0 clamp(30px,4vw,48px); display:flex; align-items:center; justify-content:space-between; gap:20px; color:var(--kit-muted); font-size:.7rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
   .kit-eyebrow { margin:0 0 10px; color:var(--kit-sage-deep); font-size:.72rem; font-weight:850; letter-spacing:.12em; text-transform:uppercase; }
   .kit-page h1,.kit-page h2,.kit-page h3 { font-family:'Newsreader Variable',serif; }
   .kit-page h1 { max-width:12ch; margin:0; font-size:clamp(3.1rem,7vw,7.4rem); line-height:.88; letter-spacing:-.055em; }
@@ -365,11 +413,11 @@ const canonical = 'https://get-quid.site/private-kit/';
   .kit-score div span { color:var(--kit-muted); font-size:.8rem; }
   .kit-score > b { margin-top:7px; font-size:.76rem; }
   .kit-score small { max-width:15ch; margin-top:5px; color:var(--kit-muted); font-size:.6rem; line-height:1.35; }
-  .kit-commercial-grid { margin:40px 0 18px; display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-  .kit-commercial { padding:25px; border-radius:18px; }
+  .kit-commercial-grid { margin:34px 0 16px; display:grid; grid-template-columns:1fr 1fr; gap:14px; align-items:stretch; }
+  .kit-commercial { min-height:220px; padding:25px; display:flex; flex-direction:column; border-radius:18px; }
   .kit-commercial > span { display:inline-flex; padding:5px 8px; border-radius:999px; font-size:.62rem; font-weight:900; letter-spacing:.09em; text-transform:uppercase; }
   .kit-commercial h2 { max-width:14ch; margin:18px 0 22px; font-size:clamp(1.7rem,3vw,2.65rem); line-height:1; }
-  .kit-commercial > div { display:grid; grid-template-columns:1fr auto .7fr auto 1.6fr; gap:6px; align-items:center; font-size:.62rem; }
+  .kit-commercial > div { margin-top:auto; display:grid; grid-template-columns:1fr auto .7fr auto 1.6fr; gap:6px; align-items:center; font-size:.62rem; }
   .kit-commercial > div b,.kit-commercial > div strong { padding:8px; border-radius:8px; text-align:center; }
   .kit-commercial > div i { font-style:normal; }
   .kit-commercial.problem { background:#fff0e7; color:#6f3827; }
@@ -380,13 +428,19 @@ const canonical = 'https://get-quid.site/private-kit/';
   .kit-commercial.solution > span { background:rgba(237,177,144,.18); color:#ffc6a6; }
   .kit-commercial.solution > div b { background:rgba(255,255,255,.1); }
   .kit-commercial.solution > div strong { background:#b7d2bd; color:var(--kit-ink); }
-  .kit-observation { margin:clamp(38px,6vw,72px) 0; padding:24px 26px; display:grid; grid-template-columns:190px 1fr; gap:28px; border-left:5px solid var(--kit-peach); border-radius:0 16px 16px 0; background:var(--kit-cream); }
+  .kit-observation { margin:16px 0 28px; padding:22px 24px; display:grid; grid-template-columns:190px 1fr; gap:28px; align-items:center; border-left:5px solid var(--kit-peach); border-radius:0 16px 16px 0; background:var(--kit-cream); }
   .kit-observation span { display:block; color:var(--kit-muted); font-size:.65rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
   .kit-observation b { display:block; margin-top:7px; font-size:.85rem; }
   .kit-observation p { margin:0; font:600 1.08rem/1.55 'Newsreader Variable',serif; }
   .kit-section-heading { margin-bottom:22px; display:flex; justify-content:space-between; gap:40px; align-items:end; }
   .kit-section-heading h2 { font-size:clamp(1.9rem,3vw,3.2rem); }
   .kit-section-heading > p { max-width:50ch; margin:0; color:var(--kit-muted); font-size:.84rem; line-height:1.55; }
+  .kit-included { margin:28px 0; padding:24px; border:1px solid var(--kit-border); border-radius:18px; background:white; }
+  .kit-included .kit-section-heading { margin-bottom:17px; }
+  .kit-included .kit-section-heading h2 { font-size:clamp(1.75rem,2.5vw,2.5rem); }
+  .kit-included-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+  .kit-included-grid span { min-height:46px; padding:12px 14px; display:flex; align-items:center; border-radius:11px; background:var(--kit-cream); color:var(--kit-ink); font-size:.72rem; font-weight:800; line-height:1.35; }
+  .kit-audit-section { margin-top:28px; }
   .kit-audit-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
   .kit-audit-card { min-height:125px; padding:18px; border:1px solid var(--kit-border); border-radius:16px; background:white; }
   .kit-audit-card > div { display:flex; justify-content:space-between; color:var(--kit-muted); font-size:.64rem; }
@@ -395,8 +449,8 @@ const canonical = 'https://get-quid.site/private-kit/';
   .kit-audit-card.tone-watch > div b { background:#f4e7b9; }
   .kit-audit-card h3 { margin:24px 0 0; font-size:1.25rem; }
   .kit-audit-card p { display:none; }
-  .kit-compare { margin:44px 0 18px; display:grid; grid-template-columns:1fr 64px 1fr; align-items:center; }
-  .kit-compare-lane { padding:24px; border:1px solid var(--kit-border); border-radius:20px; }
+  .kit-compare { margin:34px 0 16px; display:grid; grid-template-columns:1fr 64px 1fr; align-items:stretch; }
+  .kit-compare-lane { padding:22px; display:flex; flex-direction:column; border:1px solid var(--kit-border); border-radius:20px; }
   .kit-compare-lane.manual { background:#fff0e7; }
   .kit-compare-lane.automated { background:#e3eee4; }
   .kit-compare-lane header { display:flex; justify-content:space-between; gap:15px; padding-bottom:16px; border-bottom:1px solid var(--kit-border); }
@@ -408,7 +462,7 @@ const canonical = 'https://get-quid.site/private-kit/';
   .kit-compare-lane > div b { width:30px; height:30px; display:grid; place-items:center; border-radius:9px; background:white; font-size:.65rem; }
   .kit-compare-lane > div span { font-size:.76rem; }
   .kit-compare-lane > i { display:block; margin:-6px 0 -6px 13px; color:var(--kit-muted); font-style:normal; }
-  .kit-compare-lane footer { margin-top:12px; padding:13px; border-radius:11px; font-size:.74rem; font-weight:900; text-align:center; }
+  .kit-compare-lane footer { margin-top:auto; padding:13px; border-radius:11px; font-size:.74rem; font-weight:900; text-align:center; }
   .kit-compare-lane.manual footer { background:#b95032; color:white; }
   .kit-compare-lane.automated footer { background:var(--kit-ink); color:white; }
   .kit-vs { width:52px; height:52px; z-index:1; display:grid; place-items:center; justify-self:center; border:7px solid var(--kit-paper); border-radius:50%; background:var(--kit-ink); color:white; font-size:.7rem; font-weight:900; }
@@ -430,11 +484,14 @@ const canonical = 'https://get-quid.site/private-kit/';
   .kit-rule-card ul { margin:18px 0 0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:12px 25px; list-style:none; }
   .kit-rule-card li { position:relative; padding-left:20px; font-size:.78rem; }
   .kit-rule-card li::before { content:'✓'; position:absolute; left:0; color:var(--kit-sage-deep); font-weight:900; }
-  .kit-handoff { margin-top:18px; padding:25px; display:grid; grid-template-columns:1fr 1.4fr; gap:30px; align-items:center; border:1px solid var(--kit-border); border-radius:18px; }
+  .kit-handoff { margin-top:18px; padding:24px; display:grid; grid-template-columns:.9fr 1.35fr; gap:30px; align-items:center; border:1px solid var(--kit-border); border-radius:18px; background:white; }
   .kit-handoff span { color:#a46045; font-size:.65rem; font-weight:850; letter-spacing:.1em; text-transform:uppercase; }
   .kit-handoff h3 { margin:7px 0 0; font-size:1.45rem; }
-  .kit-handoff p { margin:0; color:var(--kit-muted); font-size:.8rem; line-height:1.55; }
-  .kit-template-grid { margin:42px 0 48px; display:grid; grid-template-columns:1.2fr .8fr; gap:16px; }
+  .kit-handoff p { margin:8px 0 0; color:var(--kit-muted); font-size:.75rem; line-height:1.5; }
+  .kit-handoff ul { margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:9px; list-style:none; }
+  .kit-handoff li { min-height:42px; padding:10px 11px 10px 34px; position:relative; display:flex; align-items:center; border-radius:10px; background:#f4dfd2; font-size:.69rem; font-weight:750; line-height:1.35; }
+  .kit-handoff li::before { content:'!'; position:absolute; left:11px; width:16px; height:16px; display:grid; place-items:center; border-radius:50%; background:#a65337; color:white; font-size:.58rem; font-weight:900; }
+  .kit-template-grid { margin:32px 0 34px; display:grid; grid-template-columns:1.2fr .8fr; gap:16px; align-items:stretch; }
   .kit-template { padding:22px; border:1px solid var(--kit-border); border-radius:18px; background:var(--kit-cream); }
   .kit-template.featured { background:var(--kit-sage); }
   .kit-template > div { display:flex; align-items:center; justify-content:space-between; gap:15px; }
@@ -442,27 +499,43 @@ const canonical = 'https://get-quid.site/private-kit/';
   .kit-template button { padding:6px 9px; border:1px solid var(--kit-border); border-radius:999px; background:white; color:var(--kit-ink); cursor:pointer; font-size:.64rem; font-weight:750; }
   .kit-template pre { margin:24px 0 0; white-space:pre-wrap; color:var(--kit-ink); font:500 .77rem/1.65 'Manrope Variable',sans-serif; }
   .kit-followups { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
-  .kit-followups article { position:relative; min-height:220px; padding:22px; border:1px solid var(--kit-border); border-radius:18px; background:white; }
+  .kit-followups article { position:relative; min-height:170px; padding:20px; border:1px solid var(--kit-border); border-radius:18px; background:white; }
   .kit-followups article > b { position:absolute; top:17px; right:17px; color:var(--kit-peach); font-size:.68rem; }
   .kit-followups article > span { color:var(--kit-sage-deep); font-size:.65rem; font-weight:850; text-transform:uppercase; }
   .kit-followups h3 { margin:30px 0 12px; font-size:1.3rem; }
   .kit-followups p { margin:0; color:var(--kit-muted); font-size:.75rem; line-height:1.58; }
-  .kit-copy-rule { margin-top:16px; padding:16px 20px; display:flex; gap:12px; border-radius:14px; background:var(--kit-ink); color:white; font-size:.75rem; }
-  .kit-copy-rule span { color:rgba(255,255,255,.7); }
-  .kit-plan { margin:46px 0; display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
-  .kit-plan article { min-height:205px; padding:20px; border-top:5px solid var(--kit-sage-deep); border-radius:4px 4px 16px 16px; background:var(--kit-cream); }
+  .kit-stalled { margin-top:18px; padding:22px; display:grid; grid-template-columns:.72fr 1.28fr; gap:24px; align-items:center; border-radius:18px; background:var(--kit-ink); color:white; }
+  .kit-stalled .kit-eyebrow { color:var(--kit-peach); }
+  .kit-stalled-heading { align-self:stretch; display:flex; flex-direction:column; justify-content:space-between; align-items:flex-start; }
+  .kit-stalled-heading h2 { max-width:12ch; margin:0; font-size:1.7rem; line-height:1; }
+  .kit-stalled button { padding:7px 11px; border:0; border-radius:999px; background:var(--kit-peach); color:var(--kit-ink); cursor:pointer; font-size:.66rem; font-weight:850; }
+  .kit-stalled-copy { padding:18px; border-radius:12px; background:rgba(255,255,255,.08); }
+  .kit-stalled-copy b { display:block; color:var(--kit-peach); font-size:.7rem; }
+  .kit-stalled-copy pre { margin:10px 0 0; white-space:pre-wrap; color:white; font:500 .72rem/1.5 'Manrope Variable',sans-serif; }
+  .kit-tracker { margin:30px 0 34px; overflow:hidden; border:1px solid var(--kit-border); border-radius:18px; background:white; }
+  .kit-tracker-head,.kit-tracker-row { display:grid; grid-template-columns:.72fr 1fr 1.35fr .85fr 1.65fr; gap:0; align-items:center; }
+  .kit-tracker-head { background:var(--kit-ink); color:white; }
+  .kit-tracker-head span { padding:12px 14px; color:rgba(255,255,255,.7); font-size:.6rem; font-weight:850; letter-spacing:.08em; text-transform:uppercase; }
+  .kit-tracker-row { border-top:1px solid var(--kit-border); }
+  .kit-tracker-row:first-child { border-top:0; }
+  .kit-tracker-row span { min-width:0; padding:13px 14px; color:var(--kit-muted); font-size:.68rem; line-height:1.35; }
+  .kit-tracker-row span:first-child { color:#a64b31; font-weight:900; }
+  .kit-tracker-row span:nth-child(2),.kit-tracker-row span:nth-child(4) { color:var(--kit-ink); font-weight:800; }
+  .kit-plan-heading { margin:0 0 18px; }
+  .kit-plan { margin:0; display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+  .kit-plan article { min-height:145px; padding:18px; border-top:5px solid var(--kit-sage-deep); border-radius:4px 4px 16px 16px; background:var(--kit-cream); }
   .kit-plan article:nth-child(2) { border-color:#719081; }
   .kit-plan article:nth-child(3) { border-color:var(--kit-peach); }
   .kit-plan article:nth-child(4) { border-color:var(--kit-ink); }
   .kit-plan span { color:var(--kit-muted); font-size:.65rem; font-weight:850; text-transform:uppercase; }
-  .kit-plan h3 { margin:36px 0 8px; font-size:1.35rem; }
+  .kit-plan h3 { margin:22px 0 8px; font-size:1.35rem; }
   .kit-plan p { margin:0; color:var(--kit-muted); font-size:.73rem; line-height:1.5; }
   .kit-metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
   .kit-metrics article { padding:18px; border:1px solid var(--kit-border); border-radius:15px; }
   .kit-metrics strong,.kit-metrics span { display:block; }
   .kit-metrics strong { font:700 1.05rem/1.2 'Newsreader Variable',serif; }
   .kit-metrics span { margin-top:8px; color:var(--kit-muted); font-size:.68rem; line-height:1.45; }
-  .kit-final-cta { margin-top:42px; padding:30px; display:grid; grid-template-columns:1fr auto; gap:35px; align-items:center; border-radius:20px; background:var(--kit-ink); color:white; }
+  .kit-final-cta { margin-top:28px; padding:26px; display:grid; grid-template-columns:1fr auto; gap:35px; align-items:center; border-radius:20px; background:var(--kit-ink); color:white; }
   .kit-final-cta .kit-eyebrow { color:var(--kit-peach); }
   .kit-final-cta h2 { margin:0; font-size:2rem; }
   .kit-final-cta p:last-child { max-width:62ch; margin:10px 0 0; color:rgba(255,255,255,.65); font-size:.75rem; line-height:1.5; }
@@ -489,6 +562,7 @@ const canonical = 'https://get-quid.site/private-kit/';
     .kit-flow h3 { margin-top:22px; }
     .kit-compare { grid-template-columns:1fr; gap:10px; }
     .kit-vs { margin:-5px 0; }
+    .kit-included-grid { grid-template-columns:1fr 1fr; }
   }
   @media (max-width:760px) {
     .kit-header-inner,.kit-layout { width:min(100% - 24px,1440px); }
@@ -500,12 +574,21 @@ const canonical = 'https://get-quid.site/private-kit/';
     .kit-page { min-height:0; padding:28px 20px; border-radius:20px; }
     .kit-page-topline { margin:0 0 36px; }
     .kit-page-topline span:last-child { max-width:45%; text-align:right; }
-    .kit-cover-grid,.kit-commercial-grid,.kit-observation,.kit-section-heading,.kit-workflow-grid,.kit-handoff,.kit-template-grid,.kit-final-cta { grid-template-columns:1fr; }
+    .kit-cover-grid,.kit-commercial-grid,.kit-observation,.kit-section-heading,.kit-workflow-grid,.kit-handoff,.kit-template-grid,.kit-stalled,.kit-final-cta { grid-template-columns:1fr; }
     .kit-cover-grid { align-items:start; }
     .kit-score { width:190px; }
     .kit-audit-grid,.kit-followups,.kit-plan,.kit-metrics { grid-template-columns:1fr 1fr; }
     .kit-section-heading { align-items:start; }
     .kit-rule-card ul { grid-template-columns:1fr; }
+    .kit-handoff ul { grid-template-columns:1fr; }
+    .kit-stalled-heading { gap:16px; }
+    .kit-tracker { overflow:visible; border:0; background:transparent; }
+    .kit-tracker-head { display:none; }
+    .kit-tracker-row { margin-top:10px; padding:10px 12px; grid-template-columns:1fr 1fr; gap:6px 14px; border:1px solid var(--kit-border); border-radius:14px; background:white; }
+    .kit-tracker-row:first-child { border-top:1px solid var(--kit-border); }
+    .kit-tracker-row span { padding:4px 0; }
+    .kit-tracker-row span::before { content:attr(data-label); display:block; margin-bottom:2px; color:var(--kit-muted); font-size:.52rem; font-weight:850; letter-spacing:.07em; text-transform:uppercase; }
+    .kit-tracker-row span:last-child { grid-column:1 / -1; }
     .kit-final-cta { align-items:start; }
     .kit-cta { justify-self:start; }
     .kit-revenue-strip { grid-template-columns:1fr; }
@@ -513,7 +596,7 @@ const canonical = 'https://get-quid.site/private-kit/';
   }
   @media (max-width:520px) {
     .kit-page h1 { font-size:clamp(3rem,16vw,5rem); }
-    .kit-audit-grid,.kit-followups,.kit-plan,.kit-metrics { grid-template-columns:1fr; }
+    .kit-included-grid,.kit-audit-grid,.kit-followups,.kit-plan,.kit-metrics { grid-template-columns:1fr; }
     .kit-audit-card,.kit-followups article,.kit-plan article { min-height:0; }
     .kit-copy-rule { display:grid; }
   }
