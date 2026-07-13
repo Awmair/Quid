@@ -14,6 +14,8 @@
 - Resources: https://get-quid.site/resources/
 - Assisted Living Admissions Automation: https://get-quid.site/assisted-living-admissions-automation/
 - Senior Living Inquiry Follow-Up Automation: https://get-quid.site/senior-living-inquiry-follow-up-automation/
+- Senior Living Tour Scheduling Software: https://get-quid.site/senior-living-tour-scheduling-software/
+- Free Senior Living Inquiry-Flow Grader: https://get-quid.site/senior-living-inquiry-flow-grader/
 
 ## Product Summary
 
@@ -47,6 +49,7 @@ Quid Admissions is the company and entity behind Quid. Quid is the brand. Umair 
 ## Best Resource Pages
 
 - Senior Living Inquiry-to-Tour Website Audit: https://get-quid.site/resources/senior-living-inquiry-to-tour-audit/
+- How to Increase Assisted Living Occupancy: https://get-quid.site/resources/how-to-increase-assisted-living-occupancy/
 - Senior Living Software Comparisons: https://get-quid.site/resources/senior-living-software-comparisons/
 - Senior Living Admissions Automation Software: 2026 Buyer’s Guide: https://get-quid.site/resources/senior-living-admissions-automation-software/
 - Senior Living Admissions Automation: https://get-quid.site/resources/senior-living-admissions-automation/
@@ -57,6 +60,12 @@ Quid Admissions is the company and entity behind Quid. Quid is the brand. Umair 
 - Follow-Up Email Templates: https://get-quid.site/resources/senior-living-follow-up-templates/
 
 ## Quid Software Comparisons
+
+- Aline Alternatives: https://get-quid.site/resources/alternatives/aline-alternatives/
+- Further Alternatives: https://get-quid.site/resources/alternatives/further-alternatives/
+- ECP CRM Alternatives: https://get-quid.site/resources/alternatives/ecp-crm-alternatives/
+- WelcomeHome Alternatives: https://get-quid.site/resources/alternatives/welcomehome-alternatives/
+- Advantage Anywhere Alternatives: https://get-quid.site/resources/alternatives/advantage-anywhere-alternatives/
 
 - Quid vs Aline: https://get-quid.site/resources/comparisons/quid-vs-aline/
 - Quid vs Further: https://get-quid.site/resources/comparisons/quid-vs-further/

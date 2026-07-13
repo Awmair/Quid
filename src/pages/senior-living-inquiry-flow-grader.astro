@@ -1,0 +1,198 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBlock from '../components/AnswerBlock.astro';
+import Mascot from '../components/Mascot.astro';
+import { site } from '../data/site';
+
+const title = 'Free Senior Living Website Inquiry-Flow Grader | Quid';
+const description = 'Grade your senior living website inquiry and tour journey in two minutes. Find visible friction after Request a Tour and get practical next steps.';
+const pageUrl = `${site.domain}/senior-living-inquiry-flow-grader/`;
+const questions = [
+  { id:'tour-cta', weight:12, title:'Can a family find a clear tour or visit action?', help:'Check the homepage, care pages and contact page on a phone.', gap:'Make the tour or visit action unmistakable on the pages families use most.' },
+  { id:'tour-time', weight:20, title:'Can a family select an actual tour time?', help:'Full credit requires visible availability, not only a form asking staff to call later.', gap:'Offer staff-approved tour times while intent is still high.' },
+  { id:'next-step', weight:12, title:'Does the page explain exactly what happens next?', help:'The family should know whether they are booking, requesting or waiting for contact.', gap:'State the next step and realistic response expectation beside the form.' },
+  { id:'acknowledgement', weight:12, title:'Does every inquiry receive a prompt approved acknowledgement?', help:'Separate confirmation of receipt from the later thoughtful staff response.', gap:'Acknowledge every inquiry promptly with approved language and a useful next step.' },
+  { id:'ownership', weight:10, title:'Does one person or role clearly own the next action?', help:'Your team should be able to answer who owns a new inquiry without checking several systems.', gap:'Assign one visible owner for each new inquiry and overdue next step.' },
+  { id:'reminders', weight:12, title:'Are tour confirmations and reminders consistent?', help:'Look for a defined confirmation, reminder and rescheduling process.', gap:'Standardize confirmations, reminders and rescheduling around the approved calendar.' },
+  { id:'handoff', weight:12, title:'Do sensitive questions pause automation and reach staff?', help:'Care, medication, eligibility, pricing exceptions and distress require a person.', gap:'Define which questions pause routine messages, who receives them and how they remain visible.' },
+  { id:'stalled', weight:10, title:'Can a manager see which inquiries are stuck?', help:'A shared daily view should show overdue replies, unbooked tours and staff handoffs.', gap:'Create a daily exception view for overdue, stalled and human-review items.' },
+] as const;
+const faqs = [
+  ['What is a senior living inquiry-flow grader?', 'It is a structured self-assessment of the visible journey from website visit to inquiry acknowledgement, tour scheduling, follow-up and staff handoff. It does not inspect private systems or measure actual staff performance.'],
+  ['Does Quid automatically scan our website?', 'No. This free version guides an operator through a two-minute review using what a family can see and what the admissions team knows about the next steps. A requested human review is completed separately using public business information.'],
+  ['What is a good inquiry-flow score?', 'A higher score means the visible workflow covers more of the basics assessed here. The score is a planning aid, not an industry benchmark, certification or prediction of occupancy. The individual gaps are more useful than the number alone.'],
+  ['Can this grader measure our response time?', 'No. It can identify whether acknowledgement, ownership and escalation are defined. Actual response time requires timestamped inquiry and staff-response data from the community’s workflow.'],
+  ['What should happen after Request a Tour?', 'The family should receive confirmation that the request arrived, an easy way to choose or confirm a visit, clear expectations, and a route to staff when the conversation needs judgment.'],
+  ['Does improving the inquiry flow guarantee more move-ins?', 'No. Occupancy depends on demand, market fit, care needs, pricing, availability, tours and many other factors. Improving the flow helps reduce avoidable friction between existing inquiries and visits.'],
+] as const;
+const schema = [
+  {'@context':'https://schema.org','@type':'WebApplication',name:'Senior Living Website Inquiry-Flow Grader',description,applicationCategory:'BusinessApplication',operatingSystem:'Any web browser',url:pageUrl,provider:{'@type':'Organization',name:'Quid Admissions',url:site.domain},offers:{'@type':'Offer',price:'0',priceCurrency:'USD'}},
+  {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:site.domain},{'@type':'ListItem',position:2,name:'Resources',item:`${site.domain}/resources/`},{'@type':'ListItem',position:3,name:'Inquiry-Flow Grader',item:pageUrl}]},
+  {'@context':'https://schema.org','@type':'FAQPage',mainEntity:faqs.map(([question,answer])=>({'@type':'Question',name:question,acceptedAnswer:{'@type':'Answer',text:answer}}))},
+];
+---
+
+<BaseLayout title={title} description={description} canonicalUrl={pageUrl} schema={schema}>
+  <Breadcrumbs items={[{label:'Home',href:'/'},{label:'Resources',href:'/resources/'},{label:'Inquiry-Flow Grader'}]} />
+
+  <section class="page-hero grader-hero">
+    <div class="shell grader-hero-grid">
+      <div>
+        <p class="eyebrow">Free senior living website audit tool</p>
+        <h1>What happens after “Request a Tour”?</h1>
+        <p class="lede">Grade the visible path from website inquiry to booked visit. In two minutes, see where high-intent families may hit unnecessary waiting, ambiguity or calendar friction.</p>
+        <AnswerBlock label="What this grader checks" answer="Eight practical signals across the senior living website inquiry, acknowledgement, tour scheduling, follow-up, ownership and human-handoff workflow." variant="hero" />
+        <div class="button-row"><a class="button" href="#grade-your-flow">Grade My Website Flow</a><a class="button button-secondary" href="/resources/senior-living-inquiry-to-tour-audit/">See the 25-community audit</a></div>
+        <p class="solution-microcopy">Free. No resident data. Your answers stay in this browser unless you request a review.</p>
+      </div>
+      <div class="grader-hero-visual" aria-label="Inquiry-flow score preview">
+        <Mascot pose="summary" class="grader-mascot" alt="Quid reviewing a senior living inquiry flow" width={230} eager />
+        <div class="grader-preview-score"><span>Example score</span><strong>68</strong><small>Tour friction found</small></div>
+        <div class="grader-preview-path"><span>Inquiry</span><i>→</i><span class="warn">Form wait</span><i>→</i><span>Staff reply</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm section-deep">
+    <div class="shell grader-proof-strip"><article><strong>25</strong><span>public community journeys reviewed in Quid’s July 2026 field audit</span></article><article><strong>13 of 14</strong><span>explicit tour or visit CTAs still showed a form or staff-arranged step</span></article><article><strong>Public view only</strong><span>No forms submitted and no claims about actual staff response time</span></article></div>
+  </section>
+
+  <section class="section section-white" id="grade-your-flow">
+    <div class="shell grader-layout">
+      <aside class="grader-intro">
+        <p class="eyebrow">Two-minute self-assessment</p>
+        <h2>Open your website on a phone.</h2>
+        <p>Follow the same path a family sees. Choose <strong>Yes</strong>, <strong>Partly / not sure</strong>, or <strong>No</strong> for each question.</p>
+        <div class="grader-scale"><span><b>Yes</b> clearly covered</span><span><b>Partly</b> inconsistent or unclear</span><span><b>No</b> visible gap</span></div>
+        <p class="grader-honesty">This is a planning tool, not a conversion guarantee, compliance review or industry certification.</p>
+      </aside>
+
+      <form class="grader-form" data-grader>
+        <label class="grader-url"><span>Community website</span><input type="url" name="website" placeholder="https://yourcommunity.com" inputmode="url" autocomplete="url" required /><small>Used only to label your result unless you request a human review.</small></label>
+        <div class="grader-question-list">
+          {questions.map((question,index)=><fieldset data-grader-question data-weight={question.weight} data-gap={question.gap}>
+            <legend><span>{String(index + 1).padStart(2,'0')}</span><strong>{question.title}</strong><small>{question.help}</small></legend>
+            <div class="grader-options">
+              <label><input type="radio" name={question.id} value="1" required /><span><b>Yes</b><small>Clearly covered</small></span></label>
+              <label><input type="radio" name={question.id} value="0.5" /><span><b>Partly</b><small>Not sure / inconsistent</small></span></label>
+              <label><input type="radio" name={question.id} value="0" /><span><b>No</b><small>Visible gap</small></span></label>
+            </div>
+          </fieldset>)}
+        </div>
+        <button class="button grader-submit" type="submit">Show My Inquiry-Flow Score</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="section section-sand grader-results-section" data-grader-results hidden>
+    <div class="shell grader-results-grid">
+      <div class="grader-result-score" data-score-ring>
+        <span>Your inquiry-flow score</span>
+        <strong data-grader-score>0</strong>
+        <small>out of 100</small>
+      </div>
+      <div class="grader-result-copy">
+        <p class="eyebrow">Your result</p>
+        <h2 data-grader-heading>Your next improvements are clear.</h2>
+        <p class="lede" data-grader-summary></p>
+        <h3>Highest-priority fixes</h3>
+        <ol class="grader-gap-list" data-grader-gaps></ol>
+        <p class="grader-result-note">The score reflects only the eight questions above. It does not estimate actual occupancy, staff performance or revenue.</p>
+      </div>
+    </div>
+    <div class="shell grader-review-panel">
+      <div><p class="eyebrow">Want a human-reviewed version?</p><h2>We’ll inspect the public journey and send a concise observation.</h2><p>Request a public-information-only review. We will not submit your inquiry form, impersonate a family or collect resident information.</p></div>
+      <form action="https://formspree.io/f/mnjkzyak" method="POST" data-grader-review-form>
+        <label><span>First name</span><input type="text" name="first_name" autocomplete="given-name" required /></label>
+        <label><span>Work email</span><input type="email" name="email" autocomplete="email" required /></label>
+        <label><span>Community name</span><input type="text" name="community_name" autocomplete="organization" required /></label>
+        <input type="hidden" name="website" data-review-website />
+        <input type="hidden" name="grader_score" data-review-score />
+        <input type="hidden" name="grader_gaps" data-review-gaps />
+        <input type="hidden" name="form_type" value="Senior Living Inquiry-Flow Grader Review" />
+        <input type="hidden" name="_subject" value="New Inquiry-Flow Grader Review" />
+        <button class="button" type="submit">Request My Human Review</button>
+        <p class="grader-review-status" aria-live="polite" data-grader-review-status></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="shell">
+      <div class="section-heading"><p class="eyebrow">What a strong flow looks like</p><h2>Fast for routine coordination. Human for judgment.</h2></div>
+      <div class="grader-good-flow"><article><span>01</span><h3>Inquiry arrives</h3><p>The existing website form captures only the information needed for the next step.</p></article><i>→</i><article><span>02</span><h3>Receipt is acknowledged</h3><p>Approved language confirms that the request arrived and sets expectations.</p></article><i>→</i><article><span>03</span><h3>Tour options appear</h3><p>Only staff-controlled availability is offered to the family.</p></article><i>→</i><article><span>04</span><h3>People handle exceptions</h3><p>Sensitive questions pause routine messages and reach designated staff.</p></article></div>
+    </div>
+  </section>
+
+  <section class="section section-sage">
+    <div class="narrow"><p class="eyebrow">Frequently asked questions</p><h2>About the senior living website grader.</h2><div class="faq-list">{faqs.map(([question,answer])=><details><summary>{question}</summary><p>{answer}</p></details>)}</div></div>
+  </section>
+</BaseLayout>
+
+<script>
+  const grader = document.querySelector<HTMLFormElement>('[data-grader]');
+  const results = document.querySelector<HTMLElement>('[data-grader-results]');
+  const scoreNode = document.querySelector<HTMLElement>('[data-grader-score]');
+  const headingNode = document.querySelector<HTMLElement>('[data-grader-heading]');
+  const summaryNode = document.querySelector<HTMLElement>('[data-grader-summary]');
+  const gapList = document.querySelector<HTMLOListElement>('[data-grader-gaps]');
+  const scoreRing = document.querySelector<HTMLElement>('[data-score-ring]');
+  const reviewWebsite = document.querySelector<HTMLInputElement>('[data-review-website]');
+  const reviewScore = document.querySelector<HTMLInputElement>('[data-review-score]');
+  const reviewGaps = document.querySelector<HTMLInputElement>('[data-review-gaps]');
+
+  grader?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!grader.checkValidity()) { grader.reportValidity(); return; }
+    let score = 0;
+    const gaps: { severity: number; text: string }[] = [];
+    grader.querySelectorAll<HTMLElement>('[data-grader-question]').forEach((question) => {
+      const weight = Number(question.dataset.weight || 0);
+      const selected = question.querySelector<HTMLInputElement>('input[type="radio"]:checked');
+      const value = Number(selected?.value || 0);
+      score += weight * value;
+      if (value < 1) gaps.push({ severity: weight * (1 - value), text: question.dataset.gap || 'Review this part of the workflow.' });
+    });
+    const rounded = Math.round(score);
+    const topGaps = gaps.sort((a,b) => b.severity - a.severity).slice(0,3).map((gap) => gap.text);
+    const result = rounded >= 85
+      ? { heading:'A strong foundation with a few details to tighten.', summary:'Your answers show a mostly visible, owned inquiry-to-tour path. Focus on the remaining gaps and verify that the process stays consistent after hours and during busy days.' }
+      : rounded >= 65
+        ? { heading:'Friction is hiding in the handoff.', summary:'The website captures interest, but some families may still encounter waiting, ambiguity or calendar back-and-forth before a visit is secured.' }
+        : { heading:'High-intent inquiries may be doing too much waiting.', summary:'Several basic steps depend on manual discovery, follow-up or coordination. Start with acknowledgement, tour availability and a clear owner for the next action.' };
+    if (scoreNode) scoreNode.textContent = String(rounded);
+    if (headingNode) headingNode.textContent = result.heading;
+    if (summaryNode) summaryNode.textContent = result.summary;
+    if (scoreRing) scoreRing.style.setProperty('--score', `${rounded * 3.6}deg`);
+    if (gapList) {
+      gapList.innerHTML = '';
+      (topGaps.length ? topGaps : ['Keep testing the flow on mobile and review it whenever the website or admissions process changes.']).forEach((gap) => {
+        const item = document.createElement('li'); item.textContent = gap; gapList.appendChild(item);
+      });
+    }
+    const website = String(new FormData(grader).get('website') || '');
+    if (reviewWebsite) reviewWebsite.value = website;
+    if (reviewScore) reviewScore.value = `${rounded}/100`;
+    if (reviewGaps) reviewGaps.value = topGaps.join(' | ');
+    if (results) { results.hidden = false; results.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'start' }); }
+  });
+
+  const reviewForm = document.querySelector<HTMLFormElement>('[data-grader-review-form]');
+  reviewForm?.addEventListener('submit', async (event) => {
+    if (!reviewForm.checkValidity()) { event.preventDefault(); reviewForm.reportValidity(); return; }
+    event.preventDefault();
+    const button = reviewForm.querySelector<HTMLButtonElement>('button[type="submit"]');
+    const status = reviewForm.querySelector<HTMLElement>('[data-grader-review-status]');
+    if (!button || !status) return;
+    const label = button.textContent || 'Request My Human Review';
+    button.disabled = true; button.textContent = 'Sending…'; status.textContent = '';
+    try {
+      const response = await fetch(reviewForm.action,{method:'POST',body:new FormData(reviewForm),headers:{Accept:'application/json'}});
+      if (!response.ok) throw new Error('Submission failed');
+      status.dataset.state = 'success'; status.textContent = 'Request received. We’ll review the public website journey and follow up.';
+    } catch {
+      status.dataset.state = 'error'; status.textContent = 'Something went wrong. Please try again.';
+    } finally { button.disabled = false; button.textContent = label; }
+  });
+</script>

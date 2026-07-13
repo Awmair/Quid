@@ -5,8 +5,13 @@ import dailyAdmissionsSummary from '../assets/resources/daily-admissions-summary
 import humanHandoffChecklist from '../assets/resources/human-handoff-checklist-guide.png';
 import followUpTemplates from '../assets/resources/follow-up-templates-guide.png';
 import softwareBuyersGuide from '../assets/resources/senior-living-admissions-software-buyers-guide.png';
+import familyTour from '../assets/lifestyle/family-tour.png';
 
 export const resourceMedia = {
+  'how-to-increase-assisted-living-occupancy': {
+    image: familyTour,
+    alt: 'A senior living sales director welcoming a family for a scheduled assisted living community tour',
+  },
   'senior-living-admissions-automation': {
     image: admissionsAutomation,
     alt: 'A diverse admissions team arranging a senior living follow-up workflow together',

@@ -1,0 +1,12 @@
+---
+import AlternativePage from '../../../components/AlternativePage.astro';
+import { alternatives } from '../../../data/alternatives';
+
+export function getStaticPaths() {
+  return alternatives.map((page) => ({ params: { slug: page.slug }, props: { page } }));
+}
+
+const { page } = Astro.props;
+---
+
+<AlternativePage page={page} />

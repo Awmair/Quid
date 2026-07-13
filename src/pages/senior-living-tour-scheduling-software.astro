@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBlock from '../components/AnswerBlock.astro';
+import PhotoPanel from '../components/PhotoPanel.astro';
+import VisualFlow from '../components/VisualFlow.astro';
+import QuickScan from '../components/QuickScan.astro';
+import PilotPricingCard from '../components/PilotPricingCard.astro';
+import FaqSection from '../components/FaqSection.astro';
+import { pilotOffer } from '../data/pilot';
+import { pricing } from '../data/pricing';
+import { site } from '../data/site';
+import familyTour from '../assets/lifestyle/family-tour.png';
+
+const title = 'Senior Living Tour Scheduling Software | Quid';
+const description = 'Senior living tour scheduling software that helps families choose approved visit times, receive confirmations and reminders, and reach staff when needed.';
+const pageUrl = `${site.domain}/senior-living-tour-scheduling-software/`;
+const faqs = [
+  ['What is senior living tour scheduling software?', 'It connects a new inquiry with staff-approved visit availability, confirms the selected time, sends approved reminders, records the next step, and keeps exceptions visible to the admissions team.'],
+  ['Can families schedule a tour without waiting for a call?', 'Yes, when the community approves the available times and workflow. A family can choose from those times while staff retains control of the calendar and can take over whenever needed.'],
+  ['Does Quid replace our calendar or CRM?', 'No. Quid is designed around one existing inquiry source and one tour calendar. It is not a replacement for a senior living CRM, clinical system or admissions team.'],
+  ['What happens if a family asks a care or medication question?', 'Routine scheduling pauses and the question is routed to designated staff. Clinical, medication, eligibility, care-assessment and sensitive family conversations stay with people.'],
+  ['Can tour confirmations and reminders be customized?', 'Yes. The pilot includes review of the community voice, timing, approved messages, calendar availability and handoff rules before the workflow is launched.'],
+  ['Can Quid prevent tour no-shows?', 'No software can guarantee attendance. Clear confirmations, approved reminders, directions and easy rescheduling can reduce avoidable confusion and make the visit easier to keep.'],
+  ['How much does senior living tour scheduling software cost?', `Quid’s focused 30-day admissions pilot costs ${pricing.pilot.displayWithBilling} for one community, one website inquiry source and one tour calendar. Continued managed service is optional at ${pricing.ongoing.monthlyDisplay}. Other platforms may use different pricing and implementation models.`],
+  ['How is Quid different from a scheduling link?', 'A scheduling link exposes availability. Quid connects acknowledgement, approved tour options, confirmation, reminders, stalled-inquiry visibility and staff handoffs around that scheduling step.'],
+] as const;
+const friction = [
+  {title:'The form captures intent, not a visit',text:'A family requests a tour but cannot secure a time while motivation is high.'},
+  {title:'Someone must notice the inbox',text:'The next step depends on coverage, ownership and competing work.'},
+  {title:'Calendars move through email',text:'Every proposed time creates another round of back-and-forth.'},
+  {title:'The visit is easy to forget',text:'Confirmations, directions, reminders and rescheduling are inconsistent.'},
+  {title:'Replies live outside the workflow',text:'A family question can arrive without pausing routine messages or alerting the owner.'},
+  {title:'Managers cannot see stalled requests',text:'A submitted tour form can look active even when no visit was secured.'},
+];
+const schema = [
+  {'@context':'https://schema.org','@type':'Service',name:'Senior Living Tour Scheduling Software and Managed Workflow',serviceType:'Senior living inquiry-to-tour scheduling, confirmation, reminders and staff handoffs',description,url:pageUrl,provider:{'@type':'Organization',name:'Quid Admissions',url:site.domain},audience:{'@type':'Audience',audienceType:'Assisted living, memory care and senior living owners, operators, executive directors, sales directors and admissions teams'},offers:[{'@type':'Offer',name:pilotOffer.name,price:String(pilotOffer.price),priceCurrency:'USD',url:`${site.domain}/pilot/`,description:pilotOffer.scope},{'@type':'Offer',name:'Optional Quid continuation',price:String(pricing.ongoing.amount),priceCurrency:'USD',description:pricing.ongoing.monthlyDisplay}]},
+  {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:site.domain},{'@type':'ListItem',position:2,name:'Solutions'},{'@type':'ListItem',position:3,name:'Tour Scheduling Software',item:pageUrl}]},
+  {'@context':'https://schema.org','@type':'FAQPage',mainEntity:faqs.map(([question,answer])=>({'@type':'Question',name:question,acceptedAnswer:{'@type':'Answer',text:answer}}))},
+];
+---
+
+<BaseLayout title={title} description={description} canonicalUrl={pageUrl} schema={schema}>
+  <Breadcrumbs items={[{label:'Home',href:'/'},{label:'Solutions'},{label:'Tour Scheduling Software'}]} />
+
+  <section class="page-hero solution-page-hero tour-software-hero">
+    <div class="shell solution-hero-grid">
+      <div>
+        <p class="eyebrow">Senior living tour scheduling software</p>
+        <h1>Turn “Request a Tour” into an actual visit.</h1>
+        <p class="lede">Quid helps families choose from approved tour times, confirms the visit, keeps reminders moving, and alerts staff when the conversation needs a person.</p>
+        <AnswerBlock label="What is senior living tour scheduling software?" answer="It connects a new inquiry with staff-approved visit availability, confirmation, reminders, rescheduling and human handoffs—without making staff chase every routine step." variant="hero" />
+        <div class="button-row"><a class="button" href="/pilot/">Start With One Tour Calendar</a><a class="button button-secondary" href="/senior-living-inquiry-flow-grader/">Grade Your Current Flow</a></div>
+        <p class="solution-microcopy">One community. One inquiry source. One staff-controlled calendar.</p>
+      </div>
+      <PhotoPanel image={familyTour} alt="A senior living sales director welcoming an adult daughter and older parent for a scheduled community tour" priority class="solution-hero-photo" />
+    </div>
+  </section>
+
+  <section class="section section-deep">
+    <div class="shell">
+      <div class="solution-section-intro"><div><p class="eyebrow">The complete scheduling path</p><h2>Make the next step visible while intent is high.</h2></div><p class="lede">Senior living tour booking software should do more than expose a calendar link. It should connect the website request, approved availability, confirmation, reminders, replies and staff ownership.</p></div>
+      <VisualFlow steps={[{title:'Website inquiry',text:'Existing form or tour CTA'},{title:'Approved reply',text:'Receipt confirmed'},{title:'Tour availability',text:'Staff-controlled times'},{title:'Visit confirmed',text:'Calendar and details'},{title:'Reminder or reschedule',text:'Approved timing'},{title:'Staff handoff',text:'People handle exceptions'}]} label="Senior living tour scheduling workflow" />
+      <p class="solution-boundary-note">Quid does not decide whether a family is appropriate for a community. It coordinates the routine path to a visit and pauses for staff judgment.</p>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="shell"><div class="solution-section-intro"><div><p class="eyebrow">Where tour requests lose momentum</p><h2>The hidden problem starts after the button.</h2></div><p class="lede">A clear “Schedule a Tour” call to action can still lead to waiting when the page only collects contact information and promises a later reply.</p></div><QuickScan items={friction} label="Common senior living tour scheduling gaps" /></div>
+  </section>
+
+  <section class="section section-sand">
+    <div class="shell tour-software-comparison">
+      <article class="tour-path-card manual"><span>Manual tour request</span><h2>Interest becomes inbox work.</h2><ol><li><b>1</b><p><strong>Family submits a form</strong><small>No time is secured.</small></p></li><li><b>2</b><p><strong>Staff notices later</strong><small>Coverage determines response.</small></p></li><li><b>3</b><p><strong>Email tag begins</strong><small>Availability moves back and forth.</small></p></li><li><b>4</b><p><strong>Visit may remain unbooked</strong><small>The request can look active without a date.</small></p></li></ol></article>
+      <div class="tour-path-versus" aria-hidden="true">VS</div>
+      <article class="tour-path-card quid"><span>Quid-assisted scheduling</span><h2>Interest receives a next step.</h2><ol><li><b>1</b><p><strong>Inquiry starts the approved flow</strong><small>Receipt is acknowledged.</small></p></li><li><b>2</b><p><strong>Approved times are offered</strong><small>The calendar stays controlled.</small></p></li><li><b>3</b><p><strong>The visit is confirmed</strong><small>Family and staff receive clarity.</small></p></li><li><b>4</b><p><strong>Exceptions reach people</strong><small>Replies and sensitive topics pause the routine sequence.</small></p></li></ol></article>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="shell tour-software-value-grid">
+      <div><p class="eyebrow">What the workflow adds</p><h2>More chances for existing demand to reach a visit.</h2><p class="lede">Quid does not create demand or guarantee occupancy. It reduces avoidable coordination friction between a family already interested enough to inquire and the visit your sales team wants to host.</p><a class="button button-secondary" href="/resources/how-to-increase-assisted-living-occupancy/">Read the occupancy guide</a></div>
+      <div class="tour-value-cards"><article><strong>Faster acknowledgement</strong><p>The family knows the request arrived.</p></article><article><strong>Fewer scheduling exchanges</strong><p>Only approved times are offered.</p></article><article><strong>Clearer visit details</strong><p>Confirmation, directions and reminders stay consistent.</p></article><article><strong>Visible exceptions</strong><p>Replies, reschedules and human questions do not disappear.</p></article></div>
+    </div>
+  </section>
+
+  <section class="section section-sage">
+    <div class="shell tour-software-control"><div><p class="eyebrow">Staff stays in control</p><h2>The calendar is automated. Judgment is not.</h2><p>Before launch, the community approves availability, message language, reminder timing, rescheduling behavior and escalation rules.</p></div><ul class="check-list"><li>Only approved tour times are offered</li><li>Staff can block or change availability</li><li>Family replies pause blind automation</li><li>Care, medication and eligibility questions reach staff</li><li>Every exception has a visible owner</li><li>Daily review shows what remains stuck</li></ul></div>
+  </section>
+
+  <section class="section section-white">
+    <div class="shell pilot-page-offer solution-pilot-layout"><div class="pilot-page-copy"><p class="eyebrow">A bounded implementation</p><h2>Start with one community and one tour calendar.</h2><p class="lede">The 30-day pilot maps the current tour-request path, approves messages and handoffs, configures the workflow, launches carefully and reports what happened.</p><p class="pilot-positioning pilot-positioning-light">{pilotOffer.positioning}</p><nav class="solution-inline-links" aria-label="Tour scheduling pilot links"><a href="/pilot/">See the four-week process</a><a href="/see-quid-in-action/">See Quid in action</a></nav></div><PilotPricingCard /></div>
+  </section>
+
+  <FaqSection faqs={faqs} eyebrow="Tour scheduling questions" heading="Clear answers before connecting the calendar." />
+
+  <section class="section section-sand">
+    <div class="shell"><div class="solution-section-intro"><div><p class="eyebrow">Related guidance</p><h2>Strengthen the entire inquiry-to-tour path.</h2></div><p class="lede">Tour scheduling performs best when acknowledgement, follow-up, ownership and human handoffs are designed together.</p></div><nav class="solution-link-grid" aria-label="Related tour scheduling resources"><a href="/senior-living-inquiry-flow-grader/"><strong>Free inquiry-flow grader</strong><span>Score the visible path in two minutes.</span></a><a href="/resources/senior-living-inquiry-to-tour-audit/"><strong>25-community website audit</strong><span>See the friction observed after public tour CTAs.</span></a><a href="/resources/how-to-increase-assisted-living-occupancy/"><strong>Increase assisted living occupancy</strong><span>Fix conversion leaks before buying more traffic.</span></a><a href="/senior-living-inquiry-follow-up-automation/"><strong>Inquiry follow-up software</strong><span>Connect acknowledgement, tours and stalled leads.</span></a><a href="/resources/senior-living-tour-follow-up/"><strong>Tour follow-up framework</strong><span>Plan confirmations, reminders and post-tour steps.</span></a><a href="/resources/senior-living-software-comparisons/"><strong>Software comparison hub</strong><span>Compare CRM, AI sales and focused workflow options.</span></a></nav></div>
+  </section>
+</BaseLayout>

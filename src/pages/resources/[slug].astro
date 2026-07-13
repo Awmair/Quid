@@ -25,6 +25,11 @@ const media = resourceMedia[entry.id as keyof typeof resourceMedia];
 const pageImage = media?.image.src;
 const articleImage = pageImage ? new URL(pageImage, site.domain).toString() : `${site.domain}/quid-og.png`;
 const visuals = {
+  'how-to-increase-assisted-living-occupancy': {
+    ...resourceMedia['how-to-increase-assisted-living-occupancy'],
+    answer: 'Increase assisted living occupancy by improving the measurable path from existing inquiry to tour, assessment and move-in. Begin with prompt acknowledgement, easy tour scheduling, clear ownership, consistent follow-up and a daily view of stalled work before buying more leads.',
+    items: [{kicker:'Measure',title:'Inquiry to tour'},{kicker:'Remove',title:'Scheduling friction'},{kicker:'Review',title:'What is stuck'}],
+  },
   'senior-living-admissions-automation': {
     ...resourceMedia['senior-living-admissions-automation'],
     answer: 'Automate predictable coordination such as acknowledgements, tour options, reminders, and summaries. Keep clinical judgment, eligibility, sensitive conversations, and admissions authority with staff.',

@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
+import AnswerBlock from './AnswerBlock.astro';
+import { alternatives, alternativePath, type AlternativePage } from '../data/alternatives';
+import { comparisonPath, comparisons, disclosure, vendors } from '../data/comparisons';
+import { site } from '../data/site';
+
+interface Props { page: AlternativePage; }
+const { page } = Astro.props;
+const target = vendors[page.target];
+const candidates = page.candidates.map((item) => ({ ...item, details: vendors[item.vendor] }));
+const url = `${site.domain}${alternativePath(page.slug)}`;
+const title = `${page.titleName}: 5 Senior Living Options (2026) | Quid`;
+const comparisonFor = (candidate: typeof page.candidates[number]) => comparisons.find((item) =>
+  (item.a === page.target && item.b === candidate.vendor) || (item.b === page.target && item.a === candidate.vendor)
+);
+const faqs: [string, string][] = [
+  [`What are the best ${target.name} alternatives for senior living?`, page.direct],
+  [`When should an operator keep ${target.name} on the shortlist?`, page.targetStillFits],
+  [`Is Quid a direct replacement for ${target.name}?`, `No. Quid is focused admissions automation for one website-inquiry-to-tour workflow. ${target.name} is ${target.category.toLowerCase()}. The products should not be treated as like-for-like replacements.`],
+  [`Which ${target.name} alternative works without replacing the current CRM?`, 'Further publicly connects its engagement products to a CRM. Quid is designed as a focused workflow around current tools. Exact compatibility, integrations and implementation requirements must be confirmed before purchase.'],
+  [`How should a small senior living operator compare these options?`, 'Use one real inquiry scenario. Ask each vendor to show the first response, tour scheduling, family reply, staff handoff, overdue-work visibility, implementation work and complete cost. Eliminate any option that cannot demonstrate the required workflow.'],
+  [`Are prices for these senior living software alternatives public?`, 'Most vendors in this shortlist do not publish current numeric pricing on the official pages reviewed. Quid publishes a $1,000 one-time 30-day pilot and optional continuation at $899 per month per community. Request full setup, usage, integration, support and contract costs from every vendor.'],
+];
+const schema = [
+  {'@context':'https://schema.org','@type':'Article',headline:title,description:page.description,author:{'@type':'Organization',name:'Quid Admissions',url:site.domain},editor:{'@type':'Person',name:'Umair Q.',url:`${site.domain}/about/`},publisher:{'@type':'Organization',name:'Quid Admissions',url:site.domain},datePublished:'2026-07-13',dateModified:'2026-07-13',mainEntityOfPage:url,url},
+  {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:site.domain},{'@type':'ListItem',position:2,name:'Resources',item:`${site.domain}/resources/`},{'@type':'ListItem',position:3,name:'Software Comparisons',item:`${site.domain}/resources/senior-living-software-comparisons/`},{'@type':'ListItem',position:4,name:page.titleName,item:url}]},
+  {'@context':'https://schema.org','@type':'ItemList',name:`Five ${target.name} alternatives for senior living`,numberOfItems:candidates.length,itemListOrder:'https://schema.org/ItemListOrderAscending',itemListElement:candidates.map((item,index)=>({'@type':'ListItem',position:index+1,name:item.details.name,url:item.details.website}))},
+  {'@context':'https://schema.org','@type':'FAQPage',mainEntity:faqs.map(([question,answer])=>({'@type':'Question',name:question,acceptedAnswer:{'@type':'Answer',text:answer}}))},
+];
+---
+
+<BaseLayout title={title} description={page.description} canonicalUrl={url} schema={schema}>
+  <Breadcrumbs items={[{label:'Home',href:'/'},{label:'Resources',href:'/resources/'},{label:'Software Comparisons',href:'/resources/senior-living-software-comparisons/'},{label:page.titleName}]} />
+
+  <header class="page-hero alternative-page-hero">
+    <div class="shell alternative-hero-grid">
+      <div>
+        <p class="eyebrow">Senior living software alternatives · 2026</p>
+        <h1>{page.titleName}: 5 Options to Compare</h1>
+        <p class="lede">{page.opening}</p>
+        <p class="resource-meta"><span>Published by Quid Admissions</span><span>Official vendor information reviewed July 2026</span></p>
+      </div>
+      <aside class="alternative-decision-card" aria-label="First buying decision">
+        <span>Decide this first</span>
+        <strong>{page.decisionPrompt}</strong>
+        <a href="#shortlist">See the five alternatives</a>
+      </aside>
+    </div>
+  </header>
+
+  <section class="section-sm section-sand">
+    <div class="shell narrow-wide">
+      <aside class="comparison-disclosure"><strong>Comparison disclosure</strong><p>{disclosure}</p></aside>
+      <AnswerBlock label={`What are the main ${target.name} alternatives?`} answer={page.direct} />
+    </div>
+  </section>
+
+  <section class="section section-white" id="shortlist">
+    <div class="shell">
+      <div class="section-heading alternative-heading"><div><p class="eyebrow">Five different product models</p><h2>Compare the alternatives by job, not feature count.</h2></div><p>Each option below can be relevant, but they do not solve the same-sized problem.</p></div>
+      <div class="alternative-card-grid">
+        {candidates.map((item, index) => {
+          const comparison = comparisonFor(item);
+          return <article class:list={['alternative-card', {'alternative-card-quid': item.vendor === 'quid'}]}>
+            <header><span>{String(index + 1).padStart(2,'0')}</span><small>{item.details.category}</small></header>
+            <h3>{item.details.name}</h3>
+            <p>{item.reason}</p>
+            <dl>
+              <div><dt>Best-fit signal</dt><dd>{item.details.fit}</dd></div>
+              <div><dt>System role</dt><dd>{item.details.systemRole}</dd></div>
+              <div><dt>Tradeoff to examine</dt><dd>{item.tradeoff}</dd></div>
+              <div><dt>Public pricing</dt><dd>{item.details.pricing}</dd></div>
+            </dl>
+            <footer>
+              <a href={item.details.website} target="_blank" rel="noopener noreferrer">Official {item.details.name} website</a>
+              {comparison && <a href={comparisonPath(comparison.slug)}>Read {comparison.primary}</a>}
+            </footer>
+          </article>;
+        })}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-sand">
+    <div class="shell">
+      <div class="section-heading"><p class="eyebrow">Side-by-side decision view</p><h2>What changes when you choose each alternative?</h2></div>
+      <div class="response-table-wrap alternative-table-wrap" tabindex="0" role="region" aria-label={`${target.name} alternatives comparison table`}>
+        <table class="alternative-table">
+          <thead><tr><th>Option</th><th>Category</th><th>Tour workflow</th><th>Implementation model</th><th>Pricing visibility</th></tr></thead>
+          <tbody>{candidates.map((item)=><tr><th scope="row">{item.details.name}</th><td>{item.details.category}</td><td>{item.details.tour}</td><td>{item.details.implementation}</td><td>{item.details.pricing}</td></tr>)}</tbody>
+        </table>
+      </div>
+      <p class="buyer-table-note"><strong>Not publicly specified</strong> does not mean unavailable. Ask the vendor to demonstrate and document the exact requirement.</p>
+    </div>
+  </section>
+
+  <section class="section section-sage">
+    <div class="shell alternative-balance-grid">
+      <article><p class="eyebrow">When {target.name} may still fit</p><h2>Do not switch categories by accident.</h2><p>{page.targetStillFits}</p><a href={target.website} target="_blank" rel="noopener noreferrer">Review the official {target.name} website</a></article>
+      <article class="alternative-test-card"><p class="eyebrow">A better vendor test</p><h2>Use one real inquiry scenario.</h2><ol><li>Submit a test inquiry in the demonstration.</li><li>Show the first approved response.</li><li>Book a staff-controlled tour time.</li><li>Reply with a question that needs a person.</li><li>Show where stalled work and reporting appear.</li><li>Document migration, setup and complete cost.</li></ol></article>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="shell alternative-quid-panel">
+      <div><p class="eyebrow">The focused alternative</p><h2>Fix one inquiry-to-tour gap without beginning with CRM migration.</h2><p>Quid starts with one community, one website inquiry source and one tour calendar. It is intentionally narrower than the CRM and multi-channel platforms above.</p><div class="button-row"><a class="button" href="/pilot/">Explore the $1,000 pilot</a><a class="button button-secondary" href="/senior-living-tour-scheduling-software/">Tour scheduling workflow</a><a class="button button-secondary" href="/senior-living-inquiry-flow-grader/">Grade your current flow</a></div></div>
+      <aside><span>30-Day Quid Admissions Pilot</span><strong>$1,000</strong><small>One community · one inquiry source · one tour calendar</small><hr /><p>Optional continuation: <b>$899/month per community</b>.</p></aside>
+    </div>
+  </section>
+
+  <section class="section section-sand">
+    <div class="narrow"><p class="eyebrow">Frequently asked questions</p><h2>Clear answers about {page.titleName.toLowerCase()}.</h2><div class="faq-list">{faqs.map(([question,answer])=><details><summary>{question}</summary><p>{answer}</p></details>)}</div></div>
+  </section>
+
+  <section class="section-sm section-white">
+    <div class="narrow alternative-methodology"><h2>Methodology and sources</h2><p>Quid reviewed official vendor pages in July 2026 and separated each option by system role, publicly described workflows, implementation model and pricing visibility. This is not hands-on certification, a ranking or a claim that every alternative integrates with every system.</p><p>Start with the <a href="/resources/senior-living-software-comparisons/">senior living software comparison hub</a>, the <a href="/resources/senior-living-admissions-automation-software/">admissions software buyer’s guide</a>, or another alternative page:</p><nav class="alternative-sibling-links" aria-label="Related alternatives pages">{alternatives.filter((item)=>item.slug!==page.slug).map((item)=><a href={alternativePath(item.slug)}>{item.titleName}</a>)}</nav><ul class="comparison-source-list">{[target,...candidates.map((item)=>item.details)].flatMap((vendor)=>vendor.sources).map((source)=><li><a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a> — reviewed July 2026</li>)}</ul><p class="trademark-note">Product and company names belong to their respective owners. Inclusion does not imply endorsement, partnership or affiliation.</p></div>
+  </section>
+</BaseLayout>

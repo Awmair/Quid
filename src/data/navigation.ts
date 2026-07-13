@@ -13,6 +13,8 @@ export const footerGroups = [
     links: [
       { label: 'Assisted Living Automation', href: '/assisted-living-admissions-automation/' },
       { label: 'Inquiry Follow-Up', href: '/senior-living-inquiry-follow-up-automation/' },
+      { label: 'Tour Scheduling Software', href: '/senior-living-tour-scheduling-software/' },
+      { label: 'Free Inquiry-Flow Grader', href: '/senior-living-inquiry-flow-grader/' },
     ],
   },
   {
@@ -30,6 +32,9 @@ export const footerGroups = [
     links: [
       { label: 'Resource Center', href: '/resources/' },
       { label: 'Software Comparisons', href: '/resources/senior-living-software-comparisons/' },
+      { label: 'Increase Assisted Living Occupancy', href: '/resources/how-to-increase-assisted-living-occupancy/' },
+      { label: 'Aline Alternatives', href: '/resources/alternatives/aline-alternatives/' },
+      { label: 'Further Alternatives', href: '/resources/alternatives/further-alternatives/' },
       { label: 'Admissions Automation', href: '/resources/senior-living-admissions-automation/' },
       { label: 'Inquiry Response', href: '/resources/senior-living-inquiry-response-time/' },
       { label: 'Tour Follow-Up', href: '/resources/senior-living-tour-follow-up/' },
