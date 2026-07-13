@@ -513,13 +513,16 @@ const canonical = 'https://get-quid.site/private-kit/';
   .kit-stalled-copy b { display:block; color:var(--kit-peach); font-size:.7rem; }
   .kit-stalled-copy pre { margin:10px 0 0; white-space:pre-wrap; color:white; font:500 .72rem/1.5 'Manrope Variable',sans-serif; }
   .kit-tracker { margin:30px 0 34px; overflow:hidden; border:1px solid var(--kit-border); border-radius:18px; background:white; }
-  .kit-tracker-head,.kit-tracker-row { display:grid; grid-template-columns:.72fr 1fr 1.35fr .85fr 1.65fr; gap:0; align-items:center; }
+  .kit-tracker-head,.kit-tracker-row { display:grid; grid-template-columns:.85fr 1.1fr 1.45fr 1fr 2fr; gap:0; align-items:stretch; }
   .kit-tracker-head { background:var(--kit-ink); color:white; }
-  .kit-tracker-head span { padding:12px 14px; color:rgba(255,255,255,.7); font-size:.6rem; font-weight:850; letter-spacing:.08em; text-transform:uppercase; }
+  .kit-tracker-head span { min-width:0; padding:13px 16px; color:rgba(255,255,255,.72); font-size:.6rem; font-weight:850; letter-spacing:.08em; text-transform:uppercase; }
+  .kit-tracker-head span + span { border-left:1px solid rgba(255,255,255,.13); }
   .kit-tracker-row { border-top:1px solid var(--kit-border); }
   .kit-tracker-row:first-child { border-top:0; }
-  .kit-tracker-row span { min-width:0; padding:13px 14px; color:var(--kit-muted); font-size:.68rem; line-height:1.35; }
-  .kit-tracker-row span:first-child { color:#a64b31; font-weight:900; }
+  [data-stuck-tracker] .kit-tracker-row:nth-child(even) { background:#fbf7ee; }
+  .kit-tracker-row span { min-width:0; min-height:64px; padding:15px 16px; display:flex; align-items:center; color:var(--kit-muted); font-size:.7rem; line-height:1.45; overflow-wrap:anywhere; }
+  .kit-tracker-row span + span { border-left:1px solid var(--kit-border); }
+  .kit-tracker-row span:first-child { justify-content:center; background:#fff0e7; color:#a64b31; font-weight:900; text-align:center; }
   .kit-tracker-row span:nth-child(2),.kit-tracker-row span:nth-child(4) { color:var(--kit-ink); font-weight:800; }
   .kit-plan-heading { margin:0 0 18px; }
   .kit-plan { margin:0; display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
@@ -586,7 +589,9 @@ const canonical = 'https://get-quid.site/private-kit/';
     .kit-tracker-head { display:none; }
     .kit-tracker-row { margin-top:10px; padding:10px 12px; grid-template-columns:1fr 1fr; gap:6px 14px; border:1px solid var(--kit-border); border-radius:14px; background:white; }
     .kit-tracker-row:first-child { border-top:1px solid var(--kit-border); }
-    .kit-tracker-row span { padding:4px 0; }
+    .kit-tracker-row span { min-height:0; padding:5px 0; display:block; border-left:0; background:transparent; text-align:left; }
+    .kit-tracker-row span + span { border-left:0; }
+    .kit-tracker-row span:first-child { justify-content:start; }
     .kit-tracker-row span::before { content:attr(data-label); display:block; margin-bottom:2px; color:var(--kit-muted); font-size:.52rem; font-weight:850; letter-spacing:.07em; text-transform:uppercase; }
     .kit-tracker-row span:last-child { grid-column:1 / -1; }
     .kit-final-cta { align-items:start; }
@@ -647,7 +652,7 @@ const canonical = 'https://get-quid.site/private-kit/';
     .kit-followups p { font-size:6.6pt; line-height:1.4; }
     .kit-stalled { margin-top:10px; padding:14px; }
     .kit-tracker { margin:18px 0 20px; }
-    .kit-tracker-head span,.kit-tracker-row span { padding:8px; }
+    .kit-tracker-head span,.kit-tracker-row span { min-height:0; padding:8px; }
     .kit-plan article { padding:12px; }
     .kit-plan h3 { margin:12px 0 5px; }
     .kit-final-cta { margin-top:18px; padding:18px; }
