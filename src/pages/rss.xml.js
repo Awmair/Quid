@@ -16,7 +16,7 @@ export async function GET(context) {
       title: entry.data.title,
       description: entry.data.description,
       pubDate: entry.data.publishedDate,
-      link: `/resources/${entry.id}`,
+      link: `/resources/${entry.id}/`,
       source: { url: 'https://get-quid.site/resources/', title: 'Quid Senior Living Admissions Resources' },
       customData: '<dc:creator>Quid</dc:creator>',
       })),

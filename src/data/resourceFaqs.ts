@@ -1,4 +1,11 @@
 export const resourceFaqs = {
+  'senior-living-inquiry-to-tour-audit': [
+    ['What did the senior living inquiry-to-tour audit find?', 'Quid reviewed 25 public community website journeys. Fourteen used an explicit tour, visit, or appointment call to action, and 13 of those 14 still showed a form or staff-arranged next step.'],
+    ['Does this mean most senior living communities have manual tour scheduling?', 'No. The 25-community sample was intentionally selected while researching independent communities and small operators with possible workflow friction. It is a targeted field audit, not a randomized estimate of the entire industry.'],
+    ['How did Quid review the community websites?', 'Quid followed only the public website journey visible to a family. No forms were submitted, nobody posed as a family, and no resident, medical, or private information was collected.'],
+    ['What counts as a manual or delayed coordination signal?', 'Examples include a form without visible tour availability, a promise that staff will arrange the visit later, a tour request routed into a general contact form, or a tour form that is not accepting responses.'],
+    ['Can I download the audit data?', 'Yes. Quid publishes an anonymized row-level CSV containing state, operator-size band, CTA category, visible journey category, and review date. Community and staff identities are removed.'],
+  ],
   'senior-living-admissions-automation-software': [
     ['What is senior living admissions automation software?', 'Senior living admissions automation software coordinates repeatable work such as inquiry acknowledgement, tour scheduling, approved follow-up, task visibility, and staff handoffs. Some products are complete CRMs, while others connect to existing systems or automate one focused workflow.'],
     ['What is the best admissions software for a small assisted living community?', 'There is no universal best option. A small community should first decide whether it needs a new system of record or a focused way to improve inquiry response, tour coordination, and follow-up around its current tools.'],

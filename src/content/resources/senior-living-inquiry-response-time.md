@@ -162,6 +162,8 @@ Avoid urgency tactics, universal callback promises, or language implying that au
 
 ## Measure your own baseline
 
+Quid's <a href="/resources/senior-living-inquiry-to-tour-audit/">25-community inquiry-to-tour website audit</a> found that 13 of 14 sites with an explicit tour, visit, or appointment CTA still showed a form or staff-arranged next step. The targeted sample is not an industry prevalence estimate, but it is a useful prompt to inspect what families can actually do after clicking your own CTA.
+
 Before promising improvement, follow a representative set of website inquiries through the current workflow. Measure business-hour and after-hours inquiries separately when that distinction affects staffing.
 
 Track:
