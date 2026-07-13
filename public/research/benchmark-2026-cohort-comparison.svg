@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="690" viewBox="0 0 1200 690" role="img" aria-labelledby="title desc">
+  <title id="title">Inquiry-to-tour signals by benchmark cohort</title>
+  <desc id="desc">The independent and small-operator cohort showed manual or delayed signals on 80 percent of pages and automation signals on 4 percent. The multi-location cohort showed manual or delayed signals on 56 percent and automation signals on 61 percent. Signals can overlap.</desc>
+  <rect width="1200" height="690" rx="32" fill="#fbf7ef"/>
+  <circle cx="1110" cy="90" r="150" fill="#e3ebe4"/>
+  <text x="64" y="74" fill="#a44d2d" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="3">QUID RESEARCH · JULY 2026</text>
+  <text x="64" y="128" fill="#1e3d34" font-family="Georgia, serif" font-size="40" font-weight="700">The same CTA. Two different website realities.</text>
+  <text x="64" y="164" fill="#52675f" font-family="Arial, sans-serif" font-size="19">Visible signals by cohort. Percentages are descriptive of this reviewed sample.</text>
+
+  <rect x="64" y="210" width="512" height="352" rx="24" fill="#fffdf8" stroke="#d8d2c7"/>
+  <text x="96" y="256" fill="#a44d2d" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="2">25-PAGE COHORT</text>
+  <text x="96" y="295" fill="#1e3d34" font-family="Georgia, serif" font-size="29" font-weight="700">Independent and small operators</text>
+  <text x="96" y="344" fill="#52675f" font-family="Arial, sans-serif" font-size="16" font-weight="700">Manual or delayed signal</text>
+  <rect x="96" y="361" width="416" height="28" rx="14" fill="#eee9df"/>
+  <rect x="96" y="361" width="333" height="28" rx="14" fill="#be5a2b"/>
+  <text x="462" y="384" fill="#1e3d34" font-family="Arial, sans-serif" font-size="22" font-weight="800">80%</text>
+  <text x="96" y="438" fill="#52675f" font-family="Arial, sans-serif" font-size="16" font-weight="700">Visible automation signal</text>
+  <rect x="96" y="455" width="416" height="28" rx="14" fill="#eee9df"/>
+  <rect x="96" y="455" width="17" height="28" rx="14" fill="#47685b"/>
+  <text x="462" y="478" fill="#1e3d34" font-family="Arial, sans-serif" font-size="22" font-weight="800">4%</text>
+  <text x="96" y="526" fill="#6b7b75" font-family="Arial, sans-serif" font-size="15">Targeted toward possible inquiry-to-tour friction.</text>
+
+  <rect x="600" y="210" width="536" height="352" rx="24" fill="#1e3d34"/>
+  <text x="632" y="256" fill="#ffc9aa" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="2">75-PAGE EXPANSION</text>
+  <text x="632" y="295" fill="#fffdf8" font-family="Georgia, serif" font-size="29" font-weight="700">Multi-location operator templates</text>
+  <text x="632" y="344" fill="#d8e0db" font-family="Arial, sans-serif" font-size="16" font-weight="700">Manual or delayed signal</text>
+  <rect x="632" y="361" width="432" height="28" rx="14" fill="#355449"/>
+  <rect x="632" y="361" width="242" height="28" rx="14" fill="#edb190"/>
+  <text x="1080" y="384" text-anchor="end" fill="#fffdf8" font-family="Arial, sans-serif" font-size="22" font-weight="800">56%</text>
+  <text x="632" y="438" fill="#d8e0db" font-family="Arial, sans-serif" font-size="16" font-weight="700">Visible automation signal</text>
+  <rect x="632" y="455" width="432" height="28" rx="14" fill="#355449"/>
+  <rect x="632" y="455" width="264" height="28" rx="14" fill="#a9b5a6"/>
+  <text x="1080" y="478" text-anchor="end" fill="#fffdf8" font-family="Arial, sans-serif" font-size="22" font-weight="800">61%</text>
+  <text x="632" y="526" fill="#cbd6d0" font-family="Arial, sans-serif" font-size="15">Five operator clusters; shared technology may repeat.</text>
+
+  <line x1="64" y1="610" x2="1136" y2="610" stroke="#d8d2c7"/>
+  <text x="64" y="648" fill="#52675f" font-family="Arial, sans-serif" font-size="15">Signals can overlap. Source: Quid 2026 Senior Living Inquiry-to-Tour Benchmark · get-quid.site</text>
+</svg>

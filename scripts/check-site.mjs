@@ -70,7 +70,7 @@ for (const file of htmlFiles) {
   }
   for (const match of html.matchAll(/href="(\/[^"#?]*)(?:[?#][^"]*)?"/g)) {
     const href = match[1];
-    if (/\.(png|jpg|jpeg|webp|svg|ico|xml|css|js|webmanifest|csv)$/.test(href)) continue;
+    if (/\.(png|jpg|jpeg|webp|svg|ico|xml|css|js|webmanifest|csv|pdf|txt)$/.test(href)) continue;
     if (href !== '/' && !href.endsWith('/') && !href.endsWith('.html')) errors.push(`${file}: internal link is not canonical ${href}`);
     const target = href === '/' ? join(root, 'index.html') : join(root, href.replace(/^\//, ''), 'index.html');
     const fallback = join(root, `${href.replace(/^\//, '').replace(/\/$/, '')}.html`);
@@ -78,7 +78,22 @@ for (const file of htmlFiles) {
   }
 }
 
-for (const required of ['CNAME', 'robots.txt', 'rss.xml', '404.html', 'sitemap-index.xml', 'sitemap-0.xml', 'llms.txt', 'llms-full.txt', 'data/senior-living-inquiry-to-tour-audit-2026.csv']) {
+for (const required of [
+  'CNAME',
+  'robots.txt',
+  'rss.xml',
+  '404.html',
+  'sitemap-index.xml',
+  'sitemap-0.xml',
+  'llms.txt',
+  'llms-full.txt',
+  'data/senior-living-inquiry-to-tour-audit-2026.csv',
+  'data/senior-living-inquiry-to-tour-benchmark-sources-2026.csv',
+  'downloads/quid-senior-living-inquiry-to-tour-benchmark-2026.pdf',
+  'downloads/quid-benchmark-2026-media-brief.txt',
+  'research/benchmark-2026-cohort-comparison.svg',
+  'research/benchmark-2026-visible-signals.svg',
+]) {
   try { await access(join(root, required)); } catch { errors.push(`dist/${required}: missing`); }
 }
 
@@ -132,6 +147,19 @@ try {
   if (sitemap.includes('/private-kit')) errors.push('dist/sitemap-0.xml: private kit should be excluded');
   for (const canonical of indexableCanonicals) {
     if (!sitemap.includes(`<loc>${canonical}</loc>`)) errors.push(`dist/sitemap-0.xml: canonical URL missing ${canonical}`);
+  }
+} catch {}
+
+try {
+  const benchmark = await readFile(join(root, 'resources/senior-living-inquiry-to-tour-audit/index.html'), 'utf8');
+  for (const expected of [
+    'community pages reviewed',
+    '/downloads/quid-senior-living-inquiry-to-tour-benchmark-2026.pdf',
+    '/data/senior-living-inquiry-to-tour-benchmark-sources-2026.csv',
+    '/research/benchmark-2026-cohort-comparison.svg',
+    '/research/benchmark-2026-visible-signals.svg',
+  ]) {
+    if (!benchmark.includes(expected)) errors.push(`benchmark page: missing ${expected}`);
   }
 } catch {}
 
