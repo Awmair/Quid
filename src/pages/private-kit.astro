@@ -52,7 +52,7 @@ const canonical = 'https://get-quid.site/private-kit/';
           <button class="is-active" type="button" data-go="0"><i>01</i><span>Audit &amp; diagnosis</span></button>
           <button type="button" data-go="1"><i>02</i><span>Recommended workflow</span></button>
           <button type="button" data-go="2"><i>03</i><span>Ready-to-use templates</span></button>
-          <button type="button" data-go="3"><i>04</i><span>30-day action plan</span></button>
+          <button type="button" data-go="3"><i>04</i><span>Tracker &amp; action plan</span></button>
         </nav>
         <small>Prepared from public business information. No inquiry form was submitted.</small>
       </aside>
@@ -607,16 +607,51 @@ const canonical = 'https://get-quid.site/private-kit/';
     .kit-header,.kit-sidebar,.kit-controls,.kit-loading,.kit-invalid,.kit-template button { display:none !important; }
     .kit-layout { width:100%; margin:0; display:block; }
     .kit-stage { display:block; }
-    .kit-page,.kit-page.is-active { min-height:277mm; padding:12mm; display:block !important; break-after:page; border:0; border-radius:0; box-shadow:none; animation:none; }
+    .kit-page,.kit-page.is-active { min-height:277mm; padding:8mm; display:block !important; break-after:page; border:0; border-radius:0; box-shadow:none; animation:none; }
     .kit-page:last-of-type { break-after:auto; }
-    .kit-page h1 { font-size:48pt; }
-    .kit-page > h2 { font-size:30pt; }
-    .kit-page-topline { margin-top:0; }
+    .kit-page h1 { font-size:34pt; }
+    .kit-page > h2 { font-size:24pt; }
+    .kit-page-topline { margin:0 0 18px; }
+    .kit-page-intro,.kit-lede { font-size:9pt; line-height:1.45; }
+    .kit-cover-grid { grid-template-columns:1fr 150px; gap:28px; }
+    .kit-score { width:150px; padding:15px; border-width:9px; }
+    .kit-score strong { font-size:28pt; }
+    .kit-lede { margin:12px 0; }
+    .kit-commercial-grid { margin:18px 0 10px; gap:8px; }
+    .kit-commercial { min-height:135px; padding:14px; }
+    .kit-commercial h2 { margin:10px 0 12px; font-size:17pt; }
+    .kit-observation { margin:10px 0 16px; padding:12px 14px; grid-template-columns:145px 1fr; }
+    .kit-observation p { font-size:9.5pt; }
+    .kit-included { margin:16px 0; padding:14px; }
+    .kit-included .kit-section-heading { margin-bottom:9px; }
+    .kit-included .kit-section-heading h2,.kit-section-heading h2 { font-size:18pt; }
+    .kit-included-grid { gap:5px; }
+    .kit-included-grid span { min-height:30px; padding:7px 8px; font-size:6.5pt; }
+    .kit-audit-section { margin-top:14px; }
+    .kit-section-heading { margin-bottom:10px; }
     .kit-audit-grid,.kit-plan,.kit-metrics { gap:7px; }
     .kit-audit-card,.kit-plan article { min-height:0; }
+    .kit-audit-card { padding:10px; }
+    .kit-audit-card h3 { margin-top:12px; font-size:10pt; }
+    .kit-compare { margin:20px 0 10px; }
+    .kit-compare-lane { padding:14px; }
+    .kit-handoff { padding:14px; }
+    .kit-handoff li { min-height:32px; padding-top:6px; padding-bottom:6px; }
     .kit-flow article { min-height:150px; }
-    .kit-template-grid { margin:25px 0; }
-    .kit-followups article { min-height:165px; }
+    .kit-template-grid { margin:18px 0; }
+    .kit-template { padding:14px; }
+    .kit-template pre { margin-top:12px; font-size:6.7pt; line-height:1.4; }
+    .kit-followups { gap:8px; }
+    .kit-followups article { min-height:140px; padding:14px; }
+    .kit-followups h3 { margin:20px 0 7px; font-size:11pt; }
+    .kit-followups p { font-size:6.6pt; line-height:1.4; }
+    .kit-stalled { margin-top:10px; padding:14px; }
+    .kit-tracker { margin:18px 0 20px; }
+    .kit-tracker-head span,.kit-tracker-row span { padding:8px; }
+    .kit-plan article { padding:12px; }
+    .kit-plan h3 { margin:12px 0 5px; }
+    .kit-final-cta { margin-top:18px; padding:18px; }
+    .kit-disclaimer { margin-top:14px; }
     .kit-final-cta { break-inside:avoid; }
     * { -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
   }
