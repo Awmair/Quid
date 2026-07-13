@@ -15,6 +15,10 @@ export const resourceMedia = {
     image: inquiryResponseTime,
     alt: 'An admissions coordinator promptly responding to a new senior living inquiry',
   },
+  'senior-living-inquiry-to-tour-audit': {
+    image: inquiryResponseTime,
+    alt: 'An admissions coordinator reviewing a senior living website inquiry journey',
+  },
   'senior-living-tour-follow-up': {
     image: tourFollowUp,
     alt: 'A family discussing next steps with an admissions director after a senior living tour',

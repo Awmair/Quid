@@ -70,7 +70,7 @@ for (const file of htmlFiles) {
   }
   for (const match of html.matchAll(/href="(\/[^"#?]*)(?:[?#][^"]*)?"/g)) {
     const href = match[1];
-    if (/\.(png|jpg|jpeg|webp|svg|ico|xml|css|js|webmanifest)$/.test(href)) continue;
+    if (/\.(png|jpg|jpeg|webp|svg|ico|xml|css|js|webmanifest|csv)$/.test(href)) continue;
     if (href !== '/' && !href.endsWith('/') && !href.endsWith('.html')) errors.push(`${file}: internal link is not canonical ${href}`);
     const target = href === '/' ? join(root, 'index.html') : join(root, href.replace(/^\//, ''), 'index.html');
     const fallback = join(root, `${href.replace(/^\//, '').replace(/\/$/, '')}.html`);
@@ -78,7 +78,7 @@ for (const file of htmlFiles) {
   }
 }
 
-for (const required of ['CNAME', 'robots.txt', 'rss.xml', '404.html', 'sitemap-index.xml', 'sitemap-0.xml', 'llms.txt', 'llms-full.txt']) {
+for (const required of ['CNAME', 'robots.txt', 'rss.xml', '404.html', 'sitemap-index.xml', 'sitemap-0.xml', 'llms.txt', 'llms-full.txt', 'data/senior-living-inquiry-to-tour-audit-2026.csv']) {
   try { await access(join(root, required)); } catch { errors.push(`dist/${required}: missing`); }
 }
 
@@ -93,6 +93,7 @@ const requiredPages = [
   'senior-living-inquiry-follow-up-automation/index.html',
   'resources/index.html',
   'resources/senior-living-admissions-automation/index.html',
+  'resources/senior-living-inquiry-to-tour-audit/index.html',
   'resources/senior-living-inquiry-response-time/index.html',
   'resources/senior-living-tour-follow-up/index.html',
   'resources/senior-living-daily-admissions-summary/index.html',

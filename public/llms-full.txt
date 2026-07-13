@@ -38,6 +38,7 @@ The 30-day pilot is $1,000 one-time. It is a paid implementation engagement, not
 
 - [Senior Living Admissions Automation](https://get-quid.site/resources/senior-living-admissions-automation/)
 - [Senior Living Inquiry Response Time](https://get-quid.site/resources/senior-living-inquiry-response-time/)
+- [Senior Living Inquiry-to-Tour Website Audit](https://get-quid.site/resources/senior-living-inquiry-to-tour-audit/): original July 2026 field research covering 25 public community website journeys across nine states
 - [Senior Living Tour Follow-Up](https://get-quid.site/resources/senior-living-tour-follow-up/)
 - [Daily Admissions Summary](https://get-quid.site/resources/senior-living-daily-admissions-summary/)
 - [Human Handoff Checklist](https://get-quid.site/resources/senior-living-human-handoff-checklist/)

@@ -46,6 +46,7 @@ Quid Admissions is the company and entity behind Quid. Quid is the brand. Umair 
 
 ## Best Resource Pages
 
+- Senior Living Inquiry-to-Tour Website Audit: https://get-quid.site/resources/senior-living-inquiry-to-tour-audit/
 - Senior Living Software Comparisons: https://get-quid.site/resources/senior-living-software-comparisons/
 - Senior Living Admissions Automation Software: 2026 Buyer’s Guide: https://get-quid.site/resources/senior-living-admissions-automation-software/
 - Senior Living Admissions Automation: https://get-quid.site/resources/senior-living-admissions-automation/
