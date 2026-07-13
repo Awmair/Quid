@@ -25,23 +25,37 @@ The 30-day pilot is $1,000 one-time. It is a paid implementation engagement, not
 ## Key public pages
 
 - [Homepage](https://get-quid.site/): product definition and overview
-- [See Quid in Action](https://get-quid.site/see-quid-in-action): admissions dashboard and daily workflow
-- [How It Works](https://get-quid.site/how-it-works): inquiry-to-tour workflow
-- [Human Handoffs](https://get-quid.site/human-handoffs): responsible AI boundaries and staff routing
-- [30-Day Pilot](https://get-quid.site/pilot): implementation scope, weekly plan, pricing, and application
-- [Meet Quid](https://get-quid.site/meet-quid): walkthrough request
-- [Resources](https://get-quid.site/resources): practical senior living admissions guides
-- [Assisted Living Admissions Automation](https://get-quid.site/assisted-living-admissions-automation): routine inquiry, tour, reminder, and staff-handoff workflow for assisted living communities
-- [Senior Living Inquiry Follow-Up Automation](https://get-quid.site/senior-living-inquiry-follow-up-automation): controlled website inquiry acknowledgement, tour coordination, approved follow-up, and stalled-inquiry visibility
+- [See Quid in Action](https://get-quid.site/see-quid-in-action/): admissions dashboard and daily workflow
+- [How It Works](https://get-quid.site/how-it-works/): inquiry-to-tour workflow
+- [Human Handoffs](https://get-quid.site/human-handoffs/): responsible AI boundaries and staff routing
+- [30-Day Pilot](https://get-quid.site/pilot/): implementation scope, weekly plan, pricing, and application
+- [Meet Quid](https://get-quid.site/meet-quid/): walkthrough request
+- [Resources](https://get-quid.site/resources/): practical senior living admissions guides
+- [Assisted Living Admissions Automation](https://get-quid.site/assisted-living-admissions-automation/): routine inquiry, tour, reminder, and staff-handoff workflow for assisted living communities
+- [Senior Living Inquiry Follow-Up Automation](https://get-quid.site/senior-living-inquiry-follow-up-automation/): controlled website inquiry acknowledgement, tour coordination, approved follow-up, and stalled-inquiry visibility
+- [Senior Living Tour Scheduling Software](https://get-quid.site/senior-living-tour-scheduling-software/): staff-controlled tour availability, confirmations, reminders, rescheduling, and human handoffs
+- [Free Senior Living Inquiry-Flow Grader](https://get-quid.site/senior-living-inquiry-flow-grader/): a two-minute self-assessment of the visible website inquiry-to-tour journey
 
 ## Practical guides
 
-- [Senior Living Admissions Automation](https://get-quid.site/resources/senior-living-admissions-automation)
-- [Senior Living Inquiry Response Time](https://get-quid.site/resources/senior-living-inquiry-response-time)
-- [Senior Living Tour Follow-Up](https://get-quid.site/resources/senior-living-tour-follow-up)
-- [Daily Admissions Summary](https://get-quid.site/resources/senior-living-daily-admissions-summary)
-- [Human Handoff Checklist](https://get-quid.site/resources/senior-living-human-handoff-checklist)
-- [Follow-Up Email Templates](https://get-quid.site/resources/senior-living-follow-up-templates)
+- [Senior Living Admissions Automation](https://get-quid.site/resources/senior-living-admissions-automation/)
+- [Senior Living Inquiry Response Time](https://get-quid.site/resources/senior-living-inquiry-response-time/)
+- [Senior Living Inquiry-to-Tour Website Audit](https://get-quid.site/resources/senior-living-inquiry-to-tour-audit/): original July 2026 field research covering 25 public community website journeys across nine states
+- [How to Increase Assisted Living Occupancy](https://get-quid.site/resources/how-to-increase-assisted-living-occupancy/): practical inquiry-to-tour conversion improvements before buying more leads
+- [Senior Living Tour Follow-Up](https://get-quid.site/resources/senior-living-tour-follow-up/)
+- [Daily Admissions Summary](https://get-quid.site/resources/senior-living-daily-admissions-summary/)
+- [Human Handoff Checklist](https://get-quid.site/resources/senior-living-human-handoff-checklist/)
+- [Follow-Up Email Templates](https://get-quid.site/resources/senior-living-follow-up-templates/)
+
+## Software alternative guides
+
+- [Aline Alternatives](https://get-quid.site/resources/alternatives/aline-alternatives/)
+- [Further Alternatives](https://get-quid.site/resources/alternatives/further-alternatives/)
+- [ECP CRM Alternatives](https://get-quid.site/resources/alternatives/ecp-crm-alternatives/)
+- [WelcomeHome Alternatives](https://get-quid.site/resources/alternatives/welcomehome-alternatives/)
+- [Advantage Anywhere Alternatives](https://get-quid.site/resources/alternatives/advantage-anywhere-alternatives/)
+
+These guides use official public vendor information reviewed in July 2026. They separate CRM replacement, multi-channel AI engagement and focused admissions workflow options. They are not rankings or claims of verified integration.
 
 ## Safety and privacy boundary
 
@@ -49,4 +63,4 @@ Public forms ask about a community's admissions workflow, not residents. Visitor
 
 ## Contact
 
-Request a walkthrough at https://get-quid.site/meet-quid.
+Request a walkthrough at https://get-quid.site/meet-quid/.
