@@ -1259,7 +1259,7 @@ details > p { padding: 0 48px 18px 0; color: var(--muted); max-width: 72ch; }
   .lead-magnet-mascot { position: relative; top: auto; right: auto; width: 118px; margin: -12px auto -8px; }
   .lead-magnet-form-heading { padding-right: 0; text-align: center; }
   .lead-magnet-form { padding: 20px 16px; }
-  .meet-hero .page-hero-grid { gap: 12px; }
+  .meet-hero .page-hero-grid { grid-template-columns: 1fr; gap: 12px; }
   .meet-hero { padding: 30px 0 38px; }
   .meet-hero .page-hero-grid > div:first-child { text-align: center; }
   .meet-hero .eyebrow { margin-bottom: 12px; }
