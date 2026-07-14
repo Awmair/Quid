@@ -16,6 +16,7 @@ const errors = [];
 const titles = new Map();
 const descriptions = new Map();
 const indexableCanonicals = [];
+const expectedIndexRobots = 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1';
 
 function checkStructuredDataUrls(value, file, path = 'schema') {
   if (Array.isArray(value)) {
@@ -64,7 +65,14 @@ for (const file of htmlFiles) {
   if (!/<meta property="og:image" content="https:\/\/get-quid\.site\//.test(html)) errors.push(`${file}: missing absolute Open Graph image`);
   if (!/<meta name="twitter:card" content="summary_large_image"/.test(html)) errors.push(`${file}: missing Twitter card metadata`);
   if (/lorem ipsum/i.test(html)) errors.push(`${file}: lorem ipsum found`);
-  if (!intentionalNoindex && /<meta name="robots" content="[^"]*noindex/i.test(html)) errors.push(`${file}: unexpected noindex`);
+  const robots = html.match(/<meta name="robots" content="([^"]+)"/)?.[1];
+  const googlebot = html.match(/<meta name="googlebot" content="([^"]+)"/)?.[1];
+  if (intentionalNoindex) {
+    if (!robots?.includes('noindex')) errors.push(`${file}: intentional noindex page is missing a noindex directive`);
+  } else {
+    if (robots !== expectedIndexRobots) errors.push(`${file}: incomplete robots directive ${robots || '(missing)'}`);
+    if (googlebot !== expectedIndexRobots) errors.push(`${file}: incomplete Googlebot directive ${googlebot || '(missing)'}`);
+  }
   for (const match of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
     try { checkStructuredDataUrls(JSON.parse(match[1]), file); } catch { errors.push(`${file}: invalid JSON-LD`); }
   }
@@ -145,9 +153,19 @@ try {
   if (sitemap.includes('/404')) errors.push('dist/sitemap-0.xml: 404 page should be excluded');
   if (sitemap.includes('/private-preview')) errors.push('dist/sitemap-0.xml: private preview should be excluded');
   if (sitemap.includes('/private-kit')) errors.push('dist/sitemap-0.xml: private kit should be excluded');
+  const sitemapLastmod = '<lastmod>2026-07-15T00:00:00.000Z</lastmod>';
+  const sitemapEntries = (sitemap.match(/<url>/g) || []).length;
+  const lastmodEntries = (sitemap.match(/<lastmod>/g) || []).length;
+  if (lastmodEntries !== sitemapEntries) errors.push(`dist/sitemap-0.xml: expected ${sitemapEntries} lastmod entries, found ${lastmodEntries}`);
+  if (!sitemap.includes(sitemapLastmod)) errors.push(`dist/sitemap-0.xml: missing current site-wide lastmod ${sitemapLastmod}`);
   for (const canonical of indexableCanonicals) {
     if (!sitemap.includes(`<loc>${canonical}</loc>`)) errors.push(`dist/sitemap-0.xml: canonical URL missing ${canonical}`);
   }
+} catch {}
+
+try {
+  const sitemapIndex = await readFile(join(root, 'sitemap-index.xml'), 'utf8');
+  if (!sitemapIndex.includes('<lastmod>2026-07-15T00:00:00.000Z</lastmod>')) errors.push('dist/sitemap-index.xml: missing current sitemap lastmod');
 } catch {}
 
 try {

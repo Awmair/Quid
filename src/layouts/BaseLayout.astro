@@ -54,6 +54,9 @@ const globalSchema = [
 ];
 const pageSchema = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
 const allSchema = [...globalSchema, ...pageSchema];
+const robotsContent = noindex
+  ? 'noindex,follow'
+  : 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1';
 ---
 
 <!doctype html>
@@ -64,7 +67,8 @@ const allSchema = [...globalSchema, ...pageSchema];
     <title>{title}</title>
     <meta name="description" content={description} />
     {canonical && <link rel="canonical" href={canonical} />}
-    {noindex && <meta name="robots" content="noindex,follow" />}
+    <meta name="robots" content={robotsContent} />
+    <meta name="googlebot" content={robotsContent} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Quid" />
     <meta property="og:title" content={title} />
