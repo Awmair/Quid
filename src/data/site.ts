@@ -28,9 +28,9 @@ export const site: SiteConfig = {
   pilotAvailable: true,
   pricing: pricing.pilot.displayWithBilling,
   analyticsDomain: clean(import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN),
-  defaultTitle: 'Quid | AI Admissions Concierge for Senior Living',
+  defaultTitle: 'Quid | Senior Living Inquiry & Tour Follow-Up Automation',
   defaultDescription:
-    'Quid helps senior living teams respond to website inquiries, coordinate tours, manage follow-up, and route sensitive questions to staff.',
+    'Fewer missed inquiries. More booked tours. No extra admin hire. Quid handles inquiry follow-up and tour scheduling behind the scenes for senior living teams.',
 };
 
 export const primaryCtaHref = '/meet-quid/';

@@ -173,6 +173,6 @@ Use the [human handoff checklist](/resources/senior-living-human-handoff-checkli
 - [ ] No template requests resident or medical information.
 - [ ] Staff can edit, pause, and stop the sequence.
 
-For a printable starting pack, [get the Senior Living Follow-Up Fix Kit](#follow-up-fix-kit). To see how templates and next actions appear operationally, [see the Quid admissions dashboard](/see-quid-in-action/).
+To see how templates and next actions can run behind the scenes without giving frontline staff another daily tool, [see Quid in action](/see-quid-in-action/) or [grade your current inquiry flow](/senior-living-inquiry-flow-grader/).
 
 See where these approved messages fit within the complete [senior living inquiry follow-up automation workflow](/senior-living-inquiry-follow-up-automation/).

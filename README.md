@@ -1,6 +1,6 @@
 # Quid website
 
-Production-ready static marketing website for **Quid**, the friendly AI-assisted admissions concierge for senior living communities. The site is built with Astro and deploys free through GitHub Pages at `https://get-quid.site`.
+Production-ready static marketing website for **Quid**, the behind-the-scenes inquiry follow-up and tour scheduling service for senior living communities. The site is built with Astro and deploys free through GitHub Pages at `https://get-quid.site`.
 
 ## Technology
 
@@ -58,7 +58,7 @@ Do not put secrets in `PUBLIC_` variables.
 
 ## Booking, forms, and email fallback
 
-The Meet Quid walkthrough request, pilot application, and Follow-Up Fix Kit forms submit directly to Formspree and remain usable without JavaScript. When `PUBLIC_BOOKING_URL` is configured, the Meet Quid page also offers the external booking calendar.
+The See How Quid Fits walkthrough request and pilot application forms submit directly to Formspree and remain usable without JavaScript. When `PUBLIC_BOOKING_URL` is configured, the walkthrough page also offers the external booking calendar.
 
 Never collect resident names, diagnoses, medication information, medical records, protected health information, Social Security numbers, or payment-card data through these forms.
 

@@ -35,7 +35,7 @@ const globalSchema = [
     alternateName: 'Quid',
     url: site.domain,
     logo: `${site.domain}/favicon-192x192.png`,
-    description: 'Quid is an AI-assisted admissions concierge for senior living communities.',
+    description: 'Quid handles senior living inquiry follow-up and tour scheduling behind the scenes so teams can miss fewer inquiries, book more tours, and spend more time with residents and families.',
     founder: {
       '@type': 'Person',
       '@id': `${site.domain}/about/#umair-qudoos`,
@@ -89,7 +89,7 @@ const allSchema = [...globalSchema, ...pageSchema];
     <Header />
     <main id="main-content"><slot />{!hideLeadMagnet && <LeadMagnetCTA />}</main>
     <Footer />
-    <a class="sticky-mobile-cta" href={primaryCtaHref}>Meet Quid</a>
+    <a class="sticky-mobile-cta" href={primaryCtaHref}>See How Quid Fits</a>
     <script>
       const reveals = document.querySelectorAll<HTMLElement>('[data-reveal]');
       if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {

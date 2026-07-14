@@ -30,10 +30,10 @@ const background = Buffer.from(`
   <circle cx="432" cy="514" r="8" fill="#C0714B"/>
   <rect x="448" y="505" width="136" height="8" rx="4" fill="#C0714B" opacity=".7"/>
   <rect x="448" y="522" width="93" height="6" rx="3" fill="#C0714B" opacity=".42"/>
-  <text x="58" y="228" fill="#1E3D34" font-family="DejaVu Sans, Arial, sans-serif" font-size="78" font-weight="700" letter-spacing="-3">More tours.</text>
-  <text x="58" y="315" fill="#A85D3B" font-family="DejaVu Serif, Georgia, serif" font-size="82" font-weight="600" font-style="italic" letter-spacing="-2">Less chasing.</text>
-  <text x="62" y="376" fill="#47685B" font-family="DejaVu Sans, Arial, sans-serif" font-size="25" font-weight="500">The friendly admissions concierge for senior living.</text>
-  <text x="62" y="417" fill="#1E3D34" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="3">CALM. CAPABLE. CONCIERGE.</text>
+  <text x="58" y="208" fill="#1E3D34" font-family="DejaVu Sans, Arial, sans-serif" font-size="62" font-weight="700" letter-spacing="-2.5">Fewer missed inquiries.</text>
+  <text x="58" y="280" fill="#A85D3B" font-family="DejaVu Serif, Georgia, serif" font-size="66" font-weight="600" font-style="italic" letter-spacing="-2">More booked tours.</text>
+  <text x="58" y="350" fill="#1E3D34" font-family="DejaVu Sans, Arial, sans-serif" font-size="55" font-weight="700" letter-spacing="-2">No extra admin hire.</text>
+  <text x="62" y="403" fill="#47685B" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="500">Behind-the-scenes follow-up for senior living.</text>
 </svg>`);
 
 const output = await sharp(background)

@@ -64,7 +64,7 @@ The category matters more than a long feature list. A complete CRM carries broad
 
 <div class="buyer-vendor-card">
   <p class="buyer-vendor-label">Focused admissions automation · reviewed July 12, 2026</p>
-  <p><strong>What it is:</strong> Quid is an AI-assisted admissions concierge for senior living communities. It focuses on website inquiry acknowledgement, tour coordination, approved follow-up, stalled-inquiry visibility, daily admissions summaries, and human handoffs.</p>
+  <p><strong>What it is:</strong> Quid handles website inquiries, family follow-up, and tour scheduling behind the scenes for senior living communities. It focuses on fewer missed inquiries, more booked tours, clear human handoffs, and less daily admin work around the tools a team already uses.</p>
   <p><strong>Best suited for:</strong> a community whose current CRM and core tools can remain, but whose website inquiry-to-tour workflow needs more consistent execution.</p>
   <p><strong>Product scope:</strong> one community, one website inquiry source, one tour calendar, and one controlled 30-day workflow. Quid is not a CRM replacement. Voice and SMS are not part of the current standard offer.</p>
   <p><strong>Important buying consideration:</strong> its deliberately narrow scope is useful for proving one workflow, but it is not a substitute for a portfolio CRM, broad marketing suite, or clinical system.</p>

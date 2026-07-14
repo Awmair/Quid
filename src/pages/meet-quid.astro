@@ -7,8 +7,8 @@ import AnswerBlock from '../components/AnswerBlock.astro';
 import { site } from '../data/site';
 import { pricing } from '../data/pricing';
 
-const title = 'Meet Quid | AI Admissions Concierge for Senior Living';
-const description = 'Book a Quid walkthrough to see how senior living teams can respond to inquiries, coordinate tours, automate follow-up, and keep staff in control.';
+const title = 'See How Quid Fits | Senior Living Follow-Up Automation';
+const description = 'Show us your current senior living inquiry process. We will map what Quid can handle behind the scenes without adding another daily tool.';
 const pageUrl = `${site.domain}/meet-quid/`;
 const primaryHref = site.bookingUrl || '#request-walkthrough';
 const primaryLabel = site.bookingUrl ? 'Book a Quid Walkthrough' : 'Request Walkthrough';
@@ -48,22 +48,22 @@ const schema = [
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: site.domain },
-      { '@type': 'ListItem', position: 2, name: 'Meet Quid', item: pageUrl },
+      { '@type': 'ListItem', position: 2, name: 'See How Quid Fits', item: pageUrl },
     ],
   },
 ];
 ---
 
 <BaseLayout title={title} description={description} schema={schema}>
-  <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Meet Quid' }]} />
+  <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'See How Quid Fits' }]} />
 
   <section class="page-hero meet-hero">
     <div class="shell page-hero-grid">
       <div>
-        <p class="eyebrow">Meet Quid</p>
-        <h1>See how Quid would fit your admissions workflow.</h1>
-        <p class="lede">In a short walkthrough, we will show how Quid could help your team handle website inquiries, tour follow-up, daily summaries, and human handoffs for one community.</p>
-        <AnswerBlock answer={`Meet Quid is a short walkthrough to see whether Quid fits your current admissions workflow. The 30-day pilot is ${pricing.pilot.display}. Managed Quid operations cost ${pricing.ongoing.monthlyDisplay} if you continue.`} />
+        <p class="eyebrow">See how Quid fits</p>
+        <h1>Show us your current inquiry process. We’ll show what Quid can handle behind the scenes.</h1>
+        <p class="lede">In a short walkthrough, we map the routine inquiry follow-up and tour coordination Quid could take off your team’s plate—without a CRM migration or another daily tool for frontline staff.</p>
+        <AnswerBlock answer={`See How Quid Fits is a short walkthrough of your current admissions process and what Quid could handle behind the scenes. The 30-day pilot is ${pricing.pilot.display}. Managed Quid operations cost ${pricing.ongoing.monthlyDisplay} if you continue.`} />
         <div class="button-row">
           <a class="button" href={primaryHref} rel={site.bookingUrl ? 'noopener' : undefined}>{primaryLabel}</a>
           <a class="button button-secondary" href="/pilot/">View the 30-Day Pilot</a>
@@ -136,8 +136,8 @@ const schema = [
     <div class="shell final-cta-grid">
       <div data-reveal>
         <p class="eyebrow">Start with your process</p>
-        <h2>Ready to see where Quid fits?</h2>
-        <p class="lede">Start with your current admissions process. We will show what Quid could handle, what your team should keep, and whether the 30-day pilot makes sense.</p>
+        <h2>Ready to see what Quid can take off your team’s plate?</h2>
+        <p class="lede">Start with your current admissions process. We will show what Quid could handle behind the scenes, what should stay human, and whether the 30-day pilot makes sense.</p>
         <div class="button-row"><a class="button button-light" href="#request-walkthrough">Request Walkthrough</a><a class="button button-secondary" href="/see-quid-in-action/">See Quid in Action</a></div>
       </div>
       <Mascot pose="wave" class="final-mascot" alt="Quid inviting the admissions team to start a walkthrough" width={330} />

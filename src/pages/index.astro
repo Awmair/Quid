@@ -60,18 +60,18 @@ const audiences = [
   <section class="hero">
     <div class="shell hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow" data-reveal>AI-assisted admissions follow-up for senior living</p>
-        <h1><span data-reveal>More tours.</span><span class="editorial" data-reveal>Less chasing.</span></h1>
-        <p class="lede hero-desktop-lede" data-reveal>Quid responds to website inquiries, helps families book tours, and keeps follow-up moving—while your team handles the conversations that need a person.</p>
-        <p class="lede hero-mobile-lede" data-reveal>Quid replies fast, books tours, and keeps every inquiry moving.</p>
-        <AnswerBlock variant="hero" label="What Quid is" answer="Quid is an AI-assisted admissions concierge that helps senior living teams respond to website inquiries, coordinate tours, follow up consistently, and route sensitive questions to staff." />
+        <p class="eyebrow" data-reveal>Behind-the-scenes admissions follow-up for senior living</p>
+        <h1><span data-reveal>Fewer missed inquiries.</span><span class="editorial" data-reveal>More booked tours.</span><span data-reveal>No extra admin hire.</span></h1>
+        <p class="lede hero-desktop-lede" data-reveal>Quid handles new inquiries, family follow-up, and tour scheduling behind the scenes—without another daily tool for your team to manage—so staff can focus on residents and families.</p>
+        <p class="lede hero-mobile-lede" data-reveal>Quid handles inquiry follow-up and tour scheduling behind the scenes, so your team can focus on people.</p>
+        <AnswerBlock variant="hero" label="What Quid does" answer="Quid handles new inquiries, family follow-up, and tour scheduling behind the scenes. It works around your existing process, and staff step in only when a conversation needs a person." />
         <ul class="hero-mobile-benefits" aria-label="What Quid helps with" data-reveal>
           <li><span aria-hidden="true">01</span><strong>Reply fast</strong></li>
           <li><span aria-hidden="true">02</span><strong>Book tours</strong></li>
           <li><span aria-hidden="true">03</span><strong>Follow up</strong></li>
         </ul>
         <div class="button-row" data-reveal>
-          <a class="button" href={primaryCtaHref}>Meet Quid</a>
+          <a class="button" href={primaryCtaHref}>See How Quid Fits</a>
           <a class="button button-secondary" href="/see-quid-in-action/">See Quid in Action</a>
         </div>
         <p class="microcopy hero-proof">One community. One inquiry source. One measurable 30-day pilot.</p>
@@ -79,7 +79,7 @@ const audiences = [
       </div>
       <div class="hero-brand-visual" data-reveal>
         <span class="hero-halo" aria-hidden="true"></span>
-        <span class="hero-benefit-badge"><span aria-hidden="true">✓</span><span class="hero-benefit-label-desktop">No missed inquiries or tours</span><span class="hero-benefit-label-mobile">Nothing slips through</span></span>
+        <span class="hero-benefit-badge"><span aria-hidden="true">✓</span><span class="hero-benefit-label-desktop">Routine follow-up handled behind the scenes</span><span class="hero-benefit-label-mobile">Less chasing</span></span>
         <Mascot pose="hero" class="hero-brand-mascot" alt="Quid, the admissions concierge mascot, ready to help with a new inquiry" width={360} eager />
         <span class="hero-brand-shadow" aria-hidden="true"></span>
       </div>
@@ -105,7 +105,7 @@ const audiences = [
           </article>
         ))}
       </div>
-      <p class="center muted" style="margin-top:24px">Quid is a friendly AI-assisted admissions concierge for communities where every inquiry matters, but staff cannot always stop to respond immediately.</p>
+      <p class="center muted" style="margin-top:24px">Quid is built for communities where every inquiry matters, but staff should not have to choose between following up and being present with residents and families.</p>
     </div>
   </section>
 
@@ -188,7 +188,7 @@ const audiences = [
       <div class="workflow-home-copy" data-reveal>
         <p class="eyebrow">How Quid works</p>
         <h2>From website inquiry to booked tour, without the usual chasing.</h2>
-        <p class="lede">Quid does not make the admissions decision. Quid helps prevent the admissions process from stalling.</p>
+        <p class="lede">Your team keeps the tools it knows. Quid keeps the routine work moving and brings staff in when a person is needed.</p>
         <a class="button button-secondary" href="/how-it-works/">See How Quid Works</a>
       </div>
       <VisualFlow vertical steps={workflow.map(([title, text]) => ({ title, text }))} label="Inquiry-to-tour workflow" />
@@ -198,11 +198,11 @@ const audiences = [
   <section class="section section-white dashboard-preview-section">
     <div class="shell">
       <div class="tour-section-intro">
-        <div><p class="eyebrow">See Quid in action</p><h2>See your admissions day before you change anything.</h2></div>
-        <div><p class="lede">Explore the Quid dashboard for new inquiries, booked tours, follow-up, and human handoffs in one clear daily view.</p></div>
+        <div><p class="eyebrow">See Quid in action</p><h2>Your team sees only what needs attention.</h2></div>
+        <div><p class="lede">Quid does the background work. A simple manager and exception view surfaces replies, booked tours, handoffs, and anything that needs a person—without becoming another frontline workspace.</p></div>
       </div>
       <DashboardPreview compact />
-      <div class="dashboard-preview-cta"><p>Walk through the dashboard, handoffs, daily summary, and follow-up flow.</p><a class="button" href="/see-quid-in-action/">See Quid in Action</a></div>
+      <div class="dashboard-preview-cta"><p>See the optional manager view, handoffs, daily summary, and background follow-up flow.</p><a class="button" href="/see-quid-in-action/">See Quid in Action</a></div>
     </div>
   </section>
 
@@ -248,9 +248,9 @@ const audiences = [
   <section class="section">
     <div class="shell split">
       <div data-reveal>
-        <p class="eyebrow">Built around your community</p>
-        <h2>It sounds like your team, not a software company.</h2>
-        <p class="lede">Quid is configured around your community name, services, approved FAQs, business hours, tour calendar, communication style, escalation contacts, and follow-up policy.</p>
+        <p class="eyebrow">No new frontline workspace</p>
+        <h2>Quid works around the process your team already uses.</h2>
+        <p class="lede">Quid connects the inquiry form, inbox, tour calendar, approved answers, and staff contacts you already have. Your team does not need to live in another app to keep routine follow-up moving.</p>
         <div class="chips">{['Your tone','Your tour times','Your approved answers','Your business hours','Your handoff rules','Your staff contacts'].map((x) => <span class="chip">{x}</span>)}</div>
       </div>
       <div class="message-card" data-reveal>
@@ -263,7 +263,7 @@ const audiences = [
 
   <section class="section section-sage">
     <div class="shell">
-      <p class="eyebrow">What changes</p><h2>Faster replies without faster burnout.</h2>
+      <p class="eyebrow">What changes</p><h2>Less admin work. More time for people.</h2>
       <div class="scan-layout">
         <PhotoPanel image={admissionsTeam} alt="Two senior living admissions professionals reviewing follow-up together" label="The team stays in control" caption="Quid keeps routine work visible so staff can focus on families." />
         <QuickScan items={outcomes.map(([title, text]) => ({ title, text }))} label="Benefits at a glance" />
@@ -281,7 +281,7 @@ const audiences = [
           <p class="pilot-process-line">{pilotOffer.processLine}</p>
           <div class="button-row">
             <a class="button button-light" href="/pilot/#apply">Apply for the Pilot</a>
-            <a class="button button-secondary" href="/meet-quid/">Meet Quid First</a>
+            <a class="button button-secondary" href="/meet-quid/">See How Quid Fits</a>
           </div>
         </div>
         <PilotPricingCard showCta={false} />

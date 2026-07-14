@@ -24,7 +24,7 @@ export const footerGroups = [
       { label: 'See Quid in Action', href: '/see-quid-in-action/' },
       { label: 'Human Handoffs', href: '/human-handoffs/' },
       { label: 'Pilot', href: '/pilot/' },
-      { label: 'Meet Quid', href: '/meet-quid/' },
+      { label: 'See How Quid Fits', href: '/meet-quid/' },
     ],
   },
   {

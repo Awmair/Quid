@@ -19,21 +19,21 @@ const currentPath = Astro.url.pathname;
         <a href={item.href} aria-current={currentPath === item.href ? 'page' : undefined}>{item.label}</a>
       ))}
     </nav>
-    <a class="button button-small desktop-cta" href={primaryCtaHref}>Meet Quid</a>
+    <a class="button button-small desktop-cta" href={primaryCtaHref}>See How Quid Fits</a>
     <button class="menu-trigger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="mobile-panel" id="mobile-menu" aria-hidden="true">
     <div class="mobile-panel-inner">
-      <p class="eyebrow">Calm. Capable. Concierge.</p>
+      <p class="eyebrow">Behind-the-scenes admissions follow-up</p>
       <nav aria-label="Mobile navigation">
         {navigation.map((item, index) => (
           <a href={item.href} style={`--delay:${index * 45}ms`}>{item.label}</a>
         ))}
       </nav>
-      <a class="button" href={primaryCtaHref}>Meet Quid</a>
-      <p class="mobile-tagline">More tours. Less chasing.</p>
+      <a class="button" href={primaryCtaHref}>See How Quid Fits</a>
+      <p class="mobile-tagline">Fewer missed inquiries. More booked tours.</p>
       {site.contactEmail && <a class="mobile-email" href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>}
       <Image class="mobile-mascot" src={icon} alt="" width={180} height={230} loading="lazy" />
     </div>

@@ -3,8 +3,8 @@ import { pricing } from './pricing';
 export const pilotOffer = {
   name: pricing.pilot.name,
   cardTitle: pricing.pilot.name,
-  headline: 'Start with one workflow. Prove it works.',
-  pageHeadline: 'Prove the workflow before expanding it.',
+  headline: 'See what Quid can take off your team’s plate.',
+  pageHeadline: 'Thirty days to see what Quid can handle behind the scenes.',
   price: pricing.pilot.amount,
   priceLabel: pricing.pilot.display,
   priceQualifier: pricing.pilot.billing,
@@ -18,10 +18,10 @@ export const pilotOffer = {
   positioning:
     'This is a paid implementation pilot—not a free trial or refundable deposit.',
   homepageBody:
-    'Over 30 days, we learn how your admissions team works, configure Quid around that process, launch one controlled workflow, and show you what Quid handled.',
+    'Over 30 days, we learn how your admissions team works, set up Quid around that process, run one focused workflow, and show what Quid handled behind the scenes.',
   pageBody:
-    'We learn how your admissions process works, configure Quid around one controlled workflow, deploy it carefully, and show you exactly what happened.',
-  processLine: 'Understand. Configure. Deploy. Measure.',
+    'We learn your current admissions process, set up one inquiry-to-tour workflow, run it carefully, and show whether fewer inquiries were missed, more tours were booked, and staff spent less time chasing routine work.',
+  processLine: 'Understand. Set up. Run. Measure.',
   outcomeLine:
     'By the end, you will know what Quid handled, what your team handled, and whether it is worth continuing.',
   trustLine:
@@ -31,7 +31,7 @@ export const pilotOffer = {
     'Approved response and follow-up flow',
     'Human-handoff rules',
     'Controlled implementation',
-    'Quid dashboard',
+    'Optional manager and exception view',
     'Daily admissions summary',
     'Monitoring and tuning',
     'End-of-pilot report',
@@ -75,7 +75,7 @@ export const pilotOffer = {
     'Workflow monitoring',
     'Issue resolution',
     'Message and rule updates',
-    'Dashboard reporting',
+    'Manager and exception reporting',
     'Operational support',
     'Continued optimization',
   ],
@@ -117,8 +117,8 @@ export const pilotWeeks = [
   {
     week: 'Week 2',
     icon: '02',
-    previewTitle: 'Configure',
-    title: 'We configure Quid with your staff',
+    previewTitle: 'Set up',
+    title: 'We set up Quid with your staff',
     preview:
       'We refine the workflow with one staff member and approve messages, timing, and handoff rules.',
     detail: 'We refine the workflow with one staff member and approve messages, timing, and handoff rules.',
@@ -130,8 +130,8 @@ export const pilotWeeks = [
   {
     week: 'Week 3',
     icon: '03',
-    previewTitle: 'Deploy',
-    title: 'We deploy Quid',
+    previewTitle: 'Run',
+    title: 'We run the focused workflow',
     preview:
       'Quid goes live for one inquiry source and one tour calendar.',
     detail: 'Quid goes live for one inquiry source and one tour calendar.',
@@ -157,7 +157,7 @@ export const pilotWeeks = [
 
 export const pilotFaqs = [
   ['How much does the pilot cost?', `The 30-day Quid Admissions Pilot costs ${pricing.pilot.displayWithBilling}.`],
-  ['What is included?', 'We review your current process, configure one inquiry workflow, deploy Quid, provide the dashboard and daily summary, monitor the workflow, and deliver an end-of-pilot report.'],
+  ['What is included?', 'We review your current process, set up one inquiry workflow, provide an optional manager view and daily summary, monitor the workflow, and deliver an end-of-pilot report.'],
   ['Is the pilot fee credited if we continue?', 'No. The pilot is a standalone implementation and deployment engagement. If you continue, the work completed during the pilot becomes the foundation of your managed Quid service.'],
   ['What does Quid cost after the pilot?', `Managed Quid operations cost ${pricing.ongoing.monthlyDisplay}. You decide whether to continue after the pilot.`],
   ['Do we have to continue?', 'No. At the end of the pilot, you decide whether the workflow is useful enough to keep.'],

@@ -12,8 +12,8 @@ import AnswerBlock from '../components/AnswerBlock.astro';
 import FaqSection from '../components/FaqSection.astro';
 import { site } from '../data/site';
 
-const title = 'Senior Living Admissions Dashboard Demo | Quid';
-const description = 'Explore a sample Quid dashboard showing inquiries, tours, follow-up, daily summaries, and human handoffs for senior living admissions teams.';
+const title = 'See Quid in Action | Senior Living Follow-Up Automation';
+const description = 'See how Quid handles inquiries, follow-up, and tour scheduling behind the scenes while staff see only what needs attention.';
 const pageUrl = `${site.domain}/see-quid-in-action/`;
 const faqs = [
   ['Is the dashboard real?', 'The page shows the Quid product interface and its admissions workflow states. The records explain how the interface works and are not customer performance claims.'],
@@ -53,14 +53,14 @@ const schema = [
   <section class="page-hero action-page-hero">
     <div class="shell page-hero-grid">
       <div>
-        <p class="eyebrow">Admissions workflow</p>
-        <h1>See what a day with Quid could look like.</h1>
-        <p class="lede">Quid’s sample admissions dashboard shows how senior living teams can track inquiries, tours, follow-up, and human handoffs in one daily view.</p>
-        <AnswerBlock answer="Quid’s sample admissions dashboard shows how senior living teams can track inquiries, tours, follow-up, and human handoffs in one daily view." />
-        <p>This guided walkthrough shows how the same view fits around routine admissions work—without digging through inboxes or spreadsheets.</p>
+        <p class="eyebrow">Behind-the-scenes admissions workflow</p>
+        <h1>Your team sees only what needs attention.</h1>
+        <p class="lede">Quid handles routine inquiry follow-up and tour coordination in the background. A simple manager and exception view surfaces replies, handoffs, stalled inquiries, and anything that needs a person.</p>
+        <AnswerBlock answer="Quid does not require frontline staff to manage another daily workspace. It keeps routine follow-up moving behind the scenes and gives managers a concise view of the items that need attention." />
+        <p>This walkthrough shows the optional oversight view—not another system your team has to live in.</p>
         <div class="button-row">
           <a class="button" href="#dashboard">View the Dashboard</a>
-          <a class="button button-secondary" href="/meet-quid/">Meet Quid</a>
+          <a class="button button-secondary" href="/meet-quid/">See How Quid Fits</a>
         </div>
       </div>
       <Mascot pose="tour" class="page-mascot action-page-mascot" alt="Quid calmly presenting the admissions dashboard" width={360} eager />
@@ -70,8 +70,8 @@ const schema = [
   <section class="section section-white" id="dashboard">
     <div class="shell">
       <div class="tour-section-intro">
-        <div><p class="eyebrow">The full dashboard</p><h2>Your admissions day in one calm view.</h2></div>
-        <p class="lede">New inquiries, tour movement, follow-up, and staff handoffs stay visible without turning the day into another complicated system.</p>
+        <div><p class="eyebrow">Optional manager view</p><h2>The background work is handled. The exceptions are visible.</h2></div>
+        <p class="lede">New inquiries, booked tours, follow-up, and staff handoffs stay visible without asking frontline staff to manage another complicated system.</p>
       </div>
       <DashboardPreview />
       <div class="dashboard-after-links"><a href="/how-it-works/">See the complete Quid workflow</a><a href="/human-handoffs/">Review the human-handoff rules</a></div>
@@ -102,7 +102,7 @@ const schema = [
       <div>
         <p class="eyebrow">A morning with Quid</p>
         <h2>Start the day knowing what needs attention.</h2>
-        <p class="lede">Instead of hunting through forms, emails, and notes, staff gets a simple operational summary of what changed and what needs action.</p>
+        <p class="lede">Instead of hunting through forms, emails, and notes, the right staff member gets a concise summary of what changed and what needs human action.</p>
         <a class="button button-secondary" href="/how-it-works/">Explore How Quid Works</a>
       </div>
       <DailySummaryCard />
@@ -140,7 +140,7 @@ const schema = [
         <p class="eyebrow">See it around your process</p>
         <h2>Want to see this with your own admissions process?</h2>
         <p class="lede">We can walk through how Quid would fit around one community, one inquiry source, and one tour calendar.</p>
-        <div class="button-row"><a class="button button-light" href="/meet-quid/">Meet Quid</a><a class="button button-secondary" href="/pilot/">View the 30-Day Pilot</a></div>
+        <div class="button-row"><a class="button button-light" href="/meet-quid/">See How Quid Fits</a><a class="button button-secondary" href="/pilot/">View the 30-Day Pilot</a></div>
       </div>
       <Mascot pose="wave" class="final-mascot" alt="Quid offering a calm walkthrough of the admissions workflow" width={330} />
     </div>
