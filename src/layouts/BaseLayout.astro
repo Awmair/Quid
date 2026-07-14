@@ -89,7 +89,7 @@ const allSchema = [...globalSchema, ...pageSchema];
     <Header />
     <main id="main-content"><slot />{!hideLeadMagnet && <LeadMagnetCTA />}</main>
     <Footer />
-    <a class="sticky-mobile-cta" href={primaryCtaHref}>See How Quid Fits</a>
+    {!hideLeadMagnet && <a class="sticky-mobile-cta" href={primaryCtaHref}>See How Quid Fits</a>}
     <script>
       const reveals = document.querySelectorAll<HTMLElement>('[data-reveal]');
       if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -98,6 +98,20 @@ const allSchema = [...globalSchema, ...pageSchema];
         }), { threshold: 0.12 });
         reveals.forEach((item) => observer.observe(item));
       } else reveals.forEach((item) => item.classList.add('is-visible'));
+
+      const stickyMobileCta = document.querySelector<HTMLElement>('.sticky-mobile-cta');
+      const siteFooter = document.querySelector<HTMLElement>('.site-footer');
+      const mobileViewport = window.matchMedia('(max-width: 760px)');
+      const updateStickyMobileCta = () => {
+        if (!stickyMobileCta) return;
+        const pastOpening = window.scrollY > Math.min(480, window.innerHeight * .65);
+        const footerIsVisible = Boolean(siteFooter && siteFooter.getBoundingClientRect().top < window.innerHeight - 18);
+        stickyMobileCta.classList.toggle('is-visible', mobileViewport.matches && pastOpening && !footerIsVisible);
+      };
+      updateStickyMobileCta();
+      window.addEventListener('scroll', updateStickyMobileCta, { passive: true });
+      window.addEventListener('resize', updateStickyMobileCta, { passive: true });
+      mobileViewport.addEventListener?.('change', updateStickyMobileCta);
     </script>
   </body>
 </html>

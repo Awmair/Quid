@@ -365,6 +365,14 @@ const canonical = 'https://get-quid.site/private-preview/';
     .preview-observation,.preview-section-head { grid-template-columns:1fr; display:grid; gap:12px; align-items:start; }
     .preview-lane header { display:grid; }
   }
+  @media (max-width: 420px) {
+    .preview-header span { display:none; }
+    .preview-date-row,.preview-time-row { grid-template-columns:1fr; }
+    .preview-chain { grid-template-columns:1fr; text-align:center; }
+    .preview-chain i { transform:rotate(90deg); }
+    .preview-price-card { padding:24px 20px; }
+    .preview-price-card > strong { font-size:2.8rem; }
+  }
   @media print {
     .preview-header { position: static; }
     .preview-section, .preview-hero { break-inside: avoid; }

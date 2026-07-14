@@ -29,7 +29,7 @@ const currentPath = Astro.url.pathname;
       <p class="eyebrow">Behind-the-scenes admissions follow-up</p>
       <nav aria-label="Mobile navigation">
         {navigation.map((item, index) => (
-          <a href={item.href} style={`--delay:${index * 45}ms`}>{item.label}</a>
+          <a href={item.href} aria-current={currentPath === item.href ? 'page' : undefined} style={`--delay:${index * 45}ms`}>{item.label}</a>
         ))}
       </nav>
       <a class="button" href={primaryCtaHref}>See How Quid Fits</a>
