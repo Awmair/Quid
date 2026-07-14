@@ -1,6 +1,6 @@
 # Quid
 
-> Quid is an AI-assisted admissions concierge for senior living communities. It helps admissions teams respond to website inquiries, coordinate tours, follow up consistently, and route sensitive questions to staff.
+> Quid handles new inquiries, family follow-up, and tour scheduling behind the scenes for senior living communities. The goal is fewer missed inquiries, more booked tours, and more time for staff to spend with residents and families—without another daily tool or admin hire.
 
 ## Website
 
@@ -10,7 +10,7 @@
 - How It Works: https://get-quid.site/how-it-works/
 - Human Handoffs: https://get-quid.site/human-handoffs/
 - 30-Day Pilot: https://get-quid.site/pilot/
-- Meet Quid: https://get-quid.site/meet-quid/
+- See How Quid Fits: https://get-quid.site/meet-quid/
 - Resources: https://get-quid.site/resources/
 - Assisted Living Admissions Automation: https://get-quid.site/assisted-living-admissions-automation/
 - Senior Living Inquiry Follow-Up Automation: https://get-quid.site/senior-living-inquiry-follow-up-automation/
@@ -19,7 +19,7 @@
 
 ## Product Summary
 
-Quid supports routine senior living admissions follow-up. It is not a senior living facility, care provider, CRM replacement, clinical decision tool, or medical advice system.
+Quid supports routine senior living admissions follow-up around the inquiry form, inbox, tour calendar, and lead system a community already uses. It is not a senior living facility, care provider, CRM replacement, clinical decision tool, or medical advice system.
 
 Quid helps with:
 - website inquiry acknowledgement
@@ -28,6 +28,8 @@ Quid helps with:
 - stalled inquiry tracking
 - daily admissions summaries
 - human handoffs for sensitive questions
+
+Frontline staff do not need to live in another Quid workspace. An optional manager and exception view surfaces replies, handoffs, stalled inquiries, and anything that needs human attention.
 
 Quid does not:
 - provide care
@@ -77,5 +79,5 @@ Quid Admissions publishes these comparisons using official public vendor informa
 
 ## Contact
 
-Use the Meet Quid page to request a walkthrough:
+Use the See How Quid Fits page to request a walkthrough:
 https://get-quid.site/meet-quid/

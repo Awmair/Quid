@@ -1,0 +1,64 @@
+QUID 2026 SENIOR LIVING INQUIRY-TO-TOUR BENCHMARK
+Media and podcast brief - published July 14, 2026
+
+THE FINDING
+
+Quid reviewed 100 public senior living community website journeys across 28 operator groups and 23 US states. Sixty-two pages exposed a manual or delayed-coordination signal somewhere in the visible inquiry-to-tour path. Forty-seven exposed an automation signal. Fourteen exposed both.
+
+These percentages describe a purposive, operator-clustered benchmark. They are not a randomized estimate of all US senior living communities.
+
+WHY IT MATTERS
+
+A tour CTA captures high intent, but its label does not reveal what happens after the click. A visitor may reach a contact form, request a preferred time that is not visibly reserved, enter an automated inquiry assistant, or receive a mixture of automation and later staff follow-up.
+
+The benchmark asks operators to evaluate the complete visible journey: acknowledgement, real availability, confirmation, staff ownership, human handoff, and stalled-work visibility.
+
+COHORT COMPARISON
+
+- Independent and small-operator research cohort: 25 pages; 20 showed a manual or delayed signal and 1 exposed automation.
+- Multi-location template expansion: 75 pages; 42 showed a manual or delayed signal and 46 exposed automation.
+- Combined benchmark: 100 pages; 62 showed a manual or delayed signal and 47 exposed automation.
+
+Signals are not mutually exclusive. Fourteen pages showed both.
+
+METHODOLOGY
+
+The first 25 pages came from Quid's July 12-13 small-operator outreach research and remain anonymized in the public row-level dataset. The 75-page expansion reviewed 15 public community pages from each of five operator clusters on July 14: Brookdale, Sunrise Senior Living, Benchmark Senior Living, Merrill Gardens, and Leisure Care. Pages were selected through official public sitemaps.
+
+Quid did not submit inquiry forms, pose as a family, test staff response times, inspect private systems, or collect resident or medical information. The benchmark measures only the visible public website journey.
+
+APPROVED CITATION
+
+Quid Research. "2026 Senior Living Inquiry-to-Tour Benchmark: 100 Communities." Quid Admissions, July 14, 2026. https://get-quid.site/resources/senior-living-inquiry-to-tour-audit/
+
+DOWNLOADS
+
+Report and methodology:
+https://get-quid.site/resources/senior-living-inquiry-to-tour-audit/
+
+100-row anonymized dataset:
+https://get-quid.site/data/senior-living-inquiry-to-tour-audit-2026.csv
+
+75-page named expansion source register:
+https://get-quid.site/data/senior-living-inquiry-to-tour-benchmark-sources-2026.csv
+
+Embeddable cohort comparison:
+https://get-quid.site/research/benchmark-2026-cohort-comparison.svg
+
+Embeddable visible-signals chart:
+https://get-quid.site/research/benchmark-2026-visible-signals.svg
+
+INTERVIEW TOPICS
+
+- Why "Schedule a Tour" often means three different things
+- What a public website can and cannot reveal about admissions performance
+- Where automation helps and where staff judgment must remain human
+- How independent communities can reduce coordination work without replacing their CRM
+- How operators can audit their own mobile inquiry-to-tour journey
+
+CONTACT
+
+Umair Q.
+Founder, Quid Admissions
+https://www.linkedin.com/in/umair-qudoos/
+https://get-quid.site/about/

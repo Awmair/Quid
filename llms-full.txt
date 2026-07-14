@@ -1,6 +1,6 @@
 # Quid public website summary
 
-Quid is an AI-assisted admissions concierge for senior living communities. It supports the non-clinical workflow around website inquiries, tour coordination, approved follow-up, stalled-inquiry tracking, daily summaries, and staff handoffs.
+Quid handles new inquiries, family follow-up, and tour scheduling behind the scenes for senior living communities. Its public promise is: fewer missed inquiries, more booked tours, and no extra admin hire. Quid works around the tools a team already uses so frontline staff do not have to live in another daily workspace.
 
 ## What Quid helps with
 
@@ -10,7 +10,7 @@ Quid is an AI-assisted admissions concierge for senior living communities. It su
 - Keeping new, booked, stalled, overdue, and needs-attention inquiries visible
 - Pausing routine communication when a family replies or asks a sensitive question
 - Routing clinical, medication, eligibility, and care-assessment questions to designated staff
-- Giving admissions leaders a concise daily view of activity and exceptions
+- Giving admissions leaders an optional concise view of activity and exceptions while frontline staff see only what needs attention
 
 ## What Quid does not do
 
@@ -18,18 +18,18 @@ Quid does not provide residential or clinical care, make admissions or eligibili
 
 ## Operating approach
 
-Quid starts narrowly: one community, one website inquiry source, and one tour calendar. The managed 30-day pilot maps the current workflow, approves messages and handoff rules, launches the agreed process carefully, and reports what Quid handled, what staff handled, and what needs adjustment.
+Quid starts narrowly: one community, one website inquiry source, and one tour calendar. The managed 30-day pilot maps the current workflow, approves messages and handoff rules, runs the agreed background process carefully, and reports what Quid handled, what staff handled, and what needs adjustment.
 
 The 30-day pilot is $1,000 one-time. It is a paid implementation engagement, not a free trial or refundable deposit. Managed Quid operations cost $899 per month per community if the community chooses to continue.
 
 ## Key public pages
 
 - [Homepage](https://get-quid.site/): product definition and overview
-- [See Quid in Action](https://get-quid.site/see-quid-in-action/): admissions dashboard and daily workflow
+- [See Quid in Action](https://get-quid.site/see-quid-in-action/): background workflow plus optional manager and exception view
 - [How It Works](https://get-quid.site/how-it-works/): inquiry-to-tour workflow
 - [Human Handoffs](https://get-quid.site/human-handoffs/): responsible AI boundaries and staff routing
 - [30-Day Pilot](https://get-quid.site/pilot/): implementation scope, weekly plan, pricing, and application
-- [Meet Quid](https://get-quid.site/meet-quid/): walkthrough request
+- [See How Quid Fits](https://get-quid.site/meet-quid/): walkthrough request around a community’s current process
 - [Resources](https://get-quid.site/resources/): practical senior living admissions guides
 - [Assisted Living Admissions Automation](https://get-quid.site/assisted-living-admissions-automation/): routine inquiry, tour, reminder, and staff-handoff workflow for assisted living communities
 - [Senior Living Inquiry Follow-Up Automation](https://get-quid.site/senior-living-inquiry-follow-up-automation/): controlled website inquiry acknowledgement, tour coordination, approved follow-up, and stalled-inquiry visibility
@@ -40,7 +40,7 @@ The 30-day pilot is $1,000 one-time. It is a paid implementation engagement, not
 
 - [Senior Living Admissions Automation](https://get-quid.site/resources/senior-living-admissions-automation/)
 - [Senior Living Inquiry Response Time](https://get-quid.site/resources/senior-living-inquiry-response-time/)
-- [Senior Living Inquiry-to-Tour Website Audit](https://get-quid.site/resources/senior-living-inquiry-to-tour-audit/): original July 2026 field research covering 25 public community website journeys across nine states
+- [2026 Senior Living Inquiry-to-Tour Benchmark](https://get-quid.site/resources/senior-living-inquiry-to-tour-audit/): original July 2026 research covering 100 public community website journeys, 28 operator groups, and 23 states; includes methodology, downloadable data, named expansion sources, charts, and a four-page report
 - [How to Increase Assisted Living Occupancy](https://get-quid.site/resources/how-to-increase-assisted-living-occupancy/): practical inquiry-to-tour conversion improvements before buying more leads
 - [Senior Living Tour Follow-Up](https://get-quid.site/resources/senior-living-tour-follow-up/)
 - [Daily Admissions Summary](https://get-quid.site/resources/senior-living-daily-admissions-summary/)

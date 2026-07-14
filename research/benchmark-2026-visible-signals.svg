@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">Visible inquiry-to-tour signals across 100 reviewed pages</title>
+  <desc id="desc">Sixty-two pages showed a manual or delayed coordination signal, forty-seven exposed an automation signal, and fourteen showed both.</desc>
+  <rect width="1200" height="650" rx="32" fill="#1e3d34"/>
+  <circle cx="1090" cy="70" r="170" fill="#294b40"/>
+  <text x="64" y="72" fill="#ffc9aa" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="3">100 PUBLIC COMMUNITY PAGES</text>
+  <text x="64" y="128" fill="#fffdf8" font-family="Georgia, serif" font-size="42" font-weight="700">What families could see after the click</text>
+  <text x="64" y="166" fill="#d6dfda" font-family="Arial, sans-serif" font-size="19">Nonexclusive signals observed July 12–14, 2026.</text>
+
+  <text x="64" y="246" fill="#fffdf8" font-family="Arial, sans-serif" font-size="18" font-weight="700">Manual or delayed coordination</text>
+  <rect x="64" y="267" width="980" height="42" rx="21" fill="#355449"/>
+  <rect x="64" y="267" width="608" height="42" rx="21" fill="#edb190"/>
+  <text x="1080" y="298" text-anchor="end" fill="#fffdf8" font-family="Arial, sans-serif" font-size="30" font-weight="800">62</text>
+
+  <text x="64" y="368" fill="#fffdf8" font-family="Arial, sans-serif" font-size="18" font-weight="700">Visible automation</text>
+  <rect x="64" y="389" width="980" height="42" rx="21" fill="#355449"/>
+  <rect x="64" y="389" width="461" height="42" rx="21" fill="#a9b5a6"/>
+  <text x="1080" y="420" text-anchor="end" fill="#fffdf8" font-family="Arial, sans-serif" font-size="30" font-weight="800">47</text>
+
+  <text x="64" y="490" fill="#fffdf8" font-family="Arial, sans-serif" font-size="18" font-weight="700">Both signals on the same page</text>
+  <rect x="64" y="511" width="980" height="42" rx="21" fill="#355449"/>
+  <rect x="64" y="511" width="137" height="42" rx="21" fill="#c9a66b"/>
+  <text x="1080" y="542" text-anchor="end" fill="#fffdf8" font-family="Arial, sans-serif" font-size="30" font-weight="800">14</text>
+
+  <text x="64" y="602" fill="#cbd6d0" font-family="Arial, sans-serif" font-size="15">Targeted, operator-clustered benchmark. Not a randomized estimate of all US communities. · get-quid.site</text>
+</svg>
