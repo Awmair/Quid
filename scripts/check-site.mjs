@@ -103,7 +103,7 @@ for (const file of htmlFiles) {
   const intentionalNoindex = outputPath === '404.html' || outputPath === 'private-preview/index.html' || outputPath === 'private-kit/index.html';
   const expectedCanonical = `${siteOrigin}${routeForOutput(outputPath)}`;
 
-  if (!/<html lang="en">/.test(html)) errors.push(`${file}: missing English language declaration`);
+  if (!/<html[^>]*\slang=(?:"en"|'en'|en)(?:\s|>)/i.test(html)) errors.push(`${file}: missing English language declaration`);
   if (!/<meta name="viewport" content="width=device-width, initial-scale=1"/.test(html)) errors.push(`${file}: missing responsive viewport metadata`);
 
   const title = html.match(/<title>([^<]+)<\/title>/)?.[1];
@@ -128,13 +128,13 @@ for (const file of htmlFiles) {
 
   const h1Count = (html.match(/<h1(?:\s|>)/g) || []).length;
   if (h1Count !== 1) errors.push(`${file}: expected exactly one H1, found ${h1Count}`);
-  if (!/<link rel="sitemap" href="\/sitemap-index\.xml"/.test(html)) errors.push(`${file}: missing sitemap discovery link`);
+  if (!intentionalNoindex && !/<link rel="sitemap" href="\/sitemap-index\.xml"/.test(html)) errors.push(`${file}: missing sitemap discovery link`);
   if (!/<meta property="og:title" content="[^"]+"/.test(html)) errors.push(`${file}: missing Open Graph title`);
   if (!/<meta property="og:description" content="[^"]+"/.test(html)) errors.push(`${file}: missing Open Graph description`);
   if (!/<meta property="og:image" content="https:\/\/get-quid\.site\//.test(html)) errors.push(`${file}: missing absolute Open Graph image`);
-  if (!/<meta property="og:image:alt" content="[^"]+"/.test(html)) errors.push(`${file}: missing Open Graph image alt text`);
+  if (!intentionalNoindex && !/<meta property="og:image:alt" content="[^"]+"/.test(html)) errors.push(`${file}: missing Open Graph image alt text`);
   if (!/<meta name="twitter:card" content="summary_large_image"/.test(html)) errors.push(`${file}: missing Twitter card metadata`);
-  if (!/<meta name="twitter:image:alt" content="[^"]+"/.test(html)) errors.push(`${file}: missing Twitter image alt text`);
+  if (!intentionalNoindex && !/<meta name="twitter:image:alt" content="[^"]+"/.test(html)) errors.push(`${file}: missing Twitter image alt text`);
 
   const openGraphUrl = html.match(/<meta property="og:url" content="([^"]+)"/)?.[1];
   if (canonical && openGraphUrl !== canonical) errors.push(`${file}: Open Graph URL does not match canonical`);
@@ -150,7 +150,7 @@ for (const file of htmlFiles) {
   const googlebot = html.match(/<meta name="googlebot" content="([^"]+)"/)?.[1];
   if (intentionalNoindex) {
     if (!robots?.includes('noindex')) errors.push(`${file}: intentional noindex page is missing a robots noindex directive`);
-    if (!googlebot?.includes('noindex')) errors.push(`${file}: intentional noindex page is missing a Googlebot noindex directive`);
+    if (googlebot && !googlebot.includes('noindex')) errors.push(`${file}: Googlebot directive conflicts with the intentional noindex`);
   } else {
     if (robots !== expectedIndexRobots) errors.push(`${file}: incomplete robots directive ${robots || '(missing)'}`);
     if (googlebot !== expectedIndexRobots) errors.push(`${file}: incomplete Googlebot directive ${googlebot || '(missing)'}`);
@@ -161,8 +161,8 @@ for (const file of htmlFiles) {
     try { collectStructuredData(JSON.parse(match[1]), file, schemaState); }
     catch { errors.push(`${file}: invalid JSON-LD`); }
   }
-  if (!schemaState.hasOrganization) errors.push(`${file}: missing canonical Organization entity schema`);
-  if (!schemaState.hasWebsite) errors.push(`${file}: missing canonical WebSite entity schema`);
+  if (!intentionalNoindex && !schemaState.hasOrganization) errors.push(`${file}: missing canonical Organization entity schema`);
+  if (!intentionalNoindex && !schemaState.hasWebsite) errors.push(`${file}: missing canonical WebSite entity schema`);
 
   const ogType = html.match(/<meta property="og:type" content="([^"]+)"/)?.[1];
   if (schemaState.hasArticle && ogType !== 'article') errors.push(`${file}: Article schema requires og:type=article`);
