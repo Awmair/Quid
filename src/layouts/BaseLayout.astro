@@ -79,7 +79,35 @@ const globalSchema = [
     description: site.defaultDescription,
   },
 ];
-const pageSchema = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
+
+const breadcrumbDestinations: Record<string, string> = {
+  Home: `${site.domain}/`,
+  Solutions: `${site.domain}/solutions/`,
+  Resources: `${site.domain}/resources/`,
+};
+
+const normalizeSchema = (value: unknown): unknown => {
+  if (Array.isArray(value)) return value.map(normalizeSchema);
+  if (!value || typeof value !== 'object') return value;
+
+  const normalized = Object.fromEntries(
+    Object.entries(value as Record<string, unknown>).map(([key, item]) => [key, normalizeSchema(item)]),
+  ) as Record<string, unknown>;
+
+  if (normalized['@type'] === 'BreadcrumbList' && Array.isArray(normalized.itemListElement)) {
+    normalized.itemListElement = normalized.itemListElement.map((entry, index, entries) => {
+      if (!entry || typeof entry !== 'object' || index === entries.length - 1) return entry;
+      const item = entry as Record<string, unknown>;
+      const fallback = typeof item.name === 'string' ? breadcrumbDestinations[item.name] : undefined;
+      return !item.item && fallback ? { ...item, item: fallback } : item;
+    });
+  }
+
+  return normalized;
+};
+
+const pageSchemaInput = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
+const pageSchema = pageSchemaInput.map((item) => normalizeSchema(item) as Record<string, unknown>);
 const allSchema = [...globalSchema, ...pageSchema];
 const robotsContent = noindex
   ? 'noindex,follow'
