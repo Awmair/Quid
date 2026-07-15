@@ -1,6 +1,6 @@
 # Quid website
 
-Production-ready static marketing website for **Quid**, the behind-the-scenes inquiry follow-up and tour scheduling service for senior living communities. The site is built with Astro and deploys free through GitHub Pages at `https://get-quid.site`.
+Production-ready static marketing website for **Quid**, the behind-the-scenes inquiry follow-up and tour scheduling service for senior living communities. The site is built with Astro and publishes through GitHub Pages at `https://get-quid.site`.
 
 ## Technology
 
@@ -9,8 +9,8 @@ Production-ready static marketing website for **Quid**, the behind-the-scenes in
 - Astro Image for responsive WebP mascot assets
 - Local Manrope and Newsreader variable fonts
 - Minimal vanilla TypeScript for navigation, reveals, and the calculator
-- GitHub Actions and GitHub Pages
-- No backend, database, server functions, paid CMS, or paid runtime service
+- GitHub Pages with a manually built and published `gh-pages` branch
+- No GitHub Actions, backend, database, server functions, paid CMS, or paid runtime service
 
 ## Install and run locally
 
@@ -28,15 +28,25 @@ npm run seo:check
 npm run preview
 ```
 
-## GitHub Pages deployment
+## Manual GitHub Pages deployment
 
-1. Push the repository to GitHub with the production branch named `main`.
-2. In **Settings → Pages**, choose **GitHub Actions** as the source.
-3. The workflow in `.github/workflows/deploy.yml` builds and runs the full Search Console/SEO regression check on pull requests to `main`.
-4. A push to `main`, or a manual workflow run, repeats the validation and deploys the generated `dist` artifact to GitHub Pages.
-5. Commit `package-lock.json`; the official Astro action uses the lockfile to select npm.
+GitHub Actions must not be used for this repository. Production is deployed only after a local validated build.
 
-The workflow follows Astro’s official GitHub Pages pattern with `withastro/action` and `actions/deploy-pages`. Public configuration values can be stored as GitHub repository variables with names matching the `PUBLIC_` variables below.
+1. Keep source code on the production branch named `main`.
+2. In **Settings → Pages**, select **Deploy from a branch** and choose the `gh-pages` branch at `/ (root)`.
+3. From a clean local checkout, install dependencies and run:
+
+```bash
+npm ci
+npm run build
+npm run seo:check
+```
+
+4. Publish the contents of `dist/` to the root of `gh-pages` using a manual subtree, worktree, or equivalent branch deployment.
+5. Confirm that `CNAME`, `robots.txt`, both sitemap files, the custom 404, and the production pages are present on `gh-pages` before moving the branch reference.
+6. Smoke-test the HTTPS apex domain and key routes after publishing.
+
+Never commit `.github/workflows/` deployment files. Keep `package-lock.json` committed so local and manual builds remain reproducible.
 
 ## Custom domain and DNS
 
@@ -63,7 +73,7 @@ Do not put secrets in `PUBLIC_` variables. Search Console verification tokens ar
 The repository handles the technical portion of Search Console readiness. Console ownership, DNS verification, sitemap submission, URL inspection, and report review still happen in Google Search Console.
 
 1. Create or retain a **Domain property** for `get-quid.site` and verify it with the DNS TXT record Google supplies.
-2. As an optional backup, create a URL-prefix property for `https://get-quid.site/`, store its HTML-tag token in the repository variable `PUBLIC_GOOGLE_SITE_VERIFICATION`, and redeploy.
+2. As an optional backup, create a URL-prefix property for `https://get-quid.site/`, add its HTML-tag token to the local production environment as `PUBLIC_GOOGLE_SITE_VERIFICATION`, rebuild, and manually publish.
 3. Submit `https://get-quid.site/sitemap-index.xml` in the Sitemaps report. The same sitemap is declared in `robots.txt` and in every page head.
 4. Inspect the homepage, `/solutions/`, the three solution pages, `/pilot/`, the inquiry-flow grader, the software-comparison hub, and the original benchmark resource after major releases.
 5. Review Page indexing, Crawl stats, Core Web Vitals, HTTPS, Manual actions, Security issues, and Enhancements after deployment. Resolve template-level problems in code rather than validating URLs one by one.
