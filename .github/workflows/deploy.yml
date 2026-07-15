@@ -11,6 +11,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  pull-requests: write
 
 concurrency:
   group: pages-${{ github.ref }}
@@ -44,9 +45,30 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: quid-ci-diagnostics
-          path: .ci-build.log
+          path: ${{ github.workspace }}/.ci-build.log
           if-no-files-found: warn
           retention-days: 7
+
+      - name: Comment validation failure on the pull request
+        if: steps.astro.outcome == 'failure' && github.event_name == 'pull_request'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          if [ -f "$GITHUB_WORKSPACE/.ci-build.log" ]; then
+            {
+              echo '### Search Console validation failed'
+              echo
+              echo '<details><summary>Last 180 log lines</summary>'
+              echo
+              echo '```text'
+              tail -n 180 "$GITHUB_WORKSPACE/.ci-build.log"
+              echo '```'
+              echo '</details>'
+            } > /tmp/quid-ci-comment.md
+            gh pr comment "$PR_NUMBER" --body-file /tmp/quid-ci-comment.md
+          fi
 
       - name: Fail the job when validation failed
         if: steps.astro.outcome == 'failure'
