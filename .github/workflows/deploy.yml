@@ -57,17 +57,20 @@ jobs:
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
           if [ -f "$GITHUB_WORKSPACE/.ci-build.log" ]; then
+            if grep -q '===== Search Console QA =====' "$GITHUB_WORKSPACE/.ci-build.log"; then
+              awk '/===== Search Console QA =====/{show=1} show' "$GITHUB_WORKSPACE/.ci-build.log" | tail -n 70 > /tmp/quid-ci-tail.txt
+            else
+              tail -n 70 "$GITHUB_WORKSPACE/.ci-build.log" > /tmp/quid-ci-tail.txt
+            fi
+            sed -E 's/\x1B\[[0-9;]*[mK]//g' /tmp/quid-ci-tail.txt > /tmp/quid-ci-clean.txt
             {
               echo '### Search Console validation failed'
               echo
-              echo '<details><summary>Last 180 log lines</summary>'
-              echo
               echo '```text'
-              tail -n 180 "$GITHUB_WORKSPACE/.ci-build.log"
+              cat /tmp/quid-ci-clean.txt
               echo '```'
-              echo '</details>'
             } > /tmp/quid-ci-comment.md
-            gh pr comment "$PR_NUMBER" --body-file /tmp/quid-ci-comment.md
+            gh pr comment "$PR_NUMBER" --edit-last --body-file /tmp/quid-ci-comment.md || gh pr comment "$PR_NUMBER" --body-file /tmp/quid-ci-comment.md
           fi
 
       - name: Fail the job when validation failed
