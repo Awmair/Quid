@@ -10,15 +10,20 @@ const a=vendors[item.a], b=vendors[item.b], faqs=comparisonFaqs(item);
 const url=`${site.domain}${comparisonPath(item.slug)}`;
 const title=`${item.primary}: 2026 Comparison | Quid`;
 const h1=`${item.primary}: ${item.h1Type} for 2026`;
+const image=`${site.domain}/comparisons/${item.slug}.png`;
+const publishedTime='2026-07-12T00:00:00.000Z';
+const modifiedTime='2026-07-12T00:00:00.000Z';
+const organizationId=`${site.domain}/#organization`;
+const websiteId=`${site.domain}/#website`;
 const fields:[string,keyof typeof a][]=[['Product category','category'],['Best suited for','fit'],['CRM / system-of-record role','systemRole'],['Inquiry response','inquiry'],['Tour scheduling','tour'],['Email follow-up','email'],['SMS','sms'],['Voice','voice'],['Lead nurturing','nurture'],['Referral management','referral'],['Reporting scope','reporting'],['Multi-community fit','multi'],['Human escalation','handoff'],['Implementation model','implementation'],['Public pricing','pricing']];
 const isQuid=item.a==='quid'||item.b==='quid';
 const schema=[
- {'@context':'https://schema.org','@type':'Article',headline:h1,description:item.description,image:`${site.domain}/comparisons/${item.slug}.png`,author:{'@type':'Organization',name:'Quid Admissions',url:site.domain},editor:{'@type':'Person',name:'Umair Q.',url:`${site.domain}/about/`},publisher:{'@type':'Organization',name:'Quid Admissions',url:site.domain},datePublished:'2026-07-12',dateModified:'2026-07-12',mainEntityOfPage:url,url},
- {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:site.domain},{'@type':'ListItem',position:2,name:'Resources',item:`${site.domain}/resources/`},{'@type':'ListItem',position:3,name:'Software Comparisons',item:`${site.domain}/resources/senior-living-software-comparisons/`},{'@type':'ListItem',position:4,name:item.primary,item:url}]},
+ {'@context':'https://schema.org','@type':'Article',headline:h1,description:item.description,image:{'@type':'ImageObject',url:image},author:{'@id':organizationId},editor:{'@type':'Person','@id':`${site.domain}/about/#umair-qudoos`,name:'Umair Q.',url:`${site.domain}/about/`},publisher:{'@id':organizationId},datePublished:publishedTime,dateModified:modifiedTime,mainEntityOfPage:{'@type':'WebPage','@id':url},isPartOf:{'@id':websiteId},url},
+ {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:`${site.domain}/`},{'@type':'ListItem',position:2,name:'Resources',item:`${site.domain}/resources/`},{'@type':'ListItem',position:3,name:'Software Comparisons',item:`${site.domain}/resources/senior-living-software-comparisons/`},{'@type':'ListItem',position:4,name:item.primary,item:url}]},
  {'@context':'https://schema.org','@type':'FAQPage',mainEntity:faqs.map(([q,answer])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:answer}}))},
 ];
 ---
-<BaseLayout title={title} description={item.description} image={`/comparisons/${item.slug}.png`} canonicalUrl={url} schema={schema}>
+<BaseLayout title={title} description={item.description} image={`/comparisons/${item.slug}.png`} imageAlt={`${item.primary} senior living software comparison`} canonicalUrl={url} schema={schema} ogType="article" publishedTime={publishedTime} modifiedTime={modifiedTime}>
   <Breadcrumbs items={[{label:'Home',href:'/'},{label:'Resources',href:'/resources/'},{label:'Software Comparisons',href:'/resources/senior-living-software-comparisons/'},{label:item.primary}]} />
   <header class="page-hero comparison-page-hero"><div class="shell"><p class="eyebrow">Vendor information reviewed July 2026</p><h1>{h1}</h1><p class="lede">{item.opening}</p><p class="resource-meta"><span>Published by Quid Admissions</span><span>Editorial review: <a href="/about/">Umair Q., Founder</a></span><span>Updated July 12, 2026</span></p></div></header>
   <section class="section-sm section-sand"><div class="shell"><aside class="comparison-disclosure"><strong>Comparison disclosure</strong><p>{disclosure}</p></aside></div></section>
