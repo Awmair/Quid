@@ -9,8 +9,9 @@ const sectionHrefs: Record<string, string> = {
 <nav class="breadcrumbs shell" aria-label="Breadcrumb">
   <ol>
     {items.map((item, index) => {
-      const href = item.href || (index < items.length - 1 ? sectionHrefs[item.label] : undefined);
-      return <li>{href ? <a href={href}>{item.label}</a> : <span aria-current={index === items.length - 1 ? 'page' : undefined}>{item.label}</span>}</li>;
+      const isCurrent = index === items.length - 1;
+      const href = isCurrent ? undefined : item.href || sectionHrefs[item.label];
+      return <li>{href ? <a href={href}>{item.label}</a> : <span aria-current={isCurrent ? 'page' : undefined}>{item.label}</span>}</li>;
     })}
   </ol>
 </nav>
