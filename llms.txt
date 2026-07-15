@@ -5,6 +5,7 @@
 ## Website
 
 - Homepage: https://get-quid.site/
+- Solutions: https://get-quid.site/solutions/
 - About Quid: https://get-quid.site/about/
 - See Quid in Action: https://get-quid.site/see-quid-in-action/
 - How It Works: https://get-quid.site/how-it-works/
