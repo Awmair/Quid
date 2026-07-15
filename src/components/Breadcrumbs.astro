@@ -1,11 +1,16 @@
 ---
 interface Item { label: string; href?: string }
 const { items } = Astro.props as { items: Item[] };
+const sectionHrefs: Record<string, string> = {
+  Solutions: '/solutions/',
+  Resources: '/resources/',
+};
 ---
 <nav class="breadcrumbs shell" aria-label="Breadcrumb">
   <ol>
-    {items.map((item, index) => (
-      <li>{item.href && index < items.length - 1 ? <a href={item.href}>{item.label}</a> : <span aria-current={index === items.length - 1 ? 'page' : undefined}>{item.label}</span>}</li>
-    ))}
+    {items.map((item, index) => {
+      const href = item.href || (index < items.length - 1 ? sectionHrefs[item.label] : undefined);
+      return <li>{href ? <a href={href}>{item.label}</a> : <span aria-current={index === items.length - 1 ? 'page' : undefined}>{item.label}</span>}</li>;
+    })}
   </ol>
 </nav>
