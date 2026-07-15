@@ -1,0 +1,50 @@
+name: Build, validate, and deploy Quid
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Install, build, validate, and upload site
+        uses: withastro/action@v6
+        with:
+          node-version: 24
+          build-cmd: npm run build && npm run seo:check
+        env:
+          PUBLIC_SITE_URL: 'https://get-quid.site'
+          PUBLIC_BOOKING_URL: ${{ vars.PUBLIC_BOOKING_URL }}
+          PUBLIC_FORM_ACTION: ${{ vars.PUBLIC_FORM_ACTION }}
+          PUBLIC_CONTACT_EMAIL: ${{ vars.PUBLIC_CONTACT_EMAIL }}
+          PUBLIC_LEGAL_COMPANY_NAME: ${{ vars.PUBLIC_LEGAL_COMPANY_NAME }}
+          PUBLIC_PLAUSIBLE_DOMAIN: ${{ vars.PUBLIC_PLAUSIBLE_DOMAIN }}
+          PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ vars.PUBLIC_GOOGLE_SITE_VERIFICATION }}
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
