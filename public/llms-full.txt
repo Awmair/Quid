@@ -25,6 +25,7 @@ The 30-day pilot is $1,000 one-time. It is a paid implementation engagement, not
 ## Key public pages
 
 - [Homepage](https://get-quid.site/): product definition and overview
+- [Solutions](https://get-quid.site/solutions/): canonical hub for assisted living admissions automation, inquiry follow-up, tour scheduling, and the free inquiry-flow grader
 - [See Quid in Action](https://get-quid.site/see-quid-in-action/): background workflow plus optional manager and exception view
 - [How It Works](https://get-quid.site/how-it-works/): inquiry-to-tour workflow
 - [Human Handoffs](https://get-quid.site/human-handoffs/): responsible AI boundaries and staff routing

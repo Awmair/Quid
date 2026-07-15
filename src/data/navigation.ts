@@ -1,8 +1,8 @@
 export const navigation = [
+  { label: 'Solutions', href: '/solutions/' },
   { label: 'How It Works', href: '/how-it-works/' },
   { label: 'See Quid in Action', href: '/see-quid-in-action/' },
   { label: 'Human Handoffs', href: '/human-handoffs/' },
-  { label: 'About', href: '/about/' },
   { label: 'Resources', href: '/resources/' },
   { label: 'Pilot', href: '/pilot/' },
 ];
@@ -11,6 +11,7 @@ export const footerGroups = [
   {
     title: 'Solutions',
     links: [
+      { label: 'All Solutions', href: '/solutions/' },
       { label: 'Assisted Living Automation', href: '/assisted-living-admissions-automation/' },
       { label: 'Inquiry Follow-Up', href: '/senior-living-inquiry-follow-up-automation/' },
       { label: 'Tour Scheduling Software', href: '/senior-living-tour-scheduling-software/' },

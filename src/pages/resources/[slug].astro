@@ -24,6 +24,10 @@ const url = `${site.domain}/resources/${entry.id}/`;
 const media = resourceMedia[entry.id as keyof typeof resourceMedia];
 const pageImage = media?.image.src;
 const articleImage = pageImage ? new URL(pageImage, site.domain).toString() : `${site.domain}/quid-og.png`;
+const organizationId = `${site.domain}/#organization`;
+const websiteId = `${site.domain}/#website`;
+const publishedTime = entry.data.publishedDate.toISOString();
+const modifiedTime = entry.data.updatedDate.toISOString();
 const visuals = {
   'how-to-increase-assisted-living-occupancy': {
     ...resourceMedia['how-to-increase-assisted-living-occupancy'],
@@ -74,9 +78,9 @@ const visuals = {
 const visual = visuals[entry.id as keyof typeof visuals];
 const faqs = resourceFaqs[entry.id as keyof typeof resourceFaqs];
 const schema = [
-  {'@context':'https://schema.org','@type':'Article',headline:entry.data.title,description:entry.data.description,image:articleImage,author:{'@type':'Organization',name:entry.data.author,url:site.domain},publisher:{'@type':'Organization',name:'Quid',url:site.domain},datePublished:entry.data.publishedDate.toISOString(),dateModified:entry.data.updatedDate.toISOString(),mainEntityOfPage:url,url},
-  {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[
-    {'@type':'ListItem',position:1,name:'Home',item:site.domain},
+  {'@context':'https://schema.org','@type':'Article',headline:entry.data.title,description:entry.data.description,image:{'@type':'ImageObject',url:articleImage},author:{'@type':'Organization',name:entry.data.author,url:`${site.domain}/`},publisher:{'@id':organizationId},datePublished:publishedTime,dateModified:modifiedTime,mainEntityOfPage:{'@type':'WebPage','@id':url},isPartOf:{'@id':websiteId},url},
+  {'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[
+    {'@type':'ListItem',position:1,name:'Home',item:`${site.domain}/`},
     {'@type':'ListItem',position:2,name:'Resources',item:`${site.domain}/resources/`},
     {'@type':'ListItem',position:3,name:entry.data.title,item:url},
   ]},
@@ -84,14 +88,14 @@ const schema = [
   ...(isSoftwareGuide ? [{'@context':'https://schema.org','@type':'ItemList',name:'Senior living admissions automation software options',description:'An unranked list of six options compared using current official vendor information.',numberOfItems:6,itemListOrder:'https://schema.org/ItemListUnordered',itemListElement:[
     ['Quid','https://get-quid.site/'],['Further','https://www.talkfurther.com/'],['Aline Connect','https://alineops.com/senior-living/sales-software/'],['ECP CRM','https://www.ecp123.com/crm'],['WelcomeHome','https://www.welcomehomesoftware.com/senior-living-crm'],['Advantage Anywhere','https://advantageanywhere.com/senior-living-and-care/'],
   ].map(([name,item],index) => ({'@type':'ListItem',position:index+1,name,item}))}] : []),
-  ...(isFieldAudit ? [{'@context':'https://schema.org','@type':'Dataset',name:'2026 Senior Living Inquiry-to-Tour Benchmark',description:'A purposive, operator-clustered benchmark of 100 public senior living community inquiry and tour website journeys across 28 operator groups and 23 US states, reviewed July 12–14, 2026.',url,creator:{'@type':'Organization',name:'Quid Research',url:site.domain},datePublished:'2026-07-13',dateModified:'2026-07-14',temporalCoverage:'2026-07-12/2026-07-14',spatialCoverage:{'@type':'Place',name:'United States'},measurementTechnique:'Manual review of public community pages and visible inquiry or tour controls without form submission.',variableMeasured:['Primary inquiry call to action','Visible journey category','Manual or delayed coordination signal','Visible automation signal','Operator-size band','Operator cluster','US state'],distribution:[
+  ...(isFieldAudit ? [{'@context':'https://schema.org','@type':'Dataset',name:'2026 Senior Living Inquiry-to-Tour Benchmark',description:'A purposive, operator-clustered benchmark of 100 public senior living community inquiry and tour website journeys across 28 operator groups and 23 US states, reviewed July 12–14, 2026.',url,creator:{'@id':organizationId},datePublished:'2026-07-13',dateModified:'2026-07-14',temporalCoverage:'2026-07-12/2026-07-14',spatialCoverage:{'@type':'Place',name:'United States'},measurementTechnique:'Manual review of public community pages and visible inquiry or tour controls without form submission.',variableMeasured:['Primary inquiry call to action','Visible journey category','Manual or delayed coordination signal','Visible automation signal','Operator-size band','Operator cluster','US state'],distribution:[
     {'@type':'DataDownload',name:'100-row anonymized benchmark dataset',encodingFormat:'text/csv',contentUrl:`${site.domain}/data/senior-living-inquiry-to-tour-audit-2026.csv`},
     {'@type':'DataDownload',name:'75-page named expansion source register',encodingFormat:'text/csv',contentUrl:`${site.domain}/data/senior-living-inquiry-to-tour-benchmark-sources-2026.csv`},
     {'@type':'DataDownload',name:'Four-page benchmark report',encodingFormat:'application/pdf',contentUrl:`${site.domain}/downloads/quid-senior-living-inquiry-to-tour-benchmark-2026.pdf`},
   ]}] : []),
 ];
 ---
-<BaseLayout title={entry.data.seoTitle || `${entry.data.title} | Quid`} description={entry.data.description} image={pageImage} canonicalUrl={url} schema={schema}>
+<BaseLayout title={entry.data.seoTitle || `${entry.data.title} | Quid`} description={entry.data.description} image={pageImage} imageAlt={media?.alt || `${entry.data.title} — Quid Admissions`} canonicalUrl={url} schema={schema} ogType="article" publishedTime={publishedTime} modifiedTime={modifiedTime}>
   <Breadcrumbs items={[{label:'Home',href:'/'},{label:'Resources',href:'/resources/'},{label:entry.data.title}]} />
   <header class="page-hero"><div class="shell page-hero-grid"><div><p class="eyebrow">{isSoftwareGuide ? '2026 buyer’s guide' : isFieldAudit ? 'Original field research · July 2026' : 'Quid practical guide'}</p><h1>{entry.data.title}</h1><p class="lede">{entry.data.description}</p><p class="resource-meta"><span>By {entry.data.author}</span><span>Published {entry.data.publishedDate.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}</span><span>Updated {entry.data.updatedDate.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}</span></p></div>{visual && <PhotoPanel image={visual.image} alt={visual.alt} priority />}</div></header>
   {visual && <section class="section-sm section-sand"><div class="shell"><QuickScan items={[...visual.items]} label="Guide at a glance" /></div></section>}

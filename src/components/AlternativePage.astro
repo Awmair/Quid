@@ -12,6 +12,10 @@ const target = vendors[page.target];
 const candidates = page.candidates.map((item) => ({ ...item, details: vendors[item.vendor] }));
 const url = `${site.domain}${alternativePath(page.slug)}`;
 const title = `${page.titleName}: 5 Senior Living Options (2026) | Quid`;
+const publishedTime = '2026-07-13T00:00:00.000Z';
+const modifiedTime = '2026-07-13T00:00:00.000Z';
+const organizationId = `${site.domain}/#organization`;
+const websiteId = `${site.domain}/#website`;
 const comparisonFor = (candidate: typeof page.candidates[number]) => comparisons.find((item) =>
   (item.a === page.target && item.b === candidate.vendor) || (item.b === page.target && item.a === candidate.vendor)
 );
@@ -24,14 +28,14 @@ const faqs: [string, string][] = [
   [`Are prices for these senior living software alternatives public?`, 'Most vendors in this shortlist do not publish current numeric pricing on the official pages reviewed. Quid publishes a $1,000 one-time 30-day pilot and optional continuation at $899 per month per community. Request full setup, usage, integration, support and contract costs from every vendor.'],
 ];
 const schema = [
-  {'@context':'https://schema.org','@type':'Article',headline:title,description:page.description,author:{'@type':'Organization',name:'Quid Admissions',url:site.domain},editor:{'@type':'Person',name:'Umair Q.',url:`${site.domain}/about/`},publisher:{'@type':'Organization',name:'Quid Admissions',url:site.domain},datePublished:'2026-07-13',dateModified:'2026-07-13',mainEntityOfPage:url,url},
-  {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:site.domain},{'@type':'ListItem',position:2,name:'Resources',item:`${site.domain}/resources/`},{'@type':'ListItem',position:3,name:'Software Comparisons',item:`${site.domain}/resources/senior-living-software-comparisons/`},{'@type':'ListItem',position:4,name:page.titleName,item:url}]},
+  {'@context':'https://schema.org','@type':'Article',headline:title,description:page.description,image:{'@type':'ImageObject',url:`${site.domain}/quid-og.png`},author:{'@id':organizationId},editor:{'@type':'Person','@id':`${site.domain}/about/#umair-qudoos`,name:'Umair Q.',url:`${site.domain}/about/`},publisher:{'@id':organizationId},datePublished:publishedTime,dateModified:modifiedTime,mainEntityOfPage:{'@type':'WebPage','@id':url},isPartOf:{'@id':websiteId},url},
+  {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:`${site.domain}/`},{'@type':'ListItem',position:2,name:'Resources',item:`${site.domain}/resources/`},{'@type':'ListItem',position:3,name:'Software Comparisons',item:`${site.domain}/resources/senior-living-software-comparisons/`},{'@type':'ListItem',position:4,name:page.titleName,item:url}]},
   {'@context':'https://schema.org','@type':'ItemList',name:`Five ${target.name} alternatives for senior living`,numberOfItems:candidates.length,itemListOrder:'https://schema.org/ItemListOrderAscending',itemListElement:candidates.map((item,index)=>({'@type':'ListItem',position:index+1,name:item.details.name,url:item.details.website}))},
   {'@context':'https://schema.org','@type':'FAQPage',mainEntity:faqs.map(([question,answer])=>({'@type':'Question',name:question,acceptedAnswer:{'@type':'Answer',text:answer}}))},
 ];
 ---
 
-<BaseLayout title={title} description={page.description} canonicalUrl={url} schema={schema}>
+<BaseLayout title={title} description={page.description} canonicalUrl={url} schema={schema} ogType="article" publishedTime={publishedTime} modifiedTime={modifiedTime} imageAlt={`${page.titleName}: five senior living software options to compare`}>
   <Breadcrumbs items={[{label:'Home',href:'/'},{label:'Resources',href:'/resources/'},{label:'Software Comparisons',href:'/resources/senior-living-software-comparisons/'},{label:page.titleName}]} />
 
   <header class="page-hero alternative-page-hero">

@@ -5,10 +5,16 @@ import Footer from '../components/Footer.astro';
 import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
 import { primaryCtaHref, site } from '../data/site';
 
+type OpenGraphType = 'website' | 'article';
+
 interface Props {
   title?: string;
   description?: string;
   image?: string;
+  imageAlt?: string;
+  ogType?: OpenGraphType;
+  publishedTime?: string;
+  modifiedTime?: string;
   noindex?: boolean;
   canonicalUrl?: string | false;
   schema?: Record<string, unknown> | Record<string, unknown>[];
@@ -18,23 +24,40 @@ const {
   title = site.defaultTitle,
   description = site.defaultDescription,
   image = '/quid-og.png',
+  imageAlt,
+  ogType = 'website',
+  publishedTime,
+  modifiedTime,
   noindex = false,
   canonicalUrl,
   schema,
 } = Astro.props;
 const canonical = canonicalUrl === false ? undefined : canonicalUrl || new URL(Astro.url.pathname, site.domain).toString();
 const socialImage = new URL(image, site.domain).toString();
+const socialImageAlt = imageAlt || `${title} — Quid Admissions`;
 const normalizedPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 const hideLeadMagnet = ['/privacy', '/terms', '/404', '/404.html'].includes(normalizedPath);
+const organizationId = `${site.domain}/#organization`;
+const websiteId = `${site.domain}/#website`;
+const logoId = `${site.domain}/#logo`;
 const globalSchema = [
   {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': `${site.domain}/#organization`,
+    '@id': organizationId,
     name: 'Quid Admissions',
     alternateName: 'Quid',
-    url: site.domain,
-    logo: `${site.domain}/favicon-192x192.png`,
+    url: `${site.domain}/`,
+    logo: {
+      '@type': 'ImageObject',
+      '@id': logoId,
+      url: `${site.domain}/favicon-192x192.png`,
+      contentUrl: `${site.domain}/favicon-192x192.png`,
+      width: 192,
+      height: 192,
+      caption: 'Quid Admissions',
+    },
+    image: { '@id': logoId },
     description: 'Quid handles senior living inquiry follow-up and tour scheduling behind the scenes so teams can miss fewer inquiries, book more tours, and spend more time with residents and families.',
     founder: {
       '@type': 'Person',
@@ -47,12 +70,44 @@ const globalSchema = [
   {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': websiteId,
     name: 'Quid',
-    url: site.domain,
+    alternateName: 'Quid Admissions',
+    url: `${site.domain}/`,
+    publisher: { '@id': organizationId },
+    inLanguage: 'en-US',
     description: site.defaultDescription,
   },
 ];
-const pageSchema = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
+
+const breadcrumbDestinations: Record<string, string> = {
+  Home: `${site.domain}/`,
+  Solutions: `${site.domain}/solutions/`,
+  Resources: `${site.domain}/resources/`,
+};
+
+const normalizeSchema = (value: unknown): unknown => {
+  if (Array.isArray(value)) return value.map(normalizeSchema);
+  if (!value || typeof value !== 'object') return value;
+
+  const normalized = Object.fromEntries(
+    Object.entries(value as Record<string, unknown>).map(([key, item]) => [key, normalizeSchema(item)]),
+  ) as Record<string, unknown>;
+
+  if (normalized['@type'] === 'BreadcrumbList' && Array.isArray(normalized.itemListElement)) {
+    normalized.itemListElement = normalized.itemListElement.map((entry, index, entries) => {
+      if (!entry || typeof entry !== 'object' || index === entries.length - 1) return entry;
+      const item = entry as Record<string, unknown>;
+      const fallback = typeof item.name === 'string' ? breadcrumbDestinations[item.name] : undefined;
+      return !item.item && fallback ? { ...item, item: fallback } : item;
+    });
+  }
+
+  return normalized;
+};
+
+const pageSchemaInput = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
+const pageSchema = pageSchemaInput.map((item) => normalizeSchema(item) as Record<string, unknown>);
 const allSchema = [...globalSchema, ...pageSchema];
 const robotsContent = noindex
   ? 'noindex,follow'
@@ -67,18 +122,27 @@ const robotsContent = noindex
     <title>{title}</title>
     <meta name="description" content={description} />
     {canonical && <link rel="canonical" href={canonical} />}
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="robots" content={robotsContent} />
     <meta name="googlebot" content={robotsContent} />
-    <meta property="og:type" content="website" />
+    {site.googleSiteVerification && <meta name="google-site-verification" content={site.googleSiteVerification} />}
+    <meta property="og:type" content={ogType} />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Quid" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     {canonical && <meta property="og:url" content={canonical} />}
     <meta property="og:image" content={socialImage} />
+    <meta property="og:image:secure_url" content={socialImage} />
+    <meta property="og:image:alt" content={socialImageAlt} />
+    {ogType === 'article' && publishedTime && <meta property="article:published_time" content={publishedTime} />}
+    {ogType === 'article' && modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:image:alt" content={socialImageAlt} />
+    <meta name="theme-color" content="#1E3D34" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

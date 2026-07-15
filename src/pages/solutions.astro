@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBlock from '../components/AnswerBlock.astro';
+import Mascot from '../components/Mascot.astro';
+import { site } from '../data/site';
+
+const title = 'Senior Living Admissions Automation Solutions | Quid';
+const description = 'Explore focused Quid workflows for assisted living admissions, website inquiry follow-up, and staff-controlled tour scheduling, plus a free inquiry-flow grader.';
+const pageUrl = `${site.domain}/solutions/`;
+
+const solutions = [
+  {
+    name: 'Assisted Living Admissions Automation',
+    href: '/assisted-living-admissions-automation/',
+    description: 'Keep one assisted living inquiry-to-tour workflow moving with approved acknowledgements, follow-up, tour coordination, and staff handoffs.',
+    label: 'For assisted living communities',
+  },
+  {
+    name: 'Senior Living Inquiry Follow-Up Automation',
+    href: '/senior-living-inquiry-follow-up-automation/',
+    description: 'Acknowledge new website inquiries, coordinate next steps, keep stalled conversations visible, and pause when a person should respond.',
+    label: 'For inquiry and follow-up gaps',
+  },
+  {
+    name: 'Senior Living Tour Scheduling Software',
+    href: '/senior-living-tour-scheduling-software/',
+    description: 'Offer only staff-approved tour times, confirm visits, send reviewed reminders, support rescheduling, and surface exceptions.',
+    label: 'For calendar and tour friction',
+  },
+] as const;
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': pageUrl,
+    name: title,
+    description,
+    url: pageUrl,
+    isPartOf: { '@id': `${site.domain}/#website` },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      numberOfItems: solutions.length + 1,
+      itemListElement: [
+        ...solutions.map((solution, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          item: {
+            '@type': 'Service',
+            name: solution.name,
+            description: solution.description,
+            url: `${site.domain}${solution.href}`,
+            provider: { '@id': `${site.domain}/#organization` },
+          },
+        })),
+        {
+          '@type': 'ListItem',
+          position: solutions.length + 1,
+          item: {
+            '@type': 'WebApplication',
+            name: 'Senior Living Website Inquiry-Flow Grader',
+            description: 'A free two-minute self-assessment of the visible website inquiry-to-tour journey.',
+            applicationCategory: 'BusinessApplication',
+            operatingSystem: 'Any web browser',
+            url: `${site.domain}/senior-living-inquiry-flow-grader/`,
+          },
+        },
+      ],
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${site.domain}/` },
+      { '@type': 'ListItem', position: 2, name: 'Solutions', item: pageUrl },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} canonicalUrl={pageUrl} schema={schema}>
+  <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Solutions' }]} />
+
+  <section class="page-hero">
+    <div class="shell page-hero-grid">
+      <div>
+        <p class="eyebrow">Senior living admissions solutions</p>
+        <h1>Improve the inquiry-to-tour workflow that is creating the most friction.</h1>
+        <p class="lede">Quid starts with one controlled admissions workflow around the inquiry source, calendar, messages, and staff rules a community already uses.</p>
+        <AnswerBlock label="What does Quid automate?" answer="Quid handles routine, non-clinical coordination such as website inquiry acknowledgement, approved follow-up, staff-controlled tour scheduling, reminders, stalled-inquiry visibility, and clear human handoffs." variant="hero" />
+        <div class="button-row">
+          <a class="button" href="/meet-quid/">See How Quid Fits</a>
+          <a class="button button-secondary" href="/senior-living-inquiry-flow-grader/">Grade Your Current Flow</a>
+        </div>
+      </div>
+      <Mascot pose="summary" class="page-mascot" alt="Quid reviewing several senior living admissions workflow options" width={360} eager />
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="shell">
+      <div class="section-heading">
+        <div><p class="eyebrow">Choose the first workflow</p><h2>Three focused ways to reduce inquiry and tour friction.</h2></div>
+        <p>Each solution keeps clinical judgment, eligibility, care decisions, pricing exceptions, and sensitive family conversations with staff.</p>
+      </div>
+      <div class="card-grid three">
+        {solutions.map((solution) => (
+          <article class="card" data-reveal>
+            <p class="eyebrow">{solution.label}</p>
+            <h3>{solution.name}</h3>
+            <p>{solution.description}</p>
+            <a href={solution.href}>Explore {solution.name}</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-sand">
+    <div class="shell split split-wide">
+      <div data-reveal>
+        <p class="eyebrow">Not sure where to begin?</p>
+        <h2>Review the public inquiry journey in two minutes.</h2>
+        <p class="lede">The free inquiry-flow grader checks eight visible signals across acknowledgement, tour scheduling, ownership, reminders, stalled work, and staff handoffs.</p>
+        <a class="button" href="/senior-living-inquiry-flow-grader/">Use the Free Inquiry-Flow Grader</a>
+      </div>
+      <article class="notice-card" data-reveal>
+        <p class="eyebrow">What it does not do</p>
+        <h3>A planning aid, not a performance claim.</h3>
+        <p>The grader does not submit forms, inspect private systems, measure actual staff response time, certify compliance, or predict occupancy. It helps a team identify what to examine next.</p>
+        <a href="/resources/senior-living-inquiry-to-tour-audit/">See Quid’s 100-community public benchmark</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-deep">
+    <div class="shell split split-wide">
+      <div data-reveal>
+        <p class="eyebrow">One implementation boundary</p>
+        <h2>Start narrow enough to operate safely and measure honestly.</h2>
+        <p class="lede">The first Quid pilot covers one community, one website inquiry source, and one tour calendar. Messages, timing, availability, ownership, and human-handoff rules are approved before launch.</p>
+        <div class="button-row"><a class="button button-light" href="/pilot/">Review the 30-Day Pilot</a><a class="button button-secondary" href="/how-it-works/">See the Full Workflow</a></div>
+      </div>
+      <ul class="check-list" data-reveal>
+        <li>Prompt, approved inquiry acknowledgement</li>
+        <li>Staff-controlled tour availability</li>
+        <li>Clear confirmations and reminders</li>
+        <li>Visible stalled and overdue work</li>
+        <li>Routine messages pause when families reply</li>
+        <li>Sensitive questions route to designated staff</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="narrow center">
+      <p class="eyebrow">Keep the current tools</p>
+      <h2>Quid is a focused coordination layer, not a CRM replacement.</h2>
+      <p class="lede center">The goal is to reduce repetitive work around the existing inquiry form, inbox, lead system, and calendar—not create another daily workspace for frontline staff.</p>
+      <div class="button-row center"><a class="button" href="/see-quid-in-action/">See Quid in Action</a><a class="button button-secondary" href="/resources/senior-living-software-comparisons/">Compare Software Approaches</a></div>
+    </div>
+  </section>
+</BaseLayout>
