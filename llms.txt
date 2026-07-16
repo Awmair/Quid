@@ -1,6 +1,6 @@
 # Quid
 
-> Quid handles new inquiries, family follow-up, and tour scheduling behind the scenes for senior living communities. The goal is fewer missed inquiries, more booked tours, and more time for staff to spend with residents and families—without another daily tool or admin hire.
+> Quid handles new inquiries, family follow-up, and tour scheduling behind the scenes for senior living communities. The goal is fewer missed inquiries, more booked tours, and more time for staff to spend with residents and families without another daily tool or admin hire.
 
 ## Website
 
