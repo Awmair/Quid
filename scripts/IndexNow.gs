@@ -91,10 +91,6 @@ function processQuidIndexNowQueue() {
 }
 
 function isValidQuidIndexNowUrl_(value) {
-  try {
-    const url = new URL(value);
-    return url.protocol === 'https:' && url.hostname === QUID_INDEXNOW.host && !url.hash;
-  } catch (error) {
-    return false;
-  }
+  return typeof value === 'string'
+    && /^https:\/\/get-quid\.site\/[^#]*$/.test(value);
 }
