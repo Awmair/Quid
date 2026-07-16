@@ -16,7 +16,7 @@ export const pilotOffer = {
   applicationContinuation: `Continue for ${pricing.ongoing.monthlyDisplay} after the pilot.`,
   scope: 'One community, one inquiry source, and one tour calendar.',
   positioning:
-    'This is a paid implementation pilot—not a free trial or refundable deposit.',
+    'This is a paid implementation pilot, not a free trial or refundable deposit.',
   homepageBody:
     'Over 30 days, we learn how your admissions team works, set up Quid around that process, run one focused workflow, and show what Quid handled behind the scenes.',
   pageBody:

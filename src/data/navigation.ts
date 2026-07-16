@@ -15,7 +15,6 @@ export const footerGroups = [
       { label: 'Assisted Living Automation', href: '/assisted-living-admissions-automation/' },
       { label: 'Inquiry Follow-Up', href: '/senior-living-inquiry-follow-up-automation/' },
       { label: 'Tour Scheduling Software', href: '/senior-living-tour-scheduling-software/' },
-      { label: 'Free Inquiry-Flow Grader', href: '/senior-living-inquiry-flow-grader/' },
     ],
   },
   {

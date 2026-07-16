@@ -68,7 +68,7 @@ const canonical = 'https://get-quid.site/private-kit/';
               <div class="kit-pills"><span data-location>United States</span><a data-website href="#" target="_blank" rel="noopener noreferrer">Website reviewed</a></div>
             </div>
             <div class="kit-score" aria-label="Public journey audit score">
-              <div><strong data-audit-score>—</strong><span>/100</span></div>
+              <div><strong data-audit-score>...</strong><span>/100</span></div>
               <b data-audit-label>Public journey audit</b>
               <small>Based only on what a family can see online</small>
             </div>
@@ -105,7 +105,7 @@ const canonical = 'https://get-quid.site/private-kit/';
         <article class="kit-page" id="kit-page-1" role="tabpanel" aria-labelledby="kit-tab-1" data-page="1" hidden>
           <div class="kit-page-topline"><span>02 / 04</span><span data-community>Your community</span></div>
           <p class="kit-eyebrow">Simple admissions workflow map</p>
-          <h2>See the manual gap—and the fix.</h2>
+          <h2>See the manual gap and the fix.</h2>
           <p class="kit-page-intro">Same inquiry. A faster, clearer route to a tour.</p>
 
           <div class="kit-compare">
@@ -168,7 +168,7 @@ const canonical = 'https://get-quid.site/private-kit/';
           <div class="kit-page-topline"><span>04 / 04</span><span data-community>Your community</span></div>
           <p class="kit-eyebrow">Daily “what’s stuck?” tracker</p>
           <h2>See what needs a person today.</h2>
-          <p class="kit-page-intro">A short daily view keeps warm inquiries from disappearing into inboxes. The rows below are illustrative—never resident data.</p>
+          <p class="kit-page-intro">A short daily view keeps warm inquiries from disappearing into inboxes. The rows below are illustrative and never use resident data.</p>
 
           <section class="kit-tracker" aria-label="Illustrative daily inquiry tracker">
             <div class="kit-tracker-head"><span>Priority</span><span>Inquiry</span><span>Status</span><span>Owner</span><span>Next action</span></div>
@@ -245,7 +245,7 @@ const canonical = 'https://get-quid.site/private-kit/';
             document.querySelectorAll('[data-cta]').forEach((node) => { node.textContent = cta; });
             document.querySelectorAll('[data-observation]').forEach((node) => { node.textContent = observation; });
             document.querySelectorAll('[data-prepared-date]').forEach((node) => { node.textContent = clean(data.preparedDate, 50) || 'Prepared privately by Quid'; });
-            document.querySelectorAll('[data-audit-score]').forEach((node) => { node.textContent = Number.isFinite(Number(data.auditScore)) ? String(Math.max(0, Math.min(100, Number(data.auditScore)))) : '—'; });
+            document.querySelectorAll('[data-audit-score]').forEach((node) => { node.textContent = Number.isFinite(Number(data.auditScore)) ? String(Math.max(0, Math.min(100, Number(data.auditScore)))) : '...'; });
             document.querySelectorAll('[data-audit-label]').forEach((node) => { node.textContent = clean(data.auditLabel, 60) || 'Public journey audit'; });
             document.querySelectorAll('[data-first-response]').forEach((node) => { node.textContent = firstResponse; });
             document.querySelectorAll('[data-sms-response]').forEach((node) => { node.textContent = smsResponse; });
@@ -327,12 +327,12 @@ const canonical = 'https://get-quid.site/private-kit/';
 
             const walkthrough = document.querySelector('[data-walkthrough]');
             if (walkthrough instanceof HTMLAnchorElement) {
-              const subject = encodeURIComponent(`Quid kit walkthrough — ${community}`);
+              const subject = encodeURIComponent(`Quid kit walkthrough: ${community}`);
               const body = encodeURIComponent(`Hi Umair,\n\nI'd like to walk through the inquiry-to-tour kit for ${community}.\n\n`);
               walkthrough.href = `mailto:charcopadart@gmail.com?subject=${subject}&body=${body}`;
             }
 
-            document.title = `${community} — Private Inquiry-to-Tour Kit`;
+            document.title = `${community} | Private Inquiry-to-Tour Kit`;
             loading?.setAttribute('hidden', '');
             invalid?.setAttribute('hidden', '');
             kit?.removeAttribute('hidden');

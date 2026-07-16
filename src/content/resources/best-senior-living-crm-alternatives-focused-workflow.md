@@ -54,7 +54,7 @@ Yardi provides an integrated CRM path for operators using or evaluating the wide
 
 ## When not to replace the CRM
 
-Keep the current CRM when its records and reporting are adequate, staff use it consistently and the measurable problem is one downstream workflow. Consider replacement when data quality, pipeline visibility, referral management, administration or reporting are failing across the operation—not merely because website follow-up is slow.
+Keep the current CRM when its records and reporting are adequate, staff use it consistently and the measurable problem is one downstream workflow. Consider replacement when data quality, pipeline visibility, referral management, administration or reporting are failing across the operation, not merely because website follow-up is slow.
 
 Use the [senior living software comparison hub](/resources/senior-living-software-comparisons/) for pairwise decisions, the [main ranked guide](/resources/senior-living-admissions-automation-software/) for the complete category view and the [existing-CRM inquiry software ranking](/resources/best-senior-living-inquiry-management-software-existing-crm/) for the complement-versus-replace decision.
 

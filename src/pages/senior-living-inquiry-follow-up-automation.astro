@@ -5,13 +5,12 @@ import AnswerBlock from '../components/AnswerBlock.astro';
 import PhotoPanel from '../components/PhotoPanel.astro';
 import VisualFlow from '../components/VisualFlow.astro';
 import QuickScan from '../components/QuickScan.astro';
-import PilotPricingCard from '../components/PilotPricingCard.astro';
 import FaqSection from '../components/FaqSection.astro';
 import Mascot from '../components/Mascot.astro';
 import { pilotOffer } from '../data/pilot';
 import { pricing } from '../data/pricing';
 import { site } from '../data/site';
-import inquiryFollowUp from '../assets/lifestyle/senior-living-inquiry-follow-up.png';
+import inquiryFollowUp from '../assets/lifestyle/senior-living-inquiry-follow-up.webp';
 
 const title = 'Senior Living Inquiry Follow-Up Automation | Quid';
 const description = 'Fewer missed inquiries. More booked tours. No extra admin hire. Automate senior living inquiry follow-up behind the scenes with Quid.';
@@ -100,7 +99,7 @@ const schema = [
       <div>
         <p class="eyebrow">Senior living inquiry follow-up automation</p>
         <h1>Fewer missed inquiries. More booked tours. No extra admin hire.</h1>
-        <p class="lede">Quid handles new inquiries, family follow-up, and tour scheduling behind the scenes—without another daily tool for your team to manage.</p>
+        <p class="lede">Quid handles new inquiries, family follow-up, and tour scheduling behind the scenes without another daily tool for your team to manage.</p>
         <AnswerBlock label="What is senior living inquiry follow-up automation?" answer="It is a controlled workflow that acknowledges new inquiries, coordinates tours, sends approved follow-up and identifies stalled leads without requiring staff to monitor an inbox constantly." variant="hero" />
         <div class="button-row">
           <a class="button" href="/see-quid-in-action/">See Quid in Action</a>
@@ -108,7 +107,7 @@ const schema = [
         </div>
         <p class="solution-microcopy">Fewer missed inquiries. More booked tours. No extra admin hire.</p>
       </div>
-      <PhotoPanel image={inquiryFollowUp} alt="A senior living admissions professional reviewing inquiries on a laptop while an adult daughter receives a response on her phone in the same warm community lounge" priority class="solution-hero-photo" />
+      <PhotoPanel image={inquiryFollowUp} alt="A senior living admissions coordinator returning a family call from a busy reception back desk" priority class="solution-hero-photo" />
     </div>
   </section>
 
@@ -171,26 +170,13 @@ const schema = [
     <div class="shell">
       <div class="solution-section-intro">
         <div><p class="eyebrow">No platform migration</p><h2>Background follow-up around the systems you already use.</h2></div>
-        <p class="lede">Quid provides focused senior living lead follow-up automation around the community’s existing inquiry form, inbox, calendar, and lead system—not another daily platform for staff to manage.</p>
+        <p class="lede">Quid provides focused senior living lead follow-up automation around the community’s existing inquiry form, inbox, calendar, and lead system. It is not another daily platform for staff to manage.</p>
       </div>
       <div class="crm-comparison" data-reveal>
         <article><span class="data-label">CRM</span><h3>Stores and organizes prospect records.</h3><p>A CRM is the broader record system a community may already use for contacts, stages, notes, and reporting.</p></article>
         <article class="crm-comparison-quid"><span class="data-label">Quid</span><h3>Keeps the approved next step moving.</h3><p>Quid connects the website inquiry, approved email follow-up, tour calendar, reminders, visibility, and human handoffs in one focused implementation.</p></article>
       </div>
       <AnswerBlock label="Plain-English distinction" answer="A CRM organizes records. Quid helps routine inquiry acknowledgement, tour coordination, and approved follow-up happen around the systems your community already uses." />
-    </div>
-  </section>
-
-  <section class="section section-white">
-    <div class="shell pilot-page-offer solution-pilot-layout">
-      <div class="pilot-page-copy">
-        <p class="eyebrow">Start with one inquiry source</p>
-        <h2>Prove the follow-up workflow before expanding anything.</h2>
-        <p class="lede">Over four controlled weeks, we review the current process, approve the messages and handoffs, deploy one workflow, and show what happened.</p>
-        <p class="pilot-positioning pilot-positioning-light">{pilotOffer.positioning}</p>
-        <nav class="solution-inline-links" aria-label="Pilot and walkthrough links"><a href="/pilot/">Review the 30-Day Pilot</a><a href="/meet-quid/">Request a walkthrough</a></nav>
-      </div>
-      <PilotPricingCard />
     </div>
   </section>
 
@@ -204,7 +190,6 @@ const schema = [
       </div>
       <nav class="solution-link-grid" aria-label="Related senior living inquiry follow-up resources">
         <a href="/resources/senior-living-inquiry-to-tour-audit/"><strong>100-community benchmark</strong><span>See the visible friction and automation after a family clicks a tour CTA.</span></a>
-        <a href="/senior-living-inquiry-flow-grader/"><strong>Free inquiry-flow grader</strong><span>Find the highest-priority visible follow-up gaps.</span></a>
         <a href="/senior-living-tour-scheduling-software/"><strong>Tour scheduling software</strong><span>Turn a request into a staff-controlled visit time.</span></a>
         <a href="/resources/how-to-increase-assisted-living-occupancy/"><strong>Assisted living occupancy guide</strong><span>Measure inquiry-to-tour conversion before buying more traffic.</span></a>
         <a href="/resources/senior-living-inquiry-response-time/"><strong>Inquiry response time</strong><span>Set a baseline for acknowledgement and staff response.</span></a>

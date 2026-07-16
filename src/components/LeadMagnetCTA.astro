@@ -1,38 +1,32 @@
 ---
-import Mascot from './Mascot.astro';
+import PilotPricingCard from './PilotPricingCard.astro';
 ---
 
 <section class="lead-magnet-section" aria-labelledby="site-next-step-title">
   <div class="shell lead-magnet-shell" data-reveal>
     <div class="lead-magnet-copy">
-      <p class="eyebrow">Start with your current process</p>
-      <h2 id="site-next-step-title">See what Quid could handle behind the scenes.</h2>
-      <p class="lead-magnet-lede">Quid works around your existing inquiry form, inbox, tour calendar, and lead system. Your team sees only what needs attention and keeps the conversations that need a person.</p>
+      <p class="eyebrow">30-Day Quid Admissions Pilot</p>
+      <h2 id="site-next-step-title">Start with one community and one workflow.</h2>
+      <p class="lead-magnet-lede">The pilot gives your team a focused way to test inquiry follow-up and tour coordination around the tools you already use.</p>
       <div class="lead-magnet-resource">
-        <h3>What changes for your team</h3>
+        <h3>Clear scope from day one</h3>
         <ul>
-          <li><span aria-hidden="true">✓</span>Fewer missed inquiries</li>
-          <li><span aria-hidden="true">✓</span>More booked tours</li>
-          <li><span aria-hidden="true">✓</span>Less inbox and calendar chasing</li>
-          <li><span aria-hidden="true">✓</span>No CRM migration</li>
-          <li><span aria-hidden="true">✓</span>No extra daily tool for frontline staff</li>
-          <li><span aria-hidden="true">✓</span>More time for residents and families</li>
+          <li><span aria-hidden="true">✓</span>One community</li>
+          <li><span aria-hidden="true">✓</span>One website inquiry source</li>
+          <li><span aria-hidden="true">✓</span>One staff-controlled tour calendar</li>
+          <li><span aria-hidden="true">✓</span>Approved messages and timing</li>
+          <li><span aria-hidden="true">✓</span>Human handoff rules</li>
+          <li><span aria-hidden="true">✓</span>Optional continuation after 30 days</li>
         </ul>
+      </div>
+      <div class="button-row">
+        <a class="button button-light" href="/pilot/">Review the Pilot</a>
+        <a class="button button-secondary" href="/meet-quid/">See How Quid Fits</a>
       </div>
     </div>
 
     <div class="lead-magnet-form-wrap">
-      <Mascot pose="summary" class="lead-magnet-mascot" alt="Quid keeping routine admissions work moving behind the scenes" width={190} />
-      <div class="lead-magnet-form">
-        <div class="lead-magnet-form-heading">
-          <span>Choose a useful next step</span>
-          <h3>Start with a two-minute check.</h3>
-        </div>
-        <p>Grade the visible path from website inquiry to booked tour, or show us your current process and we will map where Quid fits.</p>
-        <a class="button lead-magnet-submit" href="/senior-living-inquiry-flow-grader/">Grade Your Inquiry Flow</a>
-        <a class="button button-secondary" href="/meet-quid/">See How Quid Fits</a>
-        <p class="lead-magnet-privacy">No resident information required. The grader runs in your browser and does not store your answers.</p>
-      </div>
+      <PilotPricingCard />
     </div>
   </div>
 </section>

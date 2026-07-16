@@ -6,7 +6,7 @@ import Mascot from '../components/Mascot.astro';
 import { site } from '../data/site';
 
 const title = 'Senior Living Admissions Automation Solutions | Quid';
-const description = 'Explore focused Quid workflows for assisted living admissions, website inquiry follow-up, and staff-controlled tour scheduling, plus a free inquiry-flow grader.';
+const description = 'Explore focused Quid workflows for assisted living admissions, website inquiry follow-up, and staff-controlled tour scheduling.';
 const pageUrl = `${site.domain}/solutions/`;
 
 const solutions = [
@@ -42,9 +42,8 @@ const schema = [
     mainEntity: {
       '@type': 'ItemList',
       itemListOrder: 'https://schema.org/ItemListOrderAscending',
-      numberOfItems: solutions.length + 1,
-      itemListElement: [
-        ...solutions.map((solution, index) => ({
+      numberOfItems: solutions.length,
+      itemListElement: solutions.map((solution, index) => ({
           '@type': 'ListItem',
           position: index + 1,
           item: {
@@ -55,19 +54,6 @@ const schema = [
             provider: { '@id': `${site.domain}/#organization` },
           },
         })),
-        {
-          '@type': 'ListItem',
-          position: solutions.length + 1,
-          item: {
-            '@type': 'WebApplication',
-            name: 'Senior Living Website Inquiry-Flow Grader',
-            description: 'A free two-minute self-assessment of the visible website inquiry-to-tour journey.',
-            applicationCategory: 'BusinessApplication',
-            operatingSystem: 'Any web browser',
-            url: `${site.domain}/senior-living-inquiry-flow-grader/`,
-          },
-        },
-      ],
     },
   },
   {
@@ -93,7 +79,7 @@ const schema = [
         <AnswerBlock label="What does Quid automate?" answer="Quid handles routine, non-clinical coordination such as website inquiry acknowledgement, approved follow-up, staff-controlled tour scheduling, reminders, stalled-inquiry visibility, and clear human handoffs." variant="hero" />
         <div class="button-row">
           <a class="button" href="/meet-quid/">See How Quid Fits</a>
-          <a class="button button-secondary" href="/senior-living-inquiry-flow-grader/">Grade Your Current Flow</a>
+          <a class="button button-secondary" href="/pilot/">Review the 30-Day Pilot</a>
         </div>
       </div>
       <Mascot pose="summary" class="page-mascot" alt="Quid reviewing several senior living admissions workflow options" width={360} eager />
@@ -116,23 +102,6 @@ const schema = [
           </article>
         ))}
       </div>
-    </div>
-  </section>
-
-  <section class="section section-sand">
-    <div class="shell split split-wide">
-      <div data-reveal>
-        <p class="eyebrow">Not sure where to begin?</p>
-        <h2>Review the public inquiry journey in two minutes.</h2>
-        <p class="lede">The free inquiry-flow grader checks eight visible signals across acknowledgement, tour scheduling, ownership, reminders, stalled work, and staff handoffs.</p>
-        <a class="button" href="/senior-living-inquiry-flow-grader/">Use the Free Inquiry-Flow Grader</a>
-      </div>
-      <article class="notice-card" data-reveal>
-        <p class="eyebrow">What it does not do</p>
-        <h3>A planning aid, not a performance claim.</h3>
-        <p>The grader does not submit forms, inspect private systems, measure actual staff response time, certify compliance, or predict occupancy. It helps a team identify what to examine next.</p>
-        <a href="/resources/senior-living-inquiry-to-tour-audit/">See Quid’s 100-community public benchmark</a>
-      </article>
     </div>
   </section>
 
@@ -159,7 +128,7 @@ const schema = [
     <div class="narrow center">
       <p class="eyebrow">Keep the current tools</p>
       <h2>Quid is a focused coordination layer, not a CRM replacement.</h2>
-      <p class="lede center">The goal is to reduce repetitive work around the existing inquiry form, inbox, lead system, and calendar—not create another daily workspace for frontline staff.</p>
+      <p class="lede center">The goal is to reduce repetitive work around the existing inquiry form, inbox, lead system, and calendar. It should not create another daily workspace for frontline staff.</p>
       <div class="button-row center"><a class="button" href="/see-quid-in-action/">See Quid in Action</a><a class="button button-secondary" href="/resources/senior-living-software-comparisons/">Compare Software Approaches</a></div>
     </div>
   </section>

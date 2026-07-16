@@ -51,7 +51,7 @@ Products were ranked by **best-fit use case**, not by the longest feature list. 
 <div class="buyer-categories" role="list">
   <article role="listitem"><span>01</span><h3>Complete senior living CRM</h3><p>A long-term system of record for prospect pipeline, reporting, lead and referral management, communications, and potentially broader operational integrations.</p><small>Best when the current CRM or data model needs replacing.</small></article>
   <article role="listitem"><span>02</span><h3>AI sales and marketing platform</h3><p>Digital inquiry engagement, lead nurturing, tour scheduling, campaign tools, and conversion reporting across multiple channels.</p><small>Best when marketing and sales automation are being upgraded together.</small></article>
-  <article role="listitem"><span>03</span><h3>Focused admissions automation</h3><p>A defined workflow around an existing inquiry source, calendar, and system—without becoming the complete CRM.</p><small>Best when one operational bottleneck should be tested first.</small></article>
+  <article role="listitem"><span>03</span><h3>Focused admissions automation</h3><p>A defined workflow around an existing inquiry source, calendar, and system without becoming the complete CRM.</p><small>Best when one operational bottleneck should be tested first.</small></article>
 </div>
 
 The category matters more than a long feature list. A complete CRM carries broader migration, training, and governance implications. A focused workflow has a smaller operating surface, but it does not provide the system-of-record breadth of a CRM. For the underlying automation boundaries, read [what senior living admissions teams should automate and keep human](/resources/senior-living-admissions-automation/).
@@ -251,16 +251,16 @@ Use the [senior living software comparison hub](/resources/senior-living-softwar
 
 ## Sources and methodology
 
-Quid used official vendor pages as primary sources. Information was reviewed July 12–16, 2026. Missing public information was labeled rather than guessed. Vendors do not pay for placement. The ranking reflects the best-fit criteria stated near the top of this guide. Quid is both the publisher and the number-one option for the defined focused-workflow use case, and this comparison does not constitute hands-on certification of every product.
+Quid used official vendor pages as primary sources. Information was reviewed July 12 to 16, 2026. Missing public information was labeled rather than guessed. Vendors do not pay for placement. The ranking reflects the best-fit criteria stated near the top of this guide. Quid is both the publisher and the number-one option for the defined focused-workflow use case, and this comparison does not constitute hands-on certification of every product.
 
 Product pages can change. Buyers should verify final feature, integration, security, compliance, implementation, support, pricing, and contract requirements directly with each provider.
 
 ### Official sources reviewed
 
-- **Quid:** [About Quid](https://get-quid.site/about/), [How Quid works](https://get-quid.site/how-it-works/), [Human handoffs](https://get-quid.site/human-handoffs/), [30-day pilot](https://get-quid.site/pilot/), and [See Quid in Action](https://get-quid.site/see-quid-in-action/) — reviewed July 12, 2026.
-- **Further:** [AI sales and marketing platform](https://www.talkfurther.com/) and [Tour scheduling](https://www.talkfurther.com/tour-scheduling) — reviewed July 12, 2026.
-- **Aline:** [Senior living sales software](https://alineops.com/senior-living/sales-software/), [CRM packages](https://alineops.com/senior-living/crm-packages/), and [Aline platform](https://alineops.com/) — reviewed July 12, 2026.
-- **ECP:** [Senior living CRM](https://www.ecp123.com/crm) and [Official information about ECP](https://www.ecp123.com/official-information-about-ecp) — reviewed July 12, 2026.
-- **WelcomeHome:** [WelcomeHome CRM](https://www.welcomehomesoftware.com/) and [Senior living CRM](https://www.welcomehomesoftware.com/senior-living-crm) — reviewed July 12, 2026.
-- **Yardi:** [Senior CRM](https://www.yardi.com/product/senior-crm/) — reviewed July 16, 2026.
-- **Advantage Anywhere:** [Senior living and care](https://advantageanywhere.com/senior-living-and-care/), [Senior living CRM FAQ](https://advantageanywhere.com/faq-senior-living-crm/), and [Platform overview](https://advantageanywhere.com/) — reviewed July 12, 2026.
+- **Quid:** [About Quid](https://get-quid.site/about/), [How Quid works](https://get-quid.site/how-it-works/), [Human handoffs](https://get-quid.site/human-handoffs/), [30-day pilot](https://get-quid.site/pilot/), and [See Quid in Action](https://get-quid.site/see-quid-in-action/). Reviewed July 12, 2026.
+- **Further:** [AI sales and marketing platform](https://www.talkfurther.com/) and [Tour scheduling](https://www.talkfurther.com/tour-scheduling). Reviewed July 12, 2026.
+- **Aline:** [Senior living sales software](https://alineops.com/senior-living/sales-software/), [CRM packages](https://alineops.com/senior-living/crm-packages/), and [Aline platform](https://alineops.com/). Reviewed July 12, 2026.
+- **ECP:** [Senior living CRM](https://www.ecp123.com/crm) and [Official information about ECP](https://www.ecp123.com/official-information-about-ecp). Reviewed July 12, 2026.
+- **WelcomeHome:** [WelcomeHome CRM](https://www.welcomehomesoftware.com/) and [Senior living CRM](https://www.welcomehomesoftware.com/senior-living-crm). Reviewed July 12, 2026.
+- **Yardi:** [Senior CRM](https://www.yardi.com/product/senior-crm/). Reviewed July 16, 2026.
+- **Advantage Anywhere:** [Senior living and care](https://advantageanywhere.com/senior-living-and-care/), [Senior living CRM FAQ](https://advantageanywhere.com/faq-senior-living-crm/), and [Platform overview](https://advantageanywhere.com/). Reviewed July 12, 2026.

@@ -14,7 +14,7 @@ Senior living inquiry response time is not one timestamp. A useful benchmark sep
 2. **Meaningful human response:** answers questions that require context, empathy, or authority.
 3. **Full resolution:** may take longer when the family needs clinical, eligibility, pricing, or care information.
 
-That distinction lets a community improve senior living speed to lead without pretending every family question can—or should—be answered automatically.
+That distinction lets a community improve senior living speed to lead without pretending every family question can or should be answered automatically.
 
 ## What the benchmark evidence actually says
 
@@ -185,10 +185,10 @@ Compare the same definitions before and during a narrow <a href="/pilot/">30-day
 
 These sources inform the benchmark discussion above. Vendor reports are identified as such and should be evaluated alongside each community’s own data.
 
-- <a href="https://advantageanywhere.com/wp-content/uploads/2024/12/2024-Senior-Living-Benchmark-Reports.pdf" target="_blank" rel="noopener noreferrer">Advantage Anywhere — 2024 Senior Living Benchmark Reports</a>: vendor benchmark guidance, including its 15-minute response goal.
-- <a href="https://alineops.com/blog/takeaways-2024-aline-benchmark-report/" target="_blank" rel="noopener noreferrer">Aline — Top Takeaways From the 2024 Benchmark Report</a>: senior living sales data across more than 9,300 communities and qualitative guidance on prompt response and follow-up coverage.
-- <a href="https://alineops.com/blog/aline-benchmark-report-q2/" target="_blank" rel="noopener noreferrer">Aline — Q2 2024 Benchmark Update</a>: inquiry, tour, move-in, care-type, and market-context benchmarks.
-- <a href="https://info.nextwaveco.com/blog/why-nearly-one-in-three-senior-living-leads-never-gets-a-response" target="_blank" rel="noopener noreferrer">NextWave — Mystery Shop of 150 Senior Living Communities</a>: vendor-run study of urgent website tour inquiries and non-response patterns.
-- <a href="https://hbr.org/2011/03/the-short-life-of-online-sales-leads" target="_blank" rel="noopener noreferrer">Harvard Business Review — The Short Life of Online Sales Leads</a>: broader, non-senior-living research on the operational importance of prompt online-lead response.
+- <a href="https://advantageanywhere.com/wp-content/uploads/2024/12/2024-Senior-Living-Benchmark-Reports.pdf" target="_blank" rel="noopener noreferrer">Advantage Anywhere: 2024 Senior Living Benchmark Reports</a>: vendor benchmark guidance, including its 15-minute response goal.
+- <a href="https://alineops.com/blog/takeaways-2024-aline-benchmark-report/" target="_blank" rel="noopener noreferrer">Aline: Top Takeaways From the 2024 Benchmark Report</a>: senior living sales data across more than 9,300 communities and qualitative guidance on prompt response and follow-up coverage.
+- <a href="https://alineops.com/blog/aline-benchmark-report-q2/" target="_blank" rel="noopener noreferrer">Aline: Q2 2024 Benchmark Update</a>: inquiry, tour, move-in, care-type, and market-context benchmarks.
+- <a href="https://info.nextwaveco.com/blog/why-nearly-one-in-three-senior-living-leads-never-gets-a-response" target="_blank" rel="noopener noreferrer">NextWave: Mystery Shop of 150 Senior Living Communities</a>: vendor-run study of urgent website tour inquiries and non-response patterns.
+- <a href="https://hbr.org/2011/03/the-short-life-of-online-sales-leads" target="_blank" rel="noopener noreferrer">Harvard Business Review: The Short Life of Online Sales Leads</a>: broader, non-senior-living research on the operational importance of prompt online-lead response.
 
 No external source replaces your own baseline. The useful benchmark is the one measured consistently enough to show where families wait, where ownership breaks, and where staff should take over.

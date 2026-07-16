@@ -175,7 +175,7 @@ If the answers are unclear, improve measurement and workflow first. Then additio
 
 Do not promise an occupancy increase before the workflow is measured. Establish the baseline, test one process, and keep the changes that produce clearer movement without weakening the family experience.
 
-## Where software helps—and where people remain essential
+## Where software helps and where people remain essential
 
 Software is useful for repeatable coordination:
 
@@ -200,4 +200,4 @@ Use the <a href="/resources/senior-living-human-handoff-checklist/">human-handof
 
 ## The practical next step
 
-Grade your public website journey using the <a href="/senior-living-inquiry-flow-grader/">free senior living inquiry-flow grader</a>. If the biggest gap appears between the tour request and an actual visit time, review <a href="/senior-living-tour-scheduling-software/">senior living tour scheduling software</a> and the <a href="/senior-living-inquiry-follow-up-automation/">inquiry follow-up automation workflow</a>.
+Review the public website journey against the <a href="/resources/senior-living-inquiry-to-tour-audit/">100-community inquiry-to-tour benchmark</a>. If the biggest gap appears between the tour request and an actual visit time, review <a href="/senior-living-tour-scheduling-software/">senior living tour scheduling software</a> and the <a href="/senior-living-inquiry-follow-up-automation/">inquiry follow-up automation workflow</a>.

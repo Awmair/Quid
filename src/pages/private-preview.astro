@@ -57,7 +57,7 @@ const canonical = 'https://get-quid.site/private-preview/';
               <Image src={mascot} alt="Quid moving an inquiry toward a tour" width={118} loading="eager" />
               <span>The Quid fit</span>
               <h2>Fewer missed inquiries. More booked tours. No extra admin hire.</h2>
-              <p>Quid handles inquiry follow-up and tour scheduling behind the scenes—without another daily tool for your team to manage.</p>
+              <p>Quid handles inquiry follow-up and tour scheduling behind the scenes without another daily tool for your team to manage.</p>
               <div class="preview-chain gain"><b>Inquiry</b><i>→</i><b>Fast response</b><i>→</i><strong>More tour opportunities</strong></div>
             </article>
           </div>
@@ -165,7 +165,7 @@ const canonical = 'https://get-quid.site/private-preview/';
         document.querySelectorAll('[data-cta]').forEach((node) => { node.textContent = cta; });
         const walkthroughLink = document.querySelector('[data-walkthrough-link]');
         if (walkthroughLink instanceof HTMLAnchorElement) {
-          const subject = encodeURIComponent(`Quid walkthrough — ${community}`);
+          const subject = encodeURIComponent(`Quid walkthrough: ${community}`);
           const body = encodeURIComponent(`Hi Umair,\n\nI'd like to set up a walkthrough call for ${community}.\n\n`);
           walkthroughLink.href = `mailto:charcopadart@gmail.com?subject=${subject}&body=${body}`;
         }

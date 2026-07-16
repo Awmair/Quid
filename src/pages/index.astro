@@ -9,11 +9,11 @@ import PilotTimeline from '../components/PilotTimeline.astro';
 import DashboardPreview from '../components/DashboardPreview.astro';
 import AnswerBlock from '../components/AnswerBlock.astro';
 import { Image } from 'astro:assets';
-import assistedLiving from '../assets/lifestyle/assisted-living-diverse.png';
-import memoryCare from '../assets/lifestyle/memory-care.png';
-import independentLiving from '../assets/lifestyle/independent-living.png';
-import skilledNursing from '../assets/lifestyle/skilled-nursing-diverse.png';
-import admissionsTeam from '../assets/lifestyle/admissions-team.png';
+import assistedLiving from '../assets/lifestyle/assisted-living-diverse.webp';
+import memoryCare from '../assets/lifestyle/memory-care.webp';
+import independentLiving from '../assets/lifestyle/independent-living.webp';
+import skilledNursing from '../assets/lifestyle/skilled-nursing-diverse.webp';
+import admissionsTeam from '../assets/lifestyle/admissions-team.webp';
 import { faqs, workflow } from '../data/content';
 import { pilotOffer } from '../data/pilot';
 import { primaryCtaHref, site } from '../data/site';
@@ -49,20 +49,19 @@ const outcomes = [
 ];
 
 const audiences = [
-  { label: 'Assisted Living', image: assistedLiving, alt: 'A Black senior woman speaking with a Black admissions professional in a warm senior living lounge' },
-  { label: 'Memory Care', image: memoryCare, alt: 'An older woman and a care partner arranging flowers together in a calm residential living room' },
-  { label: 'Independent Living', image: independentLiving, alt: 'Three older friends sharing coffee and conversation in a bright community lounge' },
-  { label: 'Skilled Nursing', image: skilledNursing, alt: 'A Hispanic older man and his daughter speaking with an admissions professional during a community visit' },
+  { label: 'Assisted Living', image: assistedLiving, alt: 'A Black senior woman walking through an assisted living common area with an admissions professional' },
+  { label: 'Memory Care', image: memoryCare, alt: 'An older woman looking through old postcards with a familiar care partner' },
+  { label: 'Independent Living', image: independentLiving, alt: 'Three independent living residents setting up a card game on a rainy afternoon' },
+  { label: 'Skilled Nursing', image: skilledNursing, alt: 'A Hispanic family reviewing what to bring for a skilled nursing stay with an admissions professional' },
 ];
 ---
 
-<BaseLayout schema={schema}>
+<BaseLayout schema={schema} hideBottomPilot>
   <section class="hero">
     <div class="shell hero-grid">
       <div class="hero-copy">
         <p class="eyebrow" data-reveal>Behind-the-scenes admissions follow-up for senior living</p>
         <h1><span data-reveal>Fewer missed inquiries.</span><span class="editorial" data-reveal>More booked tours.</span><span data-reveal>No extra admin hire.</span></h1>
-        <p class="lede hero-desktop-lede" data-reveal>Quid handles new inquiries, family follow-up, and tour scheduling behind the scenes—without another daily tool for your team to manage—so staff can focus on residents and families.</p>
         <p class="lede hero-mobile-lede" data-reveal>Quid handles inquiry follow-up and tour scheduling behind the scenes, so your team can focus on people.</p>
         <AnswerBlock variant="hero" label="What Quid does" answer="Quid handles new inquiries, family follow-up, and tour scheduling behind the scenes. It works around your existing process, and staff step in only when a conversation needs a person." />
         <ul class="hero-mobile-benefits" aria-label="What Quid helps with" data-reveal>
@@ -150,7 +149,7 @@ const audiences = [
         <p class="eyebrow">Follow-up opportunity</p>
         <h2>See what follow-up gaps may be costing you.</h2>
         <p class="lede">Adjust three simple inputs to estimate the monthly resident revenue connected to missed follow-ups or tours.</p>
-        <p class="resource-inline-link"><a href="/senior-living-inquiry-flow-grader/">Then grade your actual website inquiry flow in two minutes →</a></p>
+        <p class="resource-inline-link"><a href="/resources/senior-living-inquiry-to-tour-audit/">See what Quid found across 100 public inquiry-to-tour journeys →</a></p>
         <Mascot pose="summary" class="opportunity-mascot" alt="Quid reviewing an admissions summary" width={220} />
       </div>
       <div class="calculator opportunity-calculator" data-calculator>
@@ -199,7 +198,7 @@ const audiences = [
     <div class="shell">
       <div class="tour-section-intro">
         <div><p class="eyebrow">See Quid in action</p><h2>Your team sees only what needs attention.</h2></div>
-        <div><p class="lede">Quid does the background work. A simple manager and exception view surfaces replies, booked tours, handoffs, and anything that needs a person—without becoming another frontline workspace.</p></div>
+        <div><p class="lede">Quid does the background work. A simple manager and exception view surfaces replies, booked tours, handoffs, and anything that needs a person without becoming another frontline workspace.</p></div>
       </div>
       <DashboardPreview compact />
       <div class="dashboard-preview-cta"><p>See the optional manager view, handoffs, daily summary, and background follow-up flow.</p><a class="button" href="/see-quid-in-action/">See Quid in Action</a></div>
@@ -265,9 +264,16 @@ const audiences = [
     <div class="shell">
       <p class="eyebrow">What changes</p><h2>Less admin work. More time for people.</h2>
       <div class="scan-layout">
-        <PhotoPanel image={admissionsTeam} alt="Two senior living admissions professionals reviewing follow-up together" label="The team stays in control" caption="Quid keeps routine work visible so staff can focus on families." />
+        <PhotoPanel image={admissionsTeam} alt="Two senior living admissions coworkers comparing handwritten call notes in a busy back office" label="The team stays in control" caption="Quid keeps routine work visible so staff can focus on families." />
         <QuickScan items={outcomes.map(([title, text]) => ({ title, text }))} label="Benefits at a glance" />
       </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="narrow">
+      <h2>Questions senior living teams ask about Quid</h2>
+      <div class="faq-list">{faqs.map(([question, answer]) => <details><summary>{question}</summary><p>{answer}</p></details>)}</div>
     </div>
   </section>
 
@@ -291,13 +297,6 @@ const audiences = [
         <PilotTimeline compact />
       </div>
       <p class="pilot-trust-line">{pilotOffer.trustLine}</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="narrow">
-      <h2>Questions senior living teams ask about Quid</h2>
-      <div class="faq-list">{faqs.map(([question, answer]) => <details><summary>{question}</summary><p>{answer}</p></details>)}</div>
     </div>
   </section>
 

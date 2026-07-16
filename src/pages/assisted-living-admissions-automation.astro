@@ -6,12 +6,11 @@ import PhotoPanel from '../components/PhotoPanel.astro';
 import VisualFlow from '../components/VisualFlow.astro';
 import QuickScan from '../components/QuickScan.astro';
 import HumanHandoffSpotlight from '../components/HumanHandoffSpotlight.astro';
-import PilotPricingCard from '../components/PilotPricingCard.astro';
 import FaqSection from '../components/FaqSection.astro';
 import { pilotOffer } from '../data/pilot';
 import { pricing } from '../data/pricing';
 import { site } from '../data/site';
-import assistedLivingAdmissions from '../assets/lifestyle/assisted-living-admissions-conversation.png';
+import assistedLivingAdmissions from '../assets/lifestyle/assisted-living-admissions-conversation.webp';
 
 const title = 'Assisted Living Admissions Automation | Quid';
 const description = 'Keep every assisted living inquiry moving without adding more admin work. Quid handles follow-up and tour scheduling behind the scenes.';
@@ -98,7 +97,7 @@ const schema = [
         </div>
         <p class="solution-microcopy">One community. One inquiry source. One tour calendar.</p>
       </div>
-      <PhotoPanel image={assistedLivingAdmissions} alt="An assisted living admissions professional speaking with an older prospective resident and her adult daughter in a warm community lounge" priority class="solution-hero-photo" />
+      <PhotoPanel image={assistedLivingAdmissions} alt="An admissions counselor listening to an older prospective resident and her adult daughter in a community library" priority class="solution-hero-photo" />
     </div>
   </section>
 
@@ -191,19 +190,6 @@ const schema = [
     </div>
   </section>
 
-  <section class="section section-white">
-    <div class="shell pilot-page-offer solution-pilot-layout">
-      <div class="pilot-page-copy">
-        <p class="eyebrow">Start with one controlled workflow</p>
-        <h2>Test assisted living admissions automation without a broad rollout.</h2>
-        <p class="lede">The pilot gives one community a practical way to review, configure, deploy, and measure the inquiry-to-tour workflow over four weeks.</p>
-        <p class="pilot-positioning pilot-positioning-light">{pilotOffer.positioning}</p>
-        <nav class="solution-inline-links" aria-label="Pilot and walkthrough links"><a href="/pilot/">See the four-week pilot process</a><a href="/meet-quid/">Request a walkthrough</a></nav>
-      </div>
-      <PilotPricingCard />
-    </div>
-  </section>
-
   <FaqSection faqs={faqs} eyebrow="Assisted living automation questions" heading="Clear answers before you change the workflow." />
 
   <section class="section section-sand">
@@ -215,7 +201,6 @@ const schema = [
       <nav class="solution-link-grid" aria-label="Related assisted living admissions resources">
         <a href="/resources/senior-living-admissions-automation/"><strong>Admissions automation guide</strong><span>Plan the workflow before automating it.</span></a>
         <a href="/resources/senior-living-inquiry-to-tour-audit/"><strong>100-community benchmark</strong><span>See what happens after families click a tour CTA.</span></a>
-        <a href="/senior-living-inquiry-flow-grader/"><strong>Free inquiry-flow grader</strong><span>Score the visible website-to-tour path in two minutes.</span></a>
         <a href="/senior-living-tour-scheduling-software/"><strong>Tour scheduling software</strong><span>See how approved availability becomes a confirmed visit.</span></a>
         <a href="/resources/how-to-increase-assisted-living-occupancy/"><strong>Increase assisted living occupancy</strong><span>Fix conversion friction before buying more leads.</span></a>
         <a href="/resources/senior-living-inquiry-response-time/"><strong>Inquiry response time</strong><span>Separate immediate acknowledgement from thoughtful staff response.</span></a>

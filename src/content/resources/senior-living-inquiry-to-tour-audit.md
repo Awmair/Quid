@@ -8,7 +8,7 @@ updatedDate: 2026-07-14
 order: 0
 ---
 
-Quid reviewed **100 public senior living community website journeys across 28 operator groups and 23 US states** on July 12–14, 2026. We followed only what a family could see without submitting a form. We did not pose as a family, test response times, or inspect any operator's CRM, inbox, staffing, conversion rate, or resident data.
+Quid reviewed **100 public senior living community website journeys across 28 operator groups and 23 US states** on July 12 to 14, 2026. We followed only what a family could see without submitting a form. We did not pose as a family, test response times, or inspect any operator's CRM, inbox, staffing, conversion rate, or resident data.
 
 The benchmark shows two realities at once. Many websites still place a manual step between a high-intent visitor and a confirmed visit. Larger operator templates more often expose preferred-time forms or embedded inquiry assistants, but automation and staff follow-up frequently appear together.
 
@@ -36,7 +36,7 @@ The practical conclusion is not that every manual signal means a slow team, or t
 <div class="benchmark-callout" role="note">
   <span>Most quotable finding</span>
   <strong>62 of 100 reviewed senior living pages still exposed a manual or delayed step somewhere in the public inquiry-to-tour journey.</strong>
-  <small>This is a targeted, operator-clustered website benchmark—not a randomized estimate of all US communities.</small>
+  <small>This is a targeted, operator-clustered website benchmark, not a randomized estimate of all US communities.</small>
 </div>
 
 ## Two cohorts tell a more useful story
@@ -111,7 +111,7 @@ A controlled workflow should acknowledge the request, expose only approved tour 
 
 This July 2026 edition combines two purposive cohorts:
 
-1. **25 independent and small-operator pages** previously evaluated during Quid's outreach research on July 12–13. These rows emphasize independent communities and operators with roughly one to 10 locations. Community and staff identities remain anonymized in the public row-level file.
+1. **25 independent and small-operator pages** previously evaluated during Quid's outreach research on July 12 and 13. These rows emphasize independent communities and operators with roughly one to 10 locations. Community and staff identities remain anonymized in the public row-level file.
 2. **75 multi-location pages** reviewed on July 14. We selected 15 community pages from each of five operator clusters using official public sitemaps: <a href="https://www.brookdale.com/en.sitemap.xml" target="_blank" rel="noopener noreferrer">Brookdale</a>, <a href="https://www.sunriseseniorliving.com/sitemap.xml" target="_blank" rel="noopener noreferrer">Sunrise Senior Living</a>, <a href="https://www.benchmarkseniorliving.com/sitemap.xml" target="_blank" rel="noopener noreferrer">Benchmark Senior Living</a>, <a href="https://www.merrillgardens.com/sitemap.xml" target="_blank" rel="noopener noreferrer">Merrill Gardens</a>, and <a href="https://www.leisurecare.com/sitemap_index.xml" target="_blank" rel="noopener noreferrer">Leisure Care</a>.
 
 All 75 named expansion URLs returned a public page during review. The source register includes the page title, state, classification, review date, and exact URL.
@@ -176,4 +176,4 @@ Open your own website on a phone and follow the journey without using staff know
 - Does automation pause when the family replies or asks a sensitive question?
 - Can a manager see tomorrow which inquiries are still stuck?
 
-Use Quid's <a href="/senior-living-inquiry-flow-grader/">two-minute inquiry-flow grader</a>, <a href="/resources/senior-living-human-handoff-checklist/">human-handoff checklist</a>, and <a href="/resources/senior-living-follow-up-templates/">senior living follow-up templates</a> to review the workflow.
+Use Quid's <a href="/resources/senior-living-human-handoff-checklist/">human-handoff checklist</a>, <a href="/resources/senior-living-follow-up-templates/">senior living follow-up templates</a>, and <a href="/how-it-works/">workflow overview</a> to review the process.

@@ -125,7 +125,7 @@ We wanted to make sure your inquiry did not get lost. If a tour is still useful,
 
 If you no longer need follow-up, let us know and we will update the record.
 
-This message is for a defined stalled state—not every family who has not replied.
+This message is for a defined stalled state, not every family who has not replied.
 
 ## No-show or reschedule template
 
@@ -135,7 +135,7 @@ Hello [First Name],
 
 We are sorry we missed you for today’s scheduled visit. If you would like to choose another time, reply here or use [Approved Reschedule Route].
 
-If plans have changed, that is completely fine—let us know how you would like the admissions team to follow up.
+If plans have changed, that is completely fine. Let us know how you would like the admissions team to follow up.
 
 Staff should mark the tour as no-show, cancelled, or rescheduled before this message is sent.
 
@@ -173,6 +173,6 @@ Use the [human handoff checklist](/resources/senior-living-human-handoff-checkli
 - [ ] No template requests resident or medical information.
 - [ ] Staff can edit, pause, and stop the sequence.
 
-To see how templates and next actions can run behind the scenes without giving frontline staff another daily tool, [see Quid in action](/see-quid-in-action/) or [grade your current inquiry flow](/senior-living-inquiry-flow-grader/).
+To see how templates and next actions can run behind the scenes without giving frontline staff another daily tool, [see Quid in action](/see-quid-in-action/) or [review the 30-Day Pilot](/pilot/).
 
 See where these approved messages fit within the complete [senior living inquiry follow-up automation workflow](/senior-living-inquiry-follow-up-automation/).

@@ -63,7 +63,7 @@ The community chooses the timing. Quid should not invent a universal cadence.
 
 ## A practical follow-up cadence
 
-Treat these times as review points the community can approve or change—not universal conversion rules.
+Treat these times as review points the community can approve or change, not universal conversion rules.
 
 ### Day before the tour
 

@@ -14,7 +14,7 @@ The summary is not a sales leaderboard. It is a workflow-control tool. Its job i
 
 ## What a daily admissions summary is
 
-The summary is a time-bounded view—usually covering activity since the previous business-day review. It combines the few admissions states that determine what the team should do next.
+The summary is a time-bounded view that usually covers activity since the previous business-day review. It combines the few admissions states that determine what the team should do next.
 
 A useful summary answers seven questions:
 
@@ -65,7 +65,7 @@ Tour availability and outcomes remain staff controlled. An admissions workflow c
 
 ## Overdue replies
 
-An overdue item should mean a defined service expectation was missed—not simply that a family has not replied.
+An overdue item should mean a defined service expectation was missed, not simply that a family has not replied.
 
 Useful overdue states include:
 
@@ -106,7 +106,7 @@ Workflow issues belong in the same morning view when they affect a family: deliv
 
 ## Sample daily admissions summary
 
-**Good morning, Admissions Team — Tuesday, 8:00 AM**
+**Good morning, Admissions Team. Tuesday, 8:00 AM**
 
 **New since yesterday**
 
@@ -117,8 +117,8 @@ Workflow issues belong in the same morning view when they affect a family: deliv
 
 **Tours today**
 
-- 10:30 AM — confirmed, reminder delivered, host assigned
-- 2:00 PM — family requested a new time
+- 10:30 AM: confirmed, reminder delivered, host assigned
+- 2:00 PM: family requested a new time
 
 **Needs attention**
 
