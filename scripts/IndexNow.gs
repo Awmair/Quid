@@ -12,10 +12,12 @@ function setupQuidIndexNow() {
   if (!sheet) sheet = workbook.insertSheet(QUID_INDEXNOW.sheetName);
 
   if (sheet.getLastRow() === 0) {
-    sheet.getRange(1, 1, 1, 6).setValues([[
+    sheet.getRange(1, 1).setValue('IndexNow URL Notifications');
+    sheet.getRange(2, 1).setValue('Notify participating search engines when Quid pages are added, meaningfully updated, redirected, or deleted.');
+    sheet.getRange(4, 1, 1, 6).setValues([[
       'URL', 'Action', 'Status', 'HTTP', 'Detail', 'Submitted At',
     ]]);
-    sheet.setFrozenRows(1);
+    sheet.setFrozenRows(4);
   }
 
   const hasTrigger = ScriptApp.getProjectTriggers()
@@ -36,8 +38,8 @@ function queueQuidIndexNowUrls(urls) {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(QUID_INDEXNOW.sheetName);
   if (!sheet) throw new Error('Run setupQuidIndexNow first.');
 
-  const existing = sheet.getLastRow() > 1
-    ? new Set(sheet.getRange(2, 1, sheet.getLastRow() - 1, 1).getValues().flat())
+  const existing = sheet.getLastRow() > 4
+    ? new Set(sheet.getRange(5, 1, sheet.getLastRow() - 4, 1).getValues().flat())
     : new Set();
   const rows = [...new Set(urls)]
     .filter((url) => isValidQuidIndexNowUrl_(url) && !existing.has(url))
@@ -47,9 +49,9 @@ function queueQuidIndexNowUrls(urls) {
 
 function processQuidIndexNowQueue() {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(QUID_INDEXNOW.sheetName);
-  if (!sheet || sheet.getLastRow() < 2) return;
+  if (!sheet || sheet.getLastRow() < 5) return;
 
-  const range = sheet.getRange(2, 1, sheet.getLastRow() - 1, 6);
+  const range = sheet.getRange(5, 1, sheet.getLastRow() - 4, 6);
   const rows = range.getValues();
   const pending = [];
 
