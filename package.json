@@ -9,6 +9,7 @@
     "build:og": "node scripts/build-og.mjs",
     "check": "astro check",
     "preview": "astro preview",
+    "indexnow": "node scripts/indexnow-submit.mjs",
     "test:site": "node scripts/check-site.mjs",
     "seo:check": "node scripts/check-site.mjs"
   },
