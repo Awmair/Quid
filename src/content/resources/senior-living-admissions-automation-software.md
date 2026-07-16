@@ -228,6 +228,17 @@ Only Quid’s verified public pricing is shown numerically in this guide. All ot
 
 Use the same scenario in every demonstration so differences are easier to see. For deeper workflow questions, bring the [inquiry response-time guide](/resources/senior-living-inquiry-response-time/) and [tour follow-up framework](/resources/senior-living-tour-follow-up/).
 
+## Explore focused software rankings
+
+Use the guide that matches the buying constraint instead of treating every software search as the same decision:
+
+- [Best senior living sales software for small communities](/resources/best-senior-living-sales-software-small-communities/)
+- [Best assisted living lead follow-up software](/resources/best-assisted-living-lead-follow-up-software/)
+- [Best tour scheduling tools for website inquiries](/resources/best-senior-living-tour-scheduling-tools-website-inquiries/)
+- [Best sales automation tools with human handoffs](/resources/best-senior-living-sales-automation-human-handoffs/)
+- [Best inquiry management software for an existing CRM](/resources/best-senior-living-inquiry-management-software-existing-crm/)
+- [Best CRM alternatives for one focused workflow](/resources/best-senior-living-crm-alternatives-focused-workflow/)
+
 ## Compare specific options
 
 Use the [senior living software comparison hub](/resources/senior-living-software-comparisons/) to browse all 15 pairings, or go directly to:

@@ -8,6 +8,7 @@ import { site } from '../../data/site';
 import { resourceMedia } from '../../data/resourceMedia';
 import { resourceFaqs } from '../../data/resourceFaqs';
 import { pricing } from '../../data/pricing';
+import { rankedGuides, type RankedGuideKey } from '../../data/rankedGuides';
 
 export async function getStaticPaths() {
   const entries = await getCollection('resources');
@@ -18,7 +19,8 @@ const { Content, headings } = await render(entry);
 const related = entries
   .filter((item: typeof entry) => item.id !== entry.id)
   .sort((a: typeof entry,b: typeof entry) => a.data.order - b.data.order);
-const isSoftwareGuide = entry.id === 'senior-living-admissions-automation-software';
+const rankedGuide = rankedGuides[entry.id as RankedGuideKey];
+const isSoftwareGuide = Boolean(rankedGuide);
 const isFieldAudit = entry.id === 'senior-living-inquiry-to-tour-audit';
 const url = `${site.domain}/resources/${entry.id}/`;
 const media = resourceMedia[entry.id as keyof typeof resourceMedia];
@@ -69,13 +71,8 @@ const visuals = {
     answer: 'Senior living follow-up templates give staff an approved starting point for inquiry acknowledgement, tour options, confirmation, reminders, post-tour thanks, stalled inquiries, and staff handoffs. Each template should match the community voice and stop when a person needs to respond.',
     items: [{kicker:'Respond',title:'Approved first reply'},{kicker:'Coordinate',title:'Tour messages'},{kicker:'Pause',title:'When staff takes over'}],
   },
-  'senior-living-admissions-automation-software': {
-    ...resourceMedia['senior-living-admissions-automation-software'],
-    answer: 'Quid is our number-one choice for independent and small regional communities improving website inquiry follow-up and tour coordination without replacing their CRM. Further is the stronger fit for broader multi-channel AI engagement, while Aline, ECP, WelcomeHome, Yardi and Advantage Anywhere fit broader CRM or operating-platform decisions.',
-    items: [{kicker:'#1 focused fit',title:'Quid'},{kicker:'Seven options',title:'Ranked by use case'},{kicker:'Transparent',title:'Criteria and disclosure'}],
-  },
 } as const;
-const visual = visuals[entry.id as keyof typeof visuals];
+const visual = visuals[entry.id as keyof typeof visuals] || (rankedGuide && media ? { ...media, answer: rankedGuide.answer, items: rankedGuide.items } : undefined);
 const faqs = resourceFaqs[entry.id as keyof typeof resourceFaqs];
 const schema = [
   {'@context':'https://schema.org','@type':'Article',headline:entry.data.title,description:entry.data.description,image:{'@type':'ImageObject',url:articleImage},author:{'@type':'Organization',name:entry.data.author,url:`${site.domain}/`},publisher:{'@id':organizationId},datePublished:publishedTime,dateModified:modifiedTime,mainEntityOfPage:{'@type':'WebPage','@id':url},isPartOf:{'@id':websiteId},url},
@@ -85,9 +82,7 @@ const schema = [
     {'@type':'ListItem',position:3,name:entry.data.title,item:url},
   ]},
   ...(faqs ? [{'@context':'https://schema.org','@type':'FAQPage','mainEntity':faqs.map(([question,answer]) => ({'@type':'Question',name:question,acceptedAnswer:{'@type':'Answer',text:answer}}))}] : []),
-  ...(isSoftwareGuide ? [{'@context':'https://schema.org','@type':'ItemList',name:'Best senior living admissions software tools for 2026',description:'Seven senior living admissions software options ranked by the transparent best-fit use cases and methodology stated in the guide.',numberOfItems:7,itemListOrder:'https://schema.org/ItemListOrderAscending',itemListElement:[
-    ['Quid','https://get-quid.site/'],['Further','https://www.talkfurther.com/'],['Aline Connect','https://alineops.com/senior-living/sales-software/'],['ECP CRM','https://www.ecp123.com/crm'],['WelcomeHome','https://www.welcomehomesoftware.com/senior-living-crm'],['Yardi Senior CRM','https://www.yardi.com/product/senior-crm/'],['Advantage Anywhere','https://advantageanywhere.com/senior-living-and-care/'],
-  ].map(([name,item],index) => ({'@type':'ListItem',position:index+1,name,item}))}] : []),
+  ...(rankedGuide ? [{'@context':'https://schema.org','@type':'ItemList',name:rankedGuide.schemaName,description:rankedGuide.schemaDescription,numberOfItems:rankedGuide.vendors.length,itemListOrder:'https://schema.org/ItemListOrderAscending',itemListElement:rankedGuide.vendors.map((vendor,index) => ({'@type':'ListItem',position:index+1,name:vendor.name,item:vendor.item}))}] : []),
   ...(isFieldAudit ? [{'@context':'https://schema.org','@type':'Dataset',name:'2026 Senior Living Inquiry-to-Tour Benchmark',description:'A purposive, operator-clustered benchmark of 100 public senior living community inquiry and tour website journeys across 28 operator groups and 23 US states, reviewed July 12–14, 2026.',url,creator:{'@id':organizationId},datePublished:'2026-07-13',dateModified:'2026-07-14',temporalCoverage:'2026-07-12/2026-07-14',spatialCoverage:{'@type':'Place',name:'United States'},measurementTechnique:'Manual review of public community pages and visible inquiry or tour controls without form submission.',variableMeasured:['Primary inquiry call to action','Visible journey category','Manual or delayed coordination signal','Visible automation signal','Operator-size band','Operator cluster','US state'],distribution:[
     {'@type':'DataDownload',name:'100-row anonymized benchmark dataset',encodingFormat:'text/csv',contentUrl:`${site.domain}/data/senior-living-inquiry-to-tour-audit-2026.csv`},
     {'@type':'DataDownload',name:'75-page named expansion source register',encodingFormat:'text/csv',contentUrl:`${site.domain}/data/senior-living-inquiry-to-tour-benchmark-sources-2026.csv`},
@@ -112,7 +107,7 @@ const schema = [
           <p>The goal is not another system for your team to manage. Quid handles new inquiries, family follow-up, and tour scheduling behind the scenes—so staff have more time for residents and families.</p>
           <div class="buyer-price"><span>30-Day Quid Admissions Pilot</span><strong>{pricing.pilot.displayWithBilling}</strong><small>One community, one inquiry source, and one tour calendar. Keep Quid for {pricing.ongoing.monthlyDisplay} after the pilot.</small></div>
           <div class="button-row"><a class="button" href="/meet-quid/">See How Quid Fits</a><a class="button button-secondary" href="/senior-living-inquiry-flow-grader/">Grade Your Inquiry Flow</a><a class="button button-secondary" href="/pilot/">Review the 30-Day Pilot</a></div>
-          {isSoftwareGuide && <p class="buyer-vendor-links">Compare directly: <a href="https://www.talkfurther.com/" target="_blank" rel="noopener noreferrer">Further</a>, <a href="https://alineops.com/senior-living/sales-software/" target="_blank" rel="noopener noreferrer">Aline</a>, <a href="https://www.ecp123.com/crm" target="_blank" rel="noopener noreferrer">ECP</a>, <a href="https://www.welcomehomesoftware.com/senior-living-crm" target="_blank" rel="noopener noreferrer">WelcomeHome</a>, <a href="https://www.yardi.com/product/senior-crm/" target="_blank" rel="noopener noreferrer">Yardi</a>, and <a href="https://advantageanywhere.com/senior-living-and-care/" target="_blank" rel="noopener noreferrer">Advantage Anywhere</a>.</p>}
+          {rankedGuide && <p class="buyer-vendor-links">Compare official product pages: {rankedGuide.vendors.filter((vendor) => vendor.name !== 'Quid').map((vendor,index,array) => <><a href={vendor.item} target="_blank" rel="noopener noreferrer">{vendor.name}</a>{index < array.length - 1 ? ', ' : '.'}</>)}</p>}
         </div>
       </article>
     </div>

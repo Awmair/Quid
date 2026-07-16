@@ -44,4 +44,28 @@ export const resourceMedia = {
     image: softwareBuyersGuide,
     alt: 'A senior living executive director and admissions director comparing software options together',
   },
+  'best-senior-living-sales-software-small-communities': {
+    image: softwareBuyersGuide,
+    alt: 'A small senior living community leadership team comparing sales software options',
+  },
+  'best-assisted-living-lead-follow-up-software': {
+    image: softwareBuyersGuide,
+    alt: 'An assisted living sales team comparing lead follow-up software',
+  },
+  'best-senior-living-tour-scheduling-tools-website-inquiries': {
+    image: softwareBuyersGuide,
+    alt: 'A senior living admissions team evaluating website inquiry and tour scheduling tools',
+  },
+  'best-senior-living-sales-automation-human-handoffs': {
+    image: softwareBuyersGuide,
+    alt: 'A senior living sales director reviewing automation and human handoff requirements',
+  },
+  'best-senior-living-inquiry-management-software-existing-crm': {
+    image: softwareBuyersGuide,
+    alt: 'A senior living team comparing inquiry management software that works with current systems',
+  },
+  'best-senior-living-crm-alternatives-focused-workflow': {
+    image: softwareBuyersGuide,
+    alt: 'A senior living operator comparing CRM alternatives for a focused admissions workflow',
+  },
 } as const;
