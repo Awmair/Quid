@@ -21,8 +21,10 @@ import { primaryCtaHref, site } from '../data/site';
 const schema = [
   {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Quid', applicationCategory: 'BusinessApplication',
-    operatingSystem: 'Web', description: site.defaultDescription,
+    operatingSystem: 'Web', url: site.domain, description: site.defaultDescription,
+    provider: { '@id': `${site.domain}/#organization` },
     audience: { '@type': 'Audience', audienceType: 'Senior living admissions teams' },
+    featureList: ['Website inquiry acknowledgement', 'Approved lead follow-up', 'Staff-controlled tour scheduling', 'Tour confirmations and reminders', 'Human handoffs', 'Daily inquiry and tour summary'],
   },
   {
     '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(([question, answer]) => ({
@@ -220,7 +222,7 @@ const audiences = [
       </div>
       <p class="resource-inline-link workflow-guide-note">
         <span>Planning your first workflow?</span>
-        <span>Read the <a href="/resources/senior-living-admissions-automation/">senior living admissions automation guide</a>.</span>
+        <span><a href="/senior-living-inquiry-flow-grader/">Grade your current inquiry flow</a>, then read the <a href="/resources/senior-living-admissions-automation/">inquiry-to-tour automation guide</a>.</span>
       </p>
     </div>
   </section>

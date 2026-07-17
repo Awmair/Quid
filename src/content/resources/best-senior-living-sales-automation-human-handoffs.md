@@ -1,7 +1,7 @@
 ---
 title: "7 Best Senior Living Sales Automation Tools with Human Handoffs (2026)"
 seoTitle: "Best Senior Living Sales Automation with Handoffs | Quid"
-description: "Compare seven senior living sales automation tools through a human-handoff lens: staff control, sensitive questions, reply handling and workflow boundaries."
+description: "Compare seven senior living sales automation tools for staff control, sensitive-question handoffs, reply handling and workflow boundaries."
 author: "Quid"
 publishedDate: 2026-07-16
 updatedDate: 2026-07-16

@@ -1,6 +1,6 @@
 # Quid
 
-> Quid handles new inquiries, family follow-up, and tour scheduling behind the scenes for senior living communities. The goal is fewer missed inquiries, more booked tours, and more time for staff to spend with residents and families without another daily tool or admin hire.
+> Quid handles senior living lead response, inquiry follow-up, and tour scheduling behind the scenes. It works around a community’s existing CRM or lead system, inbox, and calendar without adding another daily frontline tool.
 
 ## Website
 
@@ -13,8 +13,8 @@
 - 30-Day Pilot: https://get-quid.site/pilot/
 - See How Quid Fits: https://get-quid.site/meet-quid/
 - Resources: https://get-quid.site/resources/
-- Assisted Living Admissions Automation: https://get-quid.site/assisted-living-admissions-automation/
-- Senior Living Inquiry Follow-Up Automation: https://get-quid.site/senior-living-inquiry-follow-up-automation/
+- Assisted Living Inquiry Follow-Up and Tour Automation: https://get-quid.site/assisted-living-admissions-automation/
+- Senior Living Inquiry and Lead Follow-Up Software: https://get-quid.site/senior-living-inquiry-follow-up-automation/
 - Senior Living Tour Scheduling Software: https://get-quid.site/senior-living-tour-scheduling-software/
 - Free Senior Living Inquiry-Flow Grader: https://get-quid.site/senior-living-inquiry-flow-grader/
 
@@ -82,7 +82,7 @@ Quid Admissions is the company and entity behind Quid. Quid is the brand. Umair 
 - Quid vs WelcomeHome: https://get-quid.site/resources/comparisons/quid-vs-welcomehome/
 - Quid vs Advantage Anywhere: https://get-quid.site/resources/comparisons/quid-vs-advantage-anywhere/
 
-Quid Admissions publishes these comparisons using official public vendor information reviewed in July 2026. Vendors do not pay for placement. Aline, ECP CRM, WelcomeHome and Advantage Anywhere are compared as broader CRM or platform options; Further as a CRM-connected AI sales and marketing platform; and Quid as focused admissions automation rather than a CRM replacement.
+Quid Admissions publishes these comparisons using official public vendor information reviewed in July 2026. Vendors do not pay for placement. Aline, ECP CRM, WelcomeHome and Advantage Anywhere are compared as broader CRM or platform options; Further as a CRM-connected AI sales and marketing platform; and Quid as focused inquiry-to-tour automation rather than a CRM replacement.
 
 ## Contact
 

@@ -33,7 +33,7 @@ export const site: SiteConfig = {
   googleSiteVerification: clean(import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION),
   defaultTitle: 'Quid | Senior Living Inquiry & Tour Follow-Up Automation',
   defaultDescription:
-    'Fewer missed inquiries. More booked tours. No extra admin hire. Quid handles inquiry follow-up and tour scheduling behind the scenes for senior living teams.',
+    'Quid handles senior living lead response, inquiry follow-up, and tour scheduling around the CRM, inbox, and calendar teams already use.',
 };
 
 export const primaryCtaHref = '/meet-quid/';

@@ -1,7 +1,7 @@
 ---
 title: "7 Best Senior Living Sales Software Tools for Small Communities (2026)"
 seoTitle: "Best Senior Living Sales Software for Small Teams | Quid"
-description: "Compare seven senior living sales software tools for independent and small regional communities, ranked by workflow fit, scope, migration burden and staff control."
+description: "Compare seven senior living sales tools for small communities by inquiry workflow fit, scope, migration burden and staff control."
 author: "Quid"
 publishedDate: 2026-07-16
 updatedDate: 2026-07-16

@@ -8,7 +8,7 @@ export const workflow = [
 
 export const faqs = [
   ['What is Quid?', 'Quid handles new inquiries, family follow-up, and tour scheduling behind the scenes for senior living communities. It helps teams miss fewer inquiries and book more tours without adding another admin hire.'],
-  ['Is Quid a CRM?', 'No. Quid is not a CRM replacement. It works around a focused admissions workflow and can connect with the inquiry form, calendar, email process, and lead system your team already uses.'],
+  ['Is Quid a CRM?', 'No. Quid is not a CRM replacement. It works around a focused inquiry-to-tour workflow and can connect with the inquiry form, calendar, email process, and lead system your team already uses.'],
   ['Does Quid replace our admissions team?', 'No. Quid handles repetitive communication and coordination so staff have more time for residents, tours, family conversations, and decisions that need human judgment.'],
   ['Does Quid answer incoming calls?', 'The initial version focuses on website inquiries, email communication, tour scheduling, and staff handoffs. Voice and SMS may be offered separately later.'],
   ['Can Quid answer clinical questions?', 'No. Medical, clinical, medication, eligibility, and care-assessment questions are routed to a designated staff member.'],

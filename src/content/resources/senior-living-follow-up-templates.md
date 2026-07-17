@@ -1,7 +1,7 @@
 ---
 title: "Senior Living Follow-Up Email Templates for Inquiries and Tours"
 seoTitle: "Senior Living Follow-Up Email Templates | Quid"
-description: "Practical email templates for senior living inquiry acknowledgement, tour options, confirmation, reminders, post-tour follow-up, and stalled leads."
+description: "Email templates for senior living lead and inquiry acknowledgements, tour confirmations, reminders, post-tour follow-up and stalled leads."
 author: "Quid"
 publishedDate: 2026-07-10
 updatedDate: 2026-07-11

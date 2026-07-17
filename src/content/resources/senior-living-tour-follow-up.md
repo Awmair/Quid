@@ -1,5 +1,6 @@
 ---
 title: "A Practical Senior Living Tour Follow-Up Framework"
+seoTitle: "Senior Living Tour Follow-Up and Reminder Guide | Quid"
 description: "A clear, human-centered framework for senior living tour confirmations, reminders, post-tour follow-up, and staff handoffs."
 author: "Quid"
 publishedDate: 2026-07-10

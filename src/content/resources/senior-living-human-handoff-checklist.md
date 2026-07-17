@@ -1,18 +1,18 @@
 ---
-title: "Human Handoff Checklist for Senior Living Admissions Automation"
-seoTitle: "Senior Living Admissions Human Handoff Checklist | Quid"
-description: "A practical checklist for routing clinical, medication, eligibility, care-assessment, and sensitive admissions questions from automation to staff."
+title: "Human Handoff Checklist for Senior Living Inquiry Automation"
+seoTitle: "Senior Living Inquiry Automation Handoff Checklist | Quid"
+description: "Route clinical, medication, eligibility, care-assessment and sensitive family questions from inquiry automation to qualified staff."
 author: "Quid"
 publishedDate: 2026-07-10
 updatedDate: 2026-07-11
 order: 6
 ---
 
-A senior living human handoff checklist defines where routine admissions automation stops and staff ownership begins. It should name the questions automation must not answer, the safe acknowledgement a family receives, the staff owner and backup, and the status used to track the handoff until it is resolved.
+A senior living human handoff checklist defines where routine inquiry automation stops and staff ownership begins. It should name the questions automation must not answer, the safe acknowledgement a family receives, the staff owner and backup, and the status used to track the handoff until it is resolved.
 
 The purpose is not to make an automated system sound clinical. The purpose is to preserve human judgment while keeping the family’s question visible.
 
-## What admissions automation should not answer
+## What inquiry automation should not answer
 
 Quid is designed for routine, non-clinical communication such as website inquiry acknowledgement, staff-controlled tour options, confirmations, approved follow-up, and operational summaries.
 

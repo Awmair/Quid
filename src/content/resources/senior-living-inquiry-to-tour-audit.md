@@ -1,7 +1,7 @@
 ---
 title: "2026 Senior Living Inquiry-to-Tour Benchmark: 100 Communities"
 seoTitle: "Senior Living Inquiry-to-Tour Benchmark (2026) | Quid"
-description: "Original Quid research across 100 public senior living website journeys, 28 operator groups, and 23 US states shows where tour requests still pause and where automation is visible."
+description: "Quid research across 100 senior living website journeys shows where inquiry-to-tour coordination pauses and where automation is visible."
 author: "Quid Research"
 publishedDate: 2026-07-13
 updatedDate: 2026-07-14

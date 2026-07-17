@@ -1,22 +1,22 @@
 ---
-title: "Senior Living Admissions Automation: What to Automate and What to Keep Human"
-seoTitle: "Senior Living Admissions Automation Guide | Quid"
-description: "A practical framework for deciding which senior living admissions tasks can be made consistent and which decisions must remain with staff."
+title: "Senior Living Inquiry-to-Tour Automation: What to Automate and Keep Human"
+seoTitle: "Senior Living Inquiry-to-Tour Automation Guide | Quid"
+description: "Decide which senior living inquiry and tour tasks to automate, which require staff, and how to keep speed-to-lead work controlled."
 author: "Quid"
 publishedDate: 2026-07-10
 updatedDate: 2026-07-11
 order: 1
 ---
 
-Senior living admissions automation should support the team’s process, not replace its judgment. The safest starting point is routine, repeatable coordination: acknowledging a website inquiry, offering approved tour times, sending reminders, and showing staff what needs attention. Clinical questions, eligibility decisions, sensitive conversations, and relationship-based follow-up should remain human.
+Senior living inquiry-to-tour automation should support the team’s process, not replace its judgment. The safest starting point is routine, repeatable coordination: acknowledging a website inquiry, offering approved tour times, sending reminders, and showing staff what needs attention. This can improve speed to lead without automating clinical questions, eligibility decisions, sensitive conversations, or relationship-based follow-up.
 
-## What senior living admissions automation means
+## What senior living inquiry-to-tour automation means
 
-Senior living admissions automation is the use of approved workflow rules to coordinate repetitive, non-clinical work around a family inquiry. It can acknowledge a website form, offer staff-controlled tour times, send approved reminders, maintain next-action states, and alert staff when something is overdue or outside scope.
+Senior living inquiry-to-tour automation uses approved workflow rules to coordinate repetitive, non-clinical work around a family inquiry. It can acknowledge a website form, offer staff-controlled tour times, send approved reminders, maintain next-action states, and alert staff when something is overdue or outside scope.
 
 It is not automated admissions authority. It should not assess care needs, determine eligibility, recommend a level of care, interpret medical information, or replace the staff relationship with a family.
 
-## Start with the admissions outcome
+## Start with the inquiry-to-tour outcome
 
 The goal is not to automate as many steps as possible. The goal is to help families receive a timely, clear next step while admissions staff can see the state of every inquiry.
 
@@ -100,7 +100,7 @@ Quid is designed as a focused senior living CRM add-on or workflow layer, not a 
 
 If you are actively comparing products, use the [2026 senior living admissions automation software buyer’s guide](/resources/senior-living-admissions-automation-software/) to distinguish complete CRMs, broader AI sales platforms, and focused workflow options.
 
-| Focused admissions automation | Full CRM replacement |
+| Focused inquiry-to-tour automation | Full CRM replacement |
 | --- | --- |
 | Starts with one inquiry source and one calendar | Rebuilds broad lead and sales operations |
 | Coordinates approved messages and next actions | Owns the complete contact database and reporting model |

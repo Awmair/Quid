@@ -12,8 +12,8 @@ export const rankedGuides = {
   'senior-living-admissions-automation-software': {
     answer: 'Quid is our number-one choice for independent and small regional communities improving website inquiry follow-up and tour coordination without replacing their CRM. Further is the stronger fit for broader multi-channel AI engagement, while Aline, ECP, WelcomeHome, Yardi and Advantage Anywhere fit broader CRM or operating-platform decisions.',
     items: [{ kicker: '#1 focused fit', title: 'Quid' }, { kicker: 'Seven options', title: 'Ranked by use case' }, { kicker: 'Transparent', title: 'Criteria and disclosure' }],
-    schemaName: 'Best senior living admissions software tools for 2026',
-    schemaDescription: 'Seven senior living admissions software options ranked by the transparent best-fit use cases and methodology stated in the guide.',
+    schemaName: 'Best senior living admissions tools for inquiry follow-up in 2026',
+    schemaDescription: 'Seven senior living inquiry, tour and CRM software options ranked by the transparent best-fit use cases and methodology stated in the guide.',
     vendors: [vendors.quid, vendors.further, vendors.aline, vendors.ecp, vendors.welcomehome, vendors.yardi, vendors.advantage],
   },
   'best-senior-living-sales-software-small-communities': {
@@ -54,7 +54,7 @@ export const rankedGuides = {
   'best-senior-living-crm-alternatives-focused-workflow': {
     answer: 'Quid ranks first only when “CRM alternative” means solving a focused website inquiry-to-tour problem without replacing the current system of record. It is not a complete CRM; communities needing pipeline, referral and portfolio records should choose a purpose-built CRM.',
     items: [{ kicker: '#1 focused alternative', title: 'Quid' }, { kicker: 'Six paths', title: 'Replace or complement' }, { kicker: 'Clear scope', title: 'Not a CRM claim' }],
-    schemaName: 'Best senior living CRM alternatives for a focused admissions workflow in 2026',
+    schemaName: 'Best senior living CRM alternatives for a focused inquiry-to-tour workflow in 2026',
     schemaDescription: 'Six alternatives to a senior living CRM replacement, ranked by focused workflow, platform and system-of-record needs.',
     vendors: [vendors.quid, vendors.further, vendors.aline, vendors.ecp, vendors.welcomehome, vendors.yardi],
   },

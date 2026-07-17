@@ -95,6 +95,7 @@ const indexableCanonicals = new Set();
 const canonicalToFile = new Map();
 const noindexCanonicals = new Set();
 const structuredLocalUrls = [];
+const internalInlinks = new Map();
 const expectedIndexRobots = 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1';
 
 for (const file of htmlFiles) {
@@ -176,12 +177,17 @@ for (const file of htmlFiles) {
     const href = match[1];
     if (/\.(png|jpg|jpeg|webp|avif|gif|svg|ico|xml|css|js|webmanifest|csv|pdf|txt|zip|mp4|webm)$/i.test(href)) continue;
     if (href !== '/' && !href.endsWith('/') && !href.endsWith('.html')) errors.push(`${file}: internal link is not canonical ${href}`);
+    if (`${siteOrigin}${href}` !== canonical) internalInlinks.set(href, (internalInlinks.get(href) || 0) + 1);
     const targets = localUrlTargets(`${siteOrigin}${href}`);
     if (!(await Promise.any(targets.map(async (target) => {
       if (await exists(target)) return true;
       throw new Error('missing');
     })).catch(() => false))) errors.push(`${file}: broken internal link ${href}`);
   }
+}
+
+if ((internalInlinks.get('/senior-living-inquiry-flow-grader/') || 0) < 5) {
+  errors.push('grader page: expected at least five contextual internal inlinks');
 }
 
 for (const { file, path, value } of structuredLocalUrls) {

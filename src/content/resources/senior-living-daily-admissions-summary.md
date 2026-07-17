@@ -1,7 +1,7 @@
 ---
 title: "The Daily Admissions Summary Senior Living Teams Should Review Each Morning"
 seoTitle: "Senior Living Daily Admissions Summary Template | Quid"
-description: "A practical template for a senior living daily admissions summary covering new inquiries, tours, overdue replies, handoffs, stalled leads, and staff tasks."
+description: "A daily senior living lead-follow-up summary template for new inquiries, tours, overdue replies, handoffs, stalled leads and staff tasks."
 author: "Quid"
 publishedDate: 2026-07-10
 updatedDate: 2026-07-11

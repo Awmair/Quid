@@ -11,24 +11,29 @@ const { page } = Astro.props;
 const target = vendors[page.target];
 const candidates = page.candidates.map((item) => ({ ...item, details: vendors[item.vendor] }));
 const url = `${site.domain}${alternativePath(page.slug)}`;
-const title = `${page.titleName}: 5 Senior Living Options (2026) | Quid`;
-const publishedTime = '2026-07-13T00:00:00.000Z';
-const modifiedTime = '2026-07-13T00:00:00.000Z';
+const title = `${page.titleName} for Senior Living (2026) | Quid`;
+const toIsoTime = (date: string) => `${date}T00:00:00.000Z`;
+const formatDate = (date: string) => new Date(toIsoTime(date)).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'});
+const publishedTime = toIsoTime(page.publishedDate);
+const modifiedTime = toIsoTime(page.updatedDate);
+const reviewedVendors = [target,...candidates.map((item)=>item.details)];
+const latestReviewedDate = reviewedVendors.map((vendor)=>vendor.reviewed).sort().at(-1) || page.updatedDate;
 const organizationId = `${site.domain}/#organization`;
 const websiteId = `${site.domain}/#website`;
+const editorId = `${site.domain}/about/#umair-qudoos`;
 const comparisonFor = (candidate: typeof page.candidates[number]) => comparisons.find((item) =>
   (item.a === page.target && item.b === candidate.vendor) || (item.b === page.target && item.a === candidate.vendor)
 );
 const faqs: [string, string][] = [
   [`What are the best ${target.name} alternatives for senior living?`, page.direct],
-  [`When should an operator keep ${target.name} on the shortlist?`, page.targetStillFits],
-  [`Is Quid a direct replacement for ${target.name}?`, `No. Quid is focused admissions automation for one website-inquiry-to-tour workflow. ${target.name} is ${target.category.toLowerCase()}. The products should not be treated as like-for-like replacements.`],
+  [`When should an operator keep ${target.name} on the shortlist?`, page.decision.keep],
+  [`Is Quid a direct replacement for ${target.name}?`, `No. Quid is focused inquiry-to-tour automation for one website-inquiry-to-tour workflow. ${target.name} is ${target.category.toLowerCase()}. The products should not be treated as like-for-like replacements.`],
   [`Which ${target.name} alternative works without replacing the current CRM?`, 'Further publicly connects its engagement products to a CRM. Quid is designed as a focused workflow around current tools. Exact compatibility, integrations and implementation requirements must be confirmed before purchase.'],
   [`How should a small senior living operator compare these options?`, 'Use one real inquiry scenario. Ask each vendor to show the first response, tour scheduling, family reply, staff handoff, overdue-work visibility, implementation work and complete cost. Eliminate any option that cannot demonstrate the required workflow.'],
   [`Are prices for these senior living software alternatives public?`, 'Most vendors in this shortlist do not publish current numeric pricing on the official pages reviewed. Quid publishes a $1,000 one-time 30-day pilot and optional continuation at $899 per month per community. Request full setup, usage, integration, support and contract costs from every vendor.'],
 ];
 const schema = [
-  {'@context':'https://schema.org','@type':'Article',headline:title,description:page.description,image:{'@type':'ImageObject',url:`${site.domain}/quid-og.png`},author:{'@id':organizationId},editor:{'@type':'Person','@id':`${site.domain}/about/#umair-qudoos`,name:'Umair Q.',url:`${site.domain}/about/`},publisher:{'@id':organizationId},datePublished:publishedTime,dateModified:modifiedTime,mainEntityOfPage:{'@type':'WebPage','@id':url},isPartOf:{'@id':websiteId},url},
+  {'@context':'https://schema.org','@type':'Article',headline:title,description:page.description,image:{'@type':'ImageObject',url:`${site.domain}/quid-og.png`},author:{'@id':organizationId},editor:{'@type':'Person','@id':editorId,name:'Umair Q.',url:`${site.domain}/about/`},reviewedBy:{'@id':editorId},publisher:{'@id':organizationId},datePublished:publishedTime,dateModified:modifiedTime,mainEntityOfPage:{'@type':'WebPage','@id':url},isPartOf:{'@id':websiteId},url},
   {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:`${site.domain}/`},{'@type':'ListItem',position:2,name:'Resources',item:`${site.domain}/resources/`},{'@type':'ListItem',position:3,name:'Software Comparisons',item:`${site.domain}/resources/senior-living-software-comparisons/`},{'@type':'ListItem',position:4,name:page.titleName,item:url}]},
   {'@context':'https://schema.org','@type':'ItemList',name:`Five ${target.name} alternatives for senior living`,numberOfItems:candidates.length,itemListOrder:'https://schema.org/ItemListOrderAscending',itemListElement:candidates.map((item,index)=>({'@type':'ListItem',position:index+1,name:item.details.name,url:item.details.website}))},
   {'@context':'https://schema.org','@type':'FAQPage',mainEntity:faqs.map(([question,answer])=>({'@type':'Question',name:question,acceptedAnswer:{'@type':'Answer',text:answer}}))},
@@ -42,9 +47,9 @@ const schema = [
     <div class="shell alternative-hero-grid">
       <div>
         <p class="eyebrow">Senior living software alternatives · 2026</p>
-        <h1>{page.titleName}: 5 Options to Compare</h1>
+        <h1>{page.titleName} for Senior Living: 5 Options to Compare</h1>
         <p class="lede">{page.opening}</p>
-        <p class="resource-meta"><span>Published by Quid Admissions</span><span>Official vendor information reviewed July 2026</span></p>
+        <p class="resource-meta"><span>Published by Quid Admissions</span><span>Editorial review: <a href="/about/">Umair Q., Founder</a></span><span>Updated {formatDate(page.updatedDate)}</span><span>Sources reviewed through {formatDate(latestReviewedDate)}</span></p>
       </div>
       <aside class="alternative-decision-card" aria-label="First buying decision">
         <span>Decide this first</span>
@@ -100,10 +105,11 @@ const schema = [
     </div>
   </section>
 
-  <section class="section section-sage">
-    <div class="shell alternative-balance-grid">
-      <article><p class="eyebrow">When {target.name} may still fit</p><h2>Do not switch categories by accident.</h2><p>{page.targetStillFits}</p><a href={target.website} target="_blank" rel="noopener noreferrer">Review the official {target.name} website</a></article>
-      <article class="alternative-test-card"><p class="eyebrow">A better vendor test</p><h2>Use one real inquiry scenario.</h2><ol><li>Submit a test inquiry in the demonstration.</li><li>Show the first approved response.</li><li>Book a staff-controlled tour time.</li><li>Reply with a question that needs a person.</li><li>Show where stalled work and reporting appear.</li><li>Document migration, setup and complete cost.</li></ol></article>
+  <section class="section section-sage" id="keep-or-switch">
+    <div class="shell">
+      <div class="section-heading"><div><p class="eyebrow">Keep, switch or add a layer</p><h2>{page.decision.heading}</h2></div><p>{page.decision.summary}</p></div>
+      <div class="comparison-fit-grid"><article><span>Keep {target.name} on the shortlist when</span><p>{page.decision.keep}</p><a href={target.website} target="_blank" rel="noopener noreferrer">Review the official {target.name} website</a></article><article><span>Compare a different category when</span><p>{page.decision.switch}</p></article></div>
+      <div class="alternative-balance-grid"><article><p class="eyebrow">Migration and ownership</p><h3>Map the record flow before the feature list.</h3><p>{page.decision.migration}</p></article><article class="alternative-test-card"><p class="eyebrow">Target-specific checklist</p><h3>Resolve these questions before signing.</h3><ul>{page.decision.checklist.map((item)=><li>{item}</li>)}</ul></article></div>
     </div>
   </section>
 
@@ -119,6 +125,6 @@ const schema = [
   </section>
 
   <section class="section-sm section-white">
-    <div class="narrow alternative-methodology"><h2>Methodology and sources</h2><p>Quid reviewed official vendor pages in July 2026 and separated each option by system role, publicly described workflows, implementation model and pricing visibility. This is not hands-on certification, a ranking or a claim that every alternative integrates with every system.</p><p>Start with the <a href="/resources/senior-living-software-comparisons/">senior living software comparison hub</a>, the <a href="/resources/senior-living-admissions-automation-software/">admissions software buyer’s guide</a>, or another alternative page:</p><nav class="alternative-sibling-links" aria-label="Related alternatives pages">{alternatives.filter((item)=>item.slug!==page.slug).map((item)=><a href={alternativePath(item.slug)}>{item.titleName}</a>)}</nav><ul class="comparison-source-list">{[target,...candidates.map((item)=>item.details)].flatMap((vendor)=>vendor.sources).map((source)=><li><a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a> (reviewed July 2026)</li>)}</ul><p class="trademark-note">Product and company names belong to their respective owners. Inclusion does not imply endorsement, partnership or affiliation.</p></div>
+    <div class="narrow alternative-methodology"><h2>Methodology and sources</h2><p>Quid reviewed official vendor pages through {formatDate(latestReviewedDate)} and separated each option by system role, publicly described workflows, implementation model and pricing visibility. This is not hands-on certification, a ranking or a claim that every alternative integrates with every system.</p><p>Start with the <a href="/resources/senior-living-software-comparisons/">senior living software comparison hub</a>, the <a href="/resources/senior-living-admissions-automation-software/">admissions software buyer’s guide</a>, or another alternative page:</p><nav class="alternative-sibling-links" aria-label="Related alternatives pages">{alternatives.filter((item)=>item.slug!==page.slug).map((item)=><a href={alternativePath(item.slug)}>{item.titleName}</a>)}</nav><ul class="comparison-source-list">{reviewedVendors.flatMap((vendor)=>vendor.sources.map((source)=>({source,reviewed:vendor.reviewed}))).map(({source,reviewed})=><li><a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a> (reviewed {formatDate(reviewed)})</li>)}</ul><p class="trademark-note">Product and company names belong to their respective owners. Inclusion does not imply endorsement, partnership or affiliation.</p></div>
   </section>
 </BaseLayout>

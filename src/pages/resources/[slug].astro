@@ -27,8 +27,10 @@ const pageImage = media?.image.src;
 const articleImage = pageImage ? new URL(pageImage, site.domain).toString() : `${site.domain}/quid-og.png`;
 const organizationId = `${site.domain}/#organization`;
 const websiteId = `${site.domain}/#website`;
+const editorId = `${site.domain}/about/#umair-qudoos`;
 const publishedTime = entry.data.publishedDate.toISOString();
 const modifiedTime = entry.data.updatedDate.toISOString();
+const publisherLabel = entry.data.author === 'Quid Research' ? 'Quid Research at Quid Admissions' : 'Quid Admissions';
 const visuals = {
   'how-to-increase-assisted-living-occupancy': {
     ...resourceMedia['how-to-increase-assisted-living-occupancy'],
@@ -74,7 +76,7 @@ const visuals = {
 const visual = visuals[entry.id as keyof typeof visuals] || (rankedGuide && media ? { ...media, answer: rankedGuide.answer, items: rankedGuide.items } : undefined);
 const faqs = resourceFaqs[entry.id as keyof typeof resourceFaqs];
 const schema = [
-  {'@context':'https://schema.org','@type':'Article',headline:entry.data.title,description:entry.data.description,image:{'@type':'ImageObject',url:articleImage},author:{'@type':'Organization',name:entry.data.author,url:`${site.domain}/`},publisher:{'@id':organizationId},datePublished:publishedTime,dateModified:modifiedTime,mainEntityOfPage:{'@type':'WebPage','@id':url},isPartOf:{'@id':websiteId},url},
+  {'@context':'https://schema.org','@type':'Article',headline:entry.data.title,description:entry.data.description,image:{'@type':'ImageObject',url:articleImage},author:{'@id':organizationId},editor:{'@type':'Person','@id':editorId,name:'Umair Q.',url:`${site.domain}/about/`},reviewedBy:{'@id':editorId},publisher:{'@id':organizationId},datePublished:publishedTime,dateModified:modifiedTime,mainEntityOfPage:{'@type':'WebPage','@id':url},isPartOf:{'@id':websiteId},url},
   {'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[
     {'@type':'ListItem',position:1,name:'Home',item:`${site.domain}/`},
     {'@type':'ListItem',position:2,name:'Resources',item:`${site.domain}/resources/`},
@@ -91,7 +93,7 @@ const schema = [
 ---
 <BaseLayout title={entry.data.seoTitle || `${entry.data.title} | Quid`} description={entry.data.description} image={pageImage} imageAlt={media?.alt || `${entry.data.title} | Quid Admissions`} canonicalUrl={url} schema={schema} ogType="article" publishedTime={publishedTime} modifiedTime={modifiedTime}>
   <Breadcrumbs items={[{label:'Home',href:'/'},{label:'Resources',href:'/resources/'},{label:entry.data.title}]} />
-  <header class={`page-hero ${isSoftwareGuide ? 'buyer-guide-hero' : ''}`}><div class="shell page-hero-grid"><div><p class="eyebrow">{isSoftwareGuide ? '2026 ranked buyer’s guide' : isFieldAudit ? 'Original field research · July 2026' : 'Quid practical guide'}</p><h1>{entry.data.title}</h1><p class="lede">{entry.data.description}</p><p class="resource-meta"><span>By {entry.data.author}</span><span>Published {entry.data.publishedDate.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}</span><span>Updated {entry.data.updatedDate.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}</span></p></div>{visual && <PhotoPanel image={visual.image} alt={visual.alt} priority />}</div></header>
+  <header class={`page-hero ${isSoftwareGuide ? 'buyer-guide-hero' : ''}`}><div class="shell page-hero-grid"><div><p class="eyebrow">{isSoftwareGuide ? '2026 ranked buyer’s guide' : isFieldAudit ? 'Original field research · July 2026' : 'Quid practical guide'}</p><h1>{entry.data.title}</h1><p class="lede">{entry.data.description}</p><p class="resource-meta"><span>Published by <a href="/about/">{publisherLabel}</a></span><span>Editorial review: <a href="/about/">Umair Q., Founder</a></span><span>Published {entry.data.publishedDate.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}</span><span>Updated {entry.data.updatedDate.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}</span></p></div>{visual && <PhotoPanel image={visual.image} alt={visual.alt} priority />}</div></header>
   {visual && <section class="section-sm section-sand"><div class="shell"><QuickScan items={[...visual.items]} label="Guide at a glance" /></div></section>}
   <section class="section section-white">
     <div class="shell article-shell">
