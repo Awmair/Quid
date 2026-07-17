@@ -323,6 +323,29 @@ try {
 } catch {}
 
 try {
+  const llmsFull = await readFile(join(root, 'llms-full.txt'), 'utf8');
+  if (!llmsFull.includes('Generated automatically from the rendered content of every self-canonical, indexable Quid page.')) {
+    errors.push('dist/llms-full.txt: automatic-generation marker missing');
+  }
+
+  const declaredCount = Number(llmsFull.match(/^Canonical pages included: (\d+)$/m)?.[1]);
+  if (declaredCount !== indexableCanonicals.size) {
+    errors.push(`dist/llms-full.txt: expected declared page count ${indexableCanonicals.size}, found ${Number.isNaN(declaredCount) ? '(missing)' : declaredCount}`);
+  }
+
+  const generatedCanonicals = [...llmsFull.matchAll(/^Canonical URL: (https:\/\/get-quid\.site\/.*)$/gm)].map((match) => match[1]);
+  const generatedCanonicalSet = new Set(generatedCanonicals);
+  if (generatedCanonicals.length !== generatedCanonicalSet.size) errors.push('dist/llms-full.txt: duplicate canonical page sections found');
+  for (const canonical of indexableCanonicals) {
+    if (!generatedCanonicalSet.has(canonical)) errors.push(`dist/llms-full.txt: canonical page missing ${canonical}`);
+  }
+  for (const canonical of generatedCanonicalSet) {
+    if (!indexableCanonicals.has(canonical)) errors.push(`dist/llms-full.txt: non-indexable page included ${canonical}`);
+  }
+  if (/<(?:html|main|section|article)\b/i.test(llmsFull)) errors.push('dist/llms-full.txt: rendered HTML leaked into Markdown output');
+} catch {}
+
+try {
   const benchmark = await readFile(join(root, 'resources/senior-living-inquiry-to-tour-audit/index.html'), 'utf8');
   for (const expected of [
     'community pages reviewed',
